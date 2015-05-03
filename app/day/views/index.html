@@ -1,0 +1,31 @@
+<div ng-controller="IndexController">
+  <super-navbar>
+    <super-navbar-title>
+      Day Index
+    </super-navbar-title>
+  </super-navbar>
+
+  <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+  <div ng-hide="showSpinner">
+    <ul class="list" ng-hide="days.length == 0">
+
+      <super-navigate location="day#show" data-params-id="{{ day.id }}" ng-repeat="day in days">
+        <li class="item item-icon-right">
+          <span ng-bind="day['day']"></span>
+          <i class="icon super-ios7-arrow-right"></i>
+        </li>
+      </super-navigate>
+
+    </ul>
+
+    <h4 ng-show="days.length == 0" class="assertive padding">
+      No days found. Create one?
+    </h4>
+
+    <super-modal-show location="day#new">
+      <button class="button button-full button-positive">
+        Create a new day
+      </button>
+    </super-modal-show>
+  </div>
+</div>

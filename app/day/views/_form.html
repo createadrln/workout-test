@@ -1,0 +1,31 @@
+<div class="list">
+
+    <label class="item item-input item-stacked-label">
+        <span class="input-label">day</span>
+        <input type="text" ng-model="day['day']">
+    </label>
+
+    <label class="item item-input item-stacked-label">
+        <span class="input-label">workout ids</span>
+        <input type="text" ng-model="day['workout']">
+    </label>
+
+    <ul class="list">
+
+        <li ng-repeat="workout in workouts" class="item item-checkbox">
+            <label class="checkbox">
+                <input type="checkbox" value="workout['id']" ng-checked="checkedWorkouts.indexOf(workout.id) != -1" ng-click="toggleCheck(workout)" />
+            </label>
+            <span ng-bind="workout['title']"></span>
+            <span ng-bind="workout['id']"></span>
+        </li>
+
+    </ul>
+
+    <div>The following workouts are checked: {{checkedWorkouts | json}}</div>
+
+    <br>
+
+    <button class="button button-block button-positive">Save</button>
+
+</div>

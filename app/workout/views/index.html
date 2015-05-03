@@ -1,0 +1,33 @@
+<div ng-controller="IndexController">
+    <super-navbar>
+        <super-navbar-title>
+            Workout Index
+        </super-navbar-title>
+    </super-navbar>
+
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
+
+        <super-modal-show location="workout#new">
+            <button class="button button-full button-positive">
+                Create a new workout
+            </button>
+        </super-modal-show>
+
+        <ul class="list" ng-hide="workouts.length == 0">
+
+            <super-navigate location="workout#show" data-params-id="{{ workout.id }}" ng-repeat="workout in workouts">
+                <li class="item item-icon-right">
+                    <span ng-bind="workout['title']"></span>
+                    <i class="icon super-ios7-arrow-right"></i>
+                </li>
+            </super-navigate>
+
+        </ul>
+
+        <h4 ng-show="workouts.length == 0" class="assertive padding">
+            No workouts found. Create one?
+        </h4>
+
+    </div>
+</div>

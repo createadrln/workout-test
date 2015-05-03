@@ -1,0 +1,36 @@
+<div class="list">
+
+
+    <label class="item item-input item-stacked-label">
+        <span class="input-label">title</span>
+        <input type="text" ng-model="workout['title']">
+    </label>
+
+    <label class="item item-input">
+        <input type="text" ng-model="searchText" placeholder="Search" />
+    </label>
+
+    <ul class="list">
+        <li ng-repeat="exercise in exercises | filter:searchText" class="item item-checkbox">
+            <label class="checkbox">
+                <input type="checkbox" value="exercise['id']" ng-checked="checkedExercises.indexOf(exercise.id) != -1" ng-click="toggleCheck(exercise)" />
+            </label>
+            <span ng-bind="exercise['name']"></span>
+        </li>
+    </ul>
+
+    <div>The following workouts are checked: {{checkedExercises | json}}</div>
+
+    <label class="item item-input item-stacked-label">
+        <span class="input-label">notes</span>
+        <input type="text" ng-model="workout['notes']">
+    </label>
+
+    <label class="item item-input item-stacked-label">
+        <span class="input-label">tags</span>
+        <input type="text" ng-model="workout['tags']">
+    </label>
+
+    <button class="button button-block button-positive">Save</button>
+
+</div>
