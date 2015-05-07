@@ -32,44 +32,25 @@ angular
             var loadWorkoutInformation = function (setDayWorkoutIds) {
 
                 var setDayWorkoutInfo = ({"day" : setDayWorkoutIds.day}),
-                    workoutLen = setDayWorkoutIds.workouts.length,
                     workouts = [];
 
-                for (var key in setDayWorkoutIds.workouts) {
-                    var updateWorkouts = function(key) {
-                        if (key <= workoutLen) {
-                            return supersonic.data.model('Workout')
-                                .find(setDayWorkoutIds.workouts[key])
-                                .then(function (workout) {
-                                    alert(key);
-                                    var workoutInfo = ({"key": key, "title": workout.title, "exercise": workout.exercise});
-                                    workouts.push(workoutInfo);
-                                });
-                        }
-                    }(key)
+                var workoutInfoPush = function(workoutIds) {
+                    return supersonic.data.model('Workout')
+                        .find(workoutIds);
+                };
+
+                for (var i = 0; i < setDayWorkoutIds.workouts.length; i++) {
+                    workoutInfoPush(setDayWorkoutIds.workouts[i])
+                    .then(function (workout) {
+                            workouts.push(workout);
+                        });
                 }
 
-                updateWorkouts();
 
-                //if (key == setDayWorkoutIds.workout.length - 1) {
-                //    setDayWorkoutInfo["workouts"] = workouts;
-                //    return setDayWorkoutInfo;
-                //}
-
-                //angular.forEach(setDayWorkoutIds.workouts, function(workout, key) {
-                //    supersonic.data.model('Workout')
-                //        .find(setDayWorkoutIds.workouts[key])
-                //        .then(function (workout) {
-                //            var workoutInfo = ({"title": workout.title, "exercise": workout.exercise});
-                //            workouts.push(workoutInfo);
-                //        });
-                //});
-
-                setDayWorkoutInfo["workouts"] = updateWorkouts;
+                setDayWorkoutInfo["workouts"] = workouts;
                 return setDayWorkoutInfo;
 
             };
-
 
             loadDayInformation($scope.dataId)
                 .then( getWorkoutIds )
