@@ -34,18 +34,20 @@ angular
                 var setDayWorkoutInfo = ({"day" : setDayWorkoutIds.day}),
                     workouts = [];
 
-                var workoutInfoPush = function(workoutIds) {
+                var loadData = function(workoutId) {
                     return supersonic.data.model('Workout')
-                        .find(workoutIds);
+                        .find(workoutId).
+                        then(function(workout) {
+                            return workout;
+                        })
                 };
 
                 for (var i = 0; i < setDayWorkoutIds.workouts.length; i++) {
-                    workoutInfoPush(setDayWorkoutIds.workouts[i])
+                    loadData(setDayWorkoutIds.workouts[i])
                     .then(function (workout) {
-                            workouts.push(workout);
-                        });
+                        workouts.push(workout);
+                    })
                 }
-
 
                 setDayWorkoutInfo["workouts"] = workouts;
                 return setDayWorkoutInfo;
