@@ -1,6 +1,6 @@
 angular
     .module('day')
-    .controller("ShowController", function ($scope, Day, supersonic) {
+    .controller("ShowController", function ($q, $scope, Day, supersonic) {
         $scope.showSpinner = true;
         $scope.dataId = undefined;
 
@@ -34,23 +34,27 @@ angular
                 var setDayWorkoutInfo = ({"day" : setDayWorkoutIds.day}),
                     workouts = [];
 
-                var loadData = function(workoutId) {
-                    return supersonic.data.model('Workout')
-                        .find(workoutId).
-                        then(function(workout) {
-                            return workout;
-                        })
-                };
-
                 for (var i = 0; i < setDayWorkoutIds.workouts.length; i++) {
-                    loadData(setDayWorkoutIds.workouts[i])
-                    .then(function (workout) {
-                        workouts.push(workout);
-                    })
+                    workouts.push(loadWorkoutData(setDayWorkoutIds.workouts[i]));
+                    alert(workouts);
                 }
 
                 setDayWorkoutInfo["workouts"] = workouts;
                 return setDayWorkoutInfo;
+
+                function loadWorkoutData(workoutId) {
+                    return supersonic.data.model('Workout')
+                        .find(workoutId).then(function(workout) {
+                            return workout;
+                        })
+                }
+
+                function loadExerciseData(exerciseId) {
+                    return supersonic.data.model('Exercise')
+                        .find(exerciseId).then(function(exercise) {
+                            return exercise;
+                        })
+                }
 
             };
 
