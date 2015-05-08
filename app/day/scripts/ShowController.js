@@ -37,20 +37,15 @@ angular
                 for (var i = 0; i < setDayWorkoutIds.workouts.length; i++) {
                     loadWorkoutId(setDayWorkoutIds.workouts[i])
                         .then(function(workout){
-                            //workouts.push(getWorkoutData(workout));
-                            //return $q.when(workouts);
+                            workouts.push(getWorkoutData(workout));
                             getWorkoutData(workout);
                             return workout.exercise;
                         })
                         .then(function(exercises){
-                            var exercisesArr = [];
                             angular.forEach(exercises, function(exerciseId){
                                 loadExerciseId(exerciseId)
                                     .then(function(exercise) {
-                                        exercisesArr.push(
-                                            getExerciseData(exercise)
-                                        );
-                                        return exercisesArr;
+                                        alert(exercise.name);
                                     })
                             })
                         })
