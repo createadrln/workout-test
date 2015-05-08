@@ -32,35 +32,26 @@ angular
             var loadWorkoutInformation = function (setDayWorkoutIds) {
 
                 var setDayWorkoutInfo = ({"day" : setDayWorkoutIds.day}),
-                    deferred = $q.defer(),
                     workouts = [];
 
+                function loadWorkoutId(workoutId) {
+                    return supersonic.data.model('Workout').find(workoutId)
+                }
+
+                function getWorkoutData(workout, i) {
+                    return {'index' : i, 'title' : workout.title, 'exercises' : workout.exercise};
+                }
+
                 for (var i = 0; i < setDayWorkoutIds.workouts.length; i++) {
-                    var workoutData = loadWorkoutData(setDayWorkoutIds.workouts[i]);
-                    workouts.push(workoutData);
+                    loadWorkoutId(setDayWorkoutIds.workouts[i])
+                        .then(function(workout){
+                            workouts.push(getWorkoutData(workout));
+                            return $q.when(workouts);
+                        });
                 }
 
                 setDayWorkoutInfo["workouts"] = workouts;
                 return setDayWorkoutInfo;
-
-                function loadWorkoutData(workoutId) {
-                    return supersonic.data.model('Workout')
-                        .find(workoutId).then(function(workout) {
-                            var workoutInfo = {'title' : workout.title, 'exercises' : workout.exercise};
-                            //deferred.resolve(workoutInfo);
-                            //return deferred.promise;
-                            return $q.when(workoutInfo);
-                        })
-                }
-
-                function loadExerciseData(exerciseId) {
-                    return supersonic.data.model('Exercise')
-                        .find(exerciseId).then(function(exercise) {
-                            var exerciseInfo = {'name' : exercise.name, 'reps' : exercise.reps};
-                            deferred.resolve(exerciseInfo);
-                            return deferred.promise;
-                        })
-                }
 
             };
 
