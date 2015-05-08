@@ -32,11 +32,12 @@ angular
             var loadWorkoutInformation = function (setDayWorkoutIds) {
 
                 var setDayWorkoutInfo = ({"day" : setDayWorkoutIds.day}),
+                    deferred = $q.defer(),
                     workouts = [];
 
                 for (var i = 0; i < setDayWorkoutIds.workouts.length; i++) {
-                    workouts.push(loadWorkoutData(setDayWorkoutIds.workouts[i]));
-                    alert(workouts);
+                    var workoutData = loadWorkoutData(setDayWorkoutIds.workouts[i]);
+                    workouts.push(workoutData);
                 }
 
                 setDayWorkoutInfo["workouts"] = workouts;
@@ -45,14 +46,19 @@ angular
                 function loadWorkoutData(workoutId) {
                     return supersonic.data.model('Workout')
                         .find(workoutId).then(function(workout) {
-                            return workout;
+                            var workoutInfo = {'title' : workout.title, 'exercises' : workout.exercise};
+                            //deferred.resolve(workoutInfo);
+                            //return deferred.promise;
+                            return $q.when(workoutInfo);
                         })
                 }
 
                 function loadExerciseData(exerciseId) {
                     return supersonic.data.model('Exercise')
                         .find(exerciseId).then(function(exercise) {
-                            return exercise;
+                            var exerciseInfo = {'name' : exercise.name, 'reps' : exercise.reps};
+                            deferred.resolve(exerciseInfo);
+                            return deferred.promise;
                         })
                 }
 

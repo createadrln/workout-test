@@ -10,13 +10,13 @@
         <div ng-hide="showSpinner">
             <h2 ng-bind="day['day']"></h2>
 
-            <!--<p ng-repeat="workout in newDay.workouts">-->
-                <!--<span ng-bind="workout['title']"></span><br />-->
-            <!--</p>-->
+            <p ng-repeat="workout in day.workouts">
+                <span ng-bind="workout['title']"></span><br />
+            </p>
 
             {{day | json}}
 
-            <super-modal-show location="day#edit?id={{ newDay.id }}">
+            <super-modal-show location="day#edit?id={{ day.id }}">
                 <button class="button button-block button-positive">
                     Edit
                 </button>
