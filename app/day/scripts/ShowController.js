@@ -34,24 +34,50 @@ angular
                 var setDayWorkoutInfo = ({"day" : setDayWorkoutIds.day}),
                     workouts = [];
 
-                function loadWorkoutId(workoutId) {
-                    return supersonic.data.model('Workout').find(workoutId)
-                }
-
-                function getWorkoutData(workout, i) {
-                    return {'index' : i, 'title' : workout.title, 'exercises' : workout.exercise};
-                }
-
                 for (var i = 0; i < setDayWorkoutIds.workouts.length; i++) {
                     loadWorkoutId(setDayWorkoutIds.workouts[i])
                         .then(function(workout){
-                            workouts.push(getWorkoutData(workout));
+                            //workouts.push(getWorkoutData(workout));
+                            //return $q.when(workouts);
+                            getWorkoutData(workout);
+                            return workout.exercise;
+                        })
+                        .then(function(exercises){
+                            var exercisesArr = [];
+                            angular.forEach(exercises, function(exerciseId){
+                                loadExerciseId(exerciseId)
+                                    .then(function(exercise) {
+                                        exercisesArr.push(
+                                            getExerciseData(exercise)
+                                        );
+                                        return exercisesArr;
+                                    })
+                            })
+                        })
+                        .then(function(exercisesArr) {
+                            workouts["exercises"] = exercisesArr;
                             return $q.when(workouts);
-                        });
+                        })
                 }
 
                 setDayWorkoutInfo["workouts"] = workouts;
                 return setDayWorkoutInfo;
+
+                function loadWorkoutId(workoutId) {
+                    return supersonic.data.model('Workout').find(workoutId)
+                }
+
+                function getWorkoutData(workout) {
+                    return {'order' : workout.order, 'title' : workout.title, 'exercises' : workout.exercise};
+                }
+
+                function loadExerciseId(exerciseId) {
+                    return supersonic.data.model('Exercise').find(exerciseId)
+                }
+
+                function getExerciseData(exercise) {
+                    return {'order' : exercise.order, 'name' : exercise.name, 'reps' : exercise.reps};
+                }
 
             };
 

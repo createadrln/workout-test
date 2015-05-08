@@ -11,8 +11,13 @@
             <h2 ng-bind="day['day']"></h2>
 
             <p ng-repeat="workout in day.workouts">
-                <span ng-bind="workout['index']"></span> <span ng-bind="workout['title']"></span><br />
+                <span ng-bind="workout['title']"></span><br />
+                <!--<ul ng-repeat="exercise in workout.exercises">-->
+                    <!--<li ng-bind="exercise['name']"></li>-->
+                <!--</ul>-->
             </p>
+
+            {{ day | json }}
 
             <super-modal-show location="day#edit?id={{ day.id }}">
                 <button class="button button-block button-positive">
