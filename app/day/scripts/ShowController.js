@@ -37,22 +37,19 @@ angular
                 for (var i = 0; i < setDayWorkoutIds.workouts.length; i++) {
                     loadWorkoutId(setDayWorkoutIds.workouts[i])
                         .then(function(workout){
-                            workouts.push(getWorkoutData(workout));
-                            getWorkoutData(workout);
-                            return workout.exercise;
-                        })
-                        .then(function(exercises){
-                            angular.forEach(exercises, function(exerciseId){
-                                loadExerciseId(exerciseId)
+                            var exerciseArr = [];
+                            angular.forEach(workout.exercise, function(exerciseId) {
+                                exerciseArr.push(
+                                    loadExerciseId(exerciseId)
                                     .then(function(exercise) {
-                                        alert(exercise.name);
+                                        return $q.when({'name' : exercise.name});
                                     })
-                            })
-                        })
-                        .then(function(exercisesArr) {
-                            workouts["exercises"] = exercisesArr;
+                                )
+                            });
+
+                            workouts.push({'title' : workout.title, 'exercises' : exerciseArr});
                             return $q.when(workouts);
-                        })
+                        });
                 }
 
                 setDayWorkoutInfo["workouts"] = workouts;

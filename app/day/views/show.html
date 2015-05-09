@@ -11,10 +11,7 @@
             <h2 ng-bind="day['day']"></h2>
 
             <p ng-repeat="workout in day.workouts">
-                <span ng-bind="workout['title']"></span><br />
-                <!--<ul ng-repeat="exercise in workout.exercises">-->
-                    <!--<li ng-bind="exercise['name']"></li>-->
-                <!--</ul>-->
+                <span ng-bind="workout['title']"></span>
             </p>
 
             {{ day | json }}
