@@ -21,8 +21,19 @@ angular
             });
         });
 
+        $scope.checkedExercises = [];
+
+        $scope.toggleCheck = function (exercise) {
+            if ($scope.checkedExercises.indexOf(exercise.id) === -1) {
+                $scope.checkedExercises.push(exercise.id);
+            } else {
+                $scope.checkedExercises.splice($scope.checkedExercises.indexOf(exercise.id), 1);
+            }
+        };
+
         $scope.submitForm = function() {
             $scope.showSpinner = true;
+            $scope.workout.exercise = $scope.checkedExercises;
             $scope.workout.save().then( function () {
                 supersonic.ui.modal.hide();
             });

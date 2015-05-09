@@ -10,9 +10,16 @@
         <div ng-hide="showSpinner">
             <h2 ng-bind="day['day']"></h2>
 
-            <p ng-repeat="workout in day.workouts">
-                <span ng-bind="workout['title']"></span>
-            </p>
+            <ul class="list">
+                <li ng-repeat="workout in day.workouts" class="item">
+                    {{workout.title}}
+                    <ul class="list">
+                        <li ng-repeat="exercise in workout.exercises" class="item">
+                            {{exercise.name}} - {{exercise.reps}}
+                        </li>
+                    </ul>
+                </li>
+            </ul>
 
             {{ day | json }}
 

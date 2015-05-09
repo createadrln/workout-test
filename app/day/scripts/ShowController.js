@@ -39,12 +39,11 @@ angular
                         .then(function(workout){
                             var exerciseArr = [];
                             angular.forEach(workout.exercise, function(exerciseId) {
-                                exerciseArr.push(
-                                    loadExerciseId(exerciseId)
-                                    .then(function(exercise) {
-                                        return $q.when({'name' : exercise.name});
-                                    })
-                                )
+                                loadExerciseId(exerciseId)
+                                .then(function(exercise) {
+                                    exerciseArr.push(getExerciseData(exercise));
+                                    return $q.when(exerciseArr);
+                                })
                             });
 
                             workouts.push({'title' : workout.title, 'exercises' : exerciseArr});
