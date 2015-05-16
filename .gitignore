@@ -11,3 +11,7 @@ logs/
 .idea/workspace.xml
 
 *.xml
+
+app/common/assets/sass/color-me-sass/
+
+app/common/assets/sass/config.rb
