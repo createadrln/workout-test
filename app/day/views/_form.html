@@ -1,31 +1,35 @@
 <div class="list">
 
     <label class="item item-input item-stacked-label">
-        <span class="input-label">day</span>
+        <span class="input-label">Day</span>
         <input type="text" ng-model="day['day']">
     </label>
-
     <label class="item item-input item-stacked-label">
-        <span class="input-label">workout ids</span>
-        <input type="text" ng-model="day['workout']">
+        <span class="input-label">Order</span>
+        <input type="number" min="1" max="100" ng-model="day['order']">
     </label>
-
-    <ul class="list">
-
-        <li ng-repeat="workout in workouts" class="item item-checkbox">
-            <label class="checkbox">
-                <input type="checkbox" value="workout['id']" ng-checked="checkedWorkouts.indexOf(workout.id) != -1" ng-click="toggleCheck(workout)" />
-            </label>
-            <span ng-bind="workout['title']"></span>
-            <span ng-bind="workout['id']"></span>
-        </li>
-
-    </ul>
-
-    <div>The following workouts are checked: {{checkedWorkouts | json}}</div>
-
-    <br>
-
-    <button class="button button-block button-positive">Save</button>
-
+    <label class="item item-input item-stacked-label">
+        <span class="input-label">Brief Description of Routine (20 char max)</span>
+        <input type="text" ng-model="day['brief_description']">
+    </label>
 </div>
+
+<div class="list list-inset">
+    <label class="item item-input">
+        <i class="icon super-search placeholder-icon"></i>
+        <input type="text" ng-model="searchText" placeholder="Filter Workouts by Name or Tag" />
+    </label>
+</div>
+
+<ul class="list">
+    <li ng-repeat="workout in workouts | filter:searchText" class="item item-checkbox">
+        <label class="checkbox">
+            <input type="checkbox" value="workout['id']" ng-checked="checkedWorkouts.indexOf(workout.id) != -1" ng-click="toggleCheck(workout)" />
+        </label>
+        <span ng-bind="workout['title']"></span>
+    </li>
+</ul>
+
+<div>The following workouts are checked: {{checkedWorkouts | json}}</div>
+<br>
+<button class="button button-block button-positive">Save</button>

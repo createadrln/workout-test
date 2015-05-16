@@ -5,7 +5,7 @@ angular
         $scope.checkedWorkouts = null;
         $scope.showSpinner = true;
 
-        // Fetch an object based on id from the database
+        //Fetch an object based on id from the database
         Day.find(steroids.view.params.id).then( function (day) {
             $scope.$apply(function() {
                 $scope.day = day;

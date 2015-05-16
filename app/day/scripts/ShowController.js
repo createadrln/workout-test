@@ -16,7 +16,7 @@ angular
 
             var getWorkoutIds = function (day) {
 
-                var setDayWorkoutIds = ({"day" : day.day}),
+                var setDayWorkoutIds = ({"id" : day.id, "day" : day.day}),
                     workoutIds = [];
 
                 for (var key in day.workout) {
@@ -31,7 +31,7 @@ angular
 
             var loadWorkoutInformation = function (setDayWorkoutIds) {
 
-                var setDayWorkoutInfo = ({"day" : setDayWorkoutIds.day}),
+                var setDayWorkoutInfo = ({"id" : setDayWorkoutIds.id, "day" : setDayWorkoutIds.day}),
                     workouts = [];
 
                 for (var i = 0; i < setDayWorkoutIds.workouts.length; i++) {
@@ -56,10 +56,6 @@ angular
 
                 function loadWorkoutId(workoutId) {
                     return supersonic.data.model('Workout').find(workoutId)
-                }
-
-                function getWorkoutData(workout) {
-                    return {'order' : workout.order, 'title' : workout.title, 'exercises' : workout.exercise};
                 }
 
                 function loadExerciseId(exerciseId) {
@@ -96,12 +92,5 @@ angular
             $scope.dataId = values.id;
             _refreshViewData();
         });
-
-        $scope.remove = function (id) {
-            $scope.showSpinner = true;
-            $scope.day.delete().then( function () {
-                supersonic.ui.layers.pop();
-            });
-        };
 
     });
