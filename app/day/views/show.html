@@ -1,4 +1,5 @@
 <div ng-controller="ShowController">
+
     <super-navbar>
         <super-navbar-title>
             Show
@@ -23,19 +24,12 @@
 
             {{ day | json }}
 
-            <super-modal-show location="day#edit?id={{ day.id }}">
+            <super-navigate location="day#edit?id={{ day.id }}">
                 <button class="button button-block button-positive">
                     Edit
                 </button>
-            </super-modal-show>
-
-            <super-modal-show location="workout#show">
-                <button class="button button-full button-positive">
-                    Add a new workout
-                </button>
-            </super-modal-show>
-
-
+            </super-navigate>
         </div>
     </div>
+
 </div>

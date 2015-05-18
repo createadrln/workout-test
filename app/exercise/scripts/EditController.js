@@ -17,10 +17,17 @@ angular
             $scope.exercise.save().then( function () {
                 supersonic.ui.modal.hide();
             });
-        }
+        };
 
         $scope.cancel = function () {
             supersonic.ui.modal.hide();
-        }
+        };
+
+        var addToHistory = function() {
+            var history = [];
+            alert($scope.exercise.repgoal);
+            history.push({ date : Date, reps : $scope.exercise.repgoal });
+            return history;
+        };
 
     });

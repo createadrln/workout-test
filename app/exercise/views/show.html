@@ -1,23 +1,20 @@
 <div ng-controller="ShowController">
-    <super-navbar>
-        <super-navbar-title>
-            Show
-        </super-navbar-title>
-    </super-navbar>
+    <!--<super-navbar>-->
+        <!--<super-navbar-title>-->
+            <!--Show-->
+        <!--</super-navbar-title>-->
+    <!--</super-navbar>-->
 
     <div class="padding">
         <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
         <div ng-hide="showSpinner">
+            <h2 class="h3" ng-bind="exercise['name']"></h2>
+            <p>Reps: <span ng-bind="exercise['repgoal']"></span></p>
+            <p>Weight: <span ng-bind="exercise['weight']"></span></p>
+            <p>Log: <span ng-bind="exercise['history']"></span></p>
+            <p>Tags: <span ng-bind="exercise['tags']"></span></p>
 
-            <h2 ng-bind="exercise['name']"></h2>
-
-            <p>name: <span ng-bind="exercise['updated_at']"></span></p>
-
-            <p>repgoal: <span ng-bind="exercise['repgoal']"></span></p>
-
-            <p>rephistory: <span ng-bind="exercise['rephistory']"></span></p>
-
-            <p>tags: <span ng-bind="exercise['tags']"></span></p>
+            {{ exercise | json }}
 
             <super-modal-show location="exercise#edit?id={{ exercise.id }}">
                 <button class="button button-block button-positive">
@@ -30,4 +27,5 @@
             </button>
         </div>
     </div>
+
 </div>
