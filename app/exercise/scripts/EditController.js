@@ -12,8 +12,15 @@ angular
             });
         });
 
+        $scope.addToHistory = function (exercise) {
+            $scope.updateHistory = exercise.history;
+            $scope.pushToHistory = ({ 'history_date' : new Date().toISOString() , 'reps' : exercise.repgoal , 'weight' : exercise.weight });
+            $scope.updateHistory.push($scope.pushToHistory);
+        };
+
         $scope.submitForm = function() {
             $scope.showSpinner = true;
+            $scope.exercise.history = $scope.updateHistory;
             $scope.exercise.save().then( function () {
                 supersonic.ui.modal.hide();
             });
@@ -21,13 +28,6 @@ angular
 
         $scope.cancel = function () {
             supersonic.ui.modal.hide();
-        };
-
-        var addToHistory = function() {
-            var history = [];
-            alert($scope.exercise.repgoal);
-            history.push({ date : Date, reps : $scope.exercise.repgoal });
-            return history;
         };
 
     });

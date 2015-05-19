@@ -2,15 +2,27 @@
 
 
     <label class="item item-input item-stacked-label">
-        <span class="input-label">title</span>
-        <input type="text" ng-model="workout['title']">
+        <span class="input-label">Workout Title</span>
+        <input type="text" ng-model="workout['title']" placeholder="Ex: Heavy Shoulder Workout">
     </label>
 
-    <super-navigate location="exercise#new">
-        <div class="button button-full button-positive">
-            Add a New Exercise
-        </div>
-    </super-navigate>
+    <!--<div ng-if="workout.exercises != '' ">-->
+        <!--<h3 class="h4">Current Exercise Order:</h3>-->
+        <!--<p ng-repeat="exercise in exercises | orderBy : 'order'">-->
+            <!--{{exercise.order}} :: {{exercise.name}}-->
+            <!--<input type="text" ng-model="exercise['order']">-->
+        <!--</p>-->
+    <!--</div>-->
+
+    <h3 class="h4">Select Exercises</h3>
+
+    <p>
+        <super-navigate location="exercise#new">
+            <div class="button button-small button-positive">
+                Add a New Exercise
+            </div>
+        </super-navigate>
+    </p>
 
     <div class="list list-inset">
         <label class="item item-input">
@@ -31,13 +43,13 @@
     <div>The following workouts are checked: {{checkedExercises | json}}</div>
 
     <label class="item item-input item-stacked-label">
-        <span class="input-label">notes</span>
-        <input type="text" ng-model="workout['notes']">
+        <span class="input-label">Notes</span>
+        <input type="text" ng-model="workout['notes']" placeholder="Add Reminders and Notes">
     </label>
 
     <label class="item item-input item-stacked-label">
-        <span class="input-label">tags</span>
-        <input type="text" ng-model="workout['tags']">
+        <span class="input-label">Tags</span>
+        <input type="text" ng-model="workout['tags']" placeholder="Ex: Shoulders, Bodybuilding">
     </label>
 
     <button class="button button-block button-positive">Save</button>

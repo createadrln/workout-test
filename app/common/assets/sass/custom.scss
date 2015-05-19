@@ -1,27 +1,89 @@
 @import "bourbon/bourbon";
+@import "color-me-sass/color-me-sass";
 @import "vars";
+
+html,
+body {
+    height:100%;
+}
 
 body {
     font-family: 'Oxygen', sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     color:$grayGunmetal;
+    background: rgb(44,64,91); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(44,64,91,1) 14%, rgba(7,4,4,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(14%,rgba(44,64,91,1)), color-stop(100%,rgba(7,4,4,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(44,64,91,1) 14%,rgba(7,4,4,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(44,64,91,1) 14%,rgba(7,4,4,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(44,64,91,1) 14%,rgba(7,4,4,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(44,64,91,1) 14%,rgba(7,4,4,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c405b', endColorstr='#070404',GradientType=0 ); /* IE6-9 */
 }
 
-ul.dayGrid {
-    padding:0 3%;
-    margin-top:30px;
+div.ng-scope,
+div.ng-scope > div {
+    height:100%;
+}
+
+form {
+
+    > div {
+        background: $whiteAntiflash;
+    }
+
+}
+
+.workout-index {
+
+}
+
+.list-days {
+    height:100%;
+    padding:10%;
 
     super-navigate {
-        display: block;
-        margin:0 1.5% 5%;
+        display: table;
+        width:100%;
+        height:13.75%;
+        margin:1% 0;
+        border-bottom:1px solid #B24848;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:after {
+            @include triangle(5px, $redDull, right);
+            position: absolute;
+            right:20px;
+            top:50%;
+        }
 
         .item {
-            text-align: center;
-            padding:5% 0;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: left;
+            margin:0;
+            padding:0;
             border:none;
-            background: $blueZurb;
             text-transform: uppercase;
-            font-size: 14px;
+            font-size: 20px;
+            font-weight: 700;
+            color:$whiteSmoke;
+            background: none;
+//            background: rgb(178,72,72); /* Old browsers */
+//            background: -moz-linear-gradient(-45deg,  rgba(178,72,72,1) 14%, rgba(147,73,60,1) 100%); /* FF3.6+ */
+//            background: -webkit-gradient(linear, left top, right bottom, color-stop(14%,rgba(178,72,72,1)), color-stop(100%,rgba(147,73,60,1))); /* Chrome,Safari4+ */
+//            background: -webkit-linear-gradient(-45deg,  rgba(178,72,72,1) 14%,rgba(147,73,60,1) 100%); /* Chrome10+,Safari5.1+ */
+//            background: -o-linear-gradient(-45deg,  rgba(178,72,72,1) 14%,rgba(147,73,60,1) 100%); /* Opera 11.10+ */
+//            background: -ms-linear-gradient(-45deg,  rgba(178,72,72,1) 14%,rgba(147,73,60,1) 100%); /* IE10+ */
+//            background: linear-gradient(135deg,  rgba(178,72,72,1) 14%,rgba(147,73,60,1) 100%); /* W3C */
+//            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b24848', endColorstr='#93493c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+//            @include border-top-radius(5px);
+//            @include border-bottom-radius(5px);
+//            @include border-left-radius(5px);
+//            @include border-right-radius(5px);
         }
 
     }

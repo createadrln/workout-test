@@ -13,6 +13,12 @@
             No exercises found. Create one?
         </h4>
 
+        <super-modal-show location="exercise#new">
+            <button class="button button-full button-positive">
+                Create a new exercise
+            </button>
+        </super-modal-show>
+
         <ul class="list" ng-hide="exercises.length == 0">
             <super-navigate location="exercise#show" data-params-id="{{ exercise.id }}" ng-repeat="exercise in exercises">
                 <li class="item item-icon-right">
@@ -21,12 +27,6 @@
                 </li>
             </super-navigate>
         </ul>
-
-        <super-modal-show location="exercise#new">
-            <button class="button button-full button-positive">
-                Create a new exercise
-            </button>
-        </super-modal-show>
 
     </div>
 

@@ -10,14 +10,14 @@ module.exports =
       location: "day#index" # Supersonic module#view type navigation
     }
     {
-      title: "Exercises"
-      id: "exercise"
-      location: "exercise#index"
-    }
-    {
       title: "Workouts"
       id: "workout"
       location: "workout#index"
+    }
+    {
+      title: "Exercises"
+      id: "exercise"
+      location: "exercise#index"
     }
   ]
 

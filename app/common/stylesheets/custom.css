@@ -4,29 +4,85 @@
  * Built and Designed by Richard Bray
  *
  */
-/* line 4, ../assets/sass/custom.scss */
+/* line 5, ../assets/sass/custom.scss */
+html,
 body {
-  font-family: 'Oxygen', sans-serif;
-  font-size: 12px;
-  color: #423732;
+  height: 100%;
 }
 
 /* line 10, ../assets/sass/custom.scss */
-ul.dayGrid {
-  padding: 0 3%;
-  margin-top: 30px;
-}
-/* line 14, ../assets/sass/custom.scss */
-ul.dayGrid super-navigate {
-  display: block;
-  margin: 0 1.5% 5%;
-}
-/* line 18, ../assets/sass/custom.scss */
-ul.dayGrid super-navigate .item {
-  text-align: center;
-  padding: 5% 0;
-  border: none;
-  background: #2ba6cb;
-  text-transform: uppercase;
+body {
+  font-family: 'Oxygen', sans-serif;
   font-size: 14px;
+  color: #423732;
+  background: #2c405b;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #2c405b 14%, #070404 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(14%, #2c405b), color-stop(100%, #070404));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #2c405b 14%, #070404 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #2c405b 14%, #070404 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #2c405b 14%, #070404 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #2c405b 14%, #070404 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c405b', endColorstr='#070404',GradientType=0 );
+  /* IE6-9 */
+}
+
+/* line 24, ../assets/sass/custom.scss */
+div.ng-scope,
+div.ng-scope > div {
+  height: 100%;
+}
+
+/* line 31, ../assets/sass/custom.scss */
+form > div {
+  background: #f2f3f4;
+}
+
+/* line 41, ../assets/sass/custom.scss */
+.list-days {
+  height: 100%;
+  padding: 10%;
+}
+/* line 45, ../assets/sass/custom.scss */
+.list-days super-navigate {
+  display: table;
+  width: 100%;
+  height: 13.75%;
+  margin: 1% 0;
+  border-bottom: 1px solid #B24848;
+}
+/* line 52, ../assets/sass/custom.scss */
+.list-days super-navigate:last-child {
+  border-bottom: none;
+}
+/* line 56, ../assets/sass/custom.scss */
+.list-days super-navigate:after {
+  height: 0;
+  width: 0;
+  border-bottom: 2.5px solid transparent;
+  border-left: 2.5px solid #993333;
+  border-top: 2.5px solid transparent;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+}
+/* line 63, ../assets/sass/custom.scss */
+.list-days super-navigate .item {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 700;
+  color: #f5f5f5;
+  background: none;
 }

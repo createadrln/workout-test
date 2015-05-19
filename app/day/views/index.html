@@ -1,11 +1,18 @@
-<div ng-controller="IndexController">
+<div ng-controller="IndexController" class="workout-index">
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
-        <ul class="list dayGrid" ng-hide="days.length == 0">
+
+        <super-navbar>
+            <super-navbar-title>
+                Home
+            </super-navbar-title>
+        </super-navbar>
+
+        <ul class="list list-days" ng-hide="days.length == 0">
             <super-navigate location="day#show" data-params-id="{{ day.id }}" ng-repeat="day in days | orderBy:'order' ">
                 <li class="item">
                     <span class="title" ng-bind="day['day']"></span>
-                    <span class="sub" ng-bind="day['brief_description']"></span>
+                    <!--<span class="sub" ng-bind="day['brief_description']"></span>-->
                 </li>
             </super-navigate>
         </ul>

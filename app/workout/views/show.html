@@ -1,24 +1,32 @@
 <div ng-controller="ShowController">
-    <super-navbar>
-        <super-navbar-title>
-            Show
-        </super-navbar-title>
-    </super-navbar>
 
     <div class="padding">
         <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
         <div ng-hide="showSpinner">
-            <h2 ng-bind="workout['title']"></h2>
+            <h2 class="h3" ng-bind="workout['title']"></h2>
 
-            <p>notes: <span ng-bind="workout['notes']"></span></p>
+            <div ng-if="workout.notes != '' ">
+                <h3 class="h4">Notes:</h3>
+                <p><span ng-bind="workout['notes']"></span></p>
+            </div>
 
-            <p>tags: <span ng-bind="workout['tags']"></span></p>
+            <div ng-if="workout.tags != '' ">
+                <h3 class="h4">Tags:</h3>
+                <p><span ng-bind="workout['tags']"></span></p>
+            </div>
 
-            <p>exercises: </p>
+            <div ng-if="workout.exercises != '' ">
+                <h3 class="h4">Exercises:</h3>
+                <p ng-repeat="exercise in exercises | orderBy : 'order'">
+                    {{exercise.order}} :: {{exercise.name}} :: {{exercise.reps}} :: {{exercise.weight}}
+                </p>
+            </div>
 
-            <p ng-repeat="exercise in exercises">
-                <span ng-bind="exercise['name']"></span><br />
-            </p>
+            <super-modal-show location="workout#order?id={{ workout.id }}">
+                <button class="button button-block button-positive">
+                    Update Workout Order
+                </button>
+            </super-modal-show>
 
             <super-modal-show location="workout#edit?id={{ workout.id }}">
                 <button class="button button-block button-positive">

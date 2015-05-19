@@ -13,7 +13,7 @@ angular
 
         $scope.toggleCheck = function (exercise) {
             if ($scope.checkedExercises.indexOf(exercise.id) === -1) {
-                $scope.checkedExercises.push(exercise.id);
+                $scope.checkedExercises.push({'exercise' : [exercise.id], 'order' : '0'});
             } else {
                 $scope.checkedExercises.splice($scope.checkedExercises.indexOf(exercise.id), 1);
             }
@@ -21,7 +21,7 @@ angular
 
         $scope.submitForm = function () {
             $scope.showSpinner = true;
-            $scope.workout.exercise = $scope.checkedExercises;
+            $scope.workout.exercises = $scope.checkedExercises;
             newworkout = new Workout($scope.workout);
             newworkout.save().then( function () {
                 supersonic.ui.modal.hide();

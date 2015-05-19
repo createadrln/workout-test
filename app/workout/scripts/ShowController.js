@@ -7,15 +7,13 @@ angular
         $scope.dataId = undefined;
 
         var _refreshViewData = function () {
-
             Workout.find($scope.dataId).then(function (workout) {
-
                 var exercises = [];
                 var counter = 0;
-                angular.forEach(workout.exercise, function (exerciseId) {
-                    supersonic.data.model('Exercise').find(exerciseId).then(function (exercise) {
-                        exercises.push(exercise);
-                        if (counter == workout.exercise.length) {
+                angular.forEach(workout.exercises, function (exerciseGroup) {
+                    supersonic.data.model('Exercise').find(exerciseGroup.exercise.join()).then(function (exercise) {
+                        exercises.push({ 'order' : exerciseGroup.order, 'name' : exercise.name, 'reps' : exercise.repgoal, 'weight' : exercise.weight });
+                        if (counter == workout.exercises.length) {
                             $scope.$apply(function () {
                                 $scope.workout = workout;
                                 $scope.exercises = exercises;
@@ -25,7 +23,6 @@ angular
                     });
                     counter++;
                 });
-
             });
         };
 
@@ -42,7 +39,7 @@ angular
 
         $scope.remove = function (id) {
             $scope.showSpinner = true;
-            $scope.exercise.delete().then( function () {
+            $scope.workout.delete().then( function () {
                 supersonic.ui.layers.pop();
             });
         };

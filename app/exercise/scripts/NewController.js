@@ -5,7 +5,7 @@ angular
 
         $scope.pushToHistory = [];
         $scope.addToHistory = function (exercise) {
-            $scope.pushToHistory.push({ 'date' : new Date().toISOString() , 'reps' : exercise.repgoal });
+            $scope.pushToHistory.push({ 'history_date' : new Date().toISOString() , 'reps' : exercise.repgoal, 'weight' : exercise.weight });
         };
 
         $scope.submitForm = function () {
