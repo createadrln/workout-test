@@ -1,5 +1,4 @@
 @import "bourbon/bourbon";
-@import "color-me-sass/color-me-sass";
 @import "vars";
 
 html,
@@ -9,6 +8,7 @@ body {
 
 body {
     font-family: 'Oxygen', sans-serif;
+    font-weight: 400;
     font-size: 14px;
     color:$grayGunmetal;
     background: rgb(44,64,91); /* Old browsers */
@@ -34,9 +34,7 @@ form {
 
 }
 
-.workout-index {
-
-}
+.workout-index {}
 
 .list-days {
     height:100%;
@@ -53,39 +51,178 @@ form {
             border-bottom: none;
         }
 
-        &:after {
-            @include triangle(5px, $redDull, right);
-            position: absolute;
-            right:20px;
-            top:50%;
-        }
-
         .item {
+            position: relative;
             display: table-cell;
             vertical-align: middle;
             text-align: left;
             margin:0;
             padding:0;
             border:none;
-            text-transform: uppercase;
-            font-size: 20px;
-            font-weight: 700;
             color:$whiteSmoke;
             background: none;
-//            background: rgb(178,72,72); /* Old browsers */
-//            background: -moz-linear-gradient(-45deg,  rgba(178,72,72,1) 14%, rgba(147,73,60,1) 100%); /* FF3.6+ */
-//            background: -webkit-gradient(linear, left top, right bottom, color-stop(14%,rgba(178,72,72,1)), color-stop(100%,rgba(147,73,60,1))); /* Chrome,Safari4+ */
-//            background: -webkit-linear-gradient(-45deg,  rgba(178,72,72,1) 14%,rgba(147,73,60,1) 100%); /* Chrome10+,Safari5.1+ */
-//            background: -o-linear-gradient(-45deg,  rgba(178,72,72,1) 14%,rgba(147,73,60,1) 100%); /* Opera 11.10+ */
-//            background: -ms-linear-gradient(-45deg,  rgba(178,72,72,1) 14%,rgba(147,73,60,1) 100%); /* IE10+ */
-//            background: linear-gradient(135deg,  rgba(178,72,72,1) 14%,rgba(147,73,60,1) 100%); /* W3C */
-//            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b24848', endColorstr='#93493c',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-//            @include border-top-radius(5px);
-//            @include border-bottom-radius(5px);
-//            @include border-left-radius(5px);
-//            @include border-right-radius(5px);
+
+            .title {
+                display: block;
+                text-transform: uppercase;
+                font-size: 18px;
+                font-weight: 700;
+            }
+
+            .info {
+                display: block;
+                font-size: 15px;
+                font-weight: 400;
+                color: $grayBattleship;
+            }
+
+            &:after {
+                content:'';
+                @include triangle(20px, $redDull, right);
+                position: absolute;
+                right:20px;
+                top:50%;
+                margin-top:-10px;
+            }
+
         }
 
+    }
+
+}
+
+.single {
+    position: relative;
+    margin:5%;
+    padding:5%;
+
+    h3, .h3, h4, .h4 {
+        width:70%;
+        color: $whiteSmoke;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: $oswald;
+        font-weight: 700;
+        margin:0 auto 20px;
+    }
+
+    &:after {
+        content:'';
+        position: absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:#FA023C;
+        opacity: .7;
+        z-index: 1;
+    }
+
+    > div {
+        position: relative;
+        z-index: 2;
+    }
+
+}
+
+.info-boxes {
+
+    &.row {
+        padding:0;
+        margin-bottom:10px;
+        @include justify-content(space-between);
+
+        &.last {
+            margin-bottom:30px;
+        }
+
+    }
+
+    .col {
+        background: $grayBattleship;
+        color: $whiteSmoke;
+        text-align: center;
+        padding:20px 0;
+        line-height: 1;
+
+        span {
+            font-size: 18px;
+        }
+
+    }
+
+    .col-50 {
+        width:48%;
+        max-width: 48%;
+        @include flex(0 0 48%);
+    }
+
+    .h5 {
+        color: $whiteSmoke;
+        text-transform: uppercase;
+        line-height: 1;
+        font-family: $oswald;
+        font-weight: 400;
+        font-size: 18px;
+        margin-top:0;
+        margin-bottom:0;
+    }
+
+}
+
+.history-boxes {
+
+    &.row {
+        padding: 0;
+        margin-bottom: 10px;
+        @include justify-content(space-between);
+    }
+
+    .col {
+        background: #C8FF00;
+        color: #040004;
+        padding: 0 10px;
+        height:50px;
+
+        span {
+            font-size: 14px;
+            line-height: 1;
+        }
+
+        &.date {
+            text-align: center;
+
+            span.day {
+                font-size: 16px;
+            }
+
+            span.year {
+                font-size: 12px;
+            }
+
+        }
+
+        &.info {
+
+            span {
+                line-height: 50px;
+                padding-left:10px;
+            }
+
+        }
+
+    }
+
+    .col-20 {
+        width:18%;
+        max-width: 18%;
+        @include flex(0 0 18%);
+    }
+
+    .col-80 {
+        width:78%;
+        max-width: 80%;
+        @include flex(0 0 78%);
     }
 
 }

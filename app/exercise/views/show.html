@@ -5,44 +5,65 @@
         <!--</super-navbar-title>-->
     <!--</super-navbar>-->
 
-    <div class="padding">
+    <div class="padding single">
+
         <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
         <div ng-hide="showSpinner">
 
             <h2 class="h3" ng-bind="exercise['name']"></h2>
 
             <div ng-if="exercise.reps != '' ">
-                <h3 class="h4">Reps:</h3>
-                <p><span ng-bind="exercise['repgoal']"></span></p>
+                <div class="row info-boxes">
+                    <div class="col col-50">
+                        <h3 class="h5">Reps:</h3>
+                    </div>
+                    <div class="col col-50">
+                        <span ng-bind="exercise['repgoal']"></span>
+                    </div>
+                </div>
             </div>
 
             <div ng-if="exercise.weight != '' ">
-                <h3 class="h4">Weight:</h3>
-                <p><span ng-bind="exercise['weight']"></span></p>
+                <div class="row info-boxes last">
+                    <div class="col col-50">
+                        <h3 class="h5">Weight:</h3>
+                    </div>
+                    <div class="col col-50">
+                        <span ng-bind="exercise['weight']"></span>
+                    </div>
+                </div>
             </div>
 
             <div ng-if="exercise.history != '' ">
-                <h3 class="h4">Log (last 5):</h3>
-                <p ng-repeat="entry in exercise.history | orderBy: '-history_date' | limitTo: 5">
-                    {{entry.history_date | date : 'shortDate'}} :: {{entry.reps}} :: {{entry.weight}}
-                </p>
+                <h3>Last 5 updates</h3>
+                <div ng-repeat="entry in exercise.history | orderBy: '-history_date' | limitTo: 5">
+                    <div class="row history-boxes">
+                        <div class="date col col-20">
+                            <span class="day">{{entry.history_date | date : 'M.d'}}</span>
+                            <span class="year">{{entry.history_date | date : 'yyyy'}}</span>
+                        </div>
+                        <div class="info col col-80">{{entry.reps}} <span ng-if="entry.weight!= '' ">@ {{entry.weight}}</span></div>
+                    </div>
+                </div>
             </div>
 
             <div ng-if="exercise.tags != '' ">
-                <h3 class="h4">Tags:</h3>
+                <h3>Tags</h3>
                 <p><span ng-bind="exercise['tags']"></span></p>
             </div>
 
             <super-modal-show location="exercise#edit?id={{ exercise.id }}">
-                <button class="button button-block button-positive">
+                <button class="button button-block button-assertive">
                     Edit
                 </button>
             </super-modal-show>
 
-            <button ng-click="remove(exercise.id)" class="button button-block button-negative">
+            <button ng-click="remove(exercise.id)" class="button button-block button-light">
                 Remove
             </button>
+
         </div>
+
     </div>
 
 </div>

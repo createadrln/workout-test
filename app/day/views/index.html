@@ -12,7 +12,7 @@
             <super-navigate location="day#show" data-params-id="{{ day.id }}" ng-repeat="day in days | orderBy:'order' ">
                 <li class="item">
                     <span class="title" ng-bind="day['day']"></span>
-                    <!--<span class="sub" ng-bind="day['brief_description']"></span>-->
+                    <span class="info" ng-bind="day['brief_description']"></span>
                 </li>
             </super-navigate>
         </ul>

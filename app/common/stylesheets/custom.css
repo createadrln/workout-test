@@ -1,18 +1,14 @@
-/*!
- *
- * Color Me SASS v1.0
- * Built and Designed by Richard Bray
- *
- */
-/* line 5, ../assets/sass/custom.scss */
+/*Colors*/
+/* line 4, ../assets/sass/custom.scss */
 html,
 body {
   height: 100%;
 }
 
-/* line 10, ../assets/sass/custom.scss */
+/* line 9, ../assets/sass/custom.scss */
 body {
   font-family: 'Oxygen', sans-serif;
+  font-weight: 400;
   font-size: 14px;
   color: #423732;
   background: #2c405b;
@@ -44,12 +40,12 @@ form > div {
   background: #f2f3f4;
 }
 
-/* line 41, ../assets/sass/custom.scss */
+/* line 39, ../assets/sass/custom.scss */
 .list-days {
   height: 100%;
   padding: 10%;
 }
-/* line 45, ../assets/sass/custom.scss */
+/* line 43, ../assets/sass/custom.scss */
 .list-days super-navigate {
   display: table;
   width: 100%;
@@ -57,32 +53,202 @@ form > div {
   margin: 1% 0;
   border-bottom: 1px solid #B24848;
 }
-/* line 52, ../assets/sass/custom.scss */
+/* line 50, ../assets/sass/custom.scss */
 .list-days super-navigate:last-child {
   border-bottom: none;
 }
-/* line 56, ../assets/sass/custom.scss */
-.list-days super-navigate:after {
-  height: 0;
-  width: 0;
-  border-bottom: 2.5px solid transparent;
-  border-left: 2.5px solid #993333;
-  border-top: 2.5px solid transparent;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-}
-/* line 63, ../assets/sass/custom.scss */
+/* line 54, ../assets/sass/custom.scss */
 .list-days super-navigate .item {
+  position: relative;
   display: table-cell;
   vertical-align: middle;
   text-align: left;
   margin: 0;
   padding: 0;
   border: none;
-  text-transform: uppercase;
-  font-size: 20px;
-  font-weight: 700;
   color: #f5f5f5;
   background: none;
+}
+/* line 65, ../assets/sass/custom.scss */
+.list-days super-navigate .item .title {
+  display: block;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 700;
+}
+/* line 72, ../assets/sass/custom.scss */
+.list-days super-navigate .item .info {
+  display: block;
+  font-size: 15px;
+  font-weight: 400;
+  color: #848482;
+}
+/* line 79, ../assets/sass/custom.scss */
+.list-days super-navigate .item:after {
+  content: '';
+  height: 0;
+  width: 0;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #993333;
+  border-top: 10px solid transparent;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  margin-top: -10px;
+}
+
+/* line 94, ../assets/sass/custom.scss */
+.single {
+  position: relative;
+  margin: 5%;
+  padding: 5%;
+}
+/* line 99, ../assets/sass/custom.scss */
+.single h3, .single .h3, .single h4, .single .h4 {
+  width: 70%;
+  color: #f5f5f5;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  margin: 0 auto 20px;
+}
+/* line 109, ../assets/sass/custom.scss */
+.single:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #FA023C;
+  opacity: .7;
+  z-index: 1;
+}
+/* line 121, ../assets/sass/custom.scss */
+.single > div {
+  position: relative;
+  z-index: 2;
+}
+
+/* line 130, ../assets/sass/custom.scss */
+.info-boxes.row {
+  padding: 0;
+  margin-bottom: 10px;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+}
+/* line 135, ../assets/sass/custom.scss */
+.info-boxes.row.last {
+  margin-bottom: 30px;
+}
+/* line 141, ../assets/sass/custom.scss */
+.info-boxes .col {
+  background: #848482;
+  color: #f5f5f5;
+  text-align: center;
+  padding: 20px 0;
+  line-height: 1;
+}
+/* line 148, ../assets/sass/custom.scss */
+.info-boxes .col span {
+  font-size: 18px;
+}
+/* line 154, ../assets/sass/custom.scss */
+.info-boxes .col-50 {
+  width: 48%;
+  max-width: 48%;
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  box-flex: 0;
+  -webkit-flex: 0 0 48%;
+  -moz-flex: 0 0 48%;
+  -ms-flex: 0 0 48%;
+  flex: 0 0 48%;
+}
+/* line 160, ../assets/sass/custom.scss */
+.info-boxes .h5 {
+  color: #f5f5f5;
+  text-transform: uppercase;
+  line-height: 1;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* line 175, ../assets/sass/custom.scss */
+.history-boxes.row {
+  padding: 0;
+  margin-bottom: 10px;
+  -webkit-box-pack: justify;
+  -moz-box-pack: justify;
+  box-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  -ms-justify-content: space-between;
+  -o-justify-content: space-between;
+  justify-content: space-between;
+  -ms-flex-pack: justify;
+}
+/* line 181, ../assets/sass/custom.scss */
+.history-boxes .col {
+  background: #C8FF00;
+  color: #040004;
+  padding: 0 10px;
+  height: 50px;
+}
+/* line 187, ../assets/sass/custom.scss */
+.history-boxes .col span {
+  font-size: 14px;
+  line-height: 1;
+}
+/* line 192, ../assets/sass/custom.scss */
+.history-boxes .col.date {
+  text-align: center;
+}
+/* line 195, ../assets/sass/custom.scss */
+.history-boxes .col.date span.day {
+  font-size: 16px;
+}
+/* line 199, ../assets/sass/custom.scss */
+.history-boxes .col.date span.year {
+  font-size: 12px;
+}
+/* line 207, ../assets/sass/custom.scss */
+.history-boxes .col.info span {
+  line-height: 50px;
+  padding-left: 10px;
+}
+/* line 216, ../assets/sass/custom.scss */
+.history-boxes .col-20 {
+  width: 18%;
+  max-width: 18%;
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  box-flex: 0;
+  -webkit-flex: 0 0 18%;
+  -moz-flex: 0 0 18%;
+  -ms-flex: 0 0 18%;
+  flex: 0 0 18%;
+}
+/* line 222, ../assets/sass/custom.scss */
+.history-boxes .col-80 {
+  width: 78%;
+  max-width: 80%;
+  -webkit-box-flex: 0;
+  -moz-box-flex: 0;
+  box-flex: 0;
+  -webkit-flex: 0 0 78%;
+  -moz-flex: 0 0 78%;
+  -ms-flex: 0 0 78%;
+  flex: 0 0 78%;
 }
