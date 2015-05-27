@@ -1,4 +1,4 @@
-<div ng-controller="IndexController">
+<div ng-controller="IndexController" class="workout-index">
 
     <super-navbar>
         <super-navbar-title>
@@ -14,16 +14,15 @@
         </h4>
 
         <super-modal-show location="exercise#new">
-            <button class="button button-full button-positive">
+            <button class="button button-full button-assertive">
                 Create a new exercise
             </button>
         </super-modal-show>
 
         <ul class="list" ng-hide="exercises.length == 0">
             <super-navigate location="exercise#show" data-params-id="{{ exercise.id }}" ng-repeat="exercise in exercises">
-                <li class="item item-icon-right">
+                <li class="item">
                     <span ng-bind="exercise['name']"></span>
-                    <i class="icon super-ios7-arrow-right"></i>
                 </li>
             </super-navigate>
         </ul>

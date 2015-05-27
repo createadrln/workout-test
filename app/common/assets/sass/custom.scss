@@ -1,51 +1,135 @@
 @import "bourbon/bourbon";
 @import "vars";
 
-html,
-body {
+html {
     height:100%;
 }
 
 body {
+    height:100%;
     font-family: 'Oxygen', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color:$grayGunmetal;
-    background: rgb(44,64,91); /* Old browsers */
-    background: -moz-linear-gradient(top,  rgba(44,64,91,1) 14%, rgba(7,4,4,1) 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(14%,rgba(44,64,91,1)), color-stop(100%,rgba(7,4,4,1))); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  rgba(44,64,91,1) 14%,rgba(7,4,4,1) 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  rgba(44,64,91,1) 14%,rgba(7,4,4,1) 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  rgba(44,64,91,1) 14%,rgba(7,4,4,1) 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  rgba(44,64,91,1) 14%,rgba(7,4,4,1) 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c405b', endColorstr='#070404',GradientType=0 ); /* IE6-9 */
-}
+    background-color: #000;
 
-div.ng-scope,
-div.ng-scope > div {
-    height:100%;
-}
+    &:after {
+        content:'';
+        display: inline-block;
+        position: absolute;
+        top:-50px;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index: 1;
 
-form {
+        background: -moz-linear-gradient(top,  rgba(44,64,91,1) 0%, rgba(125,185,232,0) 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(44,64,91,1)), color-stop(100%,rgba(125,185,232,0))); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top,  rgba(44,64,91,1) 0%,rgba(125,185,232,0) 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top,  rgba(44,64,91,1) 0%,rgba(125,185,232,0) 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top,  rgba(44,64,91,1) 0%,rgba(125,185,232,0) 100%); /* IE10+ */
+        background: linear-gradient(to bottom,  rgba(44,64,91,1) 0%,rgba(125,185,232,0) 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c405b', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
+    }
 
     > div {
-        background: $whiteAntiflash;
+        margin:5%;
+        padding:0;
+        position: relative;
+        z-index: 2;
     }
 
 }
 
-.workout-index {}
+h3, .h3, h4, .h4 {
+    width:70%;
+    color: $whiteSmoke;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: $oswald;
+    font-weight: 700;
+    margin:0 auto 20px;
+    padding-bottom:15px;
+    border-bottom:1px solid $redDull;
+}
 
-.list-days {
+.margin-bottom-0 {
+    margin-bottom:0px !important;
+}
+
+.margin-bottom-10 {
+    margin-bottom:10px !important;
+}
+
+.a-center {
+    text-align: center;
+}
+
+form {
+
+    .item {
+        border-left:0;
+        border-right:0;
+        border-top:0;
+        border-bottom:0;
+
+        &.last {
+            margin-bottom:40px;
+        }
+
+    }
+
+    .item-input {
+        padding:0 0 15px;
+        margin-bottom:15px;
+
+        &.search {
+            border:1px solid $whiteSmoke;
+        }
+
+    }
+
+    .input-label {
+        color: $whiteSmoke;
+        margin-bottom:5px;
+    }
+
+    input[type="text"] {
+        padding-left:10px;
+    }
+
+}
+
+div.workout-index {
+
+    &.ng-scope,
+    &.ng-scope > div {
+        height:100%;
+    }
+
+}
+
+.list {
     height:100%;
-    padding:10%;
+
+    .item {
+        border:none;
+        color:$whiteSmoke;
+        background: none;
+    }
 
     super-navigate {
         display: table;
         width:100%;
-        height:13.75%;
+        height:12.5%;
         margin:1% 0;
-        border-bottom:1px solid #B24848;
+        padding:0 5%;
+        background: $redDull;
+//        border-bottom:1px solid #B24848;
+
+        &:hover,
+        &:active {
+        }
 
         &:last-child {
             border-bottom: none;
@@ -55,32 +139,32 @@ form {
             position: relative;
             display: table-cell;
             vertical-align: middle;
-            text-align: left;
+            text-align: center;
             margin:0;
             padding:0;
-            border:none;
-            color:$whiteSmoke;
-            background: none;
 
             .title {
                 display: block;
                 text-transform: uppercase;
-                font-size: 18px;
+                font-family: $oswald;
+                font-size: 24px;
                 font-weight: 700;
+                margin-bottom:5px;
             }
 
             .info {
                 display: block;
                 font-size: 15px;
                 font-weight: 400;
-                color: $grayBattleship;
+                text-transform: uppercase;
+                color: $neonYellow;
             }
 
             &:after {
                 content:'';
                 @include triangle(20px, $redDull, right);
                 position: absolute;
-                right:20px;
+                right:5px;
                 top:50%;
                 margin-top:-10px;
             }
@@ -91,37 +175,24 @@ form {
 
 }
 
-.single {
-    position: relative;
-    margin:5%;
-    padding:5%;
+.padding {
 
-    h3, .h3, h4, .h4 {
-        width:70%;
-        color: $whiteSmoke;
-        text-align: center;
-        text-transform: uppercase;
-        font-family: $oswald;
-        font-weight: 700;
-        margin:0 auto 20px;
-    }
-
-    &:after {
-        content:'';
-        position: absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        background:#FA023C;
-        opacity: .7;
-        z-index: 1;
-    }
-
-    > div {
-        position: relative;
-        z-index: 2;
-    }
+//    &:after {
+//        content:'';
+//        position: absolute;
+//        top:0;
+//        left:0;
+//        width:100%;
+//        height:100%;
+//        background:#FA023C;
+//        opacity: .7;
+//        z-index: 1;
+//    }
+//
+//    > div {
+//        position: relative;
+//        z-index: 2;
+//    }
 
 }
 
@@ -176,6 +247,11 @@ form {
         padding: 0;
         margin-bottom: 10px;
         @include justify-content(space-between);
+
+        &:last-child {
+            margin-bottom: 20px;
+        }
+
     }
 
     .col {
@@ -191,13 +267,16 @@ form {
 
         &.date {
             text-align: center;
+            padding-top:6px;
 
             span.day {
-                font-size: 16px;
+                font-size: 15px;
             }
 
             span.year {
-                font-size: 12px;
+                font-size: 13px;
+                font-family: $oswald;
+                font-weight: 700;
             }
 
         }
@@ -207,6 +286,7 @@ form {
             span {
                 line-height: 50px;
                 padding-left:10px;
+                font-size: 18px;
             }
 
         }
@@ -220,9 +300,16 @@ form {
     }
 
     .col-80 {
-        width:78%;
+        width:80%;
         max-width: 80%;
-        @include flex(0 0 78%);
+        @include flex(0 0 80%);
     }
 
+}
+
+.tags {
+    color: $whiteSmoke;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom:20px;
 }

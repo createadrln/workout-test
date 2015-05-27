@@ -1,11 +1,22 @@
 <div ng-controller="ShowController">
 
-    <div class="padding">
+    <div class="padding single">
+
         <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
         <div ng-hide="showSpinner">
-            <h2 ng-bind="day['day']"></h2>
+            <h2 class="h3" ng-bind="day['day']"></h2>
 
-            <ul class="list">
+            <h3 class="h5" ng-show="day.workouts.length == 0">
+                <span>You have no workouts on this day.</span>
+                <super-navigate location="workout#new">
+                    Add Some?
+                </super-navigate>
+                <super-navigate location="workout#new">
+                    Create Workouts?
+                </super-navigate>
+            </h3>
+
+            <ul class="list" ng-hide="day.workouts.length == 0">
                 <li ng-repeat="workout in day.workouts" class="item">
                     {{workout.title}}
                     <ul class="list">
@@ -16,11 +27,14 @@
                 </li>
             </ul>
 
-            <super-navigate location="day#edit?id={{ day.id }}">
-                <button class="button button-block button-positive">
-                    Edit
-                </button>
-            </super-navigate>
+            <div ng-hide="day.workouts.length == 0">
+                <super-navigate location="day#edit?id={{ day.id }}">
+                    <button class="button button-block button-positive">
+                        Edit
+                    </button>
+                </super-navigate>
+            </div>
+
         </div>
     </div>
 
