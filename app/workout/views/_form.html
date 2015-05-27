@@ -1,46 +1,11 @@
 <div class="list">
 
+    <h3>Workout Info</h3>
 
     <label class="item item-input item-stacked-label">
         <span class="input-label">Workout Title</span>
         <input type="text" ng-model="workout['title']" placeholder="Ex: Heavy Shoulder Workout">
     </label>
-
-    <!--<div ng-if="workout.exercises != '' ">-->
-        <!--<h3 class="h4">Current Exercise Order:</h3>-->
-        <!--<p ng-repeat="exercise in exercises | orderBy : 'order'">-->
-            <!--{{exercise.order}} :: {{exercise.name}}-->
-            <!--<input type="text" ng-model="exercise['order']">-->
-        <!--</p>-->
-    <!--</div>-->
-
-    <h3 class="h4">Select Exercises</h3>
-
-    <p>
-        <super-navigate location="exercise#new">
-            <div class="button button-small button-positive">
-                Add a New Exercise
-            </div>
-        </super-navigate>
-    </p>
-
-    <div class="list list-inset">
-        <label class="item item-input">
-            <i class="icon super-search placeholder-icon"></i>
-            <input type="text" ng-model="searchText" placeholder="Filter Exercises by Name or Tag" />
-        </label>
-    </div>
-
-    <ul class="list">
-        <li ng-repeat="exercise in exercises | filter:searchText" class="item item-checkbox">
-            <label class="checkbox">
-                <input type="checkbox" value="exercise['id']" ng-checked="checkedExercises.indexOf(exercise.id) != -1" ng-click="toggleCheck(exercise)" />
-            </label>
-            <span ng-bind="exercise['name']"></span>
-        </li>
-    </ul>
-
-    <div>The following workouts are checked: {{checkedExercises | json}}</div>
 
     <label class="item item-input item-stacked-label">
         <span class="input-label">Notes</span>
@@ -52,6 +17,36 @@
         <input type="text" ng-model="workout['tags']" placeholder="Ex: Shoulders, Bodybuilding">
     </label>
 
-    <button class="button button-block button-positive">Save</button>
+    <h3 class="margin-bottom-0">
+        Select Exercises
+    </h3>
+
+    <div class="row">
+        <div class="col a-center">
+            <super-navigate location="exercise#new">
+                <div class="button button-clear button-stable">
+                    <i class="icon super-plus assertive"></i> Add New
+                </div>
+            </super-navigate>
+        </div>
+    </div>
+
+    <label class="item item-input search padding">
+        <i class="icon super-search placeholder-icon"></i>
+        <input type="text" ng-model="searchText" placeholder="Filter Exercises by Name or Tag" />
+    </label>
 
 </div>
+
+<ul class="list">
+    <li ng-repeat="exercise in exercises | filter:searchText" class="item item-checkbox">
+        <label class="checkbox">
+            <input type="checkbox" value="exercise['id']" ng-checked="checkedExercises.indexOf(exercise.id) != -1" ng-click="toggleCheck(exercise)" />
+        </label>
+        <span ng-bind="exercise['name']"></span>
+    </li>
+</ul>
+
+<div>The following workouts are checked: {{checkedExercises | json}}</div>
+
+<button class="button button-block button-positive">Save</button>

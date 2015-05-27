@@ -19,6 +19,16 @@ module.exports =
       id: "workout"
       location: "workout#index"
     }
+    {
+      title: "Settings"
+      id: "settings"
+      location: "settings#index"
+    }
+    {
+      title: "About"
+      id: "about"
+      location: "about#index"
+    }
   ]
 
 # rootView:
