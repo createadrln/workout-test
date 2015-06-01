@@ -1,6 +1,6 @@
 angular
     .module('exercise')
-    .controller("ShowController", function ($scope, Exercise, supersonic) {
+    .controller("ShowController", function ($scope, $Exercise, supersonic) {
         $scope.exercise = null;
         $scope.showSpinner = true;
         $scope.dataId = undefined;

@@ -1,6 +1,6 @@
 angular
     .module('exercise')
-    .controller("NewController", function ($scope, Exercise, supersonic) {
+    .controller("NewController", function ($scope, $localStorage, Exercise, supersonic) {
         $scope.exercise = {};
 
         $scope.pushToHistory = [];
@@ -9,12 +9,19 @@ angular
         };
 
         $scope.submitForm = function () {
+            //var view_obj = new supersonic.ui.View("exercise#index");
+            //supersonic.ui.layers.replace(view_obj);
+
             $scope.showSpinner = true;
-            $scope.exercise.history = $scope.pushToHistory;
-            newexercise = new Exercise($scope.exercise);
-            newexercise.save().then( function () {
-                supersonic.ui.modal.hide();
-            });
+            $localStorage.locExercises = ({ 'name' : $scope.exercise.name, 'repgoal' : $scope.exercise.repgoal, 'weight' : $scope.exercise.weight });
+            supersonic.data.channel('locExCh').publish($localStorage.locExercises);
+            supersonic.ui.modal.hide();
+
+            //$scope.exercise.history = $scope.pushToHistory;
+            //var newExercise = new Exercise($scope.exercise);
+            //newExercise.save().then( function () {
+            //    supersonic.ui.modal.hide();
+            //});
         };
 
         $scope.cancel = function () {
@@ -22,3 +29,4 @@ angular
         }
 
     });
+
