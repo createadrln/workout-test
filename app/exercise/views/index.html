@@ -19,6 +19,8 @@
             </button>
         </super-modal-show>
 
+        <span style="color:#FFF;">{{ locExercises | json }}</span>
+
         <ul class="list" ng-hide="exercises.length == 0">
             <super-navigate location="exercise#show" data-params-id="{{ exercise.id }}" ng-repeat="exercise in exercises">
                 <li class="item">
