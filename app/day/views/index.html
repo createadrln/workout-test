@@ -9,7 +9,7 @@
         </super-navbar>
 
         <ul class="list list-days" ng-hide="days.length == 0">
-            <super-navigate location="day#show" data-params-id="{{ day.id }}" ng-repeat="day in days | orderBy:'order' ">
+            <super-navigate location="day#show" data-params-id="{{ day.id }}" ng-repeat="day in localDays | orderBy:'order' ">
                 <li class="item">
                     <span class="title" ng-bind="day['day']"></span>
                     <span class="info" ng-bind="day['brief_description']"></span>

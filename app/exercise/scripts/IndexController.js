@@ -1,20 +1,13 @@
 angular
     .module('exercise')
-    .controller("IndexController", function ($scope, $localStorage, Exercise, supersonic) {
-        $scope.exercises = null;
-        $scope.showSpinner = true;
+    .controller("IndexController", function ($scope, $localStorage, supersonic) {
+        $scope.localExercises = $localStorage.localExercises;
+        $scope.showSpinner = false;
 
-        supersonic.data.channel('locExCh').subscribe( function(locExerciseTest) {
+        supersonic.data.channel('localExercises').subscribe( function(localExercises) {
             $scope.$apply(function() {
-                $scope.locExercises = locExerciseTest;
+                $scope.localExercises = localExercises;
             });
         });
 
-        Exercise.all().whenChanged( function (exercises) {
-            $scope.$apply( function () {
-                $scope.locExercises = $localStorage.locExercises;
-                $scope.exercises = exercises;
-                $scope.showSpinner = false;
-            });
-        });
     });

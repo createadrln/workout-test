@@ -42,9 +42,16 @@ tab-bar-item#settings {
 }
 
 tab-bar-item#day {
-    background-image: url(icons/home.svg);
+    background-image: url(icons/calendar.svg);
+    color:#000;
 }
 
-tab-bar-item#internet {
-    background-image: url(icons/search.svg);
+tab-bar-item#workout {
+    background-image: url(icons/bolt.svg);
+    color:#000;
+}
+
+tab-bar-item#exercise {
+    background-image: url(icons/dumbbell.svg);
+    color:#000;
 }

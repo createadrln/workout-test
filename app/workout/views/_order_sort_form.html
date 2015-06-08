@@ -1,21 +1,17 @@
 <div class="list">
 
-
-    <label class="item item-input item-stacked-label">
-        <span class="input-label">Workout Title</span>
-        <input type="text" ng-model="workout['title']" placeholder="Ex: Heavy Shoulder Workout">
-    </label>
+    <h2 class="h3" ng-bind="workout['title']"></h2>
 
     <div ng-if="workout.exercises != '' ">
         <h3 class="h4">Update Exercise Order:</h3>
-        <div ng-repeat="exercise in exercises" class="list list-inset">
+        <div ng-repeat="exercise in localExercises" class="list list-inset">
             <label class="item item-input item-stacked-label">
-                <span class="input-label">{{ exercise.name }}</span>
-                <input type="text" ng-model="exercise['order']">
+                <span class="input-label" ng-bind="exercise['name']"></span>
+                <input type="number" min="1" max="1000" ng-model="exercise['order']" placeholder="Position (leave blank if no change)" />
             </label>
         </div>
     </div>
 
-    <button class="button button-block button-positive" ng-click="updateOrder(exercises)">Save</button>
+    <button class="button button-block button-positive" ng-click="updateOrder(localExercises)">Save</button>
 
 </div>

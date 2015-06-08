@@ -1,16 +1,8 @@
 angular
     .module('exercise')
-    .controller("EditController", function ($scope, Exercise, supersonic) {
-        $scope.exercise = null;
-        $scope.showSpinner = true;
-
-        // Fetch an object based on id from the database
-        Exercise.find(steroids.view.params.id).then( function (exercise) {
-            $scope.$apply(function() {
-                $scope.exercise = exercise;
-                $scope.showSpinner = false;
-            });
-        });
+    .controller("EditController", function ($scope, $localStorage, supersonic) {
+        $scope.exercise = getIndexOfId($localStorage.localExercises, steroids.view.params.id);
+        $scope.showSpinner = false;
 
         $scope.addToHistory = function (exercise) {
             $scope.updateHistory = exercise.history;
@@ -21,9 +13,9 @@ angular
         $scope.submitForm = function() {
             $scope.showSpinner = true;
             $scope.exercise.history = $scope.updateHistory;
-            $scope.exercise.save().then( function () {
-                supersonic.ui.modal.hide();
-            });
+            $localStorage.localExercises[getIndexOfIdCnt($localStorage.localExercises, steroids.view.params.id)] = $scope.exercise;
+            supersonic.data.channel('localExercises').publish($localStorage.localExercises);
+            supersonic.ui.modal.hide();
         };
 
         $scope.cancel = function () {

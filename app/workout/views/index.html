@@ -9,7 +9,7 @@
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
 
-        <h4 class="h3" ng-show="workouts.length == 0">
+        <h4 class="h3" ng-show="localWorkouts.length == 0">
             No workouts found. Create one?
         </h4>
 
@@ -19,8 +19,8 @@
             </button>
         </super-modal-show>
 
-        <ul class="list" ng-hide="workouts.length == 0">
-            <super-navigate location="workout#show" data-params-id="{{ workout.id }}" ng-repeat="workout in workouts">
+        <ul class="list" ng-hide="localWorkouts.length == 0">
+            <super-navigate location="workout#show" data-params-id="{{ workout.id }}" ng-repeat="workout in localWorkouts">
                 <li class="item">
                     <span ng-bind="workout['title']"></span>
                 </li>
