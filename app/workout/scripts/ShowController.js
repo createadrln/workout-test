@@ -1,29 +1,33 @@
 angular
     .module('workout')
-    .controller("ShowController", function ($scope, Workout, supersonic) {
-        $scope.workout = null;
-        $scope.exercises = null;
+    .controller("ShowController", function ($scope, $localStorage, supersonic) {
         $scope.showSpinner = true;
         $scope.dataId = undefined;
+        $scope.localWorkouts = $localStorage.localWorkouts;
+        $scope.localExercises = $localStorage.localExercises;
+
+        supersonic.data.channel('localWorkouts').subscribe( function(localWorkouts) {
+            $scope.$apply(function() {
+                var exercises = [];
+                $scope.localWorkouts = localWorkouts;
+                $scope.localWorkout = getIndexOfId(localWorkouts, $scope.dataId);
+                angular.forEach($scope.localWorkout.exercises, function (exercise) {
+                    var exerciseGroup = getIndexOfId($localStorage.localExercises, exercise.id);
+                    exercises.push({ 'order' : exercise.order, 'id' : exerciseGroup.id, 'name' : exerciseGroup.name, 'reps' : exerciseGroup.repgoal, 'weight' : exerciseGroup.weight });
+                });
+                $scope.exercises = exercises;
+            });
+        });
 
         var _refreshViewData = function () {
-            Workout.find($scope.dataId).then(function (workout) {
-                var exercises = [];
-                var counter = 0;
-                angular.forEach(workout.exercises, function (exerciseGroup) {
-                    supersonic.data.model('Exercise').find(exerciseGroup.exercise.join()).then(function (exercise) {
-                        exercises.push({ 'order' : exerciseGroup.order, 'name' : exercise.name, 'reps' : exercise.repgoal, 'weight' : exercise.weight });
-                        if (counter == workout.exercises.length) {
-                            $scope.$apply(function () {
-                                $scope.workout = workout;
-                                $scope.exercises = exercises;
-                                $scope.showSpinner = false;
-                            });
-                        }
-                    });
-                    counter++;
-                });
+            var exercises = [];
+            $scope.localWorkout = getIndexOfId($localStorage.localWorkouts, $scope.dataId);
+            angular.forEach($scope.localWorkout.exercises, function (exercise) {
+                var exerciseGroup = getIndexOfId($localStorage.localExercises, exercise.id);
+                exercises.push({ 'order' : exercise.order, 'id' : exerciseGroup.id, 'name' : exerciseGroup.name, 'reps' : exerciseGroup.repgoal, 'weight' : exerciseGroup.weight });
             });
+            $scope.exercises = exercises;
+            $scope.showSpinner = false;
         };
 
         supersonic.ui.views.current.whenVisible( function () {

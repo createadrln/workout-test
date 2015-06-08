@@ -1,46 +1,37 @@
 angular
     .module('workout')
-    .controller("EditController", function ($scope, Workout, supersonic) {
-        //$scope.storage = $localStorage;
-        $scope.workout = null;
-        $scope.exercises = null;
-        $scope.showSpinner = true;
+    .controller("EditController", function ($scope, $localStorage, Workout, supersonic) {
+        $scope.workout = getIndexOfId($localStorage.localWorkouts, steroids.view.params.id);
 
-        // Fetch an object based on id from the database
-        Workout.find(steroids.view.params.id).then( function (workout) {
+        if ($localStorage.localExercises) {
+            $scope.localExercises = $localStorage.localExercises;
+        } else {
+            $scope.localExercises = null;
+        }
 
-            $scope.$apply(function() {
-                $scope.workout = workout;
-                $scope.showSpinner = false;
+        $scope.showSpinner = false;
 
-                supersonic.data.model('Exercise').findAll().then( function(exercises) {
-                    $scope.$apply( function () {
-                        $scope.exercises = exercises;
-                        $scope.predicate = '-name';
-                    });
-                });
-
-            });
-
-        });
-
+        /* Load Toggled Exercises Into Array */
         $scope.checkedExercises = [];
-
+        var checkedExerciseCnt = 0;
         $scope.toggleCheck = function (exercise) {
-            if ($scope.checkedExercises.indexOf(exercise.id) === -1) {
-                $scope.checkedExercises.push({'exercise' : [exercise.id], 'order' : '0'});
+            if (getIndexOfIdCnt($scope.checkedExercises, exercise.id) === -1) {
+                checkedExerciseCnt++;
+                $scope.checkedExercises.push({'id' : exercise.id, 'name' : exercise.name, 'order' : checkedExerciseCnt });
             } else {
-                $scope.checkedExercises.splice($scope.checkedExercises.indexOf(exercise.id), 1);
+                checkedExerciseCnt--;
+                $scope.checkedExercises.splice($scope.localExercises.indexOf(exercise.id), 1);
             }
+            return checkedExerciseCnt;
         };
 
         $scope.submitForm = function() {
             $scope.showSpinner = true;
             $scope.workout.exercises = $scope.checkedExercises;
-            $scope.workout.save().then( function () {
-                supersonic.ui.modal.hide();
-            });
-        }
+            $localStorage.localWorkouts[getIndexOfIdCnt($localStorage.localWorkouts, steroids.view.params.id)] = $scope.workout;
+            supersonic.data.channel('localWorkouts').publish($localStorage.localWorkouts);
+            supersonic.ui.modal.hide();
+        };
 
         $scope.cancel = function () {
             supersonic.ui.modal.hide();

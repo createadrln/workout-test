@@ -1,13 +1,13 @@
 angular
     .module('workout')
-    .controller("IndexController", function ($scope, Workout, supersonic) {
-        $scope.workouts = null;
-        $scope.showSpinner = true;
+    .controller("IndexController", function ($scope, $localStorage) {
+        $scope.localWorkouts = $localStorage.localWorkouts;
+        $scope.showSpinner = false;
 
-        Workout.all().whenChanged( function (workouts) {
-            $scope.$apply( function () {
-                $scope.workouts = workouts;
-                $scope.showSpinner = false;
+        supersonic.data.channel('localWorkouts').subscribe( function(localWorkouts) {
+            $scope.$apply(function() {
+                $scope.localWorkouts = localWorkouts;
             });
         });
+
     });

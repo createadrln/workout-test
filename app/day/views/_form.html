@@ -6,11 +6,11 @@
     </label>
     <label class="item item-input item-stacked-label">
         <span class="input-label">Order</span>
-        <input type="number" min="1" max="100" ng-model="day['order']">
+        <input type="number" min="1" max="1000" ng-model="day['order']" placeholder="Position (leave blank if no change)" />
     </label>
     <label class="item item-input item-stacked-label">
         <span class="input-label">Brief Description of Routine (20 char max)</span>
-        <input type="text" ng-model="day['brief_description']">
+        <input type="text" ng-model="day['brief_description']" placeholder="Enter a Brief Description">
     </label>
 </div>
 
@@ -28,7 +28,7 @@
 </div>
 
 <ul class="list">
-    <li ng-repeat="workout in workouts | filter:searchText" class="item item-checkbox">
+    <li ng-repeat="workout in localWorkouts | filter:searchText" class="item item-checkbox">
         <label class="checkbox">
             <input type="checkbox" value="workout['id']" ng-checked="checkedWorkouts.indexOf(workout.id) != -1" ng-click="toggleCheck(workout)" />
         </label>
@@ -36,6 +36,7 @@
     </li>
 </ul>
 
-<div>The following workouts are checked: {{checkedWorkouts | json}}</div>
+<span style="color:#FFF;">{{ checkedWorkouts | json }}</span>
+
 <br>
 <button class="button button-block button-positive">Save</button>

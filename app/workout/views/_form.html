@@ -13,7 +13,7 @@
     </label>
 
     <label class="item item-input item-stacked-label">
-        <span class="input-label">Tags</span>
+        <span class="input-label">Searchable Tags</span>
         <input type="text" ng-model="workout['tags']" placeholder="Ex: Shoulders, Bodybuilding">
     </label>
 
@@ -38,15 +38,17 @@
 
 </div>
 
-<ul class="list">
-    <li ng-repeat="exercise in exercises | filter:searchText" class="item item-checkbox">
-        <label class="checkbox">
-            <input type="checkbox" value="exercise['id']" ng-checked="checkedExercises.indexOf(exercise.id) != -1" ng-click="toggleCheck(exercise)" />
-        </label>
-        <span ng-bind="exercise['name']"></span>
+<ul class="list exercise-checkbox-list">
+    <li ng-repeat="exercise in localExercises | filter:searchText">
+        <div class="item item-checkbox">
+            <label class="checkbox">
+                <input type="checkbox" value="exercise['id']" ng-checked="checkedExercises.indexOf(exercise.id) != -1" ng-click="toggleCheck(exercise)" />
+            </label>
+        </div>
+        <super-navigate location="exercise#show" data-params-id="{{ exercise.id }}" class="label">
+            <span ng-bind="exercise['name']"></span>
+        </super-navigate>
     </li>
 </ul>
-
-<div>The following workouts are checked: {{checkedExercises | json}}</div>
 
 <button class="button button-block button-positive">Save</button>

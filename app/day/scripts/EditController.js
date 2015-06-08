@@ -1,46 +1,40 @@
 angular
     .module('day')
-    .controller("EditController", function ($scope, Day, supersonic) {
-        $scope.day = null;
-        $scope.checkedWorkouts = null;
-        $scope.showSpinner = true;
+    .controller("EditController", function ($scope, $localStorage, supersonic) {
+        $scope.day = getIndexOfId($localStorage.localDays, steroids.view.params.id);
 
-        //Fetch an object based on id from the database
-        Day.find(steroids.view.params.id).then( function (day) {
-            $scope.$apply(function() {
-                $scope.day = day;
-                $scope.showSpinner = false;
+        if ($localStorage.localWorkouts) {
+            $scope.localWorkouts = $localStorage.localWorkouts;
+        } else {
+            $scope.localWorkouts = null;
+        }
 
-                supersonic.data.model('Workout').findAll().then( function(workouts) {
-                    $scope.$apply( function () {
-                        $scope.workouts = workouts;
-                        $scope.predicate = '-name';
-                    });
-                });
+        $scope.showSpinner = false;
 
-            });
-        });
-
+        /* Load Toggled Workouts Into Array */
         $scope.checkedWorkouts = [];
-
+        var checkedWorkoutCnt = 0;
         $scope.toggleCheck = function (workout) {
-            if ($scope.checkedWorkouts.indexOf(workout.id) === -1) {
-                $scope.checkedWorkouts.push(workout.id);
+            if (getIndexOfIdCnt($scope.checkedWorkouts, workout.id) === -1) {
+                checkedWorkoutCnt++;
+                $scope.checkedWorkouts.push({'id' : workout.id, 'title' : workout.title, 'order' : checkedWorkoutCnt });
             } else {
-                $scope.checkedWorkouts.splice($scope.checkedWorkouts.indexOf(workout.id), 1);
+                checkedWorkoutCnt--;
+                $scope.checkedWorkouts.splice($scope.localWorkouts.indexOf(workout.id), 1);
             }
+            return checkedWorkoutCnt;
         };
 
         $scope.submitForm = function() {
             $scope.showSpinner = true;
             $scope.day.workout = $scope.checkedWorkouts;
-            $scope.day.save().then( function () {
-                supersonic.ui.modal.hide();
-            });
+            $localStorage.localDays[getIndexOfIdCnt($localStorage.localDays, steroids.view.params.id)] = $scope.day;
+            supersonic.data.channel('localDays').publish($localStorage.localDays);
+            supersonic.ui.modal.hide();
         };
 
         $scope.cancel = function () {
             supersonic.ui.modal.hide();
-        }
+        };
 
     });

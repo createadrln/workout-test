@@ -9,7 +9,7 @@ body {
     height:100%;
     font-family: 'Oxygen', sans-serif;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 16px;
     color:$grayGunmetal;
     background-color: #000;
 
@@ -53,12 +53,59 @@ h3, .h3, h4, .h4 {
     border-bottom:1px solid $redDull;
 }
 
+super-modal-show {
+
+    &.first-view {
+        display: block;
+        width:100%;
+        padding-top:100px;
+        text-align: center;
+
+        .button {
+            display: inline-block;
+            width:200px;
+            height:200px;
+            text-transform: uppercase;
+            line-height: 1.125;
+            font-size: 20px;
+            @include border-top-radius(50%);
+            @include border-right-radius(50%);
+            @include border-bottom-radius(50%);
+            @include border-left-radius(50%);
+
+            .icon {
+                display: block;
+                margin-bottom:10px;
+
+                &:before {
+                    font-size: 50px;
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.notes {
+    width:70%;
+    color: $whiteSmoke;
+    text-align: center;
+    margin:0 auto 40px;
+}
+
 .margin-bottom-0 {
     margin-bottom:0px !important;
 }
 
 .margin-bottom-10 {
     margin-bottom:10px !important;
+}
+
+.margin-bottom-30 {
+    margin-bottom:30px !important;
 }
 
 .a-center {
@@ -80,11 +127,17 @@ form {
     }
 
     .item-input {
-        padding:0 0 15px;
-        margin-bottom:15px;
+        padding:0 0 10px;
+        margin-bottom:10px;
 
-        &.search {
-            border:1px solid $whiteSmoke;
+        &.search {}
+
+    }
+
+    .item-stacked-label {
+
+        .input-label {
+            display: block;
         }
 
     }
@@ -92,10 +145,40 @@ form {
     .input-label {
         color: $whiteSmoke;
         margin-bottom:5px;
+
+        .ex {
+            display: block;
+            font-size: 13px;
+        }
+
     }
 
-    input[type="text"] {
+    input[type="text"],
+    input[type="number"] {
+        height:45px;
+        line-height:20px;
         padding-left:10px;
+
+        &.col-40 {
+            display: inline-block;
+            width:38%;
+            max-width:38%;
+        }
+
+    }
+
+}
+
+.list-inset {
+    background-color: transparent;
+}
+
+.exercise-checkbox-list {
+
+    .item-checkbox {
+        display: inline-block;
+        width:auto;
+        height:auto;
     }
 
 }
@@ -125,11 +208,6 @@ div.workout-index {
         margin:1% 0;
         padding:0 5%;
         background: $redDull;
-//        border-bottom:1px solid #B24848;
-
-        &:hover,
-        &:active {
-        }
 
         &:last-child {
             border-bottom: none;
@@ -175,60 +253,39 @@ div.workout-index {
 
 }
 
-.padding {
-
-//    &:after {
-//        content:'';
-//        position: absolute;
-//        top:0;
-//        left:0;
-//        width:100%;
-//        height:100%;
-//        background:#FA023C;
-//        opacity: .7;
-//        z-index: 1;
-//    }
-//
-//    > div {
-//        position: relative;
-//        z-index: 2;
-//    }
-
-}
-
 .info-boxes {
 
-    &.row {
-        padding:0;
-        margin-bottom:10px;
-        @include justify-content(space-between);
+    .info-box {
 
-        &.last {
-            margin-bottom:30px;
+        &.row {
+            padding:0;
+            margin-bottom:10px;
+            @include justify-content(space-between);
+
+            &.last {
+                margin-bottom:30px;
+            }
+
+        }
+
+        .col {
+            position: relative;
+            width:100%;
+            background: $grayBattleship;
+            color: $whiteSmoke;
+            padding:10px 20px;
+            line-height: 1;
+        }
+
+        .col-50 {
+            width:48%;
+            max-width: 48%;
+            @include flex(0 0 48%);
         }
 
     }
 
-    .col {
-        background: $grayBattleship;
-        color: $whiteSmoke;
-        text-align: center;
-        padding:20px 0;
-        line-height: 1;
-
-        span {
-            font-size: 18px;
-        }
-
-    }
-
-    .col-50 {
-        width:48%;
-        max-width: 48%;
-        @include flex(0 0 48%);
-    }
-
-    .h5 {
+    h3.h5 {
         color: $whiteSmoke;
         text-transform: uppercase;
         line-height: 1;
@@ -237,72 +294,97 @@ div.workout-index {
         font-size: 18px;
         margin-top:0;
         margin-bottom:0;
+        padding-bottom:0;
+        border-bottom:0;
     }
 
 }
 
-.history-boxes {
+.workout-exercise-order {
+    position: absolute;
+    top:50%;
+    left:20px;
+    margin-top:-12.5px;
+    display: inline-block;
+    width:25px;
+    height:25px;
+    line-height: 25px;
+    background-color: $neonYellow;
+    color: $black;
+    font-family: $oswald;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: center;
+}
 
-    &.row {
+.workout-exercise-name {
+    font-size: 18px;
+    padding-left:40px;
+}
+
+.workout-exercise-info {
+    padding-left:40px;
+}
+
+.history-boxes {
+    margin-bottom:40px;
+
+    .history-box {
         padding: 0;
         margin-bottom: 10px;
         @include justify-content(space-between);
 
-        &:last-child {
-            margin-bottom: 20px;
-        }
-
-    }
-
-    .col {
-        background: #C8FF00;
-        color: #040004;
-        padding: 0 10px;
-        height:50px;
-
-        span {
-            font-size: 14px;
-            line-height: 1;
-        }
-
-        &.date {
-            text-align: center;
-            padding-top:6px;
-
-            span.day {
-                font-size: 15px;
-            }
-
-            span.year {
-                font-size: 13px;
-                font-family: $oswald;
-                font-weight: 700;
-            }
-
-        }
-
-        &.info {
+        .col {
+            background: #C8FF00;
+            color: $black;
+            padding: 0 10px;
+            height:50px;
 
             span {
-                line-height: 50px;
-                padding-left:10px;
-                font-size: 18px;
+                font-size: 14px;
+                line-height: 1;
+            }
+
+            &.date {
+                text-align: center;
+                padding-top:6px;
+
+                span.day {
+                    font-size: 15px;
+                }
+
+                span.year {
+                    font-size: 13px;
+                    font-family: $oswald;
+                    font-weight: 700;
+                }
+
+            }
+
+            &.info {
+
+                span {
+                    line-height: 50px;
+                    padding-left:10px;
+                    font-size: 18px;
+                }
+
             }
 
         }
 
-    }
+        .col-20 {
+            width:18%;
+            max-width: 18%;
+            @include flex(0 0 18%);
+        }
 
-    .col-20 {
-        width:18%;
-        max-width: 18%;
-        @include flex(0 0 18%);
-    }
+        .col-80 {
+            width:80%;
+            max-width: 80%;
+            @include flex(0 0 80%);
+        }
 
-    .col-80 {
-        width:80%;
-        max-width: 80%;
-        @include flex(0 0 80%);
     }
 
 }

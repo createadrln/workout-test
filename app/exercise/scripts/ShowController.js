@@ -1,17 +1,21 @@
 angular
     .module('exercise')
-    .controller("ShowController", function ($scope, $Exercise, supersonic) {
+    .controller("ShowController", function ($scope, $localStorage, supersonic) {
         $scope.exercise = null;
         $scope.showSpinner = true;
         $scope.dataId = undefined;
+        $scope.localExercises = $localStorage.localExercises;
+
+        supersonic.data.channel('localExercises').subscribe( function(localExercises) {
+            $scope.$apply(function() {
+                $scope.localExercises = localExercises;
+                $scope.localExercise = getIndexOfId(localExercises, $scope.dataId);
+            });
+        });
 
         var _refreshViewData = function () {
-            Exercise.find($scope.dataId).then( function (exercise) {
-                $scope.$apply( function () {
-                    $scope.exercise = exercise;
-                    $scope.showSpinner = false;
-                });
-            });
+            $scope.localExercise = getIndexOfId($localStorage.localExercises, $scope.dataId);
+            $scope.showSpinner = false;
         };
 
         supersonic.ui.views.current.whenVisible( function () {
@@ -27,8 +31,8 @@ angular
 
         $scope.remove = function (id) {
             $scope.showSpinner = true;
-            $scope.exercise.delete().then( function () {
-                supersonic.ui.layers.pop();
-            });
-        }
+            //removeIndexOfId($localStorage.localExercises, id);
+            supersonic.ui.layers.pop();
+        };
+
     });

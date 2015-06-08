@@ -9,7 +9,7 @@ body {
   height: 100%;
   font-family: 'Oxygen', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
   color: #423732;
   background-color: #000;
 }
@@ -59,67 +59,141 @@ h3, .h3, h4, .h4 {
   border-bottom: 1px solid #993333;
 }
 
-/* line 56, ../assets/sass/custom.scss */
+/* line 58, ../assets/sass/custom.scss */
+super-modal-show.first-view {
+  display: block;
+  width: 100%;
+  padding-top: 100px;
+  text-align: center;
+}
+/* line 64, ../assets/sass/custom.scss */
+super-modal-show.first-view .button {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  text-transform: uppercase;
+  line-height: 1.125;
+  font-size: 20px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-top-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+}
+/* line 76, ../assets/sass/custom.scss */
+super-modal-show.first-view .button .icon {
+  display: block;
+  margin-bottom: 10px;
+}
+/* line 80, ../assets/sass/custom.scss */
+super-modal-show.first-view .button .icon:before {
+  font-size: 50px;
+}
+
+/* line 92, ../assets/sass/custom.scss */
+.notes {
+  width: 70%;
+  color: #f5f5f5;
+  text-align: center;
+  margin: 0 auto 40px;
+}
+
+/* line 99, ../assets/sass/custom.scss */
 .margin-bottom-0 {
   margin-bottom: 0px !important;
 }
 
-/* line 60, ../assets/sass/custom.scss */
+/* line 103, ../assets/sass/custom.scss */
 .margin-bottom-10 {
   margin-bottom: 10px !important;
 }
 
-/* line 64, ../assets/sass/custom.scss */
+/* line 107, ../assets/sass/custom.scss */
+.margin-bottom-30 {
+  margin-bottom: 30px !important;
+}
+
+/* line 111, ../assets/sass/custom.scss */
 .a-center {
   text-align: center;
 }
 
-/* line 70, ../assets/sass/custom.scss */
+/* line 117, ../assets/sass/custom.scss */
 form .item {
   border-left: 0;
   border-right: 0;
   border-top: 0;
   border-bottom: 0;
 }
-/* line 76, ../assets/sass/custom.scss */
+/* line 123, ../assets/sass/custom.scss */
 form .item.last {
   margin-bottom: 40px;
 }
-/* line 82, ../assets/sass/custom.scss */
+/* line 129, ../assets/sass/custom.scss */
 form .item-input {
-  padding: 0 0 15px;
-  margin-bottom: 15px;
+  padding: 0 0 10px;
+  margin-bottom: 10px;
 }
-/* line 86, ../assets/sass/custom.scss */
-form .item-input.search {
-  border: 1px solid #f5f5f5;
+/* line 139, ../assets/sass/custom.scss */
+form .item-stacked-label .input-label {
+  display: block;
 }
-/* line 92, ../assets/sass/custom.scss */
+/* line 145, ../assets/sass/custom.scss */
 form .input-label {
   color: #f5f5f5;
   margin-bottom: 5px;
 }
-/* line 97, ../assets/sass/custom.scss */
-form input[type="text"] {
+/* line 149, ../assets/sass/custom.scss */
+form .input-label .ex {
+  display: block;
+  font-size: 13px;
+}
+/* line 156, ../assets/sass/custom.scss */
+form input[type="text"],
+form input[type="number"] {
+  height: 45px;
+  line-height: 20px;
   padding-left: 10px;
 }
+/* line 162, ../assets/sass/custom.scss */
+form input[type="text"].col-40,
+form input[type="number"].col-40 {
+  display: inline-block;
+  width: 38%;
+  max-width: 38%;
+}
 
-/* line 105, ../assets/sass/custom.scss */
+/* line 172, ../assets/sass/custom.scss */
+.list-inset {
+  background-color: transparent;
+}
+
+/* line 178, ../assets/sass/custom.scss */
+.exercise-checkbox-list .item-checkbox {
+  display: inline-block;
+  width: auto;
+  height: auto;
+}
+
+/* line 188, ../assets/sass/custom.scss */
 div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   height: 100%;
 }
 
-/* line 112, ../assets/sass/custom.scss */
+/* line 195, ../assets/sass/custom.scss */
 .list {
   height: 100%;
 }
-/* line 115, ../assets/sass/custom.scss */
+/* line 198, ../assets/sass/custom.scss */
 .list .item {
   border: none;
   color: #f5f5f5;
   background: none;
 }
-/* line 121, ../assets/sass/custom.scss */
+/* line 204, ../assets/sass/custom.scss */
 .list super-navigate {
   display: table;
   width: 100%;
@@ -128,11 +202,11 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   padding: 0 5%;
   background: #993333;
 }
-/* line 134, ../assets/sass/custom.scss */
+/* line 212, ../assets/sass/custom.scss */
 .list super-navigate:last-child {
   border-bottom: none;
 }
-/* line 138, ../assets/sass/custom.scss */
+/* line 216, ../assets/sass/custom.scss */
 .list super-navigate .item {
   position: relative;
   display: table-cell;
@@ -141,7 +215,7 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   margin: 0;
   padding: 0;
 }
-/* line 146, ../assets/sass/custom.scss */
+/* line 224, ../assets/sass/custom.scss */
 .list super-navigate .item .title {
   display: block;
   text-transform: uppercase;
@@ -150,7 +224,7 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   font-weight: 700;
   margin-bottom: 5px;
 }
-/* line 155, ../assets/sass/custom.scss */
+/* line 233, ../assets/sass/custom.scss */
 .list super-navigate .item .info {
   display: block;
   font-size: 15px;
@@ -158,7 +232,7 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   text-transform: uppercase;
   color: #C8FF00;
 }
-/* line 163, ../assets/sass/custom.scss */
+/* line 241, ../assets/sass/custom.scss */
 .list super-navigate .item:after {
   content: '';
   height: 0;
@@ -172,8 +246,8 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   margin-top: -10px;
 }
 
-/* line 201, ../assets/sass/custom.scss */
-.info-boxes.row {
+/* line 260, ../assets/sass/custom.scss */
+.info-boxes .info-box.row {
   padding: 0;
   margin-bottom: 10px;
   -webkit-box-pack: justify;
@@ -186,24 +260,21 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   justify-content: space-between;
   -ms-flex-pack: justify;
 }
-/* line 206, ../assets/sass/custom.scss */
-.info-boxes.row.last {
+/* line 265, ../assets/sass/custom.scss */
+.info-boxes .info-box.row.last {
   margin-bottom: 30px;
 }
-/* line 212, ../assets/sass/custom.scss */
-.info-boxes .col {
+/* line 271, ../assets/sass/custom.scss */
+.info-boxes .info-box .col {
+  position: relative;
+  width: 100%;
   background: #848482;
   color: #f5f5f5;
-  text-align: center;
-  padding: 20px 0;
+  padding: 10px 20px;
   line-height: 1;
 }
-/* line 219, ../assets/sass/custom.scss */
-.info-boxes .col span {
-  font-size: 18px;
-}
-/* line 225, ../assets/sass/custom.scss */
-.info-boxes .col-50 {
+/* line 280, ../assets/sass/custom.scss */
+.info-boxes .info-box .col-50 {
   width: 48%;
   max-width: 48%;
   -webkit-box-flex: 0;
@@ -214,8 +285,8 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   -ms-flex: 0 0 48%;
   flex: 0 0 48%;
 }
-/* line 231, ../assets/sass/custom.scss */
-.info-boxes .h5 {
+/* line 288, ../assets/sass/custom.scss */
+.info-boxes h3.h5 {
   color: #f5f5f5;
   text-transform: uppercase;
   line-height: 1;
@@ -224,10 +295,45 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   font-size: 18px;
   margin-top: 0;
   margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
 }
 
-/* line 246, ../assets/sass/custom.scss */
-.history-boxes.row {
+/* line 303, ../assets/sass/custom.scss */
+.workout-exercise-order {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  margin-top: -12.5px;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  line-height: 25px;
+  background-color: #C8FF00;
+  color: #040004;
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-align: center;
+}
+
+/* line 320, ../assets/sass/custom.scss */
+.workout-exercise-name {
+  font-size: 18px;
+  padding-left: 40px;
+}
+
+/* line 325, ../assets/sass/custom.scss */
+.workout-exercise-info {
+  padding-left: 40px;
+}
+
+/* line 329, ../assets/sass/custom.scss */
+.history-boxes {
+  margin-bottom: 40px;
+}
+/* line 332, ../assets/sass/custom.scss */
+.history-boxes .history-box {
   padding: 0;
   margin-bottom: 10px;
   -webkit-box-pack: justify;
@@ -240,45 +346,41 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   justify-content: space-between;
   -ms-flex-pack: justify;
 }
-/* line 251, ../assets/sass/custom.scss */
-.history-boxes.row:last-child {
-  margin-bottom: 20px;
-}
-/* line 257, ../assets/sass/custom.scss */
-.history-boxes .col {
+/* line 337, ../assets/sass/custom.scss */
+.history-boxes .history-box .col {
   background: #C8FF00;
   color: #040004;
   padding: 0 10px;
   height: 50px;
 }
-/* line 263, ../assets/sass/custom.scss */
-.history-boxes .col span {
+/* line 343, ../assets/sass/custom.scss */
+.history-boxes .history-box .col span {
   font-size: 14px;
   line-height: 1;
 }
-/* line 268, ../assets/sass/custom.scss */
-.history-boxes .col.date {
+/* line 348, ../assets/sass/custom.scss */
+.history-boxes .history-box .col.date {
   text-align: center;
   padding-top: 6px;
 }
-/* line 272, ../assets/sass/custom.scss */
-.history-boxes .col.date span.day {
+/* line 352, ../assets/sass/custom.scss */
+.history-boxes .history-box .col.date span.day {
   font-size: 15px;
 }
-/* line 276, ../assets/sass/custom.scss */
-.history-boxes .col.date span.year {
+/* line 356, ../assets/sass/custom.scss */
+.history-boxes .history-box .col.date span.year {
   font-size: 13px;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
 }
-/* line 286, ../assets/sass/custom.scss */
-.history-boxes .col.info span {
+/* line 366, ../assets/sass/custom.scss */
+.history-boxes .history-box .col.info span {
   line-height: 50px;
   padding-left: 10px;
   font-size: 18px;
 }
-/* line 296, ../assets/sass/custom.scss */
-.history-boxes .col-20 {
+/* line 376, ../assets/sass/custom.scss */
+.history-boxes .history-box .col-20 {
   width: 18%;
   max-width: 18%;
   -webkit-box-flex: 0;
@@ -289,8 +391,8 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   -ms-flex: 0 0 18%;
   flex: 0 0 18%;
 }
-/* line 302, ../assets/sass/custom.scss */
-.history-boxes .col-80 {
+/* line 382, ../assets/sass/custom.scss */
+.history-boxes .history-box .col-80 {
   width: 80%;
   max-width: 80%;
   -webkit-box-flex: 0;
@@ -302,7 +404,7 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   flex: 0 0 80%;
 }
 
-/* line 310, ../assets/sass/custom.scss */
+/* line 392, ../assets/sass/custom.scss */
 .tags {
   color: #f5f5f5;
   text-align: center;

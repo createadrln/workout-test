@@ -3,38 +3,40 @@
     <div class="padding">
         <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
         <div ng-hide="showSpinner">
-            <h2 class="h3" ng-bind="workout['title']"></h2>
 
-            <div ng-if="workout.notes != '' ">
+            <h2 class="h3" ng-bind="localWorkout['title']"></h2>
+
+            <div ng-if="localWorkout.exercises != '' " class="info-boxes margin-bottom-30">
+                <div ng-repeat="exercise in exercises | orderBy : 'order'" class="row info-box">
+                    <super-navigate location="exercise#show" data-params-id="{{ exercise.id }}" class="col">
+                        <span class="workout-exercise-order" ng-bind="exercise['order']"></span>
+                        <span class="workout-exercise-name" ng-bind="exercise['name']"></span>
+                        <div class="workout-exercise-info">
+                            <span ng-bind="exercise['reps']"></span>
+                            <span ng-bind="exercise['weight']"></span>
+                        </div>
+                    </super-navigate>
+                </div>
+            </div>
+
+            <div ng-if="localWorkout.notes != '' ">
                 <h3 class="h4">Notes:</h3>
-                <p><span ng-bind="workout['notes']"></span></p>
+                <p class="notes"><span ng-bind="localWorkout['notes']"></span></p>
             </div>
 
-            <div ng-if="workout.tags != '' ">
-                <h3 class="h4">Tags:</h3>
-                <p><span ng-bind="workout['tags']"></span></p>
-            </div>
-
-            <div ng-if="workout.exercises != '' ">
-                <h3 class="h4">Exercises:</h3>
-                <p ng-repeat="exercise in exercises | orderBy : 'order'">
-                    {{exercise.order}} :: {{exercise.name}} :: {{exercise.reps}} :: {{exercise.weight}}
-                </p>
-            </div>
-
-            <super-modal-show location="workout#order?id={{ workout.id }}">
+            <super-modal-show location="workout#order?id={{ localWorkout.id }}">
                 <button class="button button-block button-positive">
                     Update Workout Order
                 </button>
             </super-modal-show>
 
-            <super-modal-show location="workout#edit?id={{ workout.id }}">
-                <button class="button button-block button-positive">
+            <super-modal-show location="workout#edit?id={{ localWorkout.id }}">
+                <button class="button button-block button-assertive">
                     Edit
                 </button>
             </super-modal-show>
 
-            <button ng-click="remove(workout.id)" class="button button-block button-negative">
+            <button ng-click="remove(localWorkout.id)" class="button button-block button-negative">
                 Remove
             </button>
         </div>

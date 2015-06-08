@@ -10,8 +10,9 @@ module.exports =
       location: "exercise#index"
     }
     {
-      title: "Day"
+      title: "Days"
       id: "day"
+      icon: "icons/calendar.svg"
       location: "day#index" # Supersonic module#view type navigation
     }
     {
@@ -19,31 +20,21 @@ module.exports =
       id: "workout"
       location: "workout#index"
     }
-    {
-      title: "Settings"
-      id: "settings"
-      location: "settings#index"
-    }
-    {
-      title: "About"
-      id: "about"
-      location: "about#index"
-    }
   ]
 
 # rootView:
 #   location: "example#getting-started"
 
-  preloads: [
-    {
-      id: "learn-more"
-      location: "example#learn-more"
-    }
-    {
-      id: "using-the-scanner"
-      location: "example#using-the-scanner"
-    }
-  ]
+# preloads: [
+#   {
+#     id: "learn-more"
+#     location: "example#learn-more"
+#   }
+#   {
+#     id: "using-the-scanner"
+#     location: "example#using-the-scanner"
+#   }
+# ]
 
 # drawers:
 #   left:
