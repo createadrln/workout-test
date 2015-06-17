@@ -1,10 +1,10 @@
 /*Colors*/
-/* line 4, ../assets/sass/custom.scss */
+/* line 1, ../assets/sass/partials/_core.scss */
 html {
   height: 100%;
 }
 
-/* line 8, ../assets/sass/custom.scss */
+/* line 5, ../assets/sass/partials/_core.scss */
 body {
   height: 100%;
   font-family: 'Oxygen', sans-serif;
@@ -13,7 +13,7 @@ body {
   color: #423732;
   background-color: #000;
 }
-/* line 16, ../assets/sass/custom.scss */
+/* line 13, ../assets/sass/partials/_core.scss */
 body:after {
   content: '';
   display: inline-block;
@@ -38,193 +38,471 @@ body:after {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c405b', endColorstr='#007db9e8',GradientType=0 );
   /* IE6-9 */
 }
-/* line 35, ../assets/sass/custom.scss */
+/* line 32, ../assets/sass/partials/_core.scss */
 body > div {
-  margin: 5%;
+  margin: 0;
   padding: 0;
   position: relative;
   z-index: 2;
 }
 
-/* line 44, ../assets/sass/custom.scss */
+/* line 41, ../assets/sass/partials/_core.scss */
 h3, .h3, h4, .h4 {
   width: 70%;
   color: #f5f5f5;
-  text-align: center;
+  text-align: left;
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
-  font-weight: 700;
-  margin: 0 auto 20px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #993333;
+  font-weight: 300;
+  margin: 0 0 20px;
 }
 
-/* line 58, ../assets/sass/custom.scss */
-super-modal-show.first-view {
-  display: block;
-  width: 100%;
-  padding-top: 100px;
-  text-align: center;
-}
-/* line 64, ../assets/sass/custom.scss */
-super-modal-show.first-view .button {
-  display: inline-block;
-  width: 200px;
-  height: 200px;
-  text-transform: uppercase;
-  line-height: 1.125;
-  font-size: 20px;
-  border-top-left-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-right-radius: 50%;
-  border-top-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-top-left-radius: 50%;
-}
-/* line 76, ../assets/sass/custom.scss */
-super-modal-show.first-view .button .icon {
-  display: block;
-  margin-bottom: 10px;
-}
-/* line 80, ../assets/sass/custom.scss */
-super-modal-show.first-view .button .icon:before {
-  font-size: 50px;
-}
-
-/* line 92, ../assets/sass/custom.scss */
-.notes {
-  width: 70%;
-  color: #f5f5f5;
-  text-align: center;
-  margin: 0 auto 40px;
-}
-
-/* line 99, ../assets/sass/custom.scss */
-.margin-bottom-0 {
-  margin-bottom: 0px !important;
-}
-
-/* line 103, ../assets/sass/custom.scss */
-.margin-bottom-10 {
-  margin-bottom: 10px !important;
-}
-
-/* line 107, ../assets/sass/custom.scss */
-.margin-bottom-30 {
-  margin-bottom: 30px !important;
-}
-
-/* line 111, ../assets/sass/custom.scss */
-.a-center {
-  text-align: center;
-}
-
-/* line 117, ../assets/sass/custom.scss */
+/* line 3, ../assets/sass/partials/_forms.scss */
 form .item {
   border-left: 0;
   border-right: 0;
   border-top: 0;
   border-bottom: 0;
 }
-/* line 123, ../assets/sass/custom.scss */
+/* line 9, ../assets/sass/partials/_forms.scss */
 form .item.last {
   margin-bottom: 40px;
 }
-/* line 129, ../assets/sass/custom.scss */
+/* line 15, ../assets/sass/partials/_forms.scss */
 form .item-input {
-  padding: 0 0 10px;
+  padding: 0;
   margin-bottom: 10px;
 }
-/* line 139, ../assets/sass/custom.scss */
+/* line 25, ../assets/sass/partials/_forms.scss */
 form .item-stacked-label .input-label {
   display: block;
 }
-/* line 145, ../assets/sass/custom.scss */
+/* line 31, ../assets/sass/partials/_forms.scss */
+form .item-floating-label {
+  margin-bottom: 30px;
+}
+/* line 35, ../assets/sass/partials/_forms.scss */
+form .item-checkbox .checkbox {
+  left: 0;
+}
+/* line 39, ../assets/sass/partials/_forms.scss */
 form .input-label {
   color: #f5f5f5;
   margin-bottom: 5px;
 }
-/* line 149, ../assets/sass/custom.scss */
+/* line 43, ../assets/sass/partials/_forms.scss */
 form .input-label .ex {
   display: block;
   font-size: 13px;
 }
-/* line 156, ../assets/sass/custom.scss */
+/* line 50, ../assets/sass/partials/_forms.scss */
 form input[type="text"],
 form input[type="number"] {
   height: 45px;
   line-height: 20px;
   padding-left: 10px;
+  border-bottom: 1px solid #848482;
+  color: #f5f5f5;
+  font-size: 18px;
 }
-/* line 162, ../assets/sass/custom.scss */
+/* line 59, ../assets/sass/partials/_forms.scss */
 form input[type="text"].col-40,
 form input[type="number"].col-40 {
   display: inline-block;
   width: 38%;
   max-width: 38%;
 }
+/* line 67, ../assets/sass/partials/_forms.scss */
+form select {
+  font-size: 18px;
+  width: 100%;
+}
+/* line 72, ../assets/sass/partials/_forms.scss */
+form select {
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 1px solid #848482;
+  outline: 0;
+  padding: 8px 40px 8px 10px;
+  color: #aaaaa9;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+/* line 85, ../assets/sass/partials/_forms.scss */
+form select.ng-dirty {
+  color: #f5f5f5;
+}
+/* line 91, ../assets/sass/partials/_forms.scss */
+form .input-select {
+  position: relative;
+}
+/* line 94, ../assets/sass/partials/_forms.scss */
+form .input-select:after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  right: 12px;
+  height: 0;
+  width: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #848482;
+}
+/* line 104, ../assets/sass/partials/_forms.scss */
+form select::-ms-expand {
+  display: none;
+}
+/* line 108, ../assets/sass/partials/_forms.scss */
+form tags-input .tags {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  padding: 0 0 5px 10px;
+  overflow: hidden;
+  word-wrap: break-word;
+  cursor: text;
+  background-color: transparent;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #848482;
+  box-shadow: 0 0 0 0 lightgray inset;
+}
+/* line 122, ../assets/sass/partials/_forms.scss */
+form tags-input .tags .input {
+  font-size: 18px;
+  margin: 0;
+  padding-left: 0;
+  width: 100px !important;
+  height: 45px;
+}
+/* line 130, ../assets/sass/partials/_forms.scss */
+form tags-input .tags .tag-item {
+  margin: 4px 5px;
+  padding: 0 5px;
+  height: 33px;
+  line-height: 32px;
+  border: 0;
+  background: #848482;
+  color: #f5f5f5;
+}
+/* line 140, ../assets/sass/partials/_forms.scss */
+form tags-input .tags input[type="text"] {
+  line-height: 45px;
+}
 
-/* line 172, ../assets/sass/custom.scss */
+/* line 148, ../assets/sass/partials/_forms.scss */
+input.input.ng-pristine.ng-untouched.ng-valid,
+input.input.ng-untouched.ng-valid.ng-dirty {
+  height: 40px;
+}
+
+/* line 1, ../assets/sass/partials/_buttons.scss */
+.button {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-transform: uppercase;
+  line-height: 50px;
+  font-size: 20px;
+  margin: 0 auto;
+  -webkit-box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.75);
+}
+/* line 16, ../assets/sass/partials/_buttons.scss */
+.button .icon {
+  display: block;
+}
+/* line 19, ../assets/sass/partials/_buttons.scss */
+.button .icon:before {
+  font-size: 30px;
+  line-height: 47px;
+}
+
+/* line 30, ../assets/sass/partials/_buttons.scss */
+.first-view .button {
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  line-height: 1.125;
+  -webkit-box-shadow: 0px 0 0 0 rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0 0 0 rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0 0 0 rgba(0, 0, 0, 0.75);
+}
+/* line 39, ../assets/sass/partials/_buttons.scss */
+.first-view .button .icon {
+  margin-bottom: 10px;
+}
+/* line 42, ../assets/sass/partials/_buttons.scss */
+.first-view .button .icon:before {
+  line-height: 1;
+}
+
+/* line 1, ../assets/sass/partials/_supersonic.scss */
+.button.button-assertive {
+  background-color: #E32F21;
+  border-color: #E32F21;
+}
+
+/* line 6, ../assets/sass/partials/_supersonic.scss */
+.button.button-positive {
+  background-color: #4FE291;
+  border-color: #4FE291;
+  color: #040004;
+}
+/* line 11, ../assets/sass/partials/_supersonic.scss */
+.button.button-positive.button-outline {
+  border: 2px solid #4FE291;
+  color: #4FE291;
+}
+/* line 15, ../assets/sass/partials/_supersonic.scss */
+.button.button-positive.button-outline .icon:before {
+  color: #4FE291;
+}
+/* line 21, ../assets/sass/partials/_supersonic.scss */
+.button.button-positive:hover {
+  color: #040004;
+}
+
+/* line 27, ../assets/sass/partials/_supersonic.scss */
 .list-inset {
   background-color: transparent;
 }
 
-/* line 178, ../assets/sass/custom.scss */
+/* line 1, ../assets/sass/partials/_common.scss */
+.margin-bottom-0 {
+  margin-bottom: 0px !important;
+}
+
+/* line 5, ../assets/sass/partials/_common.scss */
+.margin-bottom-10 {
+  margin-bottom: 10px !important;
+}
+
+/* line 9, ../assets/sass/partials/_common.scss */
+.margin-bottom-30 {
+  margin-bottom: 30px !important;
+}
+
+/* line 13, ../assets/sass/partials/_common.scss */
+.margin-top-100 {
+  margin-top: 100px !important;
+}
+
+/* line 17, ../assets/sass/partials/_common.scss */
+.a-center {
+  text-align: center;
+}
+
+/* line 1, ../assets/sass/partials/_extensions.scss */
+.tags {
+  color: #f5f5f5;
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* line 10, ../assets/sass/custom.scss */
+.page-title {
+  width: 100%;
+  position: relative;
+  padding: 20px;
+  border-bottom: 1px solid #FC7A1D;
+}
+/* line 16, ../assets/sass/custom.scss */
+.page-title h3, .page-title .h3, .page-title h4, .page-title .h4 {
+  width: 100%;
+  line-height: 1.3;
+  margin-bottom: 0;
+}
+/* line 22, ../assets/sass/custom.scss */
+.page-title .notes {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+  font-family: "Oswald", sans-serif;
+  font-weight: 300;
+  padding: 0;
+  text-transform: uppercase;
+}
+/* line 31, ../assets/sass/custom.scss */
+.page-title .notes:after {
+  display: none;
+}
+/* line 37, ../assets/sass/custom.scss */
+.page-title .info-boxes {
+  width: 70%;
+  margin: 0 auto;
+}
+/* line 42, ../assets/sass/custom.scss */
+.page-title .info-boxes .info-box .col {
+  background: none;
+}
+
+/* line 48, ../assets/sass/custom.scss */
+.index-add {
+  position: fixed;
+  bottom: 20px;
+  right: 0;
+  width: 100%;
+  z-index: 1;
+}
+/* line 55, ../assets/sass/custom.scss */
+.index-add.first-view {
+  bottom: auto;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -100px;
+}
+
+/* line 65, ../assets/sass/custom.scss */
+.fixed-header,
+.fixed-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 15px 0;
+  border-top: 1px solid #848482;
+  background-color: #040004;
+  z-index: 2;
+}
+/* line 76, ../assets/sass/custom.scss */
+.fixed-header .button,
+.fixed-footer .button {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: auto;
+  margin: 0 auto;
+}
+
+/* line 86, ../assets/sass/custom.scss */
+.fixed-footer {
+  bottom: 0;
+}
+
+/* line 90, ../assets/sass/custom.scss */
+.fixed-header {
+  top: 0;
+}
+
+/* line 94, ../assets/sass/custom.scss */
+.notes {
+  position: relative;
+  color: #f5f5f5;
+  font-size: 14px;
+  text-align: center;
+  margin: 0 auto 5px;
+  padding: 10px 50px;
+}
+/* line 102, ../assets/sass/custom.scss */
+.notes.last {
+  margin: 0 auto 20px;
+}
+/* line 106, ../assets/sass/custom.scss */
+.notes:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #423732;
+  opacity: .5;
+  z-index: -1;
+}
+/* line 118, ../assets/sass/custom.scss */
+.notes .tag {
+  display: inline-block;
+  padding: 2px 7px;
+  background-color: #f5f5f5;
+  color: #040004;
+  margin-left: 5px;
+}
+
+/* line 128, ../assets/sass/custom.scss */
+.exercise-checkbox-list {
+  display: block;
+  padding: 10px 10px 100px;
+  margin: 20px auto;
+  background: #040004;
+}
+/* line 134, ../assets/sass/custom.scss */
+.exercise-checkbox-list li {
+  margin-bottom: 10px;
+}
+/* line 138, ../assets/sass/custom.scss */
 .exercise-checkbox-list .item-checkbox {
   display: inline-block;
   width: auto;
   height: auto;
+  vertical-align: middle;
+  padding-left: 30px;
+}
+/* line 146, ../assets/sass/custom.scss */
+.exercise-checkbox-list .list super-navigate {
+  width: 80%;
+  height: auto;
+  display: inline-block;
+  background: transparent;
+  color: #f5f5f5;
+  vertical-align: middle;
+  border-bottom: 0;
+  padding: 0 0 0 10px;
 }
 
-/* line 188, ../assets/sass/custom.scss */
+/* line 161, ../assets/sass/custom.scss */
 div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   height: 100%;
 }
 
-/* line 195, ../assets/sass/custom.scss */
+/* line 168, ../assets/sass/custom.scss */
 .list {
   height: 100%;
 }
-/* line 198, ../assets/sass/custom.scss */
+/* line 171, ../assets/sass/custom.scss */
 .list .item {
   border: none;
   color: #f5f5f5;
   background: none;
 }
-/* line 204, ../assets/sass/custom.scss */
+/* line 177, ../assets/sass/custom.scss */
 .list super-navigate {
-  display: table;
+  display: block;
   width: 100%;
-  height: 12.5%;
-  margin: 1% 0;
-  padding: 0 5%;
-  background: #993333;
+  margin: 0;
+  padding: 5% 0;
+  border-bottom: 1px solid #FC7A1D;
 }
-/* line 212, ../assets/sass/custom.scss */
-.list super-navigate:last-child {
-  border-bottom: none;
-}
-/* line 216, ../assets/sass/custom.scss */
+/* line 184, ../assets/sass/custom.scss */
 .list super-navigate .item {
   position: relative;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+  text-align: left;
   margin: 0;
   padding: 0;
+  white-space: normal;
+  font-size: 17px;
 }
-/* line 224, ../assets/sass/custom.scss */
+/* line 192, ../assets/sass/custom.scss */
 .list super-navigate .item .title {
   display: block;
   text-transform: uppercase;
   font-family: "Oswald", sans-serif;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 400;
   margin-bottom: 5px;
 }
-/* line 233, ../assets/sass/custom.scss */
+/* line 201, ../assets/sass/custom.scss */
 .list super-navigate .item .info {
   display: block;
   font-size: 15px;
@@ -232,24 +510,11 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   text-transform: uppercase;
   color: #C8FF00;
 }
-/* line 241, ../assets/sass/custom.scss */
-.list super-navigate .item:after {
-  content: '';
-  height: 0;
-  width: 0;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid #993333;
-  border-top: 10px solid transparent;
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  margin-top: -10px;
-}
 
-/* line 260, ../assets/sass/custom.scss */
+/* line 219, ../assets/sass/custom.scss */
 .info-boxes .info-box.row {
   padding: 0;
-  margin-bottom: 10px;
+  background-color: #C8FF00;
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
   box-pack: justify;
@@ -260,20 +525,24 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   justify-content: space-between;
   -ms-flex-pack: justify;
 }
-/* line 265, ../assets/sass/custom.scss */
+/* line 224, ../assets/sass/custom.scss */
 .info-boxes .info-box.row.last {
   margin-bottom: 30px;
 }
-/* line 271, ../assets/sass/custom.scss */
+/* line 230, ../assets/sass/custom.scss */
 .info-boxes .info-box .col {
   position: relative;
   width: 100%;
-  background: #848482;
-  color: #f5f5f5;
-  padding: 10px 20px;
+  padding: 10px 0;
   line-height: 1;
+  text-align: center;
 }
-/* line 280, ../assets/sass/custom.scss */
+/* line 237, ../assets/sass/custom.scss */
+.info-boxes .info-box .col > span {
+  font-size: 32px;
+  color: #040004;
+}
+/* line 244, ../assets/sass/custom.scss */
 .info-boxes .info-box .col-50 {
   width: 48%;
   max-width: 48%;
@@ -285,21 +554,21 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   -ms-flex: 0 0 48%;
   flex: 0 0 48%;
 }
-/* line 288, ../assets/sass/custom.scss */
+/* line 252, ../assets/sass/custom.scss */
 .info-boxes h3.h5 {
-  color: #f5f5f5;
+  color: #C8FF00;
   text-transform: uppercase;
   line-height: 1;
   font-family: "Oswald", sans-serif;
-  font-weight: 400;
-  font-size: 18px;
+  font-weight: 300;
+  font-size: 26px;
   margin-top: 0;
   margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: 0;
 }
 
-/* line 303, ../assets/sass/custom.scss */
+/* line 267, ../assets/sass/custom.scss */
 .workout-exercise-order {
   position: absolute;
   top: 50%;
@@ -317,25 +586,26 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   text-align: center;
 }
 
-/* line 320, ../assets/sass/custom.scss */
+/* line 284, ../assets/sass/custom.scss */
 .workout-exercise-name {
   font-size: 18px;
   padding-left: 40px;
 }
 
-/* line 325, ../assets/sass/custom.scss */
+/* line 289, ../assets/sass/custom.scss */
 .workout-exercise-info {
   padding-left: 40px;
 }
 
-/* line 329, ../assets/sass/custom.scss */
+/* line 293, ../assets/sass/custom.scss */
 .history-boxes {
   margin-bottom: 40px;
 }
-/* line 332, ../assets/sass/custom.scss */
+/* line 296, ../assets/sass/custom.scss */
 .history-boxes .history-box {
   padding: 0;
   margin-bottom: 10px;
+  border: 1px solid #848482;
   -webkit-box-pack: justify;
   -moz-box-pack: justify;
   box-pack: justify;
@@ -346,40 +616,40 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   justify-content: space-between;
   -ms-flex-pack: justify;
 }
-/* line 337, ../assets/sass/custom.scss */
+/* line 302, ../assets/sass/custom.scss */
 .history-boxes .history-box .col {
-  background: #C8FF00;
-  color: #040004;
+  color: #f5f5f5;
   padding: 0 10px;
   height: 50px;
 }
-/* line 343, ../assets/sass/custom.scss */
+/* line 307, ../assets/sass/custom.scss */
 .history-boxes .history-box .col span {
   font-size: 14px;
   line-height: 1;
 }
-/* line 348, ../assets/sass/custom.scss */
+/* line 312, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date {
   text-align: center;
-  padding-top: 6px;
+  padding-top: 3px;
+  border-right: 1px solid #848482;
 }
-/* line 352, ../assets/sass/custom.scss */
+/* line 317, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span.day {
   font-size: 15px;
 }
-/* line 356, ../assets/sass/custom.scss */
+/* line 321, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span.year {
   font-size: 13px;
   font-family: "Oswald", sans-serif;
   font-weight: 700;
 }
-/* line 366, ../assets/sass/custom.scss */
+/* line 331, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.info span {
   line-height: 50px;
-  padding-left: 10px;
-  font-size: 18px;
+  padding-left: 0;
+  font-size: 22px;
 }
-/* line 376, ../assets/sass/custom.scss */
+/* line 341, ../assets/sass/custom.scss */
 .history-boxes .history-box .col-20 {
   width: 18%;
   max-width: 18%;
@@ -391,7 +661,7 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   -ms-flex: 0 0 18%;
   flex: 0 0 18%;
 }
-/* line 382, ../assets/sass/custom.scss */
+/* line 347, ../assets/sass/custom.scss */
 .history-boxes .history-box .col-80 {
   width: 80%;
   max-width: 80%;
@@ -402,12 +672,4 @@ div.workout-index.ng-scope, div.workout-index.ng-scope > div {
   -moz-flex: 0 0 80%;
   -ms-flex: 0 0 80%;
   flex: 0 0 80%;
-}
-
-/* line 392, ../assets/sass/custom.scss */
-.tags {
-  color: #f5f5f5;
-  text-align: center;
-  font-size: 18px;
-  margin-bottom: 20px;
 }

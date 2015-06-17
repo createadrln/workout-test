@@ -1,0 +1,29 @@
+.button.button-assertive {
+    background-color: $redBrave;
+    border-color: $redBrave;
+}
+
+.button.button-positive {
+    background-color: $greenBliss;
+    border-color: $greenBliss;
+    color:$black;
+
+    &.button-outline {
+        border: 2px solid $greenBliss;
+        color: $greenBliss;
+
+        .icon:before {
+            color: $greenBliss;
+        }
+
+    }
+
+    &:hover {
+        color:$black;
+    }
+
+}
+
+.list-inset {
+    background-color: transparent;
+}

@@ -1,0 +1,151 @@
+form {
+
+    .item {
+        border-left:0;
+        border-right:0;
+        border-top:0;
+        border-bottom:0;
+
+        &.last {
+            margin-bottom:40px;
+        }
+
+    }
+
+    .item-input {
+        padding:0;
+        margin-bottom:10px;
+
+        &.search {}
+
+    }
+
+    .item-stacked-label {
+
+        .input-label {
+            display: block;
+        }
+
+    }
+
+    .item-floating-label {
+        margin-bottom:30px;
+    }
+
+    .item-checkbox .checkbox {
+        left:0;
+    }
+
+    .input-label {
+        color: $whiteSmoke;
+        margin-bottom:5px;
+
+        .ex {
+            display: block;
+            font-size: 13px;
+        }
+
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        height:45px;
+        line-height:20px;
+        padding-left:10px;
+        border-bottom: 1px solid $grayBattleship;
+        color: $whiteSmoke;
+        font-size: 18px;
+
+        &.col-40 {
+            display: inline-block;
+            width:38%;
+            max-width:38%;
+        }
+
+    }
+
+    select {
+        font-size:18px;
+        width:100%;
+    }
+
+    select {
+        -webkit-appearance: none;
+        background-color: transparent;
+        border:1px solid $grayBattleship;
+        outline: 0;
+        padding: 8px 40px 8px 10px;
+        color: lighten($grayBattleship, 15%);
+
+        @include border-top-radius(0);
+        @include border-right-radius(0);
+        @include border-bottom-radius(0);
+        @include border-left-radius(0);
+
+        &.ng-dirty {
+            color:$whiteSmoke;
+        }
+
+    }
+
+    .input-select {
+        position: relative;
+
+        &:after {
+            content:'';
+            position: absolute;
+            top:15px;
+            right:12px;
+            @include triangle(30px, $grayBattleship, down);
+        }
+
+    }
+
+    select::-ms-expand {
+        display: none;
+    }
+
+    tags-input .tags {
+        -moz-appearance: textfield;
+        -webkit-appearance: textfield;
+        padding: 0 0 5px 10px;
+        overflow: hidden;
+        word-wrap: break-word;
+        cursor: text;
+        background-color: transparent;
+        border-top: 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 1px solid $grayBattleship;
+        box-shadow: 0 0 0 0 lightgray inset;
+
+        .input {
+            font-size: 18px;
+            margin:0;
+            padding-left:0;
+            width:100px !important;
+            height:45px;
+        }
+
+        .tag-item {
+            margin: 4px 5px;
+            padding: 0 5px;
+            height: 33px;
+            line-height: 32px;
+            border: 0;
+            background:$grayBattleship;
+            color:$whiteSmoke;
+        }
+
+        input[type="text"] {
+            line-height:45px;
+        }
+
+    }
+
+}
+
+input.input.ng-pristine.ng-untouched.ng-valid,
+input.input.ng-untouched.ng-valid.ng-dirty {
+    height:40px;
+}

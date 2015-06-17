@@ -7,21 +7,31 @@
     </super-navbar>
 
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
-    <div ng-hide="showSpinner">
+    <div ng-hide="showSpinner" class="padding">
 
-        <super-modal-show location="exercise#new" ng-hide="localExercises.length == 1" class="first-view">
-            <button class="button button-assertive">
+        <super-modal-show location="exercise#new" ng-hide="localExercises.length > 0" class="index-add first-view">
+            <button class="button button-full button-positive">
                 <i class="icon super-plus"></i> Add a new exercise
             </button>
         </super-modal-show>
 
-        <super-modal-show location="exercise#new" ng-show="localExercises.length == 1">
-            <button class="button button-full button-assertive">
-                Create a new exercise
-            </button>
-        </super-modal-show>
+        <div ng-show="localExercises.length > 0" class="index-add">
+            <super-modal-show location="exercise#new">
+                <button class="button button-positive">
+                    <i class="icon super-plus"></i>
+                </button>
+            </super-modal-show>
+        </div>
 
-        <ul class="list" ng-show="localExercises.length == 1">
+        <!--<div class="modal-wrapper">-->
+            <!--<super-modal-show location="exercise#new" ng-show="localExercises.length > 0" class="index-add">-->
+                <!--<button class="button button-full button-assertive">-->
+                    <!--<i class="icon super-plus"></i>-->
+                <!--</button>-->
+            <!--</super-modal-show>-->
+        <!--</div>-->
+
+        <ul class="list" ng-show="localExercises.length > 0">
             <super-navigate location="exercise#show" data-params-id="{{ exercise.id }}" ng-repeat="exercise in localExercises">
                 <li class="item">
                     <span ng-bind="exercise['name']"></span>

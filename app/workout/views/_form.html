@@ -1,54 +1,42 @@
-<div class="list">
-
-    <h3>Workout Info</h3>
-
-    <label class="item item-input item-stacked-label">
-        <span class="input-label">Workout Title</span>
-        <input type="text" ng-model="workout['title']" placeholder="Ex: Heavy Shoulder Workout">
-    </label>
-
-    <label class="item item-input item-stacked-label">
-        <span class="input-label">Notes</span>
-        <input type="text" ng-model="workout['notes']" placeholder="Add Reminders and Notes">
-    </label>
-
-    <label class="item item-input item-stacked-label">
-        <span class="input-label">Searchable Tags</span>
-        <input type="text" ng-model="workout['tags']" placeholder="Ex: Shoulders, Bodybuilding">
-    </label>
-
-    <h3 class="margin-bottom-0">
-        Select Exercises
-    </h3>
-
-    <div class="row">
-        <div class="col a-center">
-            <super-navigate location="exercise#new">
-                <div class="button button-clear button-stable">
-                    <i class="icon super-plus assertive"></i> Add New
-                </div>
-            </super-navigate>
-        </div>
+<div class="padding">
+    <div class="list margin-bottom-0 padding">
+        <label class="item item-input item-floating-label">
+            <input type="text" ng-model="workout['title']" placeholder="Add Workout Title">
+        </label>
+        <label class="item item-input item-floating-label input-select">
+            <select ng-model="workout['technique']" ng-options="technique.name for technique in techniques"></select>
+        </label>
+        <label class="item item-input item-floating-label">
+            <input type="text" ng-model="workout['rest']" placeholder="Rest Period">
+        </label>
+        <label class="item item-input item-floating-label">
+            <input type="text" ng-model="workout['notes']" placeholder="Notes">
+        </label>
+        <label class="item item-input item-floating-label margin-bottom-0">
+            <input type="text" ng-model="workout['tags']" placeholder="Searchable Tags">
+        </label>
     </div>
-
-    <label class="item item-input search padding">
-        <i class="icon super-search placeholder-icon"></i>
-        <input type="text" ng-model="searchText" placeholder="Filter Exercises by Name or Tag" />
-    </label>
-
 </div>
 
-<ul class="list exercise-checkbox-list">
-    <li ng-repeat="exercise in localExercises | filter:searchText">
-        <div class="item item-checkbox">
-            <label class="checkbox">
-                <input type="checkbox" value="exercise['id']" ng-checked="checkedExercises.indexOf(exercise.id) != -1" ng-click="toggleCheck(exercise)" />
-            </label>
-        </div>
-        <super-navigate location="exercise#show" data-params-id="{{ exercise.id }}" class="label">
-            <span ng-bind="exercise['name']"></span>
-        </super-navigate>
-    </li>
-</ul>
+<div class="exercise-checkbox-list">
+    <label class="item item-input item-floating-label search padding">
+        <input type="text" ng-model="search" placeholder="Search Exercises" />
+    </label>
+    <ul class="list margin-bottom-0">
+        <li ng-repeat="exercise in localExercises | filter:search">
+            <div class="item item-checkbox">
+                <label class="checkbox">
+                    <input type="checkbox" value="exercise['id']" ng-checked="checkedExercises.indexOf(exercise.id) != -1" ng-click="toggleCheck(exercise)" />
+                </label>
+            </div>
+            <super-navigate location="exercise#show" data-params-id="{{ exercise.id }}" class="label">
+                <span ng-bind="exercise['name']"></span>
+            </super-navigate>
+        </li>
+    </ul>
+</div>
 
-<button class="button button-block button-positive">Save</button>
+
+<div class="fixed-footer">
+    <button class="button button-assertive" ng-click="addToHistory(workout)">Save</button>
+</div>

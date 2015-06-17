@@ -10,4 +10,12 @@ angular
             });
         });
 
+        $scope.openModal = function(location, type) {
+            var modalView = new supersonic.ui.View(location + '#' + type);
+            var options = {
+                animate: true
+            };
+            supersonic.ui.modal.show(modalView, options);
+        };
+
     });
