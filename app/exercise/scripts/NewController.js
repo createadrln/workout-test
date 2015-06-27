@@ -13,8 +13,6 @@ angular
             $scope.localExercises = [];
         }
 
-        $scope.tags = $localStorage.tags;
-
         $scope.weight_units = [
             { 'id' : 0, 'unit' : 'Select Weight Units...' },
             { 'id' : 1, 'unit' : 'lbs' },
@@ -29,7 +27,8 @@ angular
                 'history_date' : new Date().toISOString() ,
                 'sets' : exercise.setgoal,
                 'reps' : exercise.repgoal,
-                'weight' : exercise.weight
+                'weight' : exercise.weight,
+                'weight_unit' : exercise.weight_unit.unit
             });
         };
 

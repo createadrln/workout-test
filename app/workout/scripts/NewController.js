@@ -2,6 +2,9 @@ angular
     .module('workout')
     .controller("NewController", function ($scope, $localStorage, supersonic) {
         $scope.workout = {};
+        $scope.workout.title = null;
+        $scope.workout.rest = null;
+        $scope.workout.notes = null;
 
         if ($localStorage.localWorkouts) {
             if ($localStorage.localWorkouts != 'null') {
@@ -54,11 +57,11 @@ angular
             $scope.localWorkouts.push({
                 'id' : generateUUID(),
                 'title' : $scope.workout.title,
-                'rest' : $scope.workout.notes,
+                'rest' : $scope.workout.rest,
                 'technique' : $scope.workout.technique,
                 'notes' : $scope.workout.notes,
                 'tags' : $scope.workout.tags,
-                'exercises:' : $scope.checkedExercises
+                'exercises' : $scope.checkedExercises
             });
             $localStorage.localWorkouts = $scope.localWorkouts;
             supersonic.data.channel('localWorkouts').publish($localStorage.localWorkouts);

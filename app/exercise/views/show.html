@@ -9,8 +9,8 @@
 
         <div class="padding">
 
-            <div ng-if="localExercise.repgoal != ''" class="info-boxes padding">
-                <div class="info-box row">
+            <div ng-if="localExercise.repgoal != ''" class="info-boxes padding margin-bottom-20">
+                <div class="exercise-info-box info-box row">
                     <div class="col">
                         <span ng-bind="localExercise['setgoal']"></span> x <span ng-bind="localExercise['repgoal']"></span>
                         @ <span ng-bind="localExercise['weight']"></span> <span ng-bind="localExercise['weight_unit'].unit"></span>
@@ -29,7 +29,7 @@
                             </div>
                             <div class="info col col-80">
                                 <span ng-bind="entry['sets']"></span> x <span ng-bind="entry['reps']"></span>
-                                @ <span ng-bind="entry['weight']"></span>
+                                @ <span ng-bind="entry['weight']"></span> <span ng-bind="entry['weight_unit']"></span>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
 
     <div class="fixed-footer">
         <super-modal-show location="exercise#edit?id={{ localExercise.id }}">
-            <button class="button button-assertive">
+            <button class="button button-full button-assertive">
                 Edit
             </button>
         </super-modal-show>

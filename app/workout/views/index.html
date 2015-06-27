@@ -2,16 +2,11 @@
 
     <super-navbar>
         <super-navbar-title>
-            Workouts
         </super-navbar-title>
     </super-navbar>
 
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
-    <div ng-hide="showSpinner">
-
-        <h4 class="h3" ng-show="localWorkouts.length == 0">
-            No workouts found. Create one?
-        </h4>
+    <div ng-hide="showSpinner" class="padding">
 
         <super-modal-show location="workout#new" ng-hide="localWorkouts.length > 0" class="index-add first-view">
             <button class="button button-full button-positive">
@@ -19,19 +14,27 @@
             </button>
         </super-modal-show>
 
-        <super-modal-show location="workout#new" ng-show="localWorkouts.length > 0">
-            <button class="button button-full button-positive">
-                <i class="icon super-plus"></i>
-            </button>
-        </super-modal-show>
+        <div ng-show="localWorkouts.length > 0" class="list padding margin-bottom-0">
+            <label class="item item-input item-floating-label search padding margin-bottom-0">
+                <input type="text" ng-model="search" placeholder="Filter Workouts" /><i class="icon super-search"></i>
+            </label>
+        </div>
 
-        <ul class="list" ng-show="localWorkouts.length > 0">
-            <super-navigate location="workout#show" data-params-id="{{ workout.id }}" ng-repeat="workout in localWorkouts">
+        <ul class="list workout-list padding" ng-show="localWorkouts.length > 0">
+            <super-navigate location="workout#show" data-params-id="{{ workout.id }}" ng-repeat="workout in localWorkouts | filter:search">
                 <li class="item">
                     <span ng-bind="workout['title']"></span>
                 </li>
             </super-navigate>
         </ul>
+
+        <div ng-show="localWorkouts.length > 0" class="index-add fixed-footer">
+            <super-modal-show location="workout#new">
+                <button class="button button-full button-positive margin-bottom-0">
+                    <i class="icon super-plus"></i>
+                </button>
+            </super-modal-show>
+        </div>
 
     </div>
 

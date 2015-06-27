@@ -1,6 +1,6 @@
 angular
     .module('workout')
-    .controller("EditController", function ($scope, $localStorage, Workout, supersonic) {
+    .controller("EditController", function ($scope, $localStorage, supersonic) {
         $scope.workout = getIndexOfId($localStorage.localWorkouts, steroids.view.params.id);
 
         if ($localStorage.localExercises) {
@@ -17,7 +17,11 @@ angular
         $scope.toggleCheck = function (exercise) {
             if (getIndexOfIdCnt($scope.checkedExercises, exercise.id) === -1) {
                 checkedExerciseCnt++;
-                $scope.checkedExercises.push({'id' : exercise.id, 'name' : exercise.name, 'order' : checkedExerciseCnt });
+                $scope.checkedExercises.push({
+                    'id' : exercise.id,
+                    'name' : exercise.name,
+                    'order' : checkedExerciseCnt
+                });
             } else {
                 checkedExerciseCnt--;
                 $scope.checkedExercises.splice($scope.localExercises.indexOf(exercise.id), 1);

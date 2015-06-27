@@ -8,54 +8,54 @@ angular
                 'id' : generateUUID(),
                 'day' : 'Sunday',
                 'brief_description' : '',
-                'order' : '',
+                'order' : 1,
                 'workouts' : []
             },
             {
                 'id' : generateUUID(),
                 'day' : 'Monday',
                 'brief_description' : '',
-                'order' : '',
+                'order' : 2,
                 'workouts' : []
             },
             {
                 'id' : generateUUID(),
                 'day' : 'Tuesday',
                 'brief_description' : '',
-                'order' : '',
+                'order' : 3,
                 'workouts' : []
             },
             {
                 'id' : generateUUID(),
                 'day' : 'Wednesday',
                 'brief_description' : '',
-                'order' : '',
+                'order' : 4,
                 'workouts' : []
             },
             {
                 'id' : generateUUID(),
                 'day' : 'Thursday',
                 'brief_description' : '',
-                'order' : '',
+                'order' : 5,
                 'workouts' : []
             },
             {
                 'id' : generateUUID(),
                 'day' : 'Friday',
                 'brief_description' : '',
-                'order' : '',
+                'order' : 6,
                 'workouts' : []
             },
             {
                 'id' : generateUUID(),
                 'day' : 'Saturday',
                 'brief_description' : '',
-                'order' : '',
+                'order' : 7,
                 'workouts' : []
             }
         ];
 
-        $scope.initializeLocalTags = [
+        $scope.initializeLocalAutocompleteTags = [
             { text: 'Chest' },
             { text: 'Back' },
             { text: 'Legs' },
@@ -92,5 +92,15 @@ angular
 
         $scope.localDays = $localStorage.localDays;
         $scope.showSpinner = false;
+
+        var menuBtn = new supersonic.ui.NavigationBarButton({
+            title: 'info',
+            styleId: "info"
+        });
+
+        supersonic.ui.navigationBar.update({
+            overrideBackButton: false
+        }).then(supersonic.ui.navigationBar.show());
+
 
     });

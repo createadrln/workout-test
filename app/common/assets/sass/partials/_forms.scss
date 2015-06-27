@@ -1,5 +1,19 @@
 form {
 
+    .fieldset {
+        position: fixed;
+        top:0;
+        bottom:0;
+        left:0;
+        right:0;
+        width:100%;
+        height:100%;
+        overflow-y: scroll;
+        z-index: 2;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom:100px;
+    }
+
     .item {
         border-left:0;
         border-right:0;
@@ -12,18 +26,15 @@ form {
 
     }
 
-    .item-input {
-        padding:0;
-        margin-bottom:10px;
-
-        &.search {}
-
-    }
-
     .item-stacked-label {
 
         .input-label {
             display: block;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            background-color: transparent;
         }
 
     }
@@ -39,51 +50,12 @@ form {
     .input-label {
         color: $whiteSmoke;
         margin-bottom:5px;
+        width:85%;
+        max-width: 300px;
 
         .ex {
             display: block;
             font-size: 13px;
-        }
-
-    }
-
-    input[type="text"],
-    input[type="number"] {
-        height:45px;
-        line-height:20px;
-        padding-left:10px;
-        border-bottom: 1px solid $grayBattleship;
-        color: $whiteSmoke;
-        font-size: 18px;
-
-        &.col-40 {
-            display: inline-block;
-            width:38%;
-            max-width:38%;
-        }
-
-    }
-
-    select {
-        font-size:18px;
-        width:100%;
-    }
-
-    select {
-        -webkit-appearance: none;
-        background-color: transparent;
-        border:1px solid $grayBattleship;
-        outline: 0;
-        padding: 8px 40px 8px 10px;
-        color: lighten($grayBattleship, 15%);
-
-        @include border-top-radius(0);
-        @include border-right-radius(0);
-        @include border-bottom-radius(0);
-        @include border-left-radius(0);
-
-        &.ng-dirty {
-            color:$whiteSmoke;
         }
 
     }
@@ -96,19 +68,16 @@ form {
             position: absolute;
             top:15px;
             right:12px;
-            @include triangle(30px, $grayBattleship, down);
+            @include triangle(20px, $grayBattleship, down);
         }
 
-    }
-
-    select::-ms-expand {
-        display: none;
     }
 
     tags-input .tags {
         -moz-appearance: textfield;
         -webkit-appearance: textfield;
         padding: 0 0 5px 10px;
+        margin-bottom:10px;
         overflow: hidden;
         word-wrap: break-word;
         cursor: text;
@@ -139,6 +108,72 @@ form {
 
         input[type="text"] {
             line-height:45px;
+        }
+
+    }
+
+}
+
+input[type="text"],
+input[type="number"] {
+    height:45px;
+    line-height:20px;
+    padding-left:10px;
+    border-bottom: 1px solid $grayBattleship;
+    color: $whiteSmoke;
+    font-size: 18px;
+
+    &.col-40 {
+        display: inline-block;
+        width:38%;
+        max-width:38%;
+    }
+
+}
+
+select {
+    width:100%;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border:1px solid $grayBattleship;
+    outline: 0;
+    padding: 8px 40px 8px 10px;
+    font-size:18px;
+    color: lighten($grayBattleship, 15%);
+
+    @include border-top-radius(0);
+    @include border-right-radius(0);
+    @include border-bottom-radius(0);
+    @include border-left-radius(0);
+
+    &.ng-dirty {
+        color:$whiteSmoke;
+    }
+
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.item-input {
+    position: relative;
+    padding:0;
+    margin-bottom:10px;
+
+    .icon::before {
+        position: absolute;
+        bottom:10px;
+        right:10px;
+        color:lighten($grayBattleship, 10%);
+        font-size: 22px;
+    }
+
+    &.item-stacked-label,
+    &.item-tags {
+
+        .icon::before {
+            bottom:30px;
         }
 
     }

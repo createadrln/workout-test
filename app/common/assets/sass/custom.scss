@@ -11,7 +11,7 @@
     width:100%;
     position: relative;
     padding:20px;
-    border-bottom:1px solid $hyperOrange;
+    background-color: darken($originalSteel,5%);
 
     h3, .h3, h4, .h4 {
         width:100%;
@@ -19,40 +19,14 @@
         margin-bottom:0;
     }
 
-    .notes {
-        display: block;
-        width:100%;
-        font-size: 18px;
-        font-family: $oswald;
-        font-weight: 300;
-        padding:0;
-        text-transform: uppercase;
-
-        &:after {
-            display: none;
-        }
-
-    }
-
-    .info-boxes {
-        width:70%;
-        margin:0 auto;
-    }
-
-    .info-boxes .info-box .col {
-        background: none;
-    }
-
 }
 
 .index-add {
-    position: fixed;
-    bottom:20px;
-    right:0;
     width:100%;
     z-index: 1;
 
     &.first-view {
+        position: fixed;
         bottom:auto;
         top:50%;
         left:50%;
@@ -68,16 +42,14 @@
     left:0;
     right:0;
     width:100%;
-    padding:15px 0;
-    border-top:1px solid $grayBattleship;
-    background-color: $black;
-    z-index: 2;
+    padding:15px;
+    background-color: $originalSteel;
+    z-index: 3;
 
     .button {
         position: relative;
-        z-index: 2;
+        z-index: 3;
         display: block;
-        width:auto;
         margin:0 auto;
     }
 
@@ -85,6 +57,7 @@
 
 .fixed-footer {
     bottom:0;
+    border-top:1px solid $grayBattleship;
 }
 
 .fixed-header {
@@ -94,26 +67,10 @@
 .notes {
     position: relative;
     color: $whiteSmoke;
-    font-size: 14px;
-    text-align: center;
-    margin:0 auto 5px;
-    padding:10px 50px;
-
-    &.last {
-        margin:0 auto 20px;
-    }
-
-    &:after {
-        content:'';
-        position: absolute;
-        top:0;
-        left:0;
-        right:0;
-        bottom:0;
-        background-color: $grayGunmetal;
-        opacity: .5;
-        z-index:-1;
-    }
+    font-size: 18px;
+    background-color: darken($originalSteel,5%);
+    border:1px solid $grayBattleship;
+    padding:15px;
 
     .tag {
         display: inline-block;
@@ -125,15 +82,10 @@
 
 }
 
+.workout-checkbox-list,
 .exercise-checkbox-list {
     display:block;
-    padding:10px 10px 100px;
-    margin:20px auto;
-    background: $black;
-
-    li {
-        margin-bottom:10px;
-    }
+    padding:0 20px;
 
     .item-checkbox {
         display: inline-block;
@@ -154,19 +106,17 @@
         padding:0 0 0 10px;
     }
 
-}
-
-div.workout-index {
-
-    &.ng-scope,
-    &.ng-scope > div {
-        height:100%;
+    .label {
+        display:inline-block;
+        padding-left:20px;
+        color: lighten($grayBattleship, 10%);
+        font-size:16px;
     }
 
 }
 
+
 .list {
-    height:100%;
 
     .item {
         border:none;
@@ -179,7 +129,7 @@ div.workout-index {
         width:100%;
         margin:0;
         padding:5% 0;
-        border-bottom:1px solid $hyperOrange;
+        border-bottom:1px solid $grayBattleship;
 
         .item {
             position: relative;
@@ -195,7 +145,7 @@ div.workout-index {
                 font-family: $oswald;
                 font-size: 24px;
                 font-weight: 400;
-                margin-bottom:5px;
+                margin-bottom:7px;
             }
 
             .info {
@@ -204,12 +154,22 @@ div.workout-index {
                 font-weight: 400;
                 text-transform: uppercase;
                 color: $neonYellow;
+                line-height:1;
             }
 
         }
 
     }
 
+    &.list-days super-navigate {
+        padding:4% 0;
+    }
+
+}
+
+.workout-index .workout-list,
+.exercise-index .exercise-list {
+    padding-bottom:100px;
 }
 
 .info-boxes {
@@ -217,7 +177,7 @@ div.workout-index {
     .info-box {
 
         &.row {
-            padding:0;
+            padding:0 0 5px;
             background-color: $neonYellow;
             @include justify-content(space-between);
 
@@ -227,15 +187,63 @@ div.workout-index {
 
         }
 
+        &.day-info-box {
+
+            &.row {
+                margin-bottom:20px;
+            }
+
+            .col {
+                text-align: left;
+
+                > span {
+                    font-size: 18px;
+                }
+
+            }
+
+        }
+
+        &.workout-info-box {
+
+            .col {
+                text-align: left;
+
+                > span {
+                    font-size: 18px;
+                }
+
+            }
+
+            .workout-exercise-order {
+                position: absolute;
+                top:50%;
+                left:12px;
+                margin-top:-12.5px;
+            }
+
+        }
+
+        &.exercise-info-box {
+
+            .col {
+                text-align: center;
+
+                > span {
+                    font-size: 32px;
+                }
+
+            }
+
+        }
+
         .col {
             position: relative;
             width:100%;
-            padding:10px 0;
+            padding:10px;
             line-height: 1;
-            text-align: center;
 
             > span {
-                font-size: 32px;
                 color: $black;
             }
 
@@ -264,26 +272,90 @@ div.workout-index {
 
 }
 
+.day-workout-title {
+    display: block;
+    font-size: 20px;
+    font-family: $oswald;
+    font-weight: 400;
+    margin-bottom:10px;
+}
+
+.day-workout-exercise-info {
+
+    > div {
+        @include clearfix;
+        margin-bottom:13px;
+
+        &:last-child {
+            margin-bottom:0;
+        }
+
+    }
+
+    .workout-exercise-order {
+        display: block;
+        float:left;
+    }
+
+    .workout-name {
+        display: block;
+        margin-bottom:5px;
+    }
+
+    .exercise-info {
+        float:left;
+        width:75%;
+        padding-left:15px;
+
+        .exercise-name {
+            display:block;
+            margin-bottom:6px;
+        }
+
+    }
+
+    .super-arrow-right-b {
+        position: relative;
+        display: block;
+        float:right;
+        background: $grayGunmetal;
+        width:15px;
+        height:15px;
+        margin-right:5px;
+        @include border-top-radius(50%);
+        @include border-right-radius(50%);
+        @include border-bottom-radius(50%);
+        @include border-left-radius(50%);
+
+        &:before {
+            position: absolute;
+            top:2px;
+            left:6px;
+            font-size: 12px;
+            color: $neonYellow;
+        }
+
+    }
+
+}
+
 .workout-exercise-order {
-    position: absolute;
-    top:50%;
-    left:20px;
-    margin-top:-12.5px;
     display: inline-block;
     width:25px;
     height:25px;
     line-height: 25px;
-    background-color: $neonYellow;
-    color: $black;
+    background-color: $originalSteel;
+    color: $neonYellow !important;
     font-family: $oswald;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
 }
 
 .workout-exercise-name {
-    font-size: 18px;
-    padding-left:40px;
+    display:inline-block;
+    padding-left:50px;
+    line-height: 1.125;
 }
 
 .workout-exercise-info {
@@ -296,8 +368,8 @@ div.workout-index {
     .history-box {
         padding: 0;
         margin-bottom: 10px;
+        background-color: darken($originalSteel,5%);
         border:1px solid $grayBattleship;
-        @include justify-content(space-between);
 
         .col {
             color: $whiteSmoke;
@@ -315,7 +387,9 @@ div.workout-index {
                 border-right:1px solid $grayBattleship;
 
                 span.day {
-                    font-size: 15px;
+                    font-size: 11px;
+                    font-family: $oswald;
+                    font-weight: 400;
                 }
 
                 span.year {

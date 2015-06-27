@@ -1,25 +1,31 @@
-<div class="padding">
-    <div class="list padding">
-        <label class="item item-input item-floating-label">
-            <input type="text" ng-model="exercise['name']" placeholder="Add Exercise Name">
-        </label>
-        <label class="item item-input item-floating-label">
-            <input type="number" pattern="[0-9]*" ng-model="exercise['setgoal']" class="col-40" placeholder="Sets">
+<div class="fieldset">
+
+    <div class="padding">
+        <div class="list padding">
+            <label class="item item-input item-floating-label">
+                <input type="text" ng-model="exercise['name']" placeholder="Add Exercise Name"><i class="icon super-quote"></i>
+            </label>
+            <label class="item item-input item-floating-label col-40">
+                <input type="number" pattern="[0-9]*" ng-model="exercise['setgoal']" placeholder="Sets"><i class="icon super-pound"></i>
+            </label>
             &nbsp;x&nbsp;
-            <input type="number" pattern="[0-9]*" ng-model="exercise['repgoal']" class="col-40" placeholder="Reps">
-        </label>
-        <label class="item item-input item-floating-label">
-            <input type="number" pattern="[0-9]*" ng-model="exercise['weight']" placeholder="Weight Goal">
-        </label>
-        <label class="item item-input item-floating-label input-select">
-            <select ng-model="exercise['weight_unit']" ng-options="weight_unit.unit for weight_unit in weight_units"></select>
-        </label>
-        <label class="item item-input item-floating-label last">
-            <tags-input ng-model="exercise['tags']" placeholder="Tags"></tags-input>
-        </label>
+            <label class="item item-input item-floating-label col-40">
+                <input type="number" pattern="[0-9]*" ng-model="exercise['repgoal']" placeholder="Reps"><i class="icon super-pound"></i>
+            </label>
+            <label class="item item-input item-floating-label">
+                <input type="text" pattern="[0-9]*" ng-model="exercise['weight']" placeholder="Weight Goal"><i class="icon super-pound"></i>
+            </label>
+            <label class="item item-input item-floating-label input-select">
+                <select ng-model="exercise['weight_unit']" ng-options="weight_unit.unit for weight_unit in weight_units"></select>
+            </label>
+            <label class="item item-input item-floating-label item-tags last">
+                <tags-input ng-model="exercise['tags']" placeholder="Tags"></tags-input><i class="icon super-pricetag"></i>
+            </label>
+        </div>
     </div>
+
 </div>
 
-<div class="fixed-footer">
-    <button class="button button-assertive" ng-click="addToHistory(exercise)">Save</button>
+<div class="fixed-footer" data-position="fixed" data-role="footer">
+    <button class="button button-full button-positive" ng-click="addToHistory(exercise)">Save</button>
 </div>

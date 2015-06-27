@@ -1,43 +1,47 @@
 <div ng-controller="ShowController">
 
-    <div class="padding single">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
 
-        <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
-        <div ng-hide="showSpinner">
+        <div class="page-title">
+            <h2 class="h3"><span ng-bind="localDay['day']"></span></h2>
+            <h3 class="h4"><span ng-bind="localDay['brief_description']"></span></h3>
+        </div>
 
-            <h2 class="h3" ng-bind="localDay['day']"></h2>
-
-            <p class="notes">
-                <span ng-bind="localDay['brief_description']"></span>
-            </p>
-
-            <h3 class="h5" ng-show="localDay.workouts.length == 0">
-                <span>You have no workouts assigned to this day.</span>
-            </h3>
-
-            <div ng-if="localDay.workouts != '' " class="info-boxes margin-bottom-30">
-                <div ng-repeat="workout in localDay.workouts" class="row info-box">
+        <div class="padding padding-bottom-100">
+            <div ng-hide="localDay.workouts.length == 0" class="info-boxes padding margin-bottom-30">
+                <div ng-repeat="workout in localDay.workouts" class="row day-info-box info-box">
                     <super-navigate location="workout#show" data-params-id="{{ workout.id }}" class="col">
-                        <span class="day-workout-order" ng-bind="workout['order']"></span>
                         <span class="day-workout-title" ng-bind="workout['title']"></span>
                         <div class="day-workout-exercise-info">
                             <div ng-repeat="exercise in workout.exercises | orderBy : 'order'">
-                                <span ng-bind="exercise['name']"></span>
-                                <span ng-bind="exercise['reps']"></span>
-                                <span ng-bind="exercise['weight']"></span>
+                                <span class="workout-exercise-order" ng-bind="exercise['order']"></span>
+                                <div class="exercise-info">
+                                    <span class="exercise-name" ng-bind="exercise['name']"></span>
+                                    <span ng-bind="exercise['sets']"></span> x <span ng-bind="exercise['reps']"></span> @ <span ng-bind="exercise['weight']"></span>
+                                </div>
+                                <i class="icon super-arrow-right-b"></i>
                             </div>
                         </div>
                     </super-navigate>
                 </div>
             </div>
+        </div>
 
+        <super-modal-show ng-show="localDay.workouts.length == 0" location="day#edit?id={{ localDay.id }}" class="index-add first-view">
+            <button class="button button-full button-positive">
+                <i class="icon super-plus"></i> Edit/Add Workouts
+            </button>
+        </super-modal-show>
+
+        <div class="fixed-footer" ng-hide="localDay.workouts.length == 0">
             <super-modal-show location="day#edit?id={{ localDay.id }}">
-                <button class="button button-block button-assertive">
+                <button class="button button-full button-assertive">
                     Edit
                 </button>
             </super-modal-show>
-
         </div>
+
     </div>
 
 </div>

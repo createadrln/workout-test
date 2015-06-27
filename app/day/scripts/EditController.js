@@ -17,7 +17,11 @@ angular
         $scope.toggleCheck = function (workout) {
             if (getIndexOfIdCnt($scope.checkedWorkouts, workout.id) === -1) {
                 checkedWorkoutCnt++;
-                $scope.checkedWorkouts.push({'id' : workout.id, 'title' : workout.title, 'order' : checkedWorkoutCnt });
+                $scope.checkedWorkouts.push({
+                    'id' : workout.id,
+                    'title' : workout.title,
+                    'order' : checkedWorkoutCnt
+                });
             } else {
                 checkedWorkoutCnt--;
                 $scope.checkedWorkouts.splice($scope.localWorkouts.indexOf(workout.id), 1);
