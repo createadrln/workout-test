@@ -13,6 +13,7 @@
                 <div ng-repeat="workout in localDay.workouts" class="row day-info-box info-box">
                     <super-navigate location="workout#show" data-params-id="{{ workout.id }}" class="col">
                         <span class="day-workout-title" ng-bind="workout['title']"></span>
+                        <i class="icon super-arrow-right-b"></i>
                         <div class="day-workout-exercise-info">
                             <div ng-repeat="exercise in workout.exercises | orderBy : 'order'">
                                 <span class="workout-exercise-order" ng-bind="exercise['order']"></span>
@@ -20,7 +21,6 @@
                                     <span class="exercise-name" ng-bind="exercise['name']"></span>
                                     <span ng-bind="exercise['sets']"></span> x <span ng-bind="exercise['reps']"></span> @ <span ng-bind="exercise['weight']"></span>
                                 </div>
-                                <i class="icon super-arrow-right-b"></i>
                             </div>
                         </div>
                     </super-navigate>

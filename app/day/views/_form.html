@@ -1,5 +1,7 @@
 <div class="fieldset">
-
+    <p style="color:#FFF;">
+        {{localWorkouts | json}}
+    </p>
     <div class="padding">
         <div class="list margin-bottom-0 padding">
             <label class="item item-input item-floating-label">
@@ -13,7 +15,6 @@
             </label>
         </div>
     </div>
-
     <div class="workout-checkbox-list">
         <label class="item item-input item-floating-label search padding margin-bottom-10">
             <input type="text" ng-model="search" placeholder="Filter Workouts" /><i class="icon super-search"></i>
@@ -31,10 +32,11 @@
                 </div>
             </li>
         </ul>
+        <p style="color:#FFF;">
+            {{checkedWorkouts | json}}
+        </p>
     </div>
-
 </div>
-
 <div class="fixed-footer row">
     <div class="col col-50">
         <super-navigate location="workout#new">

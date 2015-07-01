@@ -35,8 +35,8 @@ angular
                         'brief_description' : $scope.day.brief_description
                     }),
                     workoutIds = [];
-                for (var key in $scope.day.workout) {
-                    var workout = $scope.day.workout[key];
+                for (var key in $scope.day.workouts) {
+                    var workout = $scope.day.workouts[key];
                     workoutIds.push(workout);
                 }
                 setDayWorkoutIds["workouts"] = workoutIds;

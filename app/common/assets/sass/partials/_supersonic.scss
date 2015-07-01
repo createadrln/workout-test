@@ -55,3 +55,25 @@ div.button.button-full {
 .list .item {
     white-space: normal;
 }
+
+.super-arrow-right-b {
+    position: relative;
+    display: block;
+    background: $grayGunmetal;
+    width:15px;
+    height:15px;
+
+    @include border-top-radius(50%);
+    @include border-right-radius(50%);
+    @include border-bottom-radius(50%);
+    @include border-left-radius(50%);
+
+    &:before {
+        position: absolute;
+        top:2px;
+        left:6px;
+        font-size: 12px;
+        color: $neonYellow;
+    }
+
+}
