@@ -10,10 +10,10 @@
             </label>
             &nbsp;x&nbsp;
             <label class="item item-input item-floating-label col-40">
-                <input type="number" pattern="[0-9]*" ng-model="exercise['repgoal']" placeholder="Reps"><i class="icon super-pound"></i>
+                <input type="number" pattern="[0-9\-]*" ng-model="exercise['repgoal']" placeholder="Reps"><i class="icon super-pound"></i>
             </label>
             <label class="item item-input item-floating-label">
-                <input type="text" pattern="[0-9]*" ng-model="exercise['weight']" placeholder="Weight Goal"><i class="icon super-pound"></i>
+                <input type="text" pattern="[0-9\-]*" ng-model="exercise['weight']" placeholder="Weight Goal"><i class="icon super-pound"></i>
             </label>
             <label class="item item-input item-floating-label input-select">
                 <select ng-model="exercise['weight_unit']" ng-options="weight_unit.unit for weight_unit in weight_units"></select>

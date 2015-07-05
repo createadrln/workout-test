@@ -12,7 +12,26 @@ angular
                 $scope.localWorkouts = localWorkouts;
                 $scope.localWorkout = getIndexOfId(localWorkouts, $scope.dataId);
                 angular.forEach($scope.localWorkout.exercises, function (exercise) {
-                    var exerciseGroup = getIndexOfId($localStorage.localExercises, exercise.id);
+                    var exerciseGroup = getIndexOfId($scope.localExercises, exercise.id);
+                    exercises.push({
+                        'order' : exercise.order,
+                        'id' : exerciseGroup.id,
+                        'name' : exerciseGroup.name,
+                        'repgoal' : exerciseGroup.repgoal,
+                        'setgoal' : exerciseGroup.setgoal,
+                        'weight' : exerciseGroup.weight,
+                        'weight_unit' : exerciseGroup.weight_unit
+                    });
+                });
+                $scope.exercises = exercises;
+            });
+        });
+
+        supersonic.data.channel('localExercises').subscribe( function(localExercises) {
+            $scope.$apply(function() {
+                var exercises = [];
+                angular.forEach($scope.localWorkout.exercises, function (exercise) {
+                    var exerciseGroup = getIndexOfId(localExercises, exercise.id);
                     exercises.push({
                         'order' : exercise.order,
                         'id' : exerciseGroup.id,

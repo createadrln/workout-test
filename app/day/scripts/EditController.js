@@ -13,25 +13,28 @@ angular
 
         /* Load Toggled Workouts Into Array */
         $scope.checkedWorkouts = [];
-        $scope.selectedWorkouts = [];
         var checkedWorkoutCnt = 0;
 
-        //if ($scope.day.workouts.length != 0) {
-        //    angular.forEach($scope.day.workouts, function(workout){
-        //        checkedWorkoutCnt++;
-        //        $scope.checkedWorkouts.push({
-        //            'id': workout.id,
-        //            'title': workout.title,
-        //            'order': checkedWorkoutCnt
-        //        });
-        //    });
-        //    angular.forEach($scope.day.workouts, function(workout){
-        //        getIndexOfId($scope.localWorkouts, workout.id)["checked"] = true;
-        //    });
-        //}
+        if ($scope.day.workouts) {
+            angular.forEach($scope.day.workouts, function(workout){
+                checkedWorkoutCnt++;
+                $scope.checkedWorkouts.push({
+                    'id': workout.id,
+                    'title': workout.title,
+                    'order': checkedWorkoutCnt
+                });
+            });
+        }
+
+        $scope.getIndexOfId = function(array, id) {
+            for (var i=0; i<array.length; i++) {
+                if (array[i].id==id) return array[i];
+            }
+            return -1;
+        };
 
         $scope.toggleCheck = function (workout) {
-            if (getIndexOfIdCnt($scope.checkedWorkouts, workout.id) === -1) {
+            if (getIndexOfId($scope.checkedWorkouts, workout.id) === -1) {
                 checkedWorkoutCnt++;
                 $scope.checkedWorkouts.push({
                     'id': workout.id,
@@ -40,7 +43,7 @@ angular
                 });
             } else {
                 checkedWorkoutCnt--;
-                $scope.checkedWorkouts.splice($scope.localWorkouts.indexOf(workout.id), 1);
+                $scope.checkedWorkouts.splice(getIndexOfIdCnt($scope.checkedWorkouts, workout.id),1);
             }
             return checkedWorkoutCnt;
         };

@@ -1,7 +1,6 @@
 <div ng-controller="IndexController" class="days-index">
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
-
         <div class="padding">
             <ul class="list list-days padding" ng-hide="days.length == 0">
                 <super-navigate location="day#show" data-params-id="{{ day.id }}" ng-repeat="day in localDays | orderBy:'order' ">
@@ -12,6 +11,5 @@
                 </super-navigate>
             </ul>
         </div>
-
     </div>
 </div>

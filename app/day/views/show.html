@@ -1,13 +1,10 @@
 <div ng-controller="ShowController">
-
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
-
         <div class="page-title">
             <h2 class="h3"><span ng-bind="localDay['day']"></span></h2>
             <h3 class="h4"><span ng-bind="localDay['brief_description']"></span></h3>
         </div>
-
         <div class="padding padding-bottom-100">
             <div ng-hide="localDay.workouts.length == 0" class="info-boxes padding margin-bottom-30">
                 <div ng-repeat="workout in localDay.workouts" class="row day-info-box info-box">
@@ -27,13 +24,11 @@
                 </div>
             </div>
         </div>
-
         <super-modal-show ng-show="localDay.workouts.length == 0" location="day#edit?id={{ localDay.id }}" class="index-add first-view">
             <button class="button button-full button-positive">
                 <i class="icon super-plus"></i> Edit/Add Workouts
             </button>
         </super-modal-show>
-
         <div class="fixed-footer" ng-hide="localDay.workouts.length == 0">
             <super-modal-show location="day#edit?id={{ localDay.id }}">
                 <button class="button button-full button-assertive">
@@ -41,7 +36,5 @@
                 </button>
             </super-modal-show>
         </div>
-
     </div>
-
 </div>

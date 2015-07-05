@@ -1,7 +1,4 @@
 <div class="fieldset">
-    <p style="color:#FFF;">
-        {{localWorkouts | json}}
-    </p>
     <div class="padding">
         <div class="list margin-bottom-0 padding">
             <label class="item item-input item-floating-label">
@@ -26,15 +23,12 @@
             <li ng-repeat="workout in localWorkouts | filter:search">
                 <div class="item item-checkbox">
                     <label class="checkbox">
-                        <input type="checkbox" value="workout['id']" ng-checked="checkedWorkouts.indexOf(workout.id) != -1" ng-click="toggleCheck(workout)" />
+                        <input type="checkbox" value="workout['id']" ng-checked="getIndexOfId(checkedWorkouts, workout.id) != -1" ng-click="toggleCheck(workout)" />
                     </label>
                     <span class="label" ng-bind="workout['title']"></span>
                 </div>
             </li>
         </ul>
-        <p style="color:#FFF;">
-            {{checkedWorkouts | json}}
-        </p>
     </div>
 </div>
 <div class="fixed-footer row">

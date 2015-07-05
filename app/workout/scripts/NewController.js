@@ -35,6 +35,13 @@ angular
         ];
         $scope.workout.technique =  $scope.techniques[0];
 
+        $scope.getIndexOfId = function(array, id) {
+            for (var i=0; i<array.length; i++) {
+                if (array[i].id==id) return array[i];
+            }
+            return -1;
+        };
+
         $scope.checkedExercises = [];
         var checkedExerciseCnt = 0;
         $scope.toggleCheck = function (exercise) {
