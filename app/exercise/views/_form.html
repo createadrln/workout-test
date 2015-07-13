@@ -1,5 +1,4 @@
 <div class="fieldset">
-
     <div class="padding">
         <div class="list padding">
             <label class="item item-input item-floating-label">
@@ -10,10 +9,10 @@
             </label>
             &nbsp;x&nbsp;
             <label class="item item-input item-floating-label col-40">
-                <input type="number" pattern="[0-9\-]*" ng-model="exercise['repgoal']" placeholder="Reps"><i class="icon super-pound"></i>
+                <input type="text" ng-model="exercise['repgoal']" placeholder="Rep Range"><i class="icon super-pound"></i>
             </label>
             <label class="item item-input item-floating-label">
-                <input type="text" pattern="[0-9\-]*" ng-model="exercise['weight']" placeholder="Weight Goal"><i class="icon super-pound"></i>
+                <input type="text" ng-model="exercise['weight']" placeholder="Weight Range"><i class="icon super-pound"></i>
             </label>
             <label class="item item-input item-floating-label input-select">
                 <select ng-model="exercise['weight_unit']" ng-options="weight_unit.unit for weight_unit in weight_units"></select>
@@ -23,9 +22,7 @@
             </label>
         </div>
     </div>
-
 </div>
-
 <div class="fixed-footer" data-position="fixed" data-role="footer">
     <button class="button button-full button-positive" ng-click="addToHistory(exercise)">Save</button>
 </div>

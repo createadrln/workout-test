@@ -12,8 +12,12 @@
             <div ng-if="localExercise.repgoal != ''" class="info-boxes padding margin-bottom-20">
                 <div class="exercise-info-box info-box row">
                     <div class="col">
-                        <span ng-bind="localExercise['setgoal']"></span> x <span ng-bind="localExercise['repgoal']"></span>
-                        @ <span ng-bind="localExercise['weight']"></span> <span ng-bind="localExercise['weight_unit'].unit"></span>
+                        <div class="set-entry">
+                            <span ng-bind="localExercise['setgoal']"></span> x <span ng-bind="localExercise['repgoal']"></span>
+                        </div>
+                        <div class="weight-entry">
+                            @ <span ng-bind="localExercise['weight']"></span> <span ng-bind="localExercise['weight_unit'].unit"></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -28,8 +32,12 @@
                                 <span class="year">{{entry.history_date | date : 'yyyy'}}</span>
                             </div>
                             <div class="info col col-80">
-                                <span ng-bind="entry['sets']"></span> x <span ng-bind="entry['reps']"></span>
-                                @ <span ng-bind="entry['weight']"></span> <span ng-bind="entry['weight_unit']"></span>
+                                <div class="set-entry">
+                                    <span ng-bind="entry['sets']"></span> x <span ng-bind="entry['reps']"></span>
+                                </div>
+                                <div class="weight-entry">
+                                    <span ng-bind="entry['weight']"></span> <span ng-bind="entry['weight_unit']"></span>
+                                </div>
                             </div>
                         </div>
                     </div>

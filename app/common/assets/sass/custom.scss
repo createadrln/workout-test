@@ -211,6 +211,12 @@
 
                 > span {
                     font-size: 18px;
+
+                    > a {
+                        text-decoration:none;
+//                        color:inherit;
+                    }
+
                 }
 
             }
@@ -229,8 +235,22 @@
             .col {
                 text-align: center;
 
-                > span {
+                .set-entry {
                     font-size: 32px;
+                }
+
+                .weight-entry {
+                    font-size: 16px;
+                }
+
+                div > span {
+                    pointer-events:none;
+
+                    > a {
+                        text-decoration:none;
+                        color:inherit;
+                    }
+
                 }
 
             }
@@ -371,25 +391,36 @@
     margin-bottom:40px;
 
     .history-box {
+        display: table;
         padding: 0;
         margin-bottom: 10px;
         background-color: darken($originalSteel,5%);
         border:1px solid $grayBattleship;
 
         .col {
+            display: table-cell;
             color: $whiteSmoke;
-            padding: 0 10px;
-            height:50px;
+            padding: 10px;
+            vertical-align: middle;
 
             span {
-                font-size: 14px;
                 line-height: 1;
+                pointer-events: none;
+
+                > a {
+                    text-decoration:none;
+                    color:inherit;
+                }
+
             }
 
             &.date {
                 text-align: center;
-                padding-top:3px;
                 border-right:1px solid $grayBattleship;
+
+                span {
+                    line-height: 1;
+                }
 
                 span.day {
                     font-size: 11px;
@@ -408,9 +439,16 @@
             &.info {
 
                 span {
-                    line-height: 50px;
+                    line-height: 1;
                     padding-left:0;
+                }
+
+                .set-entry {
                     font-size: 22px;
+                }
+
+                .weight-entry {
+                    font-size: 14px;
                 }
 
             }
