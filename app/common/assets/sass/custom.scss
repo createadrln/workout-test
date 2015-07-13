@@ -1,199 +1,122 @@
 @import "bourbon/bourbon";
 @import "vars";
+@import "partials/core";
+@import "partials/forms";
+@import "partials/buttons";
+@import "partials/supersonic";
+@import "partials/common";
+@import "partials/extensions";
 
-html {
-    height:100%;
-}
+.page-title {
+    width:100%;
+    position: relative;
+    padding:20px;
+    background-color: darken($originalSteel,5%);
 
-body {
-    height:100%;
-    font-family: 'Oxygen', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    color:$grayGunmetal;
-    background-color: #000;
-
-    &:after {
-        content:'';
-        display: inline-block;
-        position: absolute;
-        top:-50px;
-        left:0;
+    h3, .h3, h4, .h4 {
         width:100%;
-        height:100%;
-        z-index: 1;
-
-        background: -moz-linear-gradient(top,  rgba(44,64,91,1) 0%, rgba(125,185,232,0) 100%); /* FF3.6+ */
-        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(44,64,91,1)), color-stop(100%,rgba(125,185,232,0))); /* Chrome,Safari4+ */
-        background: -webkit-linear-gradient(top,  rgba(44,64,91,1) 0%,rgba(125,185,232,0) 100%); /* Chrome10+,Safari5.1+ */
-        background: -o-linear-gradient(top,  rgba(44,64,91,1) 0%,rgba(125,185,232,0) 100%); /* Opera 11.10+ */
-        background: -ms-linear-gradient(top,  rgba(44,64,91,1) 0%,rgba(125,185,232,0) 100%); /* IE10+ */
-        background: linear-gradient(to bottom,  rgba(44,64,91,1) 0%,rgba(125,185,232,0) 100%); /* W3C */
-        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2c405b', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
-    }
-
-    > div {
-        margin:5%;
-        padding:0;
-        position: relative;
-        z-index: 2;
+        line-height: 1.3;
+        margin-bottom:0;
     }
 
 }
 
-h3, .h3, h4, .h4 {
-    width:70%;
-    color: $whiteSmoke;
-    text-align: center;
-    text-transform: uppercase;
-    font-family: $oswald;
-    font-weight: 700;
-    margin:0 auto 20px;
-    padding-bottom:15px;
-    border-bottom:1px solid $redDull;
-}
-
-super-modal-show {
+.index-add {
+    width:100%;
+    z-index: 1;
 
     &.first-view {
-        display: block;
-        width:100%;
-        padding-top:100px;
-        text-align: center;
-
-        .button {
-            display: inline-block;
-            width:200px;
-            height:200px;
-            text-transform: uppercase;
-            line-height: 1.125;
-            font-size: 20px;
-            @include border-top-radius(50%);
-            @include border-right-radius(50%);
-            @include border-bottom-radius(50%);
-            @include border-left-radius(50%);
-
-            .icon {
-                display: block;
-                margin-bottom:10px;
-
-                &:before {
-                    font-size: 50px;
-                }
-
-            }
-
-        }
-
+        position: fixed;
+        bottom:auto;
+        top:50%;
+        left:50%;
+        margin-top:-100px;
+        margin-left:-100px;
     }
 
+}
+
+.fixed-header,
+.fixed-footer {
+    position: fixed;
+    left:0;
+    right:0;
+    width:100%;
+    padding:15px;
+    background-color: $originalSteel;
+    z-index: 3;
+
+    .button {
+        position: relative;
+        z-index: 3;
+        display: block;
+        margin:0 auto;
+    }
+
+}
+
+.fixed-footer {
+    bottom:0;
+    border-top:1px solid $grayBattleship;
+}
+
+.fixed-header {
+    top:0;
 }
 
 .notes {
-    width:70%;
+    position: relative;
     color: $whiteSmoke;
-    text-align: center;
-    margin:0 auto 40px;
-}
+    font-size: 18px;
+    background-color: darken($originalSteel,5%);
+    border:1px solid $grayBattleship;
+    padding:15px;
 
-.margin-bottom-0 {
-    margin-bottom:0px !important;
-}
-
-.margin-bottom-10 {
-    margin-bottom:10px !important;
-}
-
-.margin-bottom-30 {
-    margin-bottom:30px !important;
-}
-
-.a-center {
-    text-align: center;
-}
-
-form {
-
-    .item {
-        border-left:0;
-        border-right:0;
-        border-top:0;
-        border-bottom:0;
-
-        &.last {
-            margin-bottom:40px;
-        }
-
-    }
-
-    .item-input {
-        padding:0 0 10px;
-        margin-bottom:10px;
-
-        &.search {}
-
-    }
-
-    .item-stacked-label {
-
-        .input-label {
-            display: block;
-        }
-
-    }
-
-    .input-label {
-        color: $whiteSmoke;
-        margin-bottom:5px;
-
-        .ex {
-            display: block;
-            font-size: 13px;
-        }
-
-    }
-
-    input[type="text"],
-    input[type="number"] {
-        height:45px;
-        line-height:20px;
-        padding-left:10px;
-
-        &.col-40 {
-            display: inline-block;
-            width:38%;
-            max-width:38%;
-        }
-
+    .tag {
+        display: inline-block;
+        padding:2px 7px;
+        background-color: $whiteSmoke;
+        color:$black;
+        margin-left:5px;
     }
 
 }
 
-.list-inset {
-    background-color: transparent;
-}
-
+.workout-checkbox-list,
 .exercise-checkbox-list {
+    display:block;
+    padding:0 20px;
 
     .item-checkbox {
         display: inline-block;
         width:auto;
         height:auto;
+        vertical-align: middle;
+        padding-left:30px;
+    }
+
+    .list super-navigate {
+        width:80%;
+        height:auto;
+        display: inline-block;
+        background: transparent;
+        color:$whiteSmoke;
+        vertical-align: middle;
+        border-bottom:0;
+        padding:0 0 0 10px;
+    }
+
+    .label {
+        display:inline-block;
+        padding-left:20px;
+        color: lighten($grayBattleship, 10%);
+        font-size:16px;
     }
 
 }
 
-div.workout-index {
-
-    &.ng-scope,
-    &.ng-scope > div {
-        height:100%;
-    }
-
-}
 
 .list {
-    height:100%;
 
     .item {
         border:none;
@@ -202,32 +125,27 @@ div.workout-index {
     }
 
     super-navigate {
-        display: table;
+        display: block;
         width:100%;
-        height:12.5%;
-        margin:1% 0;
-        padding:0 5%;
-        background: $redDull;
-
-        &:last-child {
-            border-bottom: none;
-        }
+        margin:0;
+        padding:5% 0;
+        border-bottom:1px solid $grayBattleship;
 
         .item {
             position: relative;
-            display: table-cell;
-            vertical-align: middle;
-            text-align: center;
+            text-align: left;
             margin:0;
             padding:0;
+            white-space: normal;
+            font-size:17px;
 
             .title {
                 display: block;
                 text-transform: uppercase;
                 font-family: $oswald;
                 font-size: 24px;
-                font-weight: 700;
-                margin-bottom:5px;
+                font-weight: 400;
+                margin-bottom:7px;
             }
 
             .info {
@@ -236,21 +154,22 @@ div.workout-index {
                 font-weight: 400;
                 text-transform: uppercase;
                 color: $neonYellow;
-            }
-
-            &:after {
-                content:'';
-                @include triangle(20px, $redDull, right);
-                position: absolute;
-                right:5px;
-                top:50%;
-                margin-top:-10px;
+                line-height:1;
             }
 
         }
 
     }
 
+    &.list-days super-navigate {
+        padding:4% 0;
+    }
+
+}
+
+.workout-index .workout-list,
+.exercise-index .exercise-list {
+    padding-bottom:100px;
 }
 
 .info-boxes {
@@ -258,8 +177,8 @@ div.workout-index {
     .info-box {
 
         &.row {
-            padding:0;
-            margin-bottom:10px;
+            padding:0 0 5px;
+            background-color: $neonYellow;
             @include justify-content(space-between);
 
             &.last {
@@ -268,13 +187,86 @@ div.workout-index {
 
         }
 
+        &.day-info-box {
+
+            &.row {
+                margin-bottom:20px;
+            }
+
+            .col {
+                text-align: left;
+
+                > span {
+                    font-size: 18px;
+                }
+
+            }
+
+        }
+
+        &.workout-info-box {
+
+            .col {
+                text-align: left;
+
+                > span {
+                    font-size: 18px;
+
+                    > a {
+                        text-decoration:none;
+//                        color:inherit;
+                    }
+
+                }
+
+            }
+
+            .workout-exercise-order {
+                position: absolute;
+                top:50%;
+                left:12px;
+                margin-top:-12.5px;
+            }
+
+        }
+
+        &.exercise-info-box {
+
+            .col {
+                text-align: center;
+
+                .set-entry {
+                    font-size: 32px;
+                }
+
+                .weight-entry {
+                    font-size: 16px;
+                }
+
+                div > span {
+                    pointer-events:none;
+
+                    > a {
+                        text-decoration:none;
+                        color:inherit;
+                    }
+
+                }
+
+            }
+
+        }
+
         .col {
             position: relative;
             width:100%;
-            background: $grayBattleship;
-            color: $whiteSmoke;
-            padding:10px 20px;
+            padding:10px;
             line-height: 1;
+
+            > span {
+                color: $black;
+            }
+
         }
 
         .col-50 {
@@ -286,12 +278,12 @@ div.workout-index {
     }
 
     h3.h5 {
-        color: $whiteSmoke;
+        color: $neonYellow;
         text-transform: uppercase;
         line-height: 1;
         font-family: $oswald;
-        font-weight: 400;
-        font-size: 18px;
+        font-weight: 300;
+        font-size: 26px;
         margin-top:0;
         margin-bottom:0;
         padding-bottom:0;
@@ -300,29 +292,98 @@ div.workout-index {
 
 }
 
+.day-info-box {
+
+    .day-workout-title {
+        color: $grayGunmetal;
+        float:left;
+    }
+
+    .super-arrow-right-b {
+        float:right;
+        margin-right:5px;
+        margin-top:5px;
+    }
+
+}
+
+.day-workout-title {
+    display: block;
+    font-size: 20px;
+    font-family: $oswald;
+    font-weight: 400;
+    margin-bottom:10px;
+}
+
+.day-workout-exercise-info {
+    clear:both;
+
+    > div {
+        @include clearfix;
+        margin-bottom:13px;
+
+        &:last-child {
+            margin-bottom:0;
+        }
+
+    }
+
+    .workout-exercise-order {
+        display: block;
+        float:left;
+    }
+
+    .workout-name {
+        display: block;
+        margin-bottom:5px;
+    }
+
+    .exercise-info {
+        float:left;
+        width:75%;
+        padding-left:15px;
+
+        .exercise-name {
+            display:block;
+            margin-bottom:6px;
+        }
+
+    }
+
+}
+
+.workout-info-box {
+
+    .workout-exercise-name {
+        display:inline-block;
+        padding-left:40px;
+        line-height: 1.125;
+    }
+
+    .super-arrow-right-b {
+        float:right;
+        margin-right:5px;
+        margin-top:5px;
+    }
+
+}
+
 .workout-exercise-order {
-    position: absolute;
-    top:50%;
-    left:20px;
-    margin-top:-12.5px;
     display: inline-block;
     width:25px;
     height:25px;
     line-height: 25px;
-    background-color: $neonYellow;
-    color: $black;
+    background-color: $originalSteel;
+    color: $neonYellow !important;
     font-family: $oswald;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
 }
 
-.workout-exercise-name {
-    font-size: 18px;
-    padding-left:40px;
-}
-
 .workout-exercise-info {
+    clear:both;
+    margin-top:6px;
     padding-left:40px;
 }
 
@@ -330,27 +391,41 @@ div.workout-index {
     margin-bottom:40px;
 
     .history-box {
+        display: table;
         padding: 0;
         margin-bottom: 10px;
-        @include justify-content(space-between);
+        background-color: darken($originalSteel,5%);
+        border:1px solid $grayBattleship;
 
         .col {
-            background: #C8FF00;
-            color: $black;
-            padding: 0 10px;
-            height:50px;
+            display: table-cell;
+            color: $whiteSmoke;
+            padding: 10px;
+            vertical-align: middle;
 
             span {
-                font-size: 14px;
                 line-height: 1;
+                pointer-events: none;
+
+                > a {
+                    text-decoration:none;
+                    color:inherit;
+                }
+
             }
 
             &.date {
                 text-align: center;
-                padding-top:6px;
+                border-right:1px solid $grayBattleship;
+
+                span {
+                    line-height: 1;
+                }
 
                 span.day {
-                    font-size: 15px;
+                    font-size: 11px;
+                    font-family: $oswald;
+                    font-weight: 400;
                 }
 
                 span.year {
@@ -364,9 +439,16 @@ div.workout-index {
             &.info {
 
                 span {
-                    line-height: 50px;
-                    padding-left:10px;
-                    font-size: 18px;
+                    line-height: 1;
+                    padding-left:0;
+                }
+
+                .set-entry {
+                    font-size: 22px;
+                }
+
+                .weight-entry {
+                    font-size: 14px;
                 }
 
             }
@@ -387,11 +469,4 @@ div.workout-index {
 
     }
 
-}
-
-.tags {
-    color: $whiteSmoke;
-    text-align: center;
-    font-size: 18px;
-    margin-bottom:20px;
 }

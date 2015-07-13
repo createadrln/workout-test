@@ -1,6 +1,6 @@
 angular
     .module('workout')
-    .controller("OrderController", function ($scope, $localStorage, Workout, supersonic) {
+    .controller("OrderController", function ($scope, $localStorage, supersonic) {
         $scope.workout = getIndexOfId($localStorage.localWorkouts, steroids.view.params.id);
         $scope.localExercises = $scope.workout.exercises;
 

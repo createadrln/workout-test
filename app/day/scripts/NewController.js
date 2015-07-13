@@ -1,14 +1,7 @@
 angular
     .module('day')
-    .controller("NewController", function ($scope, Day, supersonic) {
+    .controller("NewController", function ($scope, supersonic) {
         $scope.day = {};
-
-        supersonic.data.model('Workout').findAll().then( function(workouts) {
-            $scope.$apply( function () {
-                $scope.workouts = workouts;
-                $scope.predicate = '-name';
-            });
-        });
 
         $scope.checkedWorkouts = [];
 
@@ -22,9 +15,9 @@ angular
 
         $scope.submitForm = function () {
             $scope.showSpinner = true;
-            $scope.day.workout = $scope.checkedWorkouts;
-            newday = new Day($scope.day);
-            newday.save().then( function () {
+            $scope.day.workouts = $scope.checkedWorkouts;
+            var newDay = new Day($scope.day);
+            newDay.save().then( function () {
                 supersonic.ui.modal.hide();
             });
         };

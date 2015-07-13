@@ -6,9 +6,6 @@
 navigation-bar {
     background-color: #040004;
     color: #ffffff;
-    /*-webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);*/
-    /*-moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);*/
-    /*box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.75);*/
 }
 
 navigation-bar title {
@@ -37,8 +34,9 @@ tab-bar tab-bar-item:selected {
     color: #1596f7;
 }
 
-tab-bar-item#settings {
-    background-image: url(icons/cog.svg);
+tab-bar-item#info {
+    background-image: url(icons/info.svg);
+    color:#000;
 }
 
 tab-bar-item#day {

@@ -4,9 +4,22 @@ angular
         $scope.exercise = getIndexOfId($localStorage.localExercises, steroids.view.params.id);
         $scope.showSpinner = false;
 
+        $scope.selectedWeightUnit = $scope.exercise.weight_unit;
+        $scope.weight_units = [
+            { 'id' : 1, 'unit' : 'lbs' },
+            { 'id' : 2, 'unit' : 'kgs' }
+        ];
+        $scope.exercise.weight_unit = getIndexOfId($scope.weight_units, $scope.selectedWeightUnit.id);
+
         $scope.addToHistory = function (exercise) {
             $scope.updateHistory = exercise.history;
-            $scope.pushToHistory = ({ 'history_date' : new Date().toISOString() , 'reps' : exercise.repgoal , 'weight' : exercise.weight });
+            $scope.pushToHistory = ({
+                'history_date' : new Date().toISOString(),
+                'sets' : exercise.setgoal,
+                'reps' : exercise.repgoal,
+                'weight' : exercise.weight,
+                'weight_unit' : exercise.weight_unit.unit
+            });
             $scope.updateHistory.push($scope.pushToHistory);
         };
 

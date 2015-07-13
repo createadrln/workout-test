@@ -1,44 +1,64 @@
 <div ng-controller="ShowController">
 
-    <div class="padding">
-        <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
-        <div ng-hide="showSpinner">
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner">
 
-            <h2 class="h3" ng-bind="localWorkout['title']"></h2>
+        <div class="page-title">
+            <h2 class="h3"><span ng-bind="localWorkout['title']"></span></h2>
+            <span ng-show="localWorkout.technique.name != 'Select Training Technique...'">
+                <h3 class="h4">Technique: <span ng-bind="localWorkout['technique'].name"></span></h3>
+            </span>
+        </div>
 
-            <div ng-if="localWorkout.exercises != '' " class="info-boxes margin-bottom-30">
-                <div ng-repeat="exercise in exercises | orderBy : 'order'" class="row info-box">
+        <div class="padding padding-bottom-100">
+
+            <div ng-show="localWorkout.exercises != ''" class="info-boxes margin-bottom-20 padding">
+                <div ng-repeat="exercise in exercises | orderBy : 'order'" class="row workout-info-box info-box">
                     <super-navigate location="exercise#show" data-params-id="{{ exercise.id }}" class="col">
                         <span class="workout-exercise-order" ng-bind="exercise['order']"></span>
                         <span class="workout-exercise-name" ng-bind="exercise['name']"></span>
+                        <i class="icon super-arrow-right-b"></i>
                         <div class="workout-exercise-info">
-                            <span ng-bind="exercise['reps']"></span>
-                            <span ng-bind="exercise['weight']"></span>
+                            <span ng-bind="exercise['setgoal']"></span> x <span ng-bind="exercise['repgoal']"></span>
+                            @ <span ng-bind="exercise['weight']"></span> <span ng-bind="exercise['weight_unit'].unit"></span>
                         </div>
                     </super-navigate>
                 </div>
             </div>
 
-            <div ng-if="localWorkout.notes != '' ">
-                <h3 class="h4">Notes:</h3>
+            <div ng-hide="localWorkout.rest == null" class="padding">
+                <h3>Rest Period:</h3>
+                <p class="notes"><span ng-bind="localWorkout['rest']"></span></p>
+            </div>
+
+            <div ng-hide="localWorkout.notes == null" class="padding">
+                <h3>Notes:</h3>
                 <p class="notes"><span ng-bind="localWorkout['notes']"></span></p>
             </div>
 
-            <super-modal-show location="workout#order?id={{ localWorkout.id }}">
-                <button class="button button-block button-positive">
-                    Update Workout Order
-                </button>
-            </super-modal-show>
-
-            <super-modal-show location="workout#edit?id={{ localWorkout.id }}">
-                <button class="button button-block button-assertive">
-                    Edit
-                </button>
-            </super-modal-show>
-
-            <button ng-click="remove(localWorkout.id)" class="button button-block button-negative">
-                Remove
-            </button>
         </div>
+
+        <div class="fixed-footer row">
+            <div class="col col-50">
+                <super-modal-show location="workout#order?id={{ localWorkout.id }}">
+                    <button class="button button-full button-positive">
+                        Order
+                    </button>
+                </super-modal-show>
+            </div>
+            <div class="col col-50">
+                <super-modal-show location="workout#edit?id={{ localWorkout.id }}">
+                    <button class="button button-full button-assertive">
+                        Edit
+                    </button>
+                </super-modal-show>
+            </div>
+        </div>
+
+        <!--<button ng-click="remove(localWorkout.id)" class="button button-block button-negative">-->
+        <!--Remove-->
+        <!--</button>-->
+
     </div>
+
 </div>

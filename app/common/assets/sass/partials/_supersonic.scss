@@ -1,0 +1,79 @@
+div.button.button-full {
+    width:100%;
+}
+
+.button.button-assertive {
+    border-color: $redBrave;
+    color:$originalSteel;
+
+    @include linear-gradient($redBrave, lighten($redBrave, 25%));
+
+    &:hover {
+        color:$originalSteel;
+    }
+
+}
+
+.button.button-neutral {
+    border-color: $grayBattleship;
+    color:$originalSteel;
+
+    @include linear-gradient($grayBattleship, lighten($grayBattleship, 25%));
+
+    &:hover {
+        color:$originalSteel;
+    }
+
+}
+
+.button.button-positive {
+    border-color: $aquaBlue;
+    color:$originalSteel;
+
+    @include linear-gradient($aquaBlue, lighten($aquaBlue, 25%));
+
+    &.button-outline {
+        border: 2px solid $aquaBlue;
+        color:$originalSteel;
+
+        .icon:before {
+            color:$originalSteel;
+        }
+
+    }
+
+    &:hover {
+        color:$originalSteel;
+    }
+
+}
+
+.list-inset {
+    background-color: transparent;
+}
+
+.list .item {
+    white-space: normal;
+}
+
+.super-arrow-right-b {
+    position: relative;
+    display: block;
+    border: 2px solid $grayGunmetal;
+    width:20px;
+    height:20px;
+
+    @include border-top-radius(50%);
+    @include border-right-radius(50%);
+    @include border-bottom-radius(50%);
+    @include border-left-radius(50%);
+
+    &:before {
+        position: absolute;
+        top:2px;
+        left:6px;
+        font-size: 14px;
+        color: $grayGunmetal;
+    }
+
+}

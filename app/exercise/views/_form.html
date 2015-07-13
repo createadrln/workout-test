@@ -1,57 +1,28 @@
-<div class="list">
-
-    <label class="item item-input item-stacked-label">
-        <span class="input-label">Exercise Name <span class="ex">(Ex. Seated Shoulder Press)</span></span>
-        <input type="text" ng-model="exercise['name']" placeholder="Ex: Seated Shoulder Press">
-    </label>
-
-    <label class="item item-input item-stacked-label">
-        <span class="input-label">Sets and Reps<span class="ex">(Ex. 4 x 10-12)</span></span>
-        <input type="number" ng-model="exercise['setgoal']" placeholder="Sets" class="col-40">
-        &nbsp;X&nbsp;
-        <input type="number" ng-model="exercise['repgoal']" placeholder="Reps" class="col-40">
-    </label>
-
-    <label class="item item-input item-stacked-label">
-        <span class="input-label">Weight Goal</span>
-        <input type="text" ng-model="exercise['weight']" placeholder="Ex: 145 lbs.">
-    </label>
-
-    <label class="item item-input item-stacked-label">
-        <span class="input-label">Training Technique</span>
-        <select ng-model="exercise['technique']">
-            <!--<option>General Training</option>-->
-            <!--<option>5x5 Training</option>-->
-            <!--<option>Core Training</option>-->
-            <!--<option>CrossFit</option>-->
-            <!--<option>German Volume Training</option>-->
-            <!--<option>High Intensity Training</option>-->
-            <!--<option>Mass Gain Program</option>-->
-            <!--<option>Periodization</option>-->
-            <!--<option>Powerlifting</option>-->
-            <!--<option>Pyramid</option>-->
-            <!--<option>Strength</option>-->
-            <!--<option>Other</option>-->
-            <option value="General Training" selected>General Training</option>
-            <option value="Pyrmaid">Pyramid</option>
-            <option value="Super Set">Super Set</option>
-            <option value="Circuit">Circuit</option>
-            <option value="Drop Set">Drop Set</option>
-            <option value="Negative Set">Negative Set</option>
-            <option value="Rest Pause Set">Rest Pause Set</option>
-            <option value="Static Hold">Static Hold</option>
-        </select>
-    </label>
-
-
-    <label class="item item-input item-stacked-label last">
-        <span class="input-label">Searchable Tags</span>
-        <!--<input type="text" ng-model="exercise['tags']" placeholder="Ex: Shoulders, Loaded">-->
-        <tags-input ng-model="exercise['tags']">
-            <!--<auto-complete source="loadTags($query)"></auto-complete>-->
-        </tags-input>
-    </label>
-
-    <button class="button button-block button-assertive" ng-click="addToHistory(exercise)">Save</button>
-
+<div class="fieldset">
+    <div class="padding">
+        <div class="list padding">
+            <label class="item item-input item-floating-label">
+                <input type="text" ng-model="exercise['name']" placeholder="Add Exercise Name"><i class="icon super-quote"></i>
+            </label>
+            <label class="item item-input item-floating-label col-40">
+                <input type="number" pattern="[0-9]*" ng-model="exercise['setgoal']" placeholder="Sets"><i class="icon super-pound"></i>
+            </label>
+            &nbsp;x&nbsp;
+            <label class="item item-input item-floating-label col-40">
+                <input type="text" ng-model="exercise['repgoal']" placeholder="Rep Range"><i class="icon super-pound"></i>
+            </label>
+            <label class="item item-input item-floating-label">
+                <input type="text" ng-model="exercise['weight']" placeholder="Weight Range"><i class="icon super-pound"></i>
+            </label>
+            <label class="item item-input item-floating-label input-select">
+                <select ng-model="exercise['weight_unit']" ng-options="weight_unit.unit for weight_unit in weight_units"></select>
+            </label>
+            <label class="item item-input item-floating-label item-tags last">
+                <tags-input ng-model="exercise['tags']" placeholder="Tags"></tags-input><i class="icon super-pricetag"></i>
+            </label>
+        </div>
+    </div>
+</div>
+<div class="fixed-footer" data-position="fixed" data-role="footer">
+    <button class="button button-full button-positive" ng-click="addToHistory(exercise)">Save</button>
 </div>

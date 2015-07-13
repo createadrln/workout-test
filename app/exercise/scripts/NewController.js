@@ -13,24 +13,37 @@ angular
             $scope.localExercises = [];
         }
 
-        $scope.tags = $localStorage.tags;
-        //$scope.loadTags = function(query) {
-        //    return $http.get($scope.tags);
-        //};
+        $scope.weight_units = [
+            { 'id' : 0, 'unit' : 'Select Weight Units...' },
+            { 'id' : 1, 'unit' : 'lbs' },
+            { 'id' : 2, 'unit' : 'kgs' },
+            { 'id' : 3, 'unit' : 'None' }
+        ];
+        $scope.exercise.weight_unit =  $scope.weight_units[0];
 
         $scope.pushToHistory = [];
         $scope.addToHistory = function (exercise) {
-            $scope.pushToHistory.push({ 'history_date' : new Date().toISOString() , 'reps' : exercise.repgoal, 'weight' : exercise.weight });
-        };
-
-        $scope.pushToTags = [];
-        $scope.addToHistory = function (exercise) {
-            $scope.pushToTags.push({ 'tags' : $scope.exercise.tags });
+            $scope.pushToHistory.push({
+                'history_date' : new Date().toISOString() ,
+                'sets' : exercise.setgoal,
+                'reps' : exercise.repgoal,
+                'weight' : exercise.weight,
+                'weight_unit' : exercise.weight_unit.unit
+            });
         };
 
         $scope.submitForm = function () {
             $scope.showSpinner = true;
-            $scope.localExercises.push({ 'id' : generateUUID(), 'name' : $scope.exercise.name, 'repgoal' : $scope.exercise.repgoal, 'weight' : $scope.exercise.weight, 'tags' : $scope.pushToTags, 'history' : $scope.pushToHistory });
+            $scope.localExercises.push({
+                'id' : generateUUID(),
+                'name' : $scope.exercise.name,
+                'setgoal' : $scope.exercise.setgoal,
+                'repgoal' : $scope.exercise.repgoal,
+                'weight' : $scope.exercise.weight,
+                'weight_unit' : $scope.exercise.weight_unit,
+                'tags' : $scope.exercise.tags,
+                'history' : $scope.pushToHistory
+            });
             $localStorage.localExercises = $scope.localExercises;
             supersonic.data.channel('localExercises').publish($localStorage.localExercises);
             supersonic.ui.modal.hide();
