@@ -7,6 +7,10 @@
 
     <div class="list padding">
 
+        <span style="color:#FFF;">
+            {{localExercises|json}}
+        </span>
+
         <div ng-repeat="exercise in localExercises" class="list padding margin-bottom-0">
             <label class="item item-input item-stacked-label">
                 <span class="input-label" ng-bind="exercise['name']"></span>

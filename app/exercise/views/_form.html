@@ -7,7 +7,6 @@
             <label class="item item-input item-floating-label col-40">
                 <input type="number" pattern="[0-9]*" ng-model="exercise['setgoal']" placeholder="Sets"><i class="icon super-pound"></i>
             </label>
-            &nbsp;x&nbsp;
             <label class="item item-input item-floating-label col-40">
                 <input type="text" ng-model="exercise['repgoal']" placeholder="Rep Range"><i class="icon super-pound"></i>
             </label>
@@ -23,6 +22,6 @@
         </div>
     </div>
 </div>
-<div class="fixed-footer" data-position="fixed" data-role="footer">
+<div class="bar bar-footer">
     <button class="button button-full button-positive" ng-click="addToHistory(exercise)">Save</button>
 </div>
