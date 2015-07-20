@@ -1,14 +1,10 @@
 <div ng-controller="ShowController">
-
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
-
         <div class="page-title">
             <h2 class="h3"><span ng-bind="localExercise['name']"></span></h2>
         </div>
-
         <div class="padding">
-
             <div ng-if="localExercise.repgoal != ''" class="info-boxes padding margin-bottom-20">
                 <div class="exercise-info-box info-box row">
                     <div class="col">
@@ -21,7 +17,6 @@
                     </div>
                 </div>
             </div>
-
             <div ng-if="localExercise.history != ''" class="padding">
                 <div class="history-boxes">
                     <h3>Last 5 updates</h3>
@@ -43,11 +38,8 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
     <div class="fixed-footer">
         <super-modal-show location="exercise#edit?id={{ localExercise.id }}">
             <button class="button button-full button-assertive">
@@ -55,5 +47,4 @@
             </button>
         </super-modal-show>
     </div>
-
 </div>

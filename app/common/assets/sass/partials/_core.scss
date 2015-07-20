@@ -1,22 +1,9 @@
-html {
-    height:100%;
-}
-
 body {
-    height:100%;
     font-family: $oxygen;
     font-weight: 400;
     font-size: 16px;
     color:$grayGunmetal;
     background: $originalSteel;
-
-    > div {
-        margin:0;
-        padding:0;
-        position: relative;
-        z-index: 2;
-    }
-
 }
 
 h3, .h3, h4, .h4 {

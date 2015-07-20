@@ -1,5 +1,9 @@
-div.button.button-full {
-    width:100%;
+.bar.bar-footer {
+    height:auto;
+}
+
+.bar .button {
+    min-height:47px;
 }
 
 .button.button-assertive {
@@ -26,7 +30,8 @@ div.button.button-full {
 
 }
 
-.button.button-positive {
+.button.button-positive,
+.bar.bar-positive {
     border-color: $aquaBlue;
     color:$originalSteel;
 
@@ -46,6 +51,10 @@ div.button.button-full {
         color:$originalSteel;
     }
 
+}
+
+.bar.bar-positive .button {
+    color:$originalSteel !important;
 }
 
 .list-inset {

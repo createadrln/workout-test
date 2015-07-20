@@ -37,10 +37,8 @@
 }
 
 .fixed-header,
-.fixed-footer {
-    position: fixed;
-    left:0;
-    right:0;
+.fixed-footer,
+.bar-footer {
     width:100%;
     padding:15px;
     background-color: $originalSteel;
@@ -55,7 +53,15 @@
 
 }
 
+.fixed-header,
 .fixed-footer {
+    position: fixed;
+    left:0;
+    right:0;
+}
+
+.fixed-footer,
+.bar-footer {
     bottom:0;
     border-top:1px solid $grayBattleship;
 }
@@ -85,7 +91,7 @@
 .workout-checkbox-list,
 .exercise-checkbox-list {
     display:block;
-    padding:0 20px;
+    padding:0 20px 100px;
 
     .item-checkbox {
         display: inline-block;
