@@ -1,5 +1,4 @@
 @import "bourbon/bourbon";
-@import "partials/fonts";
 @import "vars";
 @import "partials/core";
 @import "partials/forms";
@@ -116,13 +115,6 @@
 
 }
 
-.days-index {
-
-    super-navigate .item .title {
-        line-height: 1;
-    }
-
-}
 
 .list {
 
@@ -150,14 +142,16 @@
             .title {
                 display: block;
                 text-transform: uppercase;
-                font-family: $oswaldBold;
+                font-family: $oswald;
                 font-size: 24px;
+                font-weight: 400;
+                margin-bottom:7px;
             }
 
             .info {
                 display: block;
                 font-size: 15px;
-                font-family: $oswald;
+                font-weight: 400;
                 text-transform: uppercase;
                 color: $neonYellow;
                 line-height:1;
@@ -287,7 +281,8 @@
         color: $neonYellow;
         text-transform: uppercase;
         line-height: 1;
-        font-family: $oswaldLight;
+        font-family: $oswald;
+        font-weight: 300;
         font-size: 26px;
         margin-top:0;
         margin-bottom:0;
@@ -316,6 +311,7 @@
     display: block;
     font-size: 20px;
     font-family: $oswald;
+    font-weight: 400;
     margin-bottom:10px;
 }
 
@@ -380,6 +376,7 @@
     background-color: $originalSteel;
     color: $neonYellow !important;
     font-family: $oswald;
+    font-weight: 400;
     font-size: 16px;
     text-align: center;
 }
@@ -428,11 +425,13 @@
                 span.day {
                     font-size: 11px;
                     font-family: $oswald;
+                    font-weight: 400;
                 }
 
                 span.year {
                     font-size: 13px;
-                    font-family: $oswaldBold;
+                    font-family: $oswald;
+                    font-weight: 700;
                 }
 
             }

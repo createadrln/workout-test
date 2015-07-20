@@ -5,6 +5,7 @@ html {
 body {
     height:100%;
     font-family: $oxygen;
+    font-weight: 400;
     font-size: 16px;
     color:$grayGunmetal;
     background: $originalSteel;
@@ -23,11 +24,13 @@ h3, .h3, h4, .h4 {
     color: $whiteSmoke;
     text-align: left;
     text-transform: uppercase;
-    font-family: $oswaldLight;
+    font-family: $oswald;
+    font-weight: 300;
     margin:0 0 20px;
 }
 
 button,
 .button {
-    font-family: $oxygenBold;
+    font-family: $oxygen;
+    font-weight:700;
 }
