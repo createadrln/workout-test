@@ -89,10 +89,19 @@
 
 }
 
+.days-index {
+
+    .list super-navigate .item .title {
+        line-height: 1;
+        margin-bottom:0;
+    }
+
+}
+
 .workout-checkbox-list,
 .exercise-checkbox-list {
     display:block;
-    padding:0 20px 100px;
+    padding:0 20px;
 
     .item-checkbox {
         display: inline-block;

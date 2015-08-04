@@ -1,4 +1,8 @@
 <div ng-controller="IndexController" class="exercise-index">
+    <super-navbar>
+        <super-navbar-title>
+        </super-navbar-title>
+    </super-navbar>
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner" class="padding">
         <super-modal-show location="exercise#new" ng-hide="localExercises.length > 0" class="index-add first-view">
