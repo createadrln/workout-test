@@ -4,7 +4,7 @@
         <div class="page-title">
             <h2 class="h3"><span ng-bind="localExercise['name']"></span></h2>
         </div>
-        <div class="padding">
+        <div class="padding padding-bottom-100">
             <div ng-if="localExercise.repgoal != ''" class="info-boxes padding margin-bottom-20">
                 <div class="exercise-info-box info-box row">
                     <div class="col">
@@ -19,8 +19,8 @@
             </div>
             <div ng-if="localExercise.history != ''" class="padding">
                 <div class="history-boxes">
-                    <h3>Last 5 updates</h3>
-                    <div ng-repeat="entry in localExercise.history | orderBy: '-history_date' | limitTo: 5">
+                    <h3>Last 10 updates</h3>
+                    <div ng-repeat="entry in localExercise.history | orderBy: '-history_date' | limitTo: 10">
                         <div class="row history-box">
                             <div class="date col col-20">
                                 <span class="day">{{entry.history_date | date : 'M.d'}}</span>

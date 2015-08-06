@@ -1,17 +1,13 @@
 <div ng-controller="ShowController">
-
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
-
         <div class="page-title">
             <h2 class="h3"><span ng-bind="localWorkout['title']"></span></h2>
             <span ng-show="localWorkout.technique.name != 'Select Training Technique...'">
                 <h3 class="h4">Technique: <span ng-bind="localWorkout['technique'].name"></span></h3>
             </span>
         </div>
-
         <div class="padding padding-bottom-100">
-
             <div ng-show="localWorkout.exercises != ''" class="info-boxes margin-bottom-20 padding">
                 <div ng-repeat="exercise in exercises | orderBy : 'order'" class="row workout-info-box info-box">
                     <super-navigate location="exercise#show" data-params-id="{{ exercise.id }}" class="col">
@@ -25,19 +21,15 @@
                     </super-navigate>
                 </div>
             </div>
-
             <div ng-hide="localWorkout.rest == null" class="padding">
                 <h3>Rest Period:</h3>
                 <p class="notes"><span ng-bind="localWorkout['rest']"></span></p>
             </div>
-
             <div ng-hide="localWorkout.notes == null" class="padding">
                 <h3>Notes:</h3>
                 <p class="notes"><span ng-bind="localWorkout['notes']"></span></p>
             </div>
-
         </div>
-
         <div class="fixed-footer row">
             <div class="col col-50">
                 <super-modal-show location="workout#order?id={{ localWorkout.id }}">
@@ -54,11 +46,5 @@
                 </super-modal-show>
             </div>
         </div>
-
-        <!--<button ng-click="remove(localWorkout.id)" class="button button-block button-negative">-->
-        <!--Remove-->
-        <!--</button>-->
-
     </div>
-
 </div>

@@ -1,25 +1,16 @@
 <div class="fieldset">
-
     <div class="page-title">
         <h2 class="h3" ng-bind="workout['title']"></h2>
         <h3 class="h4">Update Exercise Order</h3>
     </div>
-
     <div class="list padding">
-
-        <span style="color:#FFF;">
-            {{localExercises|json}}
-        </span>
-
         <div ng-repeat="exercise in localExercises" class="list padding margin-bottom-0">
             <label class="item item-input item-stacked-label">
                 <span class="input-label" ng-bind="exercise['name']"></span>
                 <input type="number" min="1" max="1000" ng-model="exercise['order']" placeholder="Position (leave blank if no change)" /><i class="icon super-pound"></i>
             </label>
         </div>
-
     </div>
-
 </div>
 
 <div class="fixed-footer">

@@ -485,15 +485,19 @@ input.input.ng-untouched.ng-valid.ng-dirty {
 .fixed-footer,
 .bar-footer {
   bottom: 0;
+}
+
+/* line 69, ../assets/sass/custom.scss */
+.fixed-footer {
   border-top: 1px solid #848482;
 }
 
-/* line 70, ../assets/sass/custom.scss */
+/* line 74, ../assets/sass/custom.scss */
 .fixed-header {
   top: 0;
 }
 
-/* line 74, ../assets/sass/custom.scss */
+/* line 78, ../assets/sass/custom.scss */
 .notes {
   position: relative;
   color: #f5f5f5;
@@ -502,7 +506,7 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   border: 1px solid #848482;
   padding: 15px;
 }
-/* line 82, ../assets/sass/custom.scss */
+/* line 86, ../assets/sass/custom.scss */
 .notes .tag {
   display: inline-block;
   padding: 2px 7px;
@@ -511,19 +515,19 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   margin-left: 5px;
 }
 
-/* line 94, ../assets/sass/custom.scss */
+/* line 98, ../assets/sass/custom.scss */
 .days-index .list super-navigate .item .title {
   line-height: 1;
   margin-bottom: 0;
 }
 
-/* line 101, ../assets/sass/custom.scss */
+/* line 105, ../assets/sass/custom.scss */
 .workout-checkbox-list,
 .exercise-checkbox-list {
   display: block;
   padding: 0 20px;
 }
-/* line 106, ../assets/sass/custom.scss */
+/* line 110, ../assets/sass/custom.scss */
 .workout-checkbox-list .item-checkbox,
 .exercise-checkbox-list .item-checkbox {
   display: inline-block;
@@ -532,7 +536,7 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   vertical-align: middle;
   padding-left: 30px;
 }
-/* line 114, ../assets/sass/custom.scss */
+/* line 118, ../assets/sass/custom.scss */
 .workout-checkbox-list .list super-navigate,
 .exercise-checkbox-list .list super-navigate {
   width: 80%;
@@ -544,7 +548,7 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   border-bottom: 0;
   padding: 0 0 0 10px;
 }
-/* line 125, ../assets/sass/custom.scss */
+/* line 129, ../assets/sass/custom.scss */
 .workout-checkbox-list .label,
 .exercise-checkbox-list .label {
   display: inline-block;
@@ -553,13 +557,13 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   font-size: 16px;
 }
 
-/* line 137, ../assets/sass/custom.scss */
+/* line 141, ../assets/sass/custom.scss */
 .list .item {
   border: none;
   color: #f5f5f5;
   background: none;
 }
-/* line 143, ../assets/sass/custom.scss */
+/* line 147, ../assets/sass/custom.scss */
 .list super-navigate {
   display: block;
   width: 100%;
@@ -567,7 +571,7 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   padding: 5% 0;
   border-bottom: 1px solid #848482;
 }
-/* line 150, ../assets/sass/custom.scss */
+/* line 154, ../assets/sass/custom.scss */
 .list super-navigate .item {
   position: relative;
   text-align: left;
@@ -576,7 +580,7 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   white-space: normal;
   font-size: 17px;
 }
-/* line 158, ../assets/sass/custom.scss */
+/* line 162, ../assets/sass/custom.scss */
 .list super-navigate .item .title {
   display: block;
   text-transform: uppercase;
@@ -584,7 +588,7 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   font-size: 24px;
   margin-bottom: 7px;
 }
-/* line 166, ../assets/sass/custom.scss */
+/* line 170, ../assets/sass/custom.scss */
 .list super-navigate .item .info {
   display: block;
   font-size: 15px;
@@ -593,18 +597,18 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   color: #C8FF00;
   line-height: 1;
 }
-/* line 179, ../assets/sass/custom.scss */
+/* line 183, ../assets/sass/custom.scss */
 .list.list-days super-navigate {
   padding: 4% 0;
 }
 
-/* line 185, ../assets/sass/custom.scss */
+/* line 189, ../assets/sass/custom.scss */
 .workout-index .workout-list,
 .exercise-index .exercise-list {
   padding-bottom: 100px;
 }
 
-/* line 194, ../assets/sass/custom.scss */
+/* line 198, ../assets/sass/custom.scss */
 .info-boxes .info-box.row {
   padding: 0 0 5px;
   background-color: #C8FF00;
@@ -618,74 +622,79 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   justify-content: space-between;
   -ms-flex-pack: justify;
 }
-/* line 199, ../assets/sass/custom.scss */
+/* line 203, ../assets/sass/custom.scss */
 .info-boxes .info-box.row.last {
   margin-bottom: 30px;
 }
-/* line 207, ../assets/sass/custom.scss */
+/* line 211, ../assets/sass/custom.scss */
 .info-boxes .info-box.day-info-box.row {
   margin-bottom: 20px;
 }
-/* line 211, ../assets/sass/custom.scss */
+/* line 215, ../assets/sass/custom.scss */
 .info-boxes .info-box.day-info-box .col {
   text-align: left;
 }
-/* line 214, ../assets/sass/custom.scss */
+/* line 218, ../assets/sass/custom.scss */
 .info-boxes .info-box.day-info-box .col > span {
   font-size: 18px;
 }
-/* line 224, ../assets/sass/custom.scss */
+/* line 228, ../assets/sass/custom.scss */
 .info-boxes .info-box.workout-info-box .col {
   text-align: left;
 }
-/* line 227, ../assets/sass/custom.scss */
+/* line 231, ../assets/sass/custom.scss */
 .info-boxes .info-box.workout-info-box .col > span {
   font-size: 18px;
 }
-/* line 230, ../assets/sass/custom.scss */
-.info-boxes .info-box.workout-info-box .col > span > a {
-  text-decoration: none;
+/* line 235, ../assets/sass/custom.scss */
+.info-boxes .info-box.workout-info-box .col div > span {
+  pointer-events: none;
 }
-/* line 239, ../assets/sass/custom.scss */
+/* line 238, ../assets/sass/custom.scss */
+.info-boxes .info-box.workout-info-box .col div > span > a {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 247, ../assets/sass/custom.scss */
 .info-boxes .info-box.workout-info-box .workout-exercise-order {
   position: absolute;
   top: 50%;
   left: 12px;
   margin-top: -12.5px;
 }
-/* line 250, ../assets/sass/custom.scss */
+/* line 258, ../assets/sass/custom.scss */
 .info-boxes .info-box.exercise-info-box .col {
   text-align: center;
 }
-/* line 253, ../assets/sass/custom.scss */
+/* line 261, ../assets/sass/custom.scss */
 .info-boxes .info-box.exercise-info-box .col .set-entry {
   font-size: 32px;
 }
-/* line 257, ../assets/sass/custom.scss */
+/* line 265, ../assets/sass/custom.scss */
 .info-boxes .info-box.exercise-info-box .col .weight-entry {
   font-size: 16px;
 }
-/* line 261, ../assets/sass/custom.scss */
+/* line 269, ../assets/sass/custom.scss */
 .info-boxes .info-box.exercise-info-box .col div > span {
   pointer-events: none;
 }
-/* line 264, ../assets/sass/custom.scss */
+/* line 272, ../assets/sass/custom.scss */
 .info-boxes .info-box.exercise-info-box .col div > span > a {
   text-decoration: none;
   color: inherit;
 }
-/* line 275, ../assets/sass/custom.scss */
+/* line 283, ../assets/sass/custom.scss */
 .info-boxes .info-box .col {
   position: relative;
   width: 100%;
   padding: 10px;
   line-height: 1;
 }
-/* line 281, ../assets/sass/custom.scss */
+/* line 289, ../assets/sass/custom.scss */
 .info-boxes .info-box .col > span {
   color: #040004;
 }
-/* line 287, ../assets/sass/custom.scss */
+/* line 295, ../assets/sass/custom.scss */
 .info-boxes .info-box .col-50 {
   width: 48%;
   max-width: 48%;
@@ -697,7 +706,7 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   -ms-flex: 0 0 48%;
   flex: 0 0 48%;
 }
-/* line 295, ../assets/sass/custom.scss */
+/* line 303, ../assets/sass/custom.scss */
 .info-boxes h3.h5 {
   color: #C8FF00;
   text-transform: uppercase;
@@ -710,19 +719,19 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   border-bottom: 0;
 }
 
-/* line 311, ../assets/sass/custom.scss */
+/* line 319, ../assets/sass/custom.scss */
 .day-info-box .day-workout-title {
   color: #423732;
   float: left;
 }
-/* line 316, ../assets/sass/custom.scss */
+/* line 324, ../assets/sass/custom.scss */
 .day-info-box .super-arrow-right-b {
   float: right;
   margin-right: 5px;
   margin-top: 5px;
 }
 
-/* line 324, ../assets/sass/custom.scss */
+/* line 332, ../assets/sass/custom.scss */
 .day-workout-title {
   display: block;
   font-size: 20px;
@@ -730,11 +739,11 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   margin-bottom: 10px;
 }
 
-/* line 331, ../assets/sass/custom.scss */
+/* line 339, ../assets/sass/custom.scss */
 .day-workout-exercise-info {
   clear: both;
 }
-/* line 334, ../assets/sass/custom.scss */
+/* line 342, ../assets/sass/custom.scss */
 .day-workout-exercise-info > div {
   margin-bottom: 13px;
 }
@@ -744,46 +753,46 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   content: "";
   display: table;
 }
-/* line 338, ../assets/sass/custom.scss */
+/* line 346, ../assets/sass/custom.scss */
 .day-workout-exercise-info > div:last-child {
   margin-bottom: 0;
 }
-/* line 344, ../assets/sass/custom.scss */
+/* line 352, ../assets/sass/custom.scss */
 .day-workout-exercise-info .workout-exercise-order {
   display: block;
   float: left;
 }
-/* line 349, ../assets/sass/custom.scss */
+/* line 357, ../assets/sass/custom.scss */
 .day-workout-exercise-info .workout-name {
   display: block;
   margin-bottom: 5px;
 }
-/* line 354, ../assets/sass/custom.scss */
+/* line 362, ../assets/sass/custom.scss */
 .day-workout-exercise-info .exercise-info {
   float: left;
   width: 75%;
   padding-left: 15px;
 }
-/* line 359, ../assets/sass/custom.scss */
+/* line 367, ../assets/sass/custom.scss */
 .day-workout-exercise-info .exercise-info .exercise-name {
   display: block;
   margin-bottom: 6px;
 }
 
-/* line 370, ../assets/sass/custom.scss */
+/* line 378, ../assets/sass/custom.scss */
 .workout-info-box .workout-exercise-name {
   display: inline-block;
   padding-left: 40px;
   line-height: 1.125;
 }
-/* line 376, ../assets/sass/custom.scss */
+/* line 384, ../assets/sass/custom.scss */
 .workout-info-box .super-arrow-right-b {
   float: right;
   margin-right: 5px;
   margin-top: 5px;
 }
 
-/* line 384, ../assets/sass/custom.scss */
+/* line 392, ../assets/sass/custom.scss */
 .workout-exercise-order {
   display: inline-block;
   width: 25px;
@@ -796,18 +805,14 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   text-align: center;
 }
 
-/* line 396, ../assets/sass/custom.scss */
+/* line 404, ../assets/sass/custom.scss */
 .workout-exercise-info {
   clear: both;
   margin-top: 6px;
   padding-left: 40px;
 }
 
-/* line 402, ../assets/sass/custom.scss */
-.history-boxes {
-  margin-bottom: 40px;
-}
-/* line 405, ../assets/sass/custom.scss */
+/* line 412, ../assets/sass/custom.scss */
 .history-boxes .history-box {
   display: table;
   padding: 0;
@@ -815,56 +820,56 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   background-color: #343131;
   border: 1px solid #848482;
 }
-/* line 412, ../assets/sass/custom.scss */
+/* line 419, ../assets/sass/custom.scss */
 .history-boxes .history-box .col {
   display: table-cell;
   color: #f5f5f5;
   padding: 10px;
   vertical-align: middle;
 }
-/* line 418, ../assets/sass/custom.scss */
+/* line 425, ../assets/sass/custom.scss */
 .history-boxes .history-box .col span {
   line-height: 1;
   pointer-events: none;
 }
-/* line 422, ../assets/sass/custom.scss */
+/* line 429, ../assets/sass/custom.scss */
 .history-boxes .history-box .col span > a {
   text-decoration: none;
   color: inherit;
 }
-/* line 429, ../assets/sass/custom.scss */
+/* line 436, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date {
   text-align: center;
   border-right: 1px solid #848482;
 }
-/* line 433, ../assets/sass/custom.scss */
+/* line 440, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span {
   line-height: 1;
 }
-/* line 437, ../assets/sass/custom.scss */
+/* line 444, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span.day {
   font-size: 11px;
   font-family: "oswaldregular", sans-serif;
 }
-/* line 442, ../assets/sass/custom.scss */
+/* line 449, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span.year {
   font-size: 13px;
   font-family: "oswaldbold", sans-serif;
 }
-/* line 451, ../assets/sass/custom.scss */
+/* line 458, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.info span {
   line-height: 1;
   padding-left: 0;
 }
-/* line 456, ../assets/sass/custom.scss */
+/* line 463, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.info .set-entry {
   font-size: 22px;
 }
-/* line 460, ../assets/sass/custom.scss */
+/* line 467, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.info .weight-entry {
   font-size: 14px;
 }
-/* line 468, ../assets/sass/custom.scss */
+/* line 475, ../assets/sass/custom.scss */
 .history-boxes .history-box .col-20 {
   width: 18%;
   max-width: 18%;
@@ -876,7 +881,7 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   -ms-flex: 0 0 18%;
   flex: 0 0 18%;
 }
-/* line 474, ../assets/sass/custom.scss */
+/* line 481, ../assets/sass/custom.scss */
 .history-boxes .history-box .col-80 {
   width: 80%;
   max-width: 80%;
