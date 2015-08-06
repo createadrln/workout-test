@@ -784,15 +784,16 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   display: inline-block;
   padding-left: 40px;
   line-height: 1.125;
+  width: 80%;
 }
-/* line 384, ../assets/sass/custom.scss */
+/* line 385, ../assets/sass/custom.scss */
 .workout-info-box .super-arrow-right-b {
   float: right;
   margin-right: 5px;
   margin-top: 5px;
 }
 
-/* line 392, ../assets/sass/custom.scss */
+/* line 393, ../assets/sass/custom.scss */
 .workout-exercise-order {
   display: inline-block;
   width: 25px;
@@ -805,14 +806,14 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   text-align: center;
 }
 
-/* line 404, ../assets/sass/custom.scss */
+/* line 405, ../assets/sass/custom.scss */
 .workout-exercise-info {
   clear: both;
   margin-top: 6px;
   padding-left: 40px;
 }
 
-/* line 412, ../assets/sass/custom.scss */
+/* line 413, ../assets/sass/custom.scss */
 .history-boxes .history-box {
   display: table;
   padding: 0;
@@ -820,56 +821,56 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   background-color: #343131;
   border: 1px solid #848482;
 }
-/* line 419, ../assets/sass/custom.scss */
+/* line 420, ../assets/sass/custom.scss */
 .history-boxes .history-box .col {
   display: table-cell;
   color: #f5f5f5;
   padding: 10px;
   vertical-align: middle;
 }
-/* line 425, ../assets/sass/custom.scss */
+/* line 426, ../assets/sass/custom.scss */
 .history-boxes .history-box .col span {
   line-height: 1;
   pointer-events: none;
 }
-/* line 429, ../assets/sass/custom.scss */
+/* line 430, ../assets/sass/custom.scss */
 .history-boxes .history-box .col span > a {
   text-decoration: none;
   color: inherit;
 }
-/* line 436, ../assets/sass/custom.scss */
+/* line 437, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date {
   text-align: center;
   border-right: 1px solid #848482;
 }
-/* line 440, ../assets/sass/custom.scss */
+/* line 441, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span {
   line-height: 1;
 }
-/* line 444, ../assets/sass/custom.scss */
+/* line 445, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span.day {
   font-size: 11px;
   font-family: "oswaldregular", sans-serif;
 }
-/* line 449, ../assets/sass/custom.scss */
+/* line 450, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span.year {
   font-size: 13px;
   font-family: "oswaldbold", sans-serif;
 }
-/* line 458, ../assets/sass/custom.scss */
+/* line 459, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.info span {
   line-height: 1;
   padding-left: 0;
 }
-/* line 463, ../assets/sass/custom.scss */
+/* line 464, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.info .set-entry {
   font-size: 22px;
 }
-/* line 467, ../assets/sass/custom.scss */
+/* line 468, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.info .weight-entry {
   font-size: 14px;
 }
-/* line 475, ../assets/sass/custom.scss */
+/* line 476, ../assets/sass/custom.scss */
 .history-boxes .history-box .col-20 {
   width: 18%;
   max-width: 18%;
@@ -881,7 +882,7 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   -ms-flex: 0 0 18%;
   flex: 0 0 18%;
 }
-/* line 481, ../assets/sass/custom.scss */
+/* line 482, ../assets/sass/custom.scss */
 .history-boxes .history-box .col-80 {
   width: 80%;
   max-width: 80%;
