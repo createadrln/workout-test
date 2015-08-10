@@ -219,6 +219,16 @@
                     font-size: 18px;
                 }
 
+                div > span {
+                    pointer-events:none;
+
+                    > a {
+                        text-decoration:none;
+                        color:inherit;
+                    }
+
+                }
+
             }
 
         }
