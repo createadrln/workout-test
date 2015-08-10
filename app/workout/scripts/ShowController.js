@@ -19,6 +19,7 @@ angular
                         'name' : exerciseGroup.name,
                         'repgoal' : exerciseGroup.repgoal,
                         'setgoal' : exerciseGroup.setgoal,
+                        'maxweight' : exerciseGroup.maxweight,
                         'weight' : exerciseGroup.weight,
                         'weight_unit' : exerciseGroup.weight_unit
                     });
@@ -38,6 +39,7 @@ angular
                         'name' : exerciseGroup.name,
                         'repgoal' : exerciseGroup.repgoal,
                         'setgoal' : exerciseGroup.setgoal,
+                        'maxweight' : exerciseGroup.maxweight,
                         'weight' : exerciseGroup.weight,
                         'weight_unit' : exerciseGroup.weight_unit
                     });
@@ -58,6 +60,7 @@ angular
                     'name' : exerciseGroup.name,
                     'repgoal' : exerciseGroup.repgoal,
                     'setgoal' : exerciseGroup.setgoal,
+                    'maxweight' : exerciseGroup.maxweight,
                     'weight' : exerciseGroup.weight,
                     'weight_unit' : exerciseGroup.weight_unit
                 });

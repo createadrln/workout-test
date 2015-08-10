@@ -84,6 +84,7 @@ angular
                         'name' : exercise.name,
                         'reps' : exercise.repgoal,
                         'sets' : exercise.setgoal,
+                        'maxweight' : exercise.maxweight,
                         'weight' : exercise.weight,
                         'weight_unit' : exercise.weight_unit.unit
                     };

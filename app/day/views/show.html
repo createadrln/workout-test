@@ -16,7 +16,8 @@
                                 <span class="workout-exercise-order" ng-bind="exercise['order']"></span>
                                 <div class="exercise-info">
                                     <span class="exercise-name" ng-bind="exercise['name']"></span>
-                                    <span ng-bind="exercise['sets']"></span> x <span ng-bind="exercise['reps']"></span> @ <span ng-bind="exercise['weight']"></span>
+                                    <span ng-bind="exercise['sets']"></span> x <span ng-bind="exercise['reps']"></span> @ <span ng-bind="exercise['weight']"></span> <span ng-bind="exercise['weight_unit']"></span><br />
+                                    <div ng-if="exercise.maxweight">MAX:&nbsp;&nbsp;<span ng-bind="exercise['maxweight']"></span> <span ng-bind="exercise['weight_unit']"></span></div>
                                 </div>
                             </div>
                         </div>

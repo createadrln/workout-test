@@ -14,6 +14,9 @@
                         <div class="weight-entry">
                             @ <span ng-bind="localExercise['weight']"></span> <span ng-bind="localExercise['weight_unit'].unit"></span>
                         </div>
+                        <div ng-if="localExercise.maxweight" class="maxweight-entry">
+                            MAX:&nbsp;&nbsp;<span ng-bind="localExercise['maxweight']"></span> <span ng-bind="localExercise['weight_unit'].unit"></span>
+                        </div>
                     </div>
                 </div>
             </div>

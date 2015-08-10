@@ -18,6 +18,7 @@ angular
                 'history_date' : new Date().toISOString(),
                 'sets' : exercise.setgoal,
                 'reps' : exercise.repgoal,
+                'maxweight' : exercise.maxweight,
                 'weight' : exercise.weight,
                 'weight_unit' : exercise.weight_unit.unit
             });

@@ -16,7 +16,8 @@
                         <i class="icon super-arrow-right-b"></i>
                         <div class="workout-exercise-info">
                             <span ng-bind="exercise['setgoal']"></span> x <span ng-bind="exercise['repgoal']"></span><br />
-                            @ <span ng-bind="exercise['weight']"></span> <span ng-bind="exercise['weight_unit'].unit"></span>
+                            @ <span ng-bind="exercise['weight']"></span> <span ng-bind="exercise['weight_unit'].unit"></span><br />
+                            <div ng-if="exercise.maxweight">MAX:&nbsp;&nbsp;<span ng-bind="exercise['maxweight']"></span> <span ng-bind="exercise['weight_unit'].unit"></span></div>
                         </div>
                     </super-navigate>
                 </div>

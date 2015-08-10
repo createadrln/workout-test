@@ -27,6 +27,7 @@ angular
                 'history_date' : new Date().toISOString() ,
                 'sets' : exercise.setgoal,
                 'reps' : exercise.repgoal,
+                'maxweight' : exercise.maxweight,
                 'weight' : exercise.weight,
                 'weight_unit' : exercise.weight_unit.unit
             });
@@ -39,6 +40,7 @@ angular
                 'name' : $scope.exercise.name,
                 'setgoal' : $scope.exercise.setgoal,
                 'repgoal' : $scope.exercise.repgoal,
+                'maxweight' : $scope.exercise.maxweight,
                 'weight' : $scope.exercise.weight,
                 'weight_unit' : $scope.exercise.weight_unit,
                 'tags' : $scope.exercise.tags,
