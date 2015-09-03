@@ -135,6 +135,9 @@
 
 }
 
+.workout-checkbox-list {
+    padding-bottom:30px;
+}
 
 .list {
 
@@ -341,6 +344,7 @@
 
 .day-workout-title {
     display: block;
+    width:75%;
     font-size: 20px;
     font-family: $oswald;
     margin-bottom:10px;

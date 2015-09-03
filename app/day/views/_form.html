@@ -1,12 +1,9 @@
 <div class="fieldset">
+    <div class="page-title">
+        <h2 class="h3"><span ng-bind="day['day']"></span></h2>
+    </div>
     <div class="padding">
         <div class="list margin-bottom-0 padding">
-            <label class="item item-input item-floating-label">
-                <input type="text" ng-model="day['day']">
-            </label>
-            <label class="item item-input item-floating-label">
-                <input type="number" min="1" max="1000" ng-model="day['order']" placeholder="Update Order" />
-            </label>
             <label class="item item-input item-floating-label">
                 <input type="text" ng-model="day['brief_description']" placeholder="Enter a Brief Description">
             </label>
@@ -31,17 +28,6 @@
         </ul>
     </div>
 </div>
-<div class="fixed-footer row">
-    <div class="col col-50">
-        <super-navigate location="workout#new">
-            <div class="button button-full button-neutral">
-                Add workout
-            </div>
-        </super-navigate>
-    </div>
-    <div class="col col-50">
-        <button class="button button-full button-positive">
-            Save
-        </button>
-    </div>
+<div class="bar bar-footer">
+    <button class="button button-full button-positive">Save</button>
 </div>
