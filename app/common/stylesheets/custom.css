@@ -1,57 +1,76 @@
 /*Colors*/
-/* line 1, ../assets/sass/partials/_core.scss */
-html {
-  height: 100%;
+@font-face {
+  font-family: 'oswaldbold';
+  src: url("fonts/oswald-bold-webfont.eot");
+  src: url("fonts/oswald-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/oswald-bold-webfont.woff2") format("woff2"), url("fonts/oswald-bold-webfont.woff") format("woff"), url("fonts/oswald-bold-webfont.ttf") format("truetype"), url("fonts/oswald-bold-webfont.svg#oswaldbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
 }
-
-/* line 5, ../assets/sass/partials/_core.scss */
+@font-face {
+  font-family: 'oswaldlight';
+  src: url("fonts/oswald-light-webfont.eot");
+  src: url("fonts/oswald-light-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/oswald-light-webfont.woff2") format("woff2"), url("fonts/oswald-light-webfont.woff") format("woff"), url("fonts/oswald-light-webfont.ttf") format("truetype"), url("fonts/oswald-light-webfont.svg#oswaldlight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'oswaldregular';
+  src: url("fonts/oswald-regular-webfont.eot");
+  src: url("fonts/oswald-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/oswald-regular-webfont.woff2") format("woff2"), url("fonts/oswald-regular-webfont.woff") format("woff"), url("fonts/oswald-regular-webfont.ttf") format("truetype"), url("fonts/oswald-regular-webfont.svg#oswaldregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'oxygenbold';
+  src: url("fonts/oxygen-bold-webfont.eot");
+  src: url("fonts/oxygen-bold-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/oxygen-bold-webfont.woff2") format("woff2"), url("fonts/oxygen-bold-webfont.woff") format("woff"), url("fonts/oxygen-bold-webfont.ttf") format("truetype"), url("fonts/oxygen-bold-webfont.svg#oxygenbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'oxygenregular';
+  src: url("fonts/oxygen-regular-webfont.eot");
+  src: url("fonts/oxygen-regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/oxygen-regular-webfont.woff2") format("woff2"), url("fonts/oxygen-regular-webfont.woff") format("woff"), url("fonts/oxygen-regular-webfont.ttf") format("truetype"), url("fonts/oxygen-regular-webfont.svg#oxygenregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 1, ../assets/sass/partials/_core.scss */
 body {
-  height: 100%;
-  font-family: "Oxygen", sans-serif;
-  font-weight: 400;
+  font-family: "oxygenregular", sans-serif;
   font-size: 16px;
   color: #423732;
   background: #413D3D;
 }
-/* line 13, ../assets/sass/partials/_core.scss */
-body > div {
-  margin: 0;
-  padding: 0;
-  position: relative;
-  z-index: 2;
-}
 
-/* line 22, ../assets/sass/partials/_core.scss */
+/* line 8, ../assets/sass/partials/_core.scss */
 h3, .h3, h4, .h4 {
   width: 70%;
   color: #f5f5f5;
   text-align: left;
   text-transform: uppercase;
-  font-family: "Oswald", sans-serif;
-  font-weight: 300;
+  font-family: "oswaldlight", sans-serif;
   margin: 0 0 20px;
 }
 
-/* line 32, ../assets/sass/partials/_core.scss */
+/* line 17, ../assets/sass/partials/_core.scss */
 button,
 .button {
-  font-family: "Oxygen", sans-serif;
-  font-weight: 700;
+  font-family: "oxygenbold", sans-serif;
 }
 
 /* line 3, ../assets/sass/partials/_forms.scss */
 form .fieldset {
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   width: 100%;
   height: 100%;
+  padding-bottom: 100px;
   overflow-y: scroll;
   z-index: 2;
   -webkit-overflow-scrolling: touch;
-  padding-bottom: 100px;
 }
 /* line 17, ../assets/sass/partials/_forms.scss */
 form .item {
@@ -262,11 +281,16 @@ input.input.ng-untouched.ng-valid.ng-dirty {
 }
 
 /* line 1, ../assets/sass/partials/_supersonic.scss */
-div.button.button-full {
-  width: 100%;
+.bar.bar-footer {
+  height: auto;
 }
 
 /* line 5, ../assets/sass/partials/_supersonic.scss */
+.bar .button {
+  min-height: 47px;
+}
+
+/* line 9, ../assets/sass/partials/_supersonic.scss */
 .button.button-assertive {
   border-color: #FA2A00;
   color: #413D3D;
@@ -274,12 +298,12 @@ div.button.button-full {
   background-image: -webkit-linear-gradient(#FA2A00, #ff917a);
   background-image: linear-gradient(#FA2A00, #ff917a);
 }
-/* line 11, ../assets/sass/partials/_supersonic.scss */
+/* line 15, ../assets/sass/partials/_supersonic.scss */
 .button.button-assertive:hover {
   color: #413D3D;
 }
 
-/* line 17, ../assets/sass/partials/_supersonic.scss */
+/* line 21, ../assets/sass/partials/_supersonic.scss */
 .button.button-neutral {
   border-color: #848482;
   color: #413D3D;
@@ -287,44 +311,53 @@ div.button.button-full {
   background-image: -webkit-linear-gradient(#848482, #c3c3c2);
   background-image: linear-gradient(#848482, #c3c3c2);
 }
-/* line 23, ../assets/sass/partials/_supersonic.scss */
+/* line 27, ../assets/sass/partials/_supersonic.scss */
 .button.button-neutral:hover {
   color: #413D3D;
 }
 
-/* line 29, ../assets/sass/partials/_supersonic.scss */
-.button.button-positive {
+/* line 33, ../assets/sass/partials/_supersonic.scss */
+.button.button-positive,
+.bar.bar-positive {
   border-color: #1BB0CE;
   color: #413D3D;
   background-color: #1BB0CE;
   background-image: -webkit-linear-gradient(#1BB0CE, #7bdaee);
   background-image: linear-gradient(#1BB0CE, #7bdaee);
 }
-/* line 35, ../assets/sass/partials/_supersonic.scss */
-.button.button-positive.button-outline {
+/* line 40, ../assets/sass/partials/_supersonic.scss */
+.button.button-positive.button-outline,
+.bar.bar-positive.button-outline {
   border: 2px solid #1BB0CE;
   color: #413D3D;
 }
-/* line 39, ../assets/sass/partials/_supersonic.scss */
-.button.button-positive.button-outline .icon:before {
+/* line 44, ../assets/sass/partials/_supersonic.scss */
+.button.button-positive.button-outline .icon:before,
+.bar.bar-positive.button-outline .icon:before {
   color: #413D3D;
 }
-/* line 45, ../assets/sass/partials/_supersonic.scss */
-.button.button-positive:hover {
+/* line 50, ../assets/sass/partials/_supersonic.scss */
+.button.button-positive:hover,
+.bar.bar-positive:hover {
   color: #413D3D;
 }
 
-/* line 51, ../assets/sass/partials/_supersonic.scss */
+/* line 56, ../assets/sass/partials/_supersonic.scss */
+.bar.bar-positive .button {
+  color: #413D3D !important;
+}
+
+/* line 60, ../assets/sass/partials/_supersonic.scss */
 .list-inset {
   background-color: transparent;
 }
 
-/* line 55, ../assets/sass/partials/_supersonic.scss */
+/* line 64, ../assets/sass/partials/_supersonic.scss */
 .list .item {
   white-space: normal;
 }
 
-/* line 59, ../assets/sass/partials/_supersonic.scss */
+/* line 68, ../assets/sass/partials/_supersonic.scss */
 .super-arrow-right-b {
   position: relative;
   display: block;
@@ -340,7 +373,7 @@ div.button.button-full {
   border-bottom-left-radius: 50%;
   border-top-left-radius: 50%;
 }
-/* line 71, ../assets/sass/partials/_supersonic.scss */
+/* line 80, ../assets/sass/partials/_supersonic.scss */
 .super-arrow-right-b:before {
   position: absolute;
   top: 2px;
@@ -392,26 +425,26 @@ div.button.button-full {
   margin-bottom: 20px;
 }
 
-/* line 10, ../assets/sass/custom.scss */
+/* line 11, ../assets/sass/custom.scss */
 .page-title {
   width: 100%;
   position: relative;
   padding: 20px;
   background-color: #343131;
 }
-/* line 16, ../assets/sass/custom.scss */
+/* line 17, ../assets/sass/custom.scss */
 .page-title h3, .page-title .h3, .page-title h4, .page-title .h4 {
   width: 100%;
   line-height: 1.3;
   margin-bottom: 0;
 }
 
-/* line 24, ../assets/sass/custom.scss */
+/* line 25, ../assets/sass/custom.scss */
 .index-add {
   width: 100%;
   z-index: 1;
 }
-/* line 28, ../assets/sass/custom.scss */
+/* line 29, ../assets/sass/custom.scss */
 .index-add.first-view {
   position: fixed;
   bottom: auto;
@@ -421,38 +454,50 @@ div.button.button-full {
   margin-left: -100px;
 }
 
-/* line 39, ../assets/sass/custom.scss */
+/* line 40, ../assets/sass/custom.scss */
 .fixed-header,
-.fixed-footer {
-  position: fixed;
-  left: 0;
-  right: 0;
+.fixed-footer,
+.bar-footer {
   width: 100%;
   padding: 15px;
   background-color: #413D3D;
   z-index: 3;
 }
-/* line 49, ../assets/sass/custom.scss */
+/* line 48, ../assets/sass/custom.scss */
 .fixed-header .button,
-.fixed-footer .button {
+.fixed-footer .button,
+.bar-footer .button {
   position: relative;
   z-index: 3;
   display: block;
   margin: 0 auto;
 }
 
-/* line 58, ../assets/sass/custom.scss */
+/* line 57, ../assets/sass/custom.scss */
+.fixed-header,
 .fixed-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+}
+
+/* line 64, ../assets/sass/custom.scss */
+.fixed-footer,
+.bar-footer {
   bottom: 0;
+}
+
+/* line 69, ../assets/sass/custom.scss */
+.fixed-footer {
   border-top: 1px solid #848482;
 }
 
-/* line 63, ../assets/sass/custom.scss */
+/* line 74, ../assets/sass/custom.scss */
 .fixed-header {
   top: 0;
 }
 
-/* line 67, ../assets/sass/custom.scss */
+/* line 78, ../assets/sass/custom.scss */
 .notes {
   position: relative;
   color: #f5f5f5;
@@ -461,7 +506,7 @@ div.button.button-full {
   border: 1px solid #848482;
   padding: 15px;
 }
-/* line 75, ../assets/sass/custom.scss */
+/* line 86, ../assets/sass/custom.scss */
 .notes .tag {
   display: inline-block;
   padding: 2px 7px;
@@ -470,13 +515,19 @@ div.button.button-full {
   margin-left: 5px;
 }
 
-/* line 85, ../assets/sass/custom.scss */
+/* line 98, ../assets/sass/custom.scss */
+.days-index .list super-navigate .item .title {
+  line-height: 1;
+  margin-bottom: 0;
+}
+
+/* line 105, ../assets/sass/custom.scss */
 .workout-checkbox-list,
 .exercise-checkbox-list {
   display: block;
   padding: 0 20px;
 }
-/* line 90, ../assets/sass/custom.scss */
+/* line 110, ../assets/sass/custom.scss */
 .workout-checkbox-list .item-checkbox,
 .exercise-checkbox-list .item-checkbox {
   display: inline-block;
@@ -485,7 +536,7 @@ div.button.button-full {
   vertical-align: middle;
   padding-left: 30px;
 }
-/* line 98, ../assets/sass/custom.scss */
+/* line 118, ../assets/sass/custom.scss */
 .workout-checkbox-list .list super-navigate,
 .exercise-checkbox-list .list super-navigate {
   width: 80%;
@@ -497,7 +548,7 @@ div.button.button-full {
   border-bottom: 0;
   padding: 0 0 0 10px;
 }
-/* line 109, ../assets/sass/custom.scss */
+/* line 129, ../assets/sass/custom.scss */
 .workout-checkbox-list .label,
 .exercise-checkbox-list .label {
   display: inline-block;
@@ -506,13 +557,18 @@ div.button.button-full {
   font-size: 16px;
 }
 
-/* line 121, ../assets/sass/custom.scss */
+/* line 138, ../assets/sass/custom.scss */
+.workout-checkbox-list {
+  padding-bottom: 30px;
+}
+
+/* line 144, ../assets/sass/custom.scss */
 .list .item {
   border: none;
   color: #f5f5f5;
   background: none;
 }
-/* line 127, ../assets/sass/custom.scss */
+/* line 150, ../assets/sass/custom.scss */
 .list super-navigate {
   display: block;
   width: 100%;
@@ -520,7 +576,7 @@ div.button.button-full {
   padding: 5% 0;
   border-bottom: 1px solid #848482;
 }
-/* line 134, ../assets/sass/custom.scss */
+/* line 157, ../assets/sass/custom.scss */
 .list super-navigate .item {
   position: relative;
   text-align: left;
@@ -529,16 +585,15 @@ div.button.button-full {
   white-space: normal;
   font-size: 17px;
 }
-/* line 142, ../assets/sass/custom.scss */
+/* line 165, ../assets/sass/custom.scss */
 .list super-navigate .item .title {
   display: block;
   text-transform: uppercase;
-  font-family: "Oswald", sans-serif;
+  font-family: "oswaldregular", sans-serif;
   font-size: 24px;
-  font-weight: 400;
   margin-bottom: 7px;
 }
-/* line 151, ../assets/sass/custom.scss */
+/* line 173, ../assets/sass/custom.scss */
 .list super-navigate .item .info {
   display: block;
   font-size: 15px;
@@ -547,18 +602,18 @@ div.button.button-full {
   color: #C8FF00;
   line-height: 1;
 }
-/* line 164, ../assets/sass/custom.scss */
+/* line 186, ../assets/sass/custom.scss */
 .list.list-days super-navigate {
   padding: 4% 0;
 }
 
-/* line 170, ../assets/sass/custom.scss */
+/* line 192, ../assets/sass/custom.scss */
 .workout-index .workout-list,
 .exercise-index .exercise-list {
   padding-bottom: 100px;
 }
 
-/* line 179, ../assets/sass/custom.scss */
+/* line 201, ../assets/sass/custom.scss */
 .info-boxes .info-box.row {
   padding: 0 0 5px;
   background-color: #C8FF00;
@@ -572,74 +627,88 @@ div.button.button-full {
   justify-content: space-between;
   -ms-flex-pack: justify;
 }
-/* line 184, ../assets/sass/custom.scss */
+/* line 206, ../assets/sass/custom.scss */
 .info-boxes .info-box.row.last {
   margin-bottom: 30px;
 }
-/* line 192, ../assets/sass/custom.scss */
+/* line 214, ../assets/sass/custom.scss */
 .info-boxes .info-box.day-info-box.row {
   margin-bottom: 20px;
 }
-/* line 196, ../assets/sass/custom.scss */
+/* line 218, ../assets/sass/custom.scss */
 .info-boxes .info-box.day-info-box .col {
   text-align: left;
 }
-/* line 199, ../assets/sass/custom.scss */
+/* line 221, ../assets/sass/custom.scss */
 .info-boxes .info-box.day-info-box .col > span {
   font-size: 18px;
 }
-/* line 209, ../assets/sass/custom.scss */
+/* line 225, ../assets/sass/custom.scss */
+.info-boxes .info-box.day-info-box .col div > span {
+  pointer-events: none;
+}
+/* line 228, ../assets/sass/custom.scss */
+.info-boxes .info-box.day-info-box .col div > span > a {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 241, ../assets/sass/custom.scss */
 .info-boxes .info-box.workout-info-box .col {
   text-align: left;
 }
-/* line 212, ../assets/sass/custom.scss */
+/* line 244, ../assets/sass/custom.scss */
 .info-boxes .info-box.workout-info-box .col > span {
   font-size: 18px;
 }
-/* line 215, ../assets/sass/custom.scss */
-.info-boxes .info-box.workout-info-box .col > span > a {
-  text-decoration: none;
+/* line 248, ../assets/sass/custom.scss */
+.info-boxes .info-box.workout-info-box .col div > span {
+  pointer-events: none;
 }
-/* line 224, ../assets/sass/custom.scss */
+/* line 251, ../assets/sass/custom.scss */
+.info-boxes .info-box.workout-info-box .col div > span > a {
+  text-decoration: none;
+  color: inherit;
+}
+/* line 260, ../assets/sass/custom.scss */
 .info-boxes .info-box.workout-info-box .workout-exercise-order {
   position: absolute;
   top: 50%;
   left: 12px;
   margin-top: -12.5px;
 }
-/* line 235, ../assets/sass/custom.scss */
+/* line 271, ../assets/sass/custom.scss */
 .info-boxes .info-box.exercise-info-box .col {
   text-align: center;
 }
-/* line 238, ../assets/sass/custom.scss */
+/* line 274, ../assets/sass/custom.scss */
 .info-boxes .info-box.exercise-info-box .col .set-entry {
   font-size: 32px;
 }
-/* line 242, ../assets/sass/custom.scss */
+/* line 278, ../assets/sass/custom.scss */
 .info-boxes .info-box.exercise-info-box .col .weight-entry {
   font-size: 16px;
 }
-/* line 246, ../assets/sass/custom.scss */
+/* line 282, ../assets/sass/custom.scss */
 .info-boxes .info-box.exercise-info-box .col div > span {
   pointer-events: none;
 }
-/* line 249, ../assets/sass/custom.scss */
+/* line 285, ../assets/sass/custom.scss */
 .info-boxes .info-box.exercise-info-box .col div > span > a {
   text-decoration: none;
   color: inherit;
 }
-/* line 260, ../assets/sass/custom.scss */
+/* line 296, ../assets/sass/custom.scss */
 .info-boxes .info-box .col {
   position: relative;
   width: 100%;
   padding: 10px;
   line-height: 1;
 }
-/* line 266, ../assets/sass/custom.scss */
+/* line 302, ../assets/sass/custom.scss */
 .info-boxes .info-box .col > span {
   color: #040004;
 }
-/* line 272, ../assets/sass/custom.scss */
+/* line 308, ../assets/sass/custom.scss */
 .info-boxes .info-box .col-50 {
   width: 48%;
   max-width: 48%;
@@ -651,13 +720,12 @@ div.button.button-full {
   -ms-flex: 0 0 48%;
   flex: 0 0 48%;
 }
-/* line 280, ../assets/sass/custom.scss */
+/* line 316, ../assets/sass/custom.scss */
 .info-boxes h3.h5 {
   color: #C8FF00;
   text-transform: uppercase;
   line-height: 1;
-  font-family: "Oswald", sans-serif;
-  font-weight: 300;
+  font-family: "oswaldlight", sans-serif;
   font-size: 26px;
   margin-top: 0;
   margin-bottom: 0;
@@ -665,32 +733,32 @@ div.button.button-full {
   border-bottom: 0;
 }
 
-/* line 297, ../assets/sass/custom.scss */
+/* line 332, ../assets/sass/custom.scss */
 .day-info-box .day-workout-title {
   color: #423732;
   float: left;
 }
-/* line 302, ../assets/sass/custom.scss */
+/* line 337, ../assets/sass/custom.scss */
 .day-info-box .super-arrow-right-b {
   float: right;
   margin-right: 5px;
   margin-top: 5px;
 }
 
-/* line 310, ../assets/sass/custom.scss */
+/* line 345, ../assets/sass/custom.scss */
 .day-workout-title {
   display: block;
+  width: 75%;
   font-size: 20px;
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
+  font-family: "oswaldregular", sans-serif;
   margin-bottom: 10px;
 }
 
-/* line 318, ../assets/sass/custom.scss */
+/* line 353, ../assets/sass/custom.scss */
 .day-workout-exercise-info {
   clear: both;
 }
-/* line 321, ../assets/sass/custom.scss */
+/* line 356, ../assets/sass/custom.scss */
 .day-workout-exercise-info > div {
   margin-bottom: 13px;
 }
@@ -700,46 +768,47 @@ div.button.button-full {
   content: "";
   display: table;
 }
-/* line 325, ../assets/sass/custom.scss */
+/* line 360, ../assets/sass/custom.scss */
 .day-workout-exercise-info > div:last-child {
   margin-bottom: 0;
 }
-/* line 331, ../assets/sass/custom.scss */
+/* line 366, ../assets/sass/custom.scss */
 .day-workout-exercise-info .workout-exercise-order {
   display: block;
   float: left;
 }
-/* line 336, ../assets/sass/custom.scss */
+/* line 371, ../assets/sass/custom.scss */
 .day-workout-exercise-info .workout-name {
   display: block;
   margin-bottom: 5px;
 }
-/* line 341, ../assets/sass/custom.scss */
+/* line 376, ../assets/sass/custom.scss */
 .day-workout-exercise-info .exercise-info {
   float: left;
   width: 75%;
   padding-left: 15px;
 }
-/* line 346, ../assets/sass/custom.scss */
+/* line 381, ../assets/sass/custom.scss */
 .day-workout-exercise-info .exercise-info .exercise-name {
   display: block;
   margin-bottom: 6px;
 }
 
-/* line 357, ../assets/sass/custom.scss */
+/* line 392, ../assets/sass/custom.scss */
 .workout-info-box .workout-exercise-name {
   display: inline-block;
   padding-left: 40px;
   line-height: 1.125;
+  width: 80%;
 }
-/* line 363, ../assets/sass/custom.scss */
+/* line 399, ../assets/sass/custom.scss */
 .workout-info-box .super-arrow-right-b {
   float: right;
   margin-right: 5px;
   margin-top: 5px;
 }
 
-/* line 371, ../assets/sass/custom.scss */
+/* line 407, ../assets/sass/custom.scss */
 .workout-exercise-order {
   display: inline-block;
   width: 25px;
@@ -747,24 +816,19 @@ div.button.button-full {
   line-height: 25px;
   background-color: #413D3D;
   color: #C8FF00 !important;
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
+  font-family: "oswaldregular", sans-serif;
   font-size: 16px;
   text-align: center;
 }
 
-/* line 384, ../assets/sass/custom.scss */
+/* line 419, ../assets/sass/custom.scss */
 .workout-exercise-info {
   clear: both;
   margin-top: 6px;
   padding-left: 40px;
 }
 
-/* line 390, ../assets/sass/custom.scss */
-.history-boxes {
-  margin-bottom: 40px;
-}
-/* line 393, ../assets/sass/custom.scss */
+/* line 427, ../assets/sass/custom.scss */
 .history-boxes .history-box {
   display: table;
   padding: 0;
@@ -772,58 +836,56 @@ div.button.button-full {
   background-color: #343131;
   border: 1px solid #848482;
 }
-/* line 400, ../assets/sass/custom.scss */
+/* line 434, ../assets/sass/custom.scss */
 .history-boxes .history-box .col {
   display: table-cell;
   color: #f5f5f5;
   padding: 10px;
   vertical-align: middle;
 }
-/* line 406, ../assets/sass/custom.scss */
+/* line 440, ../assets/sass/custom.scss */
 .history-boxes .history-box .col span {
   line-height: 1;
   pointer-events: none;
 }
-/* line 410, ../assets/sass/custom.scss */
+/* line 444, ../assets/sass/custom.scss */
 .history-boxes .history-box .col span > a {
   text-decoration: none;
   color: inherit;
 }
-/* line 417, ../assets/sass/custom.scss */
+/* line 451, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date {
   text-align: center;
   border-right: 1px solid #848482;
 }
-/* line 421, ../assets/sass/custom.scss */
+/* line 455, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span {
   line-height: 1;
 }
-/* line 425, ../assets/sass/custom.scss */
+/* line 459, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span.day {
   font-size: 11px;
-  font-family: "Oswald", sans-serif;
-  font-weight: 400;
+  font-family: "oswaldregular", sans-serif;
 }
-/* line 431, ../assets/sass/custom.scss */
+/* line 464, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span.year {
   font-size: 13px;
-  font-family: "Oswald", sans-serif;
-  font-weight: 700;
+  font-family: "oswaldbold", sans-serif;
 }
-/* line 441, ../assets/sass/custom.scss */
+/* line 473, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.info span {
   line-height: 1;
   padding-left: 0;
 }
-/* line 446, ../assets/sass/custom.scss */
+/* line 478, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.info .set-entry {
   font-size: 22px;
 }
-/* line 450, ../assets/sass/custom.scss */
+/* line 482, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.info .weight-entry {
   font-size: 14px;
 }
-/* line 458, ../assets/sass/custom.scss */
+/* line 490, ../assets/sass/custom.scss */
 .history-boxes .history-box .col-20 {
   width: 18%;
   max-width: 18%;
@@ -835,7 +897,7 @@ div.button.button-full {
   -ms-flex: 0 0 18%;
   flex: 0 0 18%;
 }
-/* line 464, ../assets/sass/custom.scss */
+/* line 496, ../assets/sass/custom.scss */
 .history-boxes .history-box .col-80 {
   width: 80%;
   max-width: 80%;

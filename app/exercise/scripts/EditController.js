@@ -7,7 +7,8 @@ angular
         $scope.selectedWeightUnit = $scope.exercise.weight_unit;
         $scope.weight_units = [
             { 'id' : 1, 'unit' : 'lbs' },
-            { 'id' : 2, 'unit' : 'kgs' }
+            { 'id' : 2, 'unit' : 'kgs' },
+            { 'id' : 3, 'unit' : 'None' }
         ];
         $scope.exercise.weight_unit = getIndexOfId($scope.weight_units, $scope.selectedWeightUnit.id);
 
@@ -17,6 +18,7 @@ angular
                 'history_date' : new Date().toISOString(),
                 'sets' : exercise.setgoal,
                 'reps' : exercise.repgoal,
+                'maxweight' : exercise.maxweight,
                 'weight' : exercise.weight,
                 'weight_unit' : exercise.weight_unit.unit
             });

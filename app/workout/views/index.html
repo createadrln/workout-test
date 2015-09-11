@@ -1,25 +1,20 @@
 <div ng-controller="IndexController" class="workout-index">
-
     <super-navbar>
         <super-navbar-title>
         </super-navbar-title>
     </super-navbar>
-
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner" class="padding">
-
         <super-modal-show location="workout#new" ng-hide="localWorkouts.length > 0" class="index-add first-view">
             <button class="button button-full button-positive">
                 <i class="icon super-plus"></i> Add a new workout
             </button>
         </super-modal-show>
-
         <div ng-show="localWorkouts.length > 0" class="list padding margin-bottom-0">
             <label class="item item-input item-floating-label search padding margin-bottom-0">
                 <input type="text" ng-model="search" placeholder="Filter Workouts" /><i class="icon super-search"></i>
             </label>
         </div>
-
         <ul class="list workout-list padding" ng-show="localWorkouts.length > 0">
             <super-navigate location="workout#show" data-params-id="{{ workout.id }}" ng-repeat="workout in localWorkouts | filter:search">
                 <li class="item">
@@ -27,7 +22,6 @@
                 </li>
             </super-navigate>
         </ul>
-
         <div ng-show="localWorkouts.length > 0" class="index-add fixed-footer">
             <super-modal-show location="workout#new">
                 <button class="button button-full button-positive margin-bottom-0">
@@ -35,7 +29,5 @@
                 </button>
             </super-modal-show>
         </div>
-
     </div>
-
 </div>

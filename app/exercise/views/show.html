@@ -1,14 +1,10 @@
 <div ng-controller="ShowController">
-
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
-
         <div class="page-title">
             <h2 class="h3"><span ng-bind="localExercise['name']"></span></h2>
         </div>
-
-        <div class="padding">
-
+        <div class="padding padding-bottom-100">
             <div ng-if="localExercise.repgoal != ''" class="info-boxes padding margin-bottom-20">
                 <div class="exercise-info-box info-box row">
                     <div class="col">
@@ -18,14 +14,16 @@
                         <div class="weight-entry">
                             @ <span ng-bind="localExercise['weight']"></span> <span ng-bind="localExercise['weight_unit'].unit"></span>
                         </div>
+                        <div ng-if="localExercise.maxweight" class="maxweight-entry">
+                            MAX:&nbsp;&nbsp;<span ng-bind="localExercise['maxweight']"></span> <span ng-bind="localExercise['weight_unit'].unit"></span>
+                        </div>
                     </div>
                 </div>
             </div>
-
             <div ng-if="localExercise.history != ''" class="padding">
                 <div class="history-boxes">
-                    <h3>Last 5 updates</h3>
-                    <div ng-repeat="entry in localExercise.history | orderBy: '-history_date' | limitTo: 5">
+                    <h3>Last 10 updates</h3>
+                    <div ng-repeat="entry in localExercise.history | orderBy: '-history_date' | limitTo: 10">
                         <div class="row history-box">
                             <div class="date col col-20">
                                 <span class="day">{{entry.history_date | date : 'M.d'}}</span>
@@ -37,17 +35,15 @@
                                 </div>
                                 <div class="weight-entry">
                                     <span ng-bind="entry['weight']"></span> <span ng-bind="entry['weight_unit']"></span>
+                                    <span ng-if="entry.maxweight"><br />(MAX: <span ng-bind="entry['maxweight']"></span> <span ng-bind="entry['weight_unit']"></span>)</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
     <div class="fixed-footer">
         <super-modal-show location="exercise#edit?id={{ localExercise.id }}">
             <button class="button button-full button-assertive">
@@ -55,5 +51,4 @@
             </button>
         </super-modal-show>
     </div>
-
 </div>

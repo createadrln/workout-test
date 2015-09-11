@@ -3,6 +3,7 @@ angular
     .controller("EditController", function ($scope, $localStorage, supersonic) {
         $scope.workout = getIndexOfId($localStorage.localWorkouts, steroids.view.params.id);
 
+        /* Get Local Storage Object */
         if ($localStorage.localExercises) {
             $scope.localExercises = $localStorage.localExercises;
         } else {
@@ -10,6 +11,21 @@ angular
         }
 
         $scope.showSpinner = false;
+
+        /* Load Selected Workout Technique */
+        $scope.selectedTrainingTechnique = $scope.workout.technique;
+        $scope.techniques = [
+            { 'id' : 0, 'name' : 'Select Training Technique...' },
+            { 'id' : 1, 'name' : 'General Training' },
+            { 'id' : 2, 'name' : 'Pyramid' },
+            { 'id' : 3, 'name' : 'Super Set' },
+            { 'id' : 4, 'name' : 'Circuit' },
+            { 'id' : 5, 'name' : 'Drop Set' },
+            { 'id' : 6, 'name' : 'Negative Set' },
+            { 'id' : 7, 'name' : 'Rest Pause Set' },
+            { 'id' : 8, 'name' : 'Static Hold' }
+        ];
+        $scope.workout.technique = getIndexOfId($scope.techniques, $scope.selectedTrainingTechnique.id);
 
         /* Load Toggled Exercises Into Array */
         $scope.checkedExercises = [];
@@ -26,6 +42,7 @@ angular
             });
         }
 
+        /* Get Index of Data Array */
         $scope.getIndexOfId = function(array, id) {
             for (var i=0; i<array.length; i++) {
                 if (array[i].id==id) return array[i];
@@ -33,6 +50,7 @@ angular
             return -1;
         };
 
+        /* Function To Add Toggled Selections To Data Array */
         $scope.toggleCheck = function (exercise) {
             if (getIndexOfId($scope.checkedExercises, exercise.id) === -1) {
                 checkedExerciseCnt++;
@@ -48,6 +66,7 @@ angular
             return checkedExerciseCnt;
         };
 
+        /* Submit and Update Workout Data */
         $scope.submitForm = function() {
             $scope.showSpinner = true;
             $scope.workout.exercises = $scope.checkedExercises;

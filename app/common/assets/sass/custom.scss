@@ -1,5 +1,6 @@
 @import "bourbon/bourbon";
 @import "vars";
+@import "partials/fonts";
 @import "partials/core";
 @import "partials/forms";
 @import "partials/buttons";
@@ -37,10 +38,8 @@
 }
 
 .fixed-header,
-.fixed-footer {
-    position: fixed;
-    left:0;
-    right:0;
+.fixed-footer,
+.bar-footer {
     width:100%;
     padding:15px;
     background-color: $originalSteel;
@@ -55,10 +54,22 @@
 
 }
 
+.fixed-header,
 .fixed-footer {
+    position: fixed;
+    left:0;
+    right:0;
+}
+
+.fixed-footer,
+.bar-footer {
     bottom:0;
+}
+
+.fixed-footer {
     border-top:1px solid $grayBattleship;
 }
+
 
 .fixed-header {
     top:0;
@@ -78,6 +89,15 @@
         background-color: $whiteSmoke;
         color:$black;
         margin-left:5px;
+    }
+
+}
+
+.days-index {
+
+    .list super-navigate .item .title {
+        line-height: 1;
+        margin-bottom:0;
     }
 
 }
@@ -115,6 +135,9 @@
 
 }
 
+.workout-checkbox-list {
+    padding-bottom:30px;
+}
 
 .list {
 
@@ -144,7 +167,6 @@
                 text-transform: uppercase;
                 font-family: $oswald;
                 font-size: 24px;
-                font-weight: 400;
                 margin-bottom:7px;
             }
 
@@ -200,6 +222,16 @@
                     font-size: 18px;
                 }
 
+                div > span {
+                    pointer-events:none;
+
+                    > a {
+                        text-decoration:none;
+                        color:inherit;
+                    }
+
+                }
+
             }
 
         }
@@ -211,10 +243,14 @@
 
                 > span {
                     font-size: 18px;
+                }
+
+                div > span {
+                    pointer-events:none;
 
                     > a {
                         text-decoration:none;
-//                        color:inherit;
+                        color:inherit;
                     }
 
                 }
@@ -281,8 +317,7 @@
         color: $neonYellow;
         text-transform: uppercase;
         line-height: 1;
-        font-family: $oswald;
-        font-weight: 300;
+        font-family: $oswaldLight;
         font-size: 26px;
         margin-top:0;
         margin-bottom:0;
@@ -309,9 +344,9 @@
 
 .day-workout-title {
     display: block;
+    width:75%;
     font-size: 20px;
     font-family: $oswald;
-    font-weight: 400;
     margin-bottom:10px;
 }
 
@@ -358,6 +393,7 @@
         display:inline-block;
         padding-left:40px;
         line-height: 1.125;
+        width:80%
     }
 
     .super-arrow-right-b {
@@ -376,7 +412,6 @@
     background-color: $originalSteel;
     color: $neonYellow !important;
     font-family: $oswald;
-    font-weight: 400;
     font-size: 16px;
     text-align: center;
 }
@@ -388,7 +423,6 @@
 }
 
 .history-boxes {
-    margin-bottom:40px;
 
     .history-box {
         display: table;
@@ -425,13 +459,11 @@
                 span.day {
                     font-size: 11px;
                     font-family: $oswald;
-                    font-weight: 400;
                 }
 
                 span.year {
                     font-size: 13px;
-                    font-family: $oswald;
-                    font-weight: 700;
+                    font-family: $oswaldBold;
                 }
 
             }
