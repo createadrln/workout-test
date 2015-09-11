@@ -35,6 +35,7 @@
                                 </div>
                                 <div class="weight-entry">
                                     <span ng-bind="entry['weight']"></span> <span ng-bind="entry['weight_unit']"></span>
+                                    <span ng-if="entry.maxweight"><br />(MAX: <span ng-bind="entry['maxweight']"></span> <span ng-bind="entry['weight_unit']"></span>)</span>
                                 </div>
                             </div>
                         </div>
