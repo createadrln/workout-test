@@ -7,7 +7,7 @@
         </div>
         <div class="padding padding-bottom-100">
             <div ng-hide="localDay.workouts.length == 0" class="info-boxes padding margin-bottom-30">
-                <div ng-repeat="workout in localDay.workouts" class="row day-info-box info-box">
+                <div ng-repeat="workout in localDay.workouts | orderBy : 'order'" class="row day-info-box info-box">
                     <super-navigate location="workout#show" data-params-id="{{ workout.id }}" class="col">
                         <span class="day-workout-title" ng-bind="workout['title']"></span>
                         <i class="icon super-arrow-right-b"></i>
@@ -30,12 +30,21 @@
                 <i class="icon super-plus"></i> Edit/Add Workouts
             </button>
         </super-modal-show>
-        <div class="fixed-footer" ng-hide="localDay.workouts.length == 0">
-            <super-modal-show location="day#edit?id={{ localDay.id }}">
-                <button class="button button-full button-assertive">
-                    Edit
-                </button>
-            </super-modal-show>
+        <div class="bar bar-footer row" ng-hide="localDay.workouts.length == 0">
+            <div class="col col-50">
+                <super-modal-show location="day#order?id={{ localDay.id }}">
+                    <button class="button button-full button-positive">
+                        Order
+                    </button>
+                </super-modal-show>
+            </div>
+            <div class="col col-50">
+                <super-modal-show location="day#edit?id={{ localDay.id }}">
+                    <button class="button button-full button-assertive">
+                        Edit
+                    </button>
+                </super-modal-show>
+            </div>
         </div>
     </div>
 </div>

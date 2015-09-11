@@ -60,8 +60,8 @@ angular
                         exerciseArr.push(getExerciseData($scope.localExercise, exercise.order));
                     });
                     workouts.push({
+                        'order' : setDayWorkoutIds.workouts[i].order,
                         'id' : $scope.localWorkout.id,
-                        'order' : $scope.localWorkout.order,
                         'title' : $scope.localWorkout.title,
                         'exercises' : exerciseArr
                     });
