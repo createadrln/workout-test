@@ -118,10 +118,9 @@ input[type="text"],
 input[type="number"] {
     height:45px;
     line-height:20px;
-    padding-left:10px;
     border-bottom: 1px solid $grayBattleship;
     color: $whiteSmoke;
-    font-size: 18px;
+    font-size: 16px;
 
     &.col-40 {
         display: inline-block;
@@ -131,6 +130,54 @@ input[type="number"] {
 
 }
 
+.list-qty .item {
+    display:inline-block;
+}
+
+.item-input-qty {
+    text-align: center;
+    padding:0 20px 20px;
+}
+
+input[type="text"].input-qty {
+    display:inline-block;
+    -webkit-appearance: none;
+    vertical-align: middle;
+    outline: 0;
+
+    width:90px;
+    height:110px;
+    line-height: 110px;
+
+    font-size: 70px;
+    text-align: center;
+    font-family: $oxygen;
+
+    background-color: transparent;
+    border:1px solid $grayBattleship;
+    color: lighten($grayBattleship, 15%);
+    padding:10px;
+
+    @include border-top-radius(0);
+    @include border-right-radius(0);
+    @include border-bottom-radius(0);
+    @include border-left-radius(0);
+}
+
+textarea {
+    -webkit-appearance: none;
+    background-color: transparent;
+    border:1px solid $grayBattleship;
+    outline: 0;
+    font-size:16px;
+    padding:10px;
+    color: lighten($grayBattleship, 15%);
+    @include border-top-radius(0);
+    @include border-right-radius(0);
+    @include border-bottom-radius(0);
+    @include border-left-radius(0);
+}
+
 select {
     width:100%;
     -webkit-appearance: none;
@@ -138,7 +185,7 @@ select {
     border:1px solid $grayBattleship;
     outline: 0;
     padding: 8px 40px 8px 10px;
-    font-size:18px;
+    font-size:16px;
     color: lighten($grayBattleship, 15%);
 
     @include border-top-radius(0);
@@ -178,6 +225,66 @@ select::-ms-expand {
 
     }
 
+}
+
+.item-radio .item-content,
+.item-radio input:checked ~ .item-content {
+    background-color:transparent;
+}
+
+.list-set-exercise-reps {
+    width:90%;
+    margin:0 auto;
+
+    .item-radio input:checked ~ .super-ios-circle-outline:before {
+        content:'\f400';
+    }
+
+    .item-radio .item-content {
+        text-transform: uppercase;
+    }
+
+    .col-30 {
+        display: inline-block;
+        width:33%;
+        max-width:33%;
+        text-align: center;
+    }
+
+    .item-radio .radio-icon {
+        display:block;
+        visibility: visible;
+        padding-top:0;
+        padding-bottom:0;
+
+        position:relative;
+        top:auto;
+        right:auto;
+
+        color:$neonYellow;
+        font-size: 36px;
+    }
+
+    .item-content {
+        display:block;
+        padding-right:0;
+        padding-left:0;
+    }
+
+    .exercise-reps-message {
+        display:block;
+        color:$neonYellow;
+        text-align: center;
+        text-transform: uppercase;            
+    }
+
+}
+
+.to {
+    color:$whiteSmoke;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom:20px;
 }
 
 input.input.ng-pristine.ng-untouched.ng-valid,

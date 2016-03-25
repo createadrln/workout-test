@@ -1,9 +1,24 @@
+h2 {
+    font-size: 36px;
+}
+
 .bar.bar-footer {
     height:auto;
 }
 
 .bar .button {
     min-height:47px;
+}
+
+.button.button-half {
+    position:relative !important;
+    top:auto !important;
+    right:auto !important;
+    bottom:auto !important;
+    
+    display:inline-block;
+    width:48%;
+    margin:0 1% 0 1%;
 }
 
 .button.button-assertive {
@@ -85,4 +100,28 @@
         color: $grayGunmetal;
     }
 
+}
+
+.super-navigate:before {
+    content:'';
+    display:none;
+}
+
+.list.list-qty{
+    text-align: center;
+
+    .icon:before {
+        vertical-align: middle;
+        color:$neonYellow;
+        font-size:40px;
+    }
+}
+
+.list .item-radio {
+    .icon:before {
+        visibility: visible;
+        vertical-align: middle;
+        color:$neonYellow;
+        font-size:40px;
+    }
 }

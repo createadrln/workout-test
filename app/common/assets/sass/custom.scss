@@ -12,12 +12,21 @@
     width:100%;
     position: relative;
     padding:20px;
-    background-color: darken($originalSteel,5%);
 
-    h3, .h3, h4, .h4 {
+    h2, .h2, h3, .h3, h4, .h4 {
+        text-align: center;
         width:100%;
         line-height: 1.3;
         margin-bottom:0;
+    }
+
+    .sub-title {
+        display:block;
+        text-align: center;
+        width:100%;
+        color:$whiteSmoke;
+        font-size: 12px;
+        text-transform:uppercase;        
     }
 
 }
@@ -95,9 +104,22 @@
 
 .days-index {
 
-    .list super-navigate .item .title {
+    .list-days {
+        position:absolute;
+        top:50%;
+        width:95%;
+        -ms-transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        &.list .super-navigate:first-child {
+            border-top:1px solid $grayBattleship;
+        }
+    }
+
+    .list .super-navigate .item .title {
         line-height: 1;
         margin-bottom:0;
+        font-family: $oswaldLight;
     }
 
 }
