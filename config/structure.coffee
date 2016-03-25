@@ -5,6 +5,11 @@ module.exports =
   # See styling options for tabs and other native components in app/common/native-styles/ios.css or app/common/native-styles/android.css
   tabs: [
     {
+      title: "Exercises"
+      id: "exercise"
+      location: "exercise#index"
+    }
+    {
       title: "Days"
       id: "day"
       icon: "icons/calendar.svg"
@@ -14,11 +19,6 @@ module.exports =
       title: "Workouts"
       id: "workout"
       location: "workout#index"
-    }
-    {
-      title: "Exercises"
-      id: "exercise"
-      location: "exercise#index"
     }
     {
       title: "Info"

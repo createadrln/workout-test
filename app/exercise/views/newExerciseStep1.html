@@ -1,0 +1,8 @@
+<div ng-controller="NewExerciseStep1Controller">
+    <super-navbar>
+        <super-navbar-button ng-click="cancel()">
+        </super-navbar-button>
+    </super-navbar>
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <form ng-hide="showSpinner" ng-include="'_formStep1.html'"></form>
+</div>

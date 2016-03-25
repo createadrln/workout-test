@@ -1,0 +1,47 @@
+<div class="fieldset">
+
+	<div class="page-title">
+	    <h2>Enter Sets</h2>
+	</div>
+
+    <div class="padding">
+        <div class="list list-qty">
+            <i ng-click="increaseSetQty()" class="icon super-plus-circled"></i>
+            <label class="item item-input-qty">
+                <input type="text" class="input-qty" ng-model="exercise['sets']" pattern="[0-9]*" />
+            </label>
+            <i ng-click="decreaseSetQty()" class="icon super-minus-circled"></i>
+        </div>
+    </div>
+
+    <div class="divider margin-top-20 margin-bottom-20"></div>
+
+    <div class="page-title">
+        <h2>Enter Reps</h2>
+    </div>
+
+    <div class="list list-set-exercise-reps">
+        <label ng-click="updateRepMessage()" class="item item-radio col-30">
+            <input ng-model="exercise['reps']" type="radio" name="group" value="fixed">
+            <i class="radio-icon super-ios-circle-outline"></i>
+            <div class="item-content">Fixed</div>
+        </label>
+        <label ng-click="updateRepMessage()" class="item item-radio col-30">
+            <input ng-model="exercise['reps']" type="radio" name="group" value="range">
+            <i class="radio-icon super-ios-circle-outline"></i>
+            <div class="item-content">Range</div>
+        </label>
+        <label ng-click="updateRepMessage()" class="item item-radio col-30">
+            <input ng-model="exercise['reps']" type="radio" name="group" value="series">
+            <i class="radio-icon super-ios-circle-outline"></i>
+            <div class="item-content">Series</div>
+        </label>
+        <span class="exercise-reps-message" ng-bind="exercise['reps_message']"></span>
+    </div>
+
+</div>
+
+<div class="bar bar-footer">
+    <button class="button button-half button-positive" ng-click="addToExerciseStep2(exercise)">Next</button>
+    <button class="button button-half button-neutral" ng-click="cancel()">Cancel</button>
+</div>

@@ -1,0 +1,46 @@
+<div class="fieldset">
+
+	<div class="page-title">
+        <h2 ng-if="exercise.reps == 'fixed'">Enter Reps</h2>
+        <h2 ng-if="exercise.reps == 'range'">Enter Rep Range</h2>
+	    <h2 ng-if="exercise.reps == 'series'">Enter Rep Series</h2>
+	</div>
+
+    <div class="padding">        
+        <div ng-if="exercise.reps == 'fixed'" class="list list-qty v-align">
+            <i ng-click="increaseFixedRepQty()" class="icon super-plus-circled"></i>
+            <label class="item item-input-qty">
+                <input type="text" class="input-qty" ng-model="exercise['reps_fixed']" pattern="[0-9]*" />
+            </label>
+            <i ng-click="decreaseFixedRepQty()" class="icon super-minus-circled"></i>
+        </div>
+        <div ng-if="exercise.reps == 'range'" class="list list-qty v-align">
+            <div class="v-align">
+                <i ng-click="increaseRepRangeStartQty()" class="icon super-plus-circled"></i>
+                <label class="item item-input-qty">
+                    <input type="text" class="input-qty" ng-model="exercise['rep_range_start']" pattern="[0-9]*" />
+                </label>
+                <i ng-click="decreaseRepRangeStartQty()" class="icon super-minus-circled"></i>
+            </div>  
+            <div class="to">- TO -</div>
+            <div>
+                <i ng-click="increaseRepRangeEndQty()" class="icon super-plus-circled"></i>
+                <label class="item item-input-qty">
+                    <input type="text" class="input-qty" ng-model="exercise['rep_range_end']" pattern="[0-9]*" />
+                </label>
+                <i ng-click="decreaseRepRangeEndQty()" class="icon super-minus-circled"></i>
+            </div>
+        </div>
+        <div ng-if="exercise.reps == 'series'" ng-repeat="i in getCount(exercise.sets) track by $index" class="list list-qty">      
+            <label class="item item-input-qty">
+                <input type="text" class="input-qty" ng-model="exercise['rep_series_' + $index]" pattern="[0-9]*" />
+            </label>
+        </div>        
+    </div>
+
+</div>
+
+<div class="bar bar-footer">
+    <button class="button button-half button-positive" ng-click="addToExerciseStep3(exercise)">Next</button>
+    <button class="button button-half button-neutral" ng-click="cancel()">Cancel</button>
+</div>
