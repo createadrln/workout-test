@@ -1,4 +1,5 @@
 <div ng-controller="ShowController">
+    <span style="color:#FFF;">{{localExercise | json}}</span>
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
         <div class="page-title">

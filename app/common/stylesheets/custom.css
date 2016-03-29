@@ -1014,7 +1014,7 @@ h2 {
   width: 80%;
 }
 /* line 421, ../assets/sass/custom.scss */
-.workout-info-box .super-arrow-right-b {
+.workout-info-box .view-link {
   float: right;
   margin-right: 5px;
   margin-top: 5px;
@@ -1120,4 +1120,20 @@ h2 {
   -moz-flex: 0 0 80%;
   -ms-flex: 0 0 80%;
   flex: 0 0 80%;
+}
+
+/* line 528, ../assets/sass/custom.scss */
+.icon.view-link {
+  border: 1px solid #FA2A00;
+  padding: 4px 7px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  font-size: 14px;
+  color: #FA2A00;
 }

@@ -418,7 +418,7 @@
         width:80%
     }
 
-    .super-arrow-right-b {
+    .view-link {
         float:right;
         margin-right:5px;
         margin-top:5px;
@@ -523,4 +523,17 @@
 
     }
 
+}
+
+.icon.view-link {
+    border:1px solid $redBrave;
+    padding:4px 7px;
+
+    @include border-top-radius(3px);
+    @include border-right-radius(3px);
+    @include border-bottom-radius(3px);
+    @include border-left-radius(3px);
+
+    font-size: 14px;
+    color:$redBrave;
 }
