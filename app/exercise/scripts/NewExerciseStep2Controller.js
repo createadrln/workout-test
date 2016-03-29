@@ -8,11 +8,11 @@ angular
 
         $scope.increaseSetQty = function() {
     		$scope.exercise.sets++;
-        }
+        };
 
         $scope.decreaseSetQty = function() {
     		$scope.exercise.sets--;
-        }
+        };
 
         $scope.updateRepMessage = function() {
             if ($scope.exercise.reps == 'fixed') {
@@ -27,13 +27,12 @@ angular
             } else {
                 $scope.exercise.reps_message = 'There is a problem with your selection!'
             }
-        }
+        };
 
         $scope.addToExerciseStep2 = function() {
             var view = new supersonic.ui.View("exercise#newExerciseStep3");
             supersonic.ui.layers.push(view);
-        }
-
+        };
 
         $scope.cancel = function () {
             supersonic.ui.modal.hide();
