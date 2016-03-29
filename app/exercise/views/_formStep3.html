@@ -1,3 +1,5 @@
+<span style="color:#FFF;">{{exercise.reps_series | json}}</span>
+
 <div class="fieldset">
 
 	<div class="page-title">
@@ -31,16 +33,19 @@
                 <i ng-click="decreaseRepRangeEndQty()" class="icon super-minus-circled"></i>
             </div>
         </div>
-        <div ng-if="exercise.reps == 'series'" ng-repeat="i in getCount(exercise.sets) track by $index" class="list list-qty">      
+        <div ng-if="exercise.reps == 'series'" ng-repeat="i in getCount(exercise.sets) track by $index" class="list list-qty">
+            <span class="sub-title">Set {{$index}}</span>
+            <i ng-click="increaseRepSeriesQty($index)" class="icon super-plus-circled"></i>
             <label class="item item-input-qty">
-                <input type="text" class="input-qty" ng-model="exercise['rep_series_' + $index]" pattern="[0-9]*" />
+                <input type="text" class="input-qty" ng-model="exercise.reps_series['reps_series' + '_' + $index]" pattern="[0-9]*" />
             </label>
-        </div>        
+            <i ng-click="decreaseRepSeriesQty($index)" class="icon super-minus-circled"></i>
+        </div>
     </div>
 
 </div>
 
 <div class="bar bar-footer">
-    <button class="button button-half button-positive" ng-click="addToExerciseStep3(exercise)">Next</button>
+    <button class="button button-half button-positive" ng-click="submitForm()">Save</button>
     <button class="button button-half button-neutral" ng-click="cancel()">Cancel</button>
 </div>
