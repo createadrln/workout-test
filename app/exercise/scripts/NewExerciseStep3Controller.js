@@ -60,6 +60,7 @@ angular
 
         $scope.submitForm = function() {
             $scope.showSpinner = true;
+            $localStorage.localExercises.push($scope.exercise);
             supersonic.data.channel('localExercises').publish($localStorage.localExercises);
             supersonic.ui.modal.hide();
         };
