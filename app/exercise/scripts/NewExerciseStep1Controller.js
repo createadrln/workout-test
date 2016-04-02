@@ -3,6 +3,11 @@ angular
     .controller("NewExerciseStep1Controller", function ($scope, $localStorage, supersonic) {
         $scope.exercise = {};
         $scope.exercise.id = generateUUID();
+
+        if (!$localStorage.localExercises) {
+            $localStorage.localExercises = [];
+        }
+
         $localStorage.newExercise = null;
 
         $scope.addToExerciseStep1 = function() {
