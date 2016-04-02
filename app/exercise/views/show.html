@@ -2,25 +2,42 @@
     <span style="color:#FFF;">{{localExercise | json}}</span>
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
+
         <div class="page-title">
-            <h2 class="h3"><span ng-bind="localExercise['name']"></span></h2>
+            <h2><span ng-bind="localExercise['name']"></span></h2>
         </div>
+
         <div class="padding padding-bottom-100">
+
             <div ng-if="localExercise.repgoal != ''" class="info-boxes padding margin-bottom-20">
-                <div class="exercise-info-box info-box row">
+                <div class="exercise-info-box info-box row" ng-if="localExercise.reps == 'fixed'">
                     <div class="col">
                         <div class="set-entry">
-                            <span ng-bind="localExercise['setgoal']"></span> x <span ng-bind="localExercise['repgoal']"></span>
+                            <span ng-bind="localExercise['sets']"></span> x <span ng-bind="localExercise['reps_fixed']"></span>
+                        </div>
+                        <div class="weight-entry">
+                            @ <span ng-bind="localExercise['reps_fixed_weight']"></span> <span ng-bind="localExercise['weight_unit'].unit"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="exercise-info-box info-box row" ng-if="localExercise.reps == 'range'">
+                    <div class="col">
+                        <div class="set-entry">
+                            <span ng-bind="localExercise['sets']"></span> x <span ng-bind="localExercise['reps_fixed']"></span>
                         </div>
                         <div class="weight-entry">
                             @ <span ng-bind="localExercise['weight']"></span> <span ng-bind="localExercise['weight_unit'].unit"></span>
                         </div>
-                        <div ng-if="localExercise.maxweight" class="maxweight-entry">
-                            MAX:&nbsp;&nbsp;<span ng-bind="localExercise['maxweight']"></span> <span ng-bind="localExercise['weight_unit'].unit"></span>
-                        </div>
                     </div>
                 </div>
+
+                <div ng-if="localExercise.maxweight" class="maxweight-entry">
+                    MAX:&nbsp;&nbsp;<span ng-bind="localExercise['maxweight']"></span> <span ng-bind="localExercise['weight_unit'].unit"></span>
+                </div>
+
             </div>
+
             <div ng-if="localExercise.history != ''" class="padding">
                 <div class="history-boxes">
                     <h3>Last 10 updates</h3>
@@ -43,8 +60,11 @@
                     </div>
                 </div>
             </div>
+
         </div>
+
     </div>
+
     <div class="fixed-footer">
         <super-modal-show location="exercise#edit?id={{ localExercise.id }}">
             <button class="button button-full button-assertive">
