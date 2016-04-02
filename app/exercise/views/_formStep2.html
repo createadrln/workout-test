@@ -1,3 +1,4 @@
+<span style="color:#FFF;">{{localExercises | json}}</span>
 <div class="fieldset">
 
 	<div class="page-title">
@@ -36,7 +37,8 @@
             <i class="radio-icon super-ios-circle-outline"></i>
             <div class="item-content">Series</div>
         </label>
-        <span class="exercise-reps-message" ng-bind="exercise['reps_message']"></span>
+        <span class="exercise-reps-message" ng-if="exercise.reps == 'fixed'">Your reps are the same for all the sets.</span>
+        <span class="exercise-reps-message" ng-if="exercise.reps == 'range'">Your reps are in a range from first to last set.</span>
     </div>
 
 </div>

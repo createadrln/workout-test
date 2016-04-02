@@ -1,5 +1,3 @@
-<span style="color:#FFF;">{{exercise | json}}</span>
-
 <div class="fieldset">
 
 	<div class="page-title">
@@ -17,6 +15,19 @@
             	<textarea ng-model="exercise['notes']" placeholder="Notes" rows="10"></textarea>
 			</label>
         </div>
+
+        <label class="item padding item-radio col-30">
+            <input ng-model="exercise['weight']" type="radio" name="group" value="lbs">
+            <div class="item-content">LBS</div>
+        </label>
+        <label class="item item-radio col-30">
+            <input ng-model="exercise['weight']" type="radio" name="group" value="kgs">
+            <div class="item-content">KGS</div>
+        </label>
+        <label class="item item-radio col-30">
+            <input ng-model="exercise['weight']" type="radio" name="group" value="body">
+            <div class="item-content">Body</div>
+        </label>
 
     </div>
 

@@ -1,36 +1,49 @@
-<span style="color:#FFF;">{{exercise | json}}</span>
+<span style="color:#FFF;">TEST{{localExercises | json}}</span>
 
 <div class="fieldset">
 
 	<div class="page-title">
         <h2 ng-if="exercise.reps == 'fixed'">Enter Reps</h2>
+        <span class="sub-title" ng-if="exercise.reps == 'fixed'">Enter your reps and weight for all sets in the exercise</span>
         <h2 ng-if="exercise.reps == 'range'">Enter Rep Range</h2>
+        <span class="sub-title" ng-if="exercise.reps == 'range'">Enter your range of reps and weight for the first and last sets</span>
 	    <h2 ng-if="exercise.reps == 'series'">Enter Rep Series</h2>
 	</div>
 
     <div class="padding">        
         <div ng-if="exercise.reps == 'fixed'" class="list list-qty v-align">
-            <i ng-click="increaseFixedRepQty()" class="icon super-plus-circled"></i>
             <label class="item item-input-qty">
                 <input type="text" class="input-qty" ng-model="exercise['reps_fixed']" pattern="[0-9]*" />
+                <div class="label">Reps</div>
             </label>
-            <i ng-click="decreaseFixedRepQty()" class="icon super-minus-circled"></i>
+            <label class="item item-input-qty-weight">
+                <input type="text" class="input-qty-weight" ng-model="exercise['reps_fixed_weight']" pattern="[0-9]*" />
+                <div class="label">Weight</div>
+            </label>
         </div>
         <div ng-if="exercise.reps == 'range'" class="list list-qty v-align">
-            <div class="v-align">
-                <i ng-click="increaseRepRangeStartQty()" class="icon super-plus-circled"></i>
+            <div>
                 <label class="item item-input-qty">
                     <input type="text" class="input-qty" ng-model="exercise['rep_range_start']" pattern="[0-9]*" />
+                    <div class="label">Reps</div>
                 </label>
-                <i ng-click="decreaseRepRangeStartQty()" class="icon super-minus-circled"></i>
-            </div>  
+                <label class="item item-input-qty-weight">
+                    <input type="text" class="input-qty-weight" ng-model="exercise['rep_range_start_weight']" pattern="[0-9]*" />
+                    <div class="label">Weight</div>
+                </label>
+            </div>
             <div class="to">- TO -</div>
             <div>
-                <i ng-click="increaseRepRangeEndQty()" class="icon super-plus-circled"></i>
+                <!--<i ng-click="increaseRepRangeEndQty()" class="icon super-plus-circled"></i>-->
                 <label class="item item-input-qty">
                     <input type="text" class="input-qty" ng-model="exercise['rep_range_end']" pattern="[0-9]*" />
+                    <div class="label">Reps</div>
                 </label>
-                <i ng-click="decreaseRepRangeEndQty()" class="icon super-minus-circled"></i>
+                <!--<i ng-click="decreaseRepRangeEndQty()" class="icon super-minus-circled"></i>-->
+                <label class="item item-input-qty-weight">
+                    <input type="text" class="input-qty-weight" ng-model="exercise['rep_range_end_weight']" pattern="[0-9]*" />
+                    <div class="label">Weight</div>
+                </label>
             </div>
         </div>
         <div ng-if="exercise.reps == 'series'" ng-repeat="i in getCount(exercise.sets) track by $index" class="list list-qty">
