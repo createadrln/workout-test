@@ -6,42 +6,44 @@ angular
 
         //Rep Fixed Settings and Functions//
 
-        $scope.exercise.reps_fixed = 1;
-
-        $scope.increaseFixedRepQty = function() {
-            $scope.exercise.reps_fixed++;
-        };
-
-        $scope.decreaseFixedRepQty = function() {
-            $scope.exercise.reps_fixed--;
-        };
+        // $scope.exercise.reps_fixed = 1;
+        //
+        // $scope.increaseFixedRepQty = function() {
+        //     $scope.exercise.reps_fixed++;
+        // };
+        //
+        // $scope.decreaseFixedRepQty = function() {
+        //     $scope.exercise.reps_fixed--;
+        // };
 
         //Rep Range Settings and Functions//
 
-        $scope.exercise.rep_range_start = 1;
-        $scope.exercise.rep_range_end = 1;
-
-        $scope.increaseRepRangeStartQty = function() {
-            $scope.exercise.rep_range_start++;
-        };
-
-        $scope.decreaseRepRangeStartQty = function() {
-            $scope.exercise.rep_range_start--;
-        };
-
-        $scope.increaseRepRangeEndQty = function() {
-            $scope.exercise.rep_range_end++;
-        };
-
-        $scope.decreaseRepRangeEndQty = function() {
-            $scope.exercise.rep_range_end--;
-        };
+        // $scope.exercise.rep_range_start = 1;
+        // $scope.exercise.rep_range_end = 1;
+        //
+        // $scope.increaseRepRangeStartQty = function() {
+        //     $scope.exercise.rep_range_start++;
+        // };
+        //
+        // $scope.decreaseRepRangeStartQty = function() {
+        //     $scope.exercise.rep_range_start--;
+        // };
+        //
+        // $scope.increaseRepRangeEndQty = function() {
+        //     $scope.exercise.rep_range_end++;
+        // };
+        //
+        // $scope.decreaseRepRangeEndQty = function() {
+        //     $scope.exercise.rep_range_end--;
+        // };
 
         //Rep Series Settings and Functions//
 
-        $scope.exercise.reps_series = {};
-        for(var set = 0; set < $scope.exercise.sets; set++ ) {
-            $scope.exercise.reps_series['reps_series' + '_' + set] = 1;
+        if ($scope.exercise.reps == 'series') {
+            $scope.exercise.reps_series = {};
+            for(var set = 0; set < $scope.exercise.sets; set++ ) {
+                $scope.exercise.reps_series['reps_series' + '_' + set] = 1;
+            }
         }
 
         $scope.getCount = function(num) {
