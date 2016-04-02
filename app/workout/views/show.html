@@ -2,7 +2,7 @@
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner">
         <div class="page-title">
-            <h2 class="h3"><span ng-bind="localWorkout['title']"></span></h2>
+            <h2><span ng-bind="localWorkout['title']"></span></h2>
             <span ng-show="localWorkout.technique.name != 'Select Training Technique...'">
                 <h3 class="h4">Technique: <span ng-bind="localWorkout['technique'].name"></span></h3>
             </span>
