@@ -27,7 +27,7 @@
     text-align: center;
     width:100%;
     color:$whiteSmoke;
-    font-size: 12px;
+    font-size: 14px;
     text-transform:uppercase;
 }
 
@@ -445,6 +445,10 @@
 }
 
 .history-boxes {
+
+    h3 {
+        text-align: center;
+    }
 
     .history-box {
         display: table;

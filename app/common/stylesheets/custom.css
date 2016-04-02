@@ -191,18 +191,24 @@ input[type="number"].col-40 {
 }
 
 /* line 137, ../assets/sass/partials/_forms.scss */
-.item-input-qty {
+.item-input-qty,
+.item-input-qty-weight {
   text-align: center;
   padding: 0 20px 20px;
 }
+/* line 141, ../assets/sass/partials/_forms.scss */
+.item-input-qty .label,
+.item-input-qty-weight .label {
+  margin-top: 10px;
+}
 
-/* line 142, ../assets/sass/partials/_forms.scss */
-input[type="text"].input-qty {
+/* line 146, ../assets/sass/partials/_forms.scss */
+input[type="text"].input-qty,
+input[type="text"].input-qty-weight {
   display: inline-block;
   -webkit-appearance: none;
   vertical-align: middle;
   outline: 0;
-  width: 90px;
   height: 110px;
   line-height: 110px;
   font-size: 70px;
@@ -222,7 +228,17 @@ input[type="text"].input-qty {
   border-top-left-radius: 0;
 }
 
-/* line 167, ../assets/sass/partials/_forms.scss */
+/* line 171, ../assets/sass/partials/_forms.scss */
+input[type="text"].input-qty {
+  width: 110px;
+}
+
+/* line 175, ../assets/sass/partials/_forms.scss */
+input[type="text"].input-qty-weight {
+  width: 160px;
+}
+
+/* line 179, ../assets/sass/partials/_forms.scss */
 textarea {
   -webkit-appearance: none;
   background-color: transparent;
@@ -241,7 +257,7 @@ textarea {
   border-top-left-radius: 0;
 }
 
-/* line 181, ../assets/sass/partials/_forms.scss */
+/* line 193, ../assets/sass/partials/_forms.scss */
 select {
   width: 100%;
   -webkit-appearance: none;
@@ -260,23 +276,23 @@ select {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
-/* line 196, ../assets/sass/partials/_forms.scss */
+/* line 208, ../assets/sass/partials/_forms.scss */
 select.ng-dirty {
   color: #f5f5f5;
 }
 
-/* line 202, ../assets/sass/partials/_forms.scss */
+/* line 214, ../assets/sass/partials/_forms.scss */
 select::-ms-expand {
   display: none;
 }
 
-/* line 206, ../assets/sass/partials/_forms.scss */
+/* line 218, ../assets/sass/partials/_forms.scss */
 .item-input {
   position: relative;
   padding: 0;
   margin-bottom: 10px;
 }
-/* line 211, ../assets/sass/partials/_forms.scss */
+/* line 223, ../assets/sass/partials/_forms.scss */
 .item-input .icon::before {
   position: absolute;
   bottom: 10px;
@@ -284,38 +300,38 @@ select::-ms-expand {
   color: #9d9d9c;
   font-size: 22px;
 }
-/* line 222, ../assets/sass/partials/_forms.scss */
+/* line 234, ../assets/sass/partials/_forms.scss */
 .item-input.item-stacked-label .icon::before, .item-input.item-tags .icon::before {
   bottom: 30px;
 }
 
-/* line 230, ../assets/sass/partials/_forms.scss */
+/* line 242, ../assets/sass/partials/_forms.scss */
 .item-radio .item-content,
 .item-radio input:checked ~ .item-content {
   background-color: transparent;
 }
 
-/* line 235, ../assets/sass/partials/_forms.scss */
+/* line 247, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps {
   width: 90%;
   margin: 0 auto;
 }
-/* line 239, ../assets/sass/partials/_forms.scss */
+/* line 251, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .item-radio input:checked ~ .super-ios-circle-outline:before {
   content: '\f400';
 }
-/* line 243, ../assets/sass/partials/_forms.scss */
+/* line 255, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .item-radio .item-content {
   text-transform: uppercase;
 }
-/* line 247, ../assets/sass/partials/_forms.scss */
+/* line 259, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .col-30 {
   display: inline-block;
   width: 33%;
   max-width: 33%;
   text-align: center;
 }
-/* line 254, ../assets/sass/partials/_forms.scss */
+/* line 266, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .item-radio .radio-icon {
   display: block;
   visibility: visible;
@@ -327,13 +343,13 @@ select::-ms-expand {
   color: #C8FF00;
   font-size: 36px;
 }
-/* line 268, ../assets/sass/partials/_forms.scss */
+/* line 280, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .item-content {
   display: block;
   padding-right: 0;
   padding-left: 0;
 }
-/* line 274, ../assets/sass/partials/_forms.scss */
+/* line 286, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .exercise-reps-message {
   display: block;
   color: #C8FF00;
@@ -341,7 +357,7 @@ select::-ms-expand {
   text-transform: uppercase;
 }
 
-/* line 283, ../assets/sass/partials/_forms.scss */
+/* line 295, ../assets/sass/partials/_forms.scss */
 .to {
   color: #f5f5f5;
   font-size: 20px;
@@ -349,7 +365,7 @@ select::-ms-expand {
   margin-bottom: 20px;
 }
 
-/* line 290, ../assets/sass/partials/_forms.scss */
+/* line 302, ../assets/sass/partials/_forms.scss */
 input.input.ng-pristine.ng-untouched.ng-valid,
 input.input.ng-untouched.ng-valid.ng-dirty {
   height: 40px;
@@ -633,7 +649,7 @@ h2 {
   text-align: center;
   width: 100%;
   color: #f5f5f5;
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
 }
 
@@ -1041,6 +1057,10 @@ h2 {
 }
 
 /* line 449, ../assets/sass/custom.scss */
+.history-boxes h3 {
+  text-align: center;
+}
+/* line 453, ../assets/sass/custom.scss */
 .history-boxes .history-box {
   display: table;
   padding: 0;
@@ -1048,56 +1068,56 @@ h2 {
   background-color: #343131;
   border: 1px solid #848482;
 }
-/* line 456, ../assets/sass/custom.scss */
+/* line 460, ../assets/sass/custom.scss */
 .history-boxes .history-box .col {
   display: table-cell;
   color: #f5f5f5;
   padding: 10px;
   vertical-align: middle;
 }
-/* line 462, ../assets/sass/custom.scss */
+/* line 466, ../assets/sass/custom.scss */
 .history-boxes .history-box .col span {
   line-height: 1;
   pointer-events: none;
 }
-/* line 466, ../assets/sass/custom.scss */
+/* line 470, ../assets/sass/custom.scss */
 .history-boxes .history-box .col span > a {
   text-decoration: none;
   color: inherit;
 }
-/* line 473, ../assets/sass/custom.scss */
+/* line 477, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date {
   text-align: center;
   border-right: 1px solid #848482;
 }
-/* line 477, ../assets/sass/custom.scss */
+/* line 481, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span {
   line-height: 1;
 }
-/* line 481, ../assets/sass/custom.scss */
+/* line 485, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span.day {
   font-size: 11px;
   font-family: "oswaldregular", sans-serif;
 }
-/* line 486, ../assets/sass/custom.scss */
+/* line 490, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.date span.year {
   font-size: 13px;
   font-family: "oswaldbold", sans-serif;
 }
-/* line 495, ../assets/sass/custom.scss */
+/* line 499, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.info span {
   line-height: 1;
   padding-left: 0;
 }
-/* line 500, ../assets/sass/custom.scss */
+/* line 504, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.info .set-entry {
   font-size: 22px;
 }
-/* line 504, ../assets/sass/custom.scss */
+/* line 508, ../assets/sass/custom.scss */
 .history-boxes .history-box .col.info .weight-entry {
   font-size: 14px;
 }
-/* line 512, ../assets/sass/custom.scss */
+/* line 516, ../assets/sass/custom.scss */
 .history-boxes .history-box .col-20 {
   width: 18%;
   max-width: 18%;
@@ -1109,7 +1129,7 @@ h2 {
   -ms-flex: 0 0 18%;
   flex: 0 0 18%;
 }
-/* line 518, ../assets/sass/custom.scss */
+/* line 522, ../assets/sass/custom.scss */
 .history-boxes .history-box .col-80 {
   width: 80%;
   max-width: 80%;
@@ -1122,7 +1142,7 @@ h2 {
   flex: 0 0 80%;
 }
 
-/* line 528, ../assets/sass/custom.scss */
+/* line 532, ../assets/sass/custom.scss */
 .icon.view-link {
   border: 1px solid #FA2A00;
   padding: 4px 7px;
