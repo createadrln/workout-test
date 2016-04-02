@@ -10,7 +10,7 @@
                 <div ng-repeat="workout in localDay.workouts | orderBy : 'order'" class="row day-info-box info-box">
                     <super-navigate location="workout#show" data-params-id="{{ workout.id }}" class="col">
                         <span class="day-workout-title" ng-bind="workout['title']"></span>
-                        <i class="icon super-arrow-right-b"></i>
+                        <i class="icon view-link">View</i>
                         <div class="day-workout-exercise-info">
                             <div ng-repeat="exercise in workout.exercises | orderBy : 'order'">
                                 <span class="workout-exercise-order" ng-bind="exercise['order']"></span>
