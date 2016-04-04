@@ -6,29 +6,34 @@
 	</div>
 
     <div class="padding">
+        <div class="padding">
 
-        <div class="list padding">
-            <label class="item item-input item-floating-label">
-                <input type="text" ng-model="exercise['name']" placeholder="What is the name of this exercise?" />
-            </label>
-            <label class="item item-input item-floating-label">
-            	<textarea ng-model="exercise['notes']" placeholder="Notes" rows="10"></textarea>
-			</label>
+            <div class="list margin-bottom-0">
+                <label class="item item-input item-floating-label">
+                    <input type="text" ng-model="exercise['name']" placeholder="What is the name of this exercise?" />
+                </label>
+                <label class="item item-input item-floating-label">
+                    <textarea ng-model="exercise['notes']" placeholder="Notes" rows="7"></textarea>
+                </label>
+            </div>
+
+            <div class="list list-set-exercise-weight">
+                <span class="sub-title margin-bottom-10">Select Weight Units</span>
+                <label class="item item-radio col-30">
+                    <input ng-model="exercise['weight_unit']" type="radio" name="group" value="lbs">
+                    <div class="item-content">Lbs</div>
+                </label>
+                <label class="item item-radio col-30">
+                    <input ng-model="exercise['weight_unit']" type="radio" name="group" value="kgs">
+                    <div class="item-content">Kgs</div>
+                </label>
+                <label class="item item-radio col-30">
+                    <input ng-model="exercise['weight_unit']" type="radio" name="group" value="body">
+                    <div class="item-content">Body</div>
+                </label>
+            </div>
+
         </div>
-
-        <label class="item padding item-radio col-30">
-            <input ng-model="exercise['weight']" type="radio" name="group" value="lbs">
-            <div class="item-content">LBS</div>
-        </label>
-        <label class="item item-radio col-30">
-            <input ng-model="exercise['weight']" type="radio" name="group" value="kgs">
-            <div class="item-content">KGS</div>
-        </label>
-        <label class="item item-radio col-30">
-            <input ng-model="exercise['weight']" type="radio" name="group" value="body">
-            <div class="item-content">Body</div>
-        </label>
-
     </div>
 
 </div>

@@ -3,42 +3,47 @@
 
 	<div class="page-title">
 	    <h2>Enter Sets</h2>
+        <span class="sub-title">Enter number of sets for this exercise</span>
 	</div>
 
     <div class="padding">
+
         <div class="list list-qty">
             <i ng-click="increaseSetQty()" class="icon super-plus-circled"></i>
             <label class="item item-input-qty">
-                <input type="text" class="input-qty" ng-model="exercise['sets']" pattern="[0-9]*" />
+                <input type="text" class="input-qty" ng-model="exercise['sets']" pattern="[0-9]*" disabled/>
             </label>
             <i ng-click="decreaseSetQty()" class="icon super-minus-circled"></i>
         </div>
+
     </div>
 
-    <div class="divider margin-top-20 margin-bottom-20"></div>
+    <div class="divider margin-top-10 margin-bottom-10"></div>
 
     <div class="page-title">
-        <h2>Enter Reps</h2>
+        <h2>Select Rep Format</h2>
+        <span class="sub-title">How you are tracking reps</span>
     </div>
 
-    <div class="list list-set-exercise-reps">
-        <label ng-click="updateRepMessage()" class="item item-radio col-30">
-            <input ng-model="exercise['reps']" type="radio" name="group" value="fixed">
-            <i class="radio-icon super-ios-circle-outline"></i>
-            <div class="item-content">Fixed</div>
-        </label>
-        <label ng-click="updateRepMessage()" class="item item-radio col-30">
-            <input ng-model="exercise['reps']" type="radio" name="group" value="range">
-            <i class="radio-icon super-ios-circle-outline"></i>
-            <div class="item-content">Range</div>
-        </label>
-        <label ng-click="updateRepMessage()" class="item item-radio col-30">
-            <input ng-model="exercise['reps']" type="radio" name="group" value="series">
-            <i class="radio-icon super-ios-circle-outline"></i>
-            <div class="item-content">Series</div>
-        </label>
-        <span class="exercise-reps-message" ng-if="exercise.reps == 'fixed'">Your reps are the same for all the sets.</span>
-        <span class="exercise-reps-message" ng-if="exercise.reps == 'range'">Your reps are in a range from first to last set.</span>
+    <div class="padding padding-top-0">
+
+        <div class="padding padding-top-0">
+
+            <div class="list list-set-exercise-reps">
+                <label ng-click="updateRepMessage()" class="item item-radio col-50">
+                    <input ng-model="exercise['reps']" type="radio" name="group" value="fixed">
+                    <div class="item-content">Fixed</div>
+                </label>
+                <label ng-click="updateRepMessage()" class="item item-radio col-50">
+                    <input ng-model="exercise['reps']" type="radio" name="group" value="series">
+                    <div class="item-content">Series</div>
+                </label>
+                <span class="exercise-reps-message margin-top-20" ng-if="exercise.reps == 'fixed'">Ex. 3 sets all with 10 reps</span>
+                <span class="exercise-reps-message margin-top-20" ng-if="exercise.reps == 'series'">Ex. Set 1 for 10 reps, Set 2 for 8 reps, Set 3 for 6 reps</span>
+            </div>
+
+        </div>
+
     </div>
 
 </div>
