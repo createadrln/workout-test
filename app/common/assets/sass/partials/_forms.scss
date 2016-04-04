@@ -119,7 +119,7 @@ input[type="number"] {
   height: 45px;
   line-height: 20px;
   border-bottom: 1px solid $grayBattleship;
-  color: $whiteSmoke;
+  color: lighten($grayBattleship, 15%);
   font-size: 16px;
 
   &.col-40 {
@@ -136,8 +136,10 @@ input[type="number"] {
 
 .item-input-qty,
 .item-input-qty-weight {
+  display: inline-block;
   text-align: center;
-  padding: 0 20px 20px;
+  padding: 0 15px 20px;
+  vertical-align: middle;
   .label {
     margin-top:10px;
   }
@@ -169,11 +171,11 @@ input[type="text"].input-qty-weight {
 }
 
 input[type="text"].input-qty {
-  width: 110px;
+  width: 100px;
 }
 
 input[type="text"].input-qty-weight {
-  width: 160px;
+  width: 140px;
 }
 
 textarea {
@@ -245,8 +247,6 @@ select::-ms-expand {
 }
 
 .list-set-exercise-reps {
-  width: 90%;
-  margin: 0 auto;
 
   .item-radio input:checked ~ .super-ios-circle-outline:before {
     content: '\f400';
@@ -254,6 +254,13 @@ select::-ms-expand {
 
   .item-radio .item-content {
     text-transform: uppercase;
+  }
+
+  .col-50 {
+    display: inline-block;
+    width: 49%;
+    max-width: 49%;
+    text-align: center;
   }
 
   .col-30 {
@@ -288,6 +295,39 @@ select::-ms-expand {
     color: $neonYellow;
     text-align: center;
     text-transform: uppercase;
+  }
+
+}
+
+.list-set-exercise-weight {
+  .col-30 {
+    display: inline-block;
+    width: 32%;
+    max-width: 32%;
+    text-align: center;
+  }
+}
+
+.list-set-exercise-reps,
+.list-set-exercise-weight {
+
+  .item-radio .item-content {
+    border:1px solid $grayBattleship;
+    color: lighten($grayBattleship, 15%);
+    @include border-top-radius(4px);
+    @include border-right-radius(4px);
+    @include border-bottom-radius(4px);
+    @include border-left-radius(4px);
+    text-align: center;
+    text-transform: uppercase;
+    text-overflow: initial;
+    padding:15px 10px;
+  }
+
+  .item-radio input:checked ~ .item-content {
+    background: $neonYellow;
+    color: $grayGunmetal;
+    border:1px solid $neonYellow;
   }
 
 }

@@ -463,6 +463,7 @@
             padding: 10px;
             vertical-align: middle;
 
+
             span {
                 line-height: 1;
                 pointer-events: none;
@@ -540,4 +541,11 @@
 
     font-size: 14px;
     color:$redBrave;
+}
+
+.at {
+    display: inline;
+    color:$neonYellow;
+    vertical-align: middle;
+    font-size: 30px;
 }
