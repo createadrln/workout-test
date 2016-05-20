@@ -2,22 +2,24 @@
 
 	<div class="page-title">
 	    <h2>Exercise Info</h2>
-	    <span class="sub-title">You Scared Of Them Reps?</span>
 	</div>
 
-    <div class="padding">
-        <div class="padding">
+    <div class="padding padding-top-0">
+        <div class="padding padding-top-0">
 
             <div class="list margin-bottom-0">
-                <label class="item item-input item-floating-label">
-                    <input type="text" ng-model="exercise['name']" placeholder="What is the name of this exercise?" />
+                <label class="item item-input item-floating-label margin-bottom-10">
+                    <input type="text" class="input-name" ng-model="exercise['name']" placeholder="Exercise Name" />
+                </label>
+                <label class="item item-input item-floating-label item-tags">
+                    <tags-input ng-model="exercise['tags']"></tags-input>
                 </label>
                 <label class="item item-input item-floating-label">
                     <textarea ng-model="exercise['notes']" placeholder="Notes" rows="7"></textarea>
                 </label>
             </div>
 
-            <div class="list list-set-exercise-weight">
+            <div class="list list-set-exercise-weight margin-bottom-30 clearfix">
                 <span class="sub-title margin-bottom-10">Select Weight Units</span>
                 <label class="item item-radio col-30">
                     <input ng-model="exercise['weight_unit']" type="radio" name="group" value="lbs">
@@ -33,11 +35,19 @@
                 </label>
             </div>
 
+            <div class="list clearfix">
+                <span class="sub-title margin-bottom-10">Select Training Program</span>
+                <label class="item item-input item-floating-label input-select">
+                    <select ng-model="exercise['technique']" ng-options="technique.technique_name for technique in techniques"></select>
+                </label>
+            </div>
+
         </div>
     </div>
 
 </div>
 
-<div class="bar bar-footer">
-    <button class="button button-full button-positive" ng-click="addToExerciseStep1()">Create Exercise</button>
+<div class="fixed-footer">
+    <button class="button button-half button-exercises" ng-click="addToExerciseStep1()">Next</button>
+    <button class="button button-half button-neutral" ng-click="cancel()">Cancel</button>
 </div>

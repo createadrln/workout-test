@@ -1,14 +1,12 @@
 angular
     .module('exercise')
-    .controller("NewExerciseStep1Controller", function ($scope, $localStorage, supersonic) {
-        $scope.exercise = {};
-        $scope.exercise.id = generateUUID();
-        $localStorage.newExercise = null;
-
-        if (!$localStorage.localExercises) {
-            $localStorage.localExercises = [];
-        }
-
+    .controller("EditExerciseStep1Controller", function ($scope, $localStorage, supersonic) {
+        $scope.exercise = getIndexOfId($localStorage.localExercises, steroids.view.params.id);
+        $scope.button_title = 'Continue';
+        $scope.showSpinner = false;
+        
+        // Load Selected Workout Technique //
+        $scope.selectedTrainingTechnique = $scope.exercise.technique;
         $scope.techniques = [
             { 'id' : 0, 'technique_name' : 'Select Training Technique...' },
             { 'id' : 1, 'technique_name' : 'General Training' },
@@ -20,9 +18,7 @@ angular
             { 'id' : 7, 'technique_name' : 'Rest Pause Set' },
             { 'id' : 8, 'technique_name' : 'Static Hold' }
         ];
-        $scope.exercise.technique =  $scope.techniques[0];
-
-        // Form Actions //
+        $scope.exercise.technique = getIndexOfId($scope.techniques, $scope.selectedTrainingTechnique.id);
 
         // Form Validate //
         $scope.validate = function () {
@@ -38,7 +34,8 @@ angular
         $scope.addToExerciseStep1 = function() {
             if ($scope.validate()) {
                 $localStorage.newExercise = $scope.exercise;
-                var view = new supersonic.ui.View("exercise#newExerciseStep2");
+                $localStorage.paramId = steroids.view.params.id;
+                var view = new supersonic.ui.View("exercise#editExerciseStep2");
                 supersonic.ui.layers.push(view);
             }
         };
@@ -48,4 +45,3 @@ angular
         };
 
     });
-

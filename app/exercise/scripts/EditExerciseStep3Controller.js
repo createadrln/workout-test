@@ -1,9 +1,10 @@
 angular
     .module('exercise')
-    .controller("NewExerciseStep3Controller", function ($scope, $localStorage, supersonic) {
+    .controller("EditExerciseStep3Controller", function ($scope, $localStorage, supersonic) {
 
         $scope.exercise = $localStorage.newExercise;
-
+        $scope.paramId = $localStorage.paramId;
+        
         // Front End Functions //
 
         // Iterate From Array //
@@ -21,37 +22,37 @@ angular
         };
 
         //Exercise History//
-        $scope.exercise.history = {};
         $scope.addToHistory = function () {
             if ($scope.exercise.reps == 'fixed') {
-                $scope.exercise.history = [{
+                $scope.pushToHistory = {
                     'history_date': new Date().toISOString(),
-                    'notes' : $scope.exercise.notes,
-                    'technique' : $scope.exercise.technique,
+                    'notes': $scope.exercise.notes,
+                    'technique': $scope.exercise.technique,
                     'weight_unit': $scope.exercise.weight_unit,
-                    'reps' : 'fixed',
-                    'sets' : $scope.exercise.sets,
-                    'reps_fixed' : $scope.exercise.reps_fixed,
-                    'reps_fixed_weight' : $scope.exercise.reps_fixed_weight,
+                    'reps': 'fixed',
+                    'sets': $scope.exercise.sets,
+                    'reps_fixed': $scope.exercise.reps_fixed,
+                    'reps_fixed_weight': $scope.exercise.reps_fixed_weight,
                     'max_weight' : $scope.exercise.max_weight,
                     'one_rep_max' : $scope.exercise.one_rep_max
-                }];
+                };
             }
             if ($scope.exercise.reps == 'series') {
-                $scope.exercise.history = [{
+                $scope.pushToHistory = {
                     'history_date': new Date().toISOString(),
-                    'notes' : $scope.exercise.notes,
-                    'technique' : $scope.exercise.technique,
+                    'notes': $scope.exercise.notes,
+                    'technique': $scope.exercise.technique,
                     'weight_unit': $scope.exercise.weight_unit,
-                    'reps' : 'series',
-                    'sets' : $scope.exercise.sets,
+                    'reps': 'series',
+                    'sets': $scope.exercise.sets,
                     'reps_series' : $scope.exercise.reps_series,
                     'max_weight' : $scope.exercise.max_weight,
                     'one_rep_max' : $scope.exercise.one_rep_max
-                }];
+                };
             }
+            $scope.exercise.history.push($scope.pushToHistory);
         };
-
+        
         // Form Actions //
 
         // Form Validate //
@@ -64,7 +65,7 @@ angular
             if ($scope.validate()) {
                 $scope.showSpinner = true;
                 $scope.addToHistory();
-                $localStorage.localExercises.push($scope.exercise);
+                $localStorage.localExercises[getIndexOfIdCnt($localStorage.localExercises, $scope.paramId)] = $scope.exercise;
                 supersonic.data.channel('localExercises').publish($localStorage.localExercises);
                 supersonic.ui.modal.hide();
             }

@@ -1,9 +1,8 @@
 angular
     .module('exercise')
-    .controller("NewExerciseStep2Controller", function ($scope, $localStorage, supersonic) {
+    .controller("EditExerciseStep2Controller", function ($scope, $localStorage, supersonic) {
 
         $scope.exercise = $localStorage.newExercise;
-		$scope.exercise.sets = 1;
         
         $scope.increaseSetQty = function() {
             $scope.exercise.sets++;
@@ -27,7 +26,8 @@ angular
 
         $scope.addToExerciseStep2 = function() {
             if ($scope.validate()) {
-                var view = new supersonic.ui.View("exercise#newExerciseStep3");
+                $localStorage.newExercise = $scope.exercise;
+                var view = new supersonic.ui.View("exercise#editExerciseStep3");
                 supersonic.ui.layers.push(view);
             }
         };
@@ -37,4 +37,3 @@ angular
         };
 
     });
-

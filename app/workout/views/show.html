@@ -3,49 +3,35 @@
     <div ng-hide="showSpinner">
         <div class="page-title">
             <h2><span ng-bind="localWorkout['title']"></span></h2>
-            <span ng-show="localWorkout.technique.name != 'Select Training Technique...'">
-                <h3 class="h4">Technique: <span ng-bind="localWorkout['technique'].name"></span></h3>
-            </span>
         </div>
-        <div class="padding padding-bottom-100">
+        <div class="padding padding-top-0 padding-bottom-100">
             <div ng-show="localWorkout.exercises != ''" class="info-boxes margin-bottom-20 padding">
-                <div ng-repeat="exercise in exercises | orderBy : 'order'" class="row workout-info-box info-box">
+                <div ng-repeat="exercise in exercises" class="row workout-info-box info-box">
                     <super-navigate location="exercise#show" data-params-id="{{ exercise.id }}" class="col">
-                        <span class="workout-exercise-order" ng-bind="exercise['order']"></span>
-                        <span class="workout-exercise-name" ng-bind="exercise['name']"></span>
+                        <div class="count">{{$index + 1}}</div>
+                        <span class="workout-exercise-name">{{exercise.name}}</span>
+                        <span class="workout-exercise-sets">x {{exercise.sets}} sets</span>
                         <i class="icon view-link">View</i>
-                        <div class="workout-exercise-info">
-                            <span ng-bind="exercise['setgoal']"></span> x <span ng-bind="exercise['repgoal']"></span><br />
-                            @ <span ng-bind="exercise['weight']"></span> <span ng-bind="exercise['weight_unit'].unit"></span><br />
-                            <div ng-if="exercise.maxweight">MAX:&nbsp;&nbsp;<span ng-bind="exercise['maxweight']"></span> <span ng-bind="exercise['weight_unit'].unit"></span></div>
+                        <div class="workout-exercise-info" ng-if="exercise.reps == 'fixed'">
+                            <span ng-bind="exercise['reps_fixed']"></span> reps @ <span ng-bind="exercise['reps_fixed_weight']"></span> <span ng-bind="exercise['weight_unit']"></span><br />
+                        </div>
+                        <div class="workout-exercise-info" ng-if="exercise.reps == 'series'">
+                            <div ng-repeat="i in getCount(exercise.sets) track by $index">
+                                <div class="series-entry">
+                                    <span ng-bind="exercise.reps_series['reps_series' + '_' + $index]"></span> reps <small>@</small> <span ng-bind="exercise.reps_series['reps_series_weight' + '_' + $index]"></span> {{exercise.weight_unit}}
+                                </div>
+                            </div>
                         </div>
                     </super-navigate>
                 </div>
             </div>
-            <div ng-hide="localWorkout.rest == null" class="padding">
-                <h3>Rest Period:</h3>
-                <p class="notes"><span ng-bind="localWorkout['rest']"></span></p>
-            </div>
-            <div ng-hide="localWorkout.notes == null" class="padding">
-                <h3>Notes:</h3>
-                <p class="notes"><span ng-bind="localWorkout['notes']"></span></p>
-            </div>
         </div>
-        <div class="fixed-footer row">
-            <div class="col col-50">
-                <super-modal-show location="workout#order?id={{ localWorkout.id }}">
-                    <button class="button button-full button-positive">
-                        Order
-                    </button>
-                </super-modal-show>
-            </div>
-            <div class="col col-50">
-                <super-modal-show location="workout#edit?id={{ localWorkout.id }}">
-                    <button class="button button-full button-assertive">
-                        Edit
-                    </button>
-                </super-modal-show>
-            </div>
+        <div class="fixed-footer">
+            <super-modal-show location="workout#edit?id={{ localWorkout.id }}">
+                <button class="button button-full button-workouts">
+                    Edit This Workout
+                </button>
+            </super-modal-show>
         </div>
     </div>
 </div>

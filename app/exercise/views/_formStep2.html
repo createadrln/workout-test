@@ -1,4 +1,3 @@
-<span style="color:#FFF;">{{localExercises | json}}</span>
 <div class="fieldset">
 
 	<div class="page-title">
@@ -26,7 +25,6 @@
     </div>
 
     <div class="padding padding-top-0">
-
         <div class="padding padding-top-0">
 
             <div class="list list-set-exercise-reps">
@@ -38,17 +36,16 @@
                     <input ng-model="exercise['reps']" type="radio" name="group" value="series">
                     <div class="item-content">Series</div>
                 </label>
-                <span class="exercise-reps-message margin-top-20" ng-if="exercise.reps == 'fixed'">Ex. 3 sets all with 10 reps</span>
-                <span class="exercise-reps-message margin-top-20" ng-if="exercise.reps == 'series'">Ex. Set 1 for 10 reps, Set 2 for 8 reps, Set 3 for 6 reps</span>
+                <span class="exercise-reps-message margin-top-20" ng-if="exercise.reps == 'fixed'">Ex. {{exercise.sets}} sets all with 10 reps</span>
+                <span class="exercise-reps-message margin-top-20" ng-if="exercise.reps == 'series'">Ex. Set 1 - 10 reps, Set 2 - 8 reps, Set 3 - 6 reps</span>
             </div>
 
         </div>
-
     </div>
 
 </div>
 
-<div class="bar bar-footer">
-    <button class="button button-half button-positive" ng-click="addToExerciseStep2(exercise)">Next</button>
+<div class="fixed-footer">
+    <button class="button button-half button-exercises" ng-click="addToExerciseStep2()">Next</button>
     <button class="button button-half button-neutral" ng-click="cancel()">Cancel</button>
 </div>

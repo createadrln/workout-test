@@ -1,32 +1,24 @@
 <div ng-controller="IndexController" class="workout-index">
-    <super-navbar>
-        <super-navbar-title>
-        </super-navbar-title>
-    </super-navbar>
     <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
     <div ng-hide="showSpinner" class="padding">
-        <super-modal-show location="workout#new" ng-hide="localWorkouts.length > 0" class="index-add first-view">
-            <button class="button button-full button-positive">
-                <i class="icon super-plus"></i> Add a new workout
-            </button>
-        </super-modal-show>
-        <div ng-show="localWorkouts.length > 0" class="list padding margin-bottom-0">
-            <label class="item item-input item-floating-label search padding margin-bottom-0">
+        <div ng-show="localWorkouts.length > 0" class="fixed-header fixed-header__search list margin-bottom-0">
+            <label class="item item-input item-floating-label margin-bottom-0">
                 <input type="text" ng-model="search" placeholder="Filter Workouts" /><i class="icon super-search"></i>
             </label>
         </div>
-        <ul class="list workout-list padding" ng-show="localWorkouts.length > 0">
-            <super-navigate location="workout#show" data-params-id="{{ workout.id }}" ng-repeat="workout in localWorkouts | filter:search">
+        <ul ng-show="localWorkouts.length > 0" class="list workout-list padding padding-top-70 padding-bottom-150">
+            <super-navigate location="workout#show" data-params-id="{{ workout.id }}" ng-repeat="workout in localWorkouts | orderBy: 'featured' | filter:search">
                 <li class="item">
-                    <span ng-bind="workout['title']"></span>
+                    <span ng-bind="workout['title']"></span><span ng-if="workout.featured" class="right icon super-star"></span>
                 </li>
             </super-navigate>
         </ul>
         <div ng-show="localWorkouts.length > 0" class="index-add fixed-footer">
             <super-modal-show location="workout#new">
-                <button class="button button-full button-positive margin-bottom-0">
-                    <i class="icon super-plus"></i>
-                </button>
+                <button class="button button-full button-workouts margin-bottom-10">Add another workout</button>
+            </super-modal-show>
+            <super-modal-show location="exercise#index">
+                <button class="button button-full button-exercises">Go To Exercises</button>
             </super-modal-show>
         </div>
     </div>

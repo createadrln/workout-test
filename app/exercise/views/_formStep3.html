@@ -1,70 +1,106 @@
-<!--<span style="color:#FFFFFF;">{{exercise | json}}</span>-->
-
 <div class="fieldset">
 
 	<div class="page-title">
         <h2 ng-if="exercise.reps == 'fixed'">Enter Reps</h2>
-        <span class="sub-title" ng-if="exercise.reps == 'fixed'">Enter your reps and weight for all sets in the exercise</span>
-        <!--<h2 ng-if="exercise.reps == 'range'">Enter Rep Range</h2>-->
-        <!--<span class="sub-title" ng-if="exercise.reps == 'range'">Enter your range of reps and weight for the first and last sets</span>-->
+        <span class="sub-title" ng-if="exercise.reps == 'fixed'">Ex. {{exercise.sets}} sets all with 10 reps</span>
 	    <h2 ng-if="exercise.reps == 'series'">Enter Rep Series</h2>
-        <!--<span class="sub-title" ng-if="exercise.reps == 'series'">Enter your range of reps and weight for the first and last sets</span>-->
+        <span class="sub-title" ng-if="exercise.reps == 'series'">Ex. Set 1 - 10 reps, Set 2 - 8 reps, Set 3 - 6 reps</span>
 	</div>
 
-    <div class="padding">        
-        <div ng-if="exercise.reps == 'fixed'" class="list list-qty v-align">
-            <label class="item item-input-qty">
-                <input type="text" class="input-qty" ng-model="exercise['reps_fixed']" pattern="[0-9]*" />
-                <div class="label">Reps</div>
-            </label>
-            <label class="item item-input-qty-weight">
-                <input type="text" class="input-qty-weight" ng-model="exercise['reps_fixed_weight']" pattern="[0-9]*" />
-                <div class="label">Weight</div>
-            </label>
+    <div class="padding padding-top-0">
+
+        <div ng-if="exercise.reps == 'fixed'" class="list list-exercise-reps-fixed">
+            <div class="label left">{{exercise.sets}} Sets:</div>
+            <div class="right">
+                <label class="item item-input input-select">
+                    <select ng-model="exercise['reps_fixed']">
+                        <option ng-show="{{exercise.reps_fixed}}" value="{{exercise.reps_fixed}}" selected>{{exercise.reps_fixed}}</option>
+                        <option ng-hide="{{exercise.reps_fixed}}" value="" selected>Reps</option>
+                        <option value="">---------------------</option>
+                        <option ng-repeat="range in range(1, 50, 1)" value="{{range}}">{{range}}</option>
+                    </select>
+                </label>
+            </div>
+            <div class="label left">Weight:</div>
+            <div class="right">
+                <label class="item item-input input-select">
+                    <select ng-model="exercise['reps_fixed_weight']">
+                        <option ng-show="{{exercise.reps_fixed_weight}}" value="{{exercise.reps_fixed_weight}}" selected>{{exercise.reps_fixed_weight}}</option>
+                        <option ng-hide="{{exercise.reps_fixed_weight}}" value="" selected>Weight</option>
+                        <option value="">---------------------</option>
+                        <option ng-repeat="range in range(5, 1500, 5)" value="{{range}}">{{range}}</option>
+                    </select>
+                </label>
+            </div>
         </div>
-        <!--<div ng-if="exercise.reps == 'range'" class="list list-qty v-align">-->
-            <!--<div>-->
-                <!--<label class="item item-input-qty">-->
-                    <!--<input type="text" class="input-qty" ng-model="exercise['rep_range_start']" pattern="[0-9]*" />-->
-                    <!--<div class="label">Reps</div>-->
-                <!--</label>-->
-                <!--<label class="item item-input-qty-weight">-->
-                    <!--<input type="text" class="input-qty-weight" ng-model="exercise['rep_range_start_weight']" pattern="[0-9]*" />-->
-                    <!--<div class="label">Weight</div>-->
-                <!--</label>-->
-            <!--</div>-->
-            <!--<div class="to">- TO -</div>-->
-            <!--<div>-->
-                <!--&lt;!&ndash;<i ng-click="increaseRepRangeEndQty()" class="icon super-plus-circled"></i>&ndash;&gt;-->
-                <!--<label class="item item-input-qty">-->
-                    <!--<input type="text" class="input-qty" ng-model="exercise['rep_range_end']" pattern="[0-9]*" />-->
-                    <!--<div class="label">Reps</div>-->
-                <!--</label>-->
-                <!--&lt;!&ndash;<i ng-click="decreaseRepRangeEndQty()" class="icon super-minus-circled"></i>&ndash;&gt;-->
-                <!--<label class="item item-input-qty-weight">-->
-                    <!--<input type="text" class="input-qty-weight" ng-model="exercise['rep_range_end_weight']" pattern="[0-9]*" />-->
-                    <!--<div class="label">Weight</div>-->
-                <!--</label>-->
-            <!--</div>-->
-        <!--</div>-->
-        <div ng-if="exercise.reps == 'series'" ng-repeat="i in getCount(exercise.sets) track by $index" class="list list-qty">
-            <!--<i ng-click="increaseRepSeriesQty($index)" class="icon super-plus-circled"></i>-->
-            <label class="item item-input-qty">
-                <input type="text" class="input-qty" ng-model="exercise.reps_series['reps_series' + '_' + $index]" pattern="[0-9]*" />
-                <div class="label">Set {{$index + 1}} Reps</div>
-            </label>
-            <span class="at">@</span>
-            <label class="item item-input-qty-weight">
-                <input type="text" class="input-qty-weight" ng-model="exercise.reps_series['reps_series_weight' + '_' + $index]" pattern="[0-9]*" />
-                <div class="label">Set {{$index + 1}} Weight</div>
-            </label>
-            <!--<i ng-click="decreaseRepSeriesQty($index)" class="icon super-minus-circled"></i>-->
+
+        <div ng-if="exercise.reps == 'series'" class="list list-qty list-exercise-reps-series">
+            <div ng-repeat="i in getCount(exercise.sets) track by $index">
+                <div class="label left">Set #{{$index + 1}}:</div>
+                <div class="right">
+                    <label class="item item-input input-select">
+                        <select ng-model="exercise.reps_series['reps_series' + '_' + $index]">
+                            <option ng-show="{{exercise.reps_series['reps_series' + '_' + $index]}}" value="{{exercise.reps_series['reps_series' + '_' + $index]}}" selected>{{exercise.reps_series['reps_series' + '_' + $index]}}</option>
+                            <option ng-hide="{{exercise.reps_series['reps_series' + '_' + $index]}}" value="" selected>Reps</option>
+                            <option value="">---------------------</option>
+                            <option ng-repeat="range in range(1, 50, 1)" value="{{range}}">{{range}}</option>
+                        </select>
+                    </label>
+                    <span class="at">@</span>
+                    <label class="item item-input input-select">
+                        <select ng-model="exercise.reps_series['reps_series_weight' + '_' + $index]">
+                            <option ng-show="{{exercise.reps_series['reps_series_weight' + '_' + $index]}}" value="{{exercise.reps_series['reps_series_weight' + '_' + $index]}}" selected>{{exercise.reps_series['reps_series_weight' + '_' + $index]}}</option>
+                            <option ng-hide="{{exercise.reps_series['reps_series_weight' + '_' + $index]}}" value="" selected>Weight</option>
+                            <option value="">---------------------</option>
+                            <option ng-repeat="range in range(5, 1500, 5)" value="{{range}}">{{range}}</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="clearfix"></div>
+            </div>
         </div>
+
+    </div>
+
+    <div class="divider margin-top-10 margin-bottom-10"></div>
+
+    <div class="page-title">
+        <h2>Stats</h2>
+        <span class="sub-title">Max Working Set Weight and One Rep Max</span>
+    </div>
+
+    <div class="padding padding-top-0">
+
+        <div class="list list-exercise-reps-fixed">
+            <div class="label left">Max Exercise Weight:</div>
+            <div class="right">
+                <label class="item item-input input-select">
+                    <select ng-model="exercise['max_weight']">
+                        <option ng-show="{{exercise.max_weight}}" value="{{exercise.max_weight}}" selected>{{exercise.max_weight}}</option>
+                        <option ng-hide="{{exercise.max_weight}}" value="" selected>Weight</option>
+                        <option value="">---------------------</option>
+                        <option ng-repeat="range in range(5, 1500, 5)" value="{{range}}">{{range}}</option>
+                    </select>
+                </label>
+            </div>
+            <div class="label left">One Rep Max:</div>
+            <div class="right">
+                <label class="item item-input input-select">
+                    <select ng-model="exercise['one_rep_max']">
+                        <option ng-show="{{exercise.one_rep_max}}" value="{{exercise.one_rep_max}}" selected>{{exercise.one_rep_max}}</option>
+                        <option ng-hide="{{exercise.one_rep_max}}" value="" selected>Weight</option>
+                        <option value="">---------------------</option>
+                        <option ng-repeat="range in range(5, 1500, 5)" value="{{range}}">{{range}}</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
     </div>
 
 </div>
 
-<div class="bar bar-footer">
-    <button class="button button-half button-positive" ng-click="submitForm()">Save</button>
+<div class="fixed-footer">
+    <button class="button button-half button-exercises" ng-click="submitForm()">Save</button>
     <button class="button button-half button-neutral" ng-click="cancel()">Cancel</button>
 </div>

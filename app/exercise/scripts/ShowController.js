@@ -13,6 +13,10 @@ angular
             });
         });
 
+        $scope.getCount = function(num) {
+            return new Array(num);
+        };
+
         var _refreshViewData = function () {
             $scope.localExercise = getIndexOfId($localStorage.localExercises, $scope.dataId);
             $scope.showSpinner = false;
