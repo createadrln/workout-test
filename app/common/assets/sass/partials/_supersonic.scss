@@ -2,45 +2,38 @@ h2 {
     font-size: 36px;
 }
 
-.bar.bar-footer {
-    height:auto;
-}
-
-.bar .button {
-    min-height:47px;
-}
-
 .button.button-half {
-    position:relative !important;
-    top:auto !important;
-    right:auto !important;
-    bottom:auto !important;
-    
-    display:inline-block;
-    width:48%;
-    margin:0 1% 0 1%;
+    display: inline-block;
+    width: 48%;
+    margin: 0 .5% 0 .5%;
+}
+
+.fixed-footer .button.button-full {
+    .icon {
+        display: inline;
+    }
 }
 
 .button.button-assertive {
     border-color: $redBrave;
-    color:$originalSteel;
+    color: $originalSteel;
 
     @include linear-gradient($redBrave, lighten($redBrave, 25%));
 
     &:hover {
-        color:$originalSteel;
+        color: $originalSteel;
     }
 
 }
 
 .button.button-neutral {
     border-color: $grayBattleship;
-    color:$originalSteel;
+    color: $originalSteel;
 
     @include linear-gradient($grayBattleship, lighten($grayBattleship, 25%));
 
     &:hover {
-        color:$originalSteel;
+        color: $originalSteel;
     }
 
 }
@@ -48,28 +41,54 @@ h2 {
 .button.button-positive,
 .bar.bar-positive {
     border-color: $aquaBlue;
-    color:$originalSteel;
+    color: $originalSteel;
 
     @include linear-gradient($aquaBlue, lighten($aquaBlue, 25%));
 
     &.button-outline {
         border: 2px solid $aquaBlue;
-        color:$originalSteel;
+        color: $originalSteel;
 
         .icon:before {
-            color:$originalSteel;
+            color: $originalSteel;
         }
 
     }
 
     &:hover {
-        color:$originalSteel;
+        color: $originalSteel;
     }
 
 }
 
-.bar.bar-positive .button {
-    color:$originalSteel !important;
+.button.button-workouts {
+    border-color: $grayGunmetal;
+    color: $originalSteel;
+    //background-color: $aquaBlue;
+    @include linear-gradient($highGlossOrange, lighten($highGlossOrange, 20%));
+}
+
+.button.button-exercises {
+    border-color: $grayGunmetal;
+    color: $originalSteel;
+    //background-color: $aquaBlue;
+    @include linear-gradient($highGlossOrange, lighten($highGlossOrange, 20%));
+}
+
+.first-view {
+
+    .button.button-workouts {
+        border: 1px solid $hyperOrange;
+        color: $hyperOrange;
+        @include linear-gradient(transparent, transparent);
+    }
+
+    .button.button-exercises {
+        border: 1px solid $seaGreen;
+        color: $seaGreen;
+        @include linear-gradient(transparent, transparent);
+    }
+
 }
 
 .list-inset {
@@ -84,8 +103,8 @@ h2 {
     position: relative;
     display: block;
     border: 2px solid $grayGunmetal;
-    width:20px;
-    height:20px;
+    width: 20px;
+    height: 20px;
 
     @include border-top-radius(50%);
     @include border-right-radius(50%);
@@ -94,8 +113,8 @@ h2 {
 
     &:before {
         position: absolute;
-        top:2px;
-        left:6px;
+        top: 2px;
+        left: 6px;
         font-size: 14px;
         color: $grayGunmetal;
     }
@@ -103,8 +122,8 @@ h2 {
 }
 
 .super-navigate:before {
-    content:'';
-    display:none;
+    content: '';
+    display: none;
 }
 
 .list.list-qty{
@@ -112,8 +131,8 @@ h2 {
 
     .icon:before {
         vertical-align: middle;
-        color:$neonYellow;
-        font-size:40px;
+        color: $neonYellow;
+        font-size: 40px;
     }
 }
 
@@ -121,7 +140,15 @@ h2 {
     .icon:before {
         visibility: visible;
         vertical-align: middle;
-        color:$neonYellow;
-        font-size:40px;
+        color: $neonYellow;
+        font-size: 40px;
     }
+}
+
+.icon.super-search:before,
+.list__add-exercise-to-workout .icon:before,
+.item__add-exercise-to-workout .icon:before {
+    vertical-align: middle;
+    color: $neonYellow;
+    font-size: 40px;
 }

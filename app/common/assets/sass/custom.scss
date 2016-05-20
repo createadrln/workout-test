@@ -7,545 +7,600 @@
 @import "partials/supersonic";
 @import "partials/common";
 @import "partials/extensions";
+@import "partials/icons";
+
+.onboarding-background {
+  background-image: url("../../../images/gym-background.jpg");
+  background-position: 50% 20%;
+  background-size: 600%;
+  background-repeat: no-repeat;
+  background-color: $black;
+  text-align: center;
+  color: $whiteSmoke;
+}
 
 .page-title {
-    width:100%;
-    position: relative;
-    padding:20px;
+  width: 100%;
+  position: relative;
+  padding: 20px;
 
-    h2, .h2, h3, .h3, h4, .h4 {
-        text-align: center;
-        width:100%;
-        line-height: 1.3;
-        margin-bottom:0;
-    }
+  h2, .h2, h3, .h3, h4, .h4 {
+    text-align: center;
+    width: 100%;
+    line-height: 1.3;
+    margin-bottom: 0;
+  }
 
 }
 
 .sub-title {
-    display:block;
-    text-align: center;
-    width:100%;
-    color:$whiteSmoke;
-    font-size: 14px;
-    text-transform:uppercase;
+  display: block;
+  text-align: center;
+  width: 100%;
+  color: $whiteSmoke;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 
 .index-add {
-    width:100%;
-    z-index: 1;
+  width: 100%;
+  z-index: 1;
 
-    &.first-view {
-        position: fixed;
-        bottom:auto;
-        top:50%;
-        left:50%;
-        margin-top:-100px;
-        margin-left:-100px;
-    }
-
-}
-
-.fixed-header,
-.fixed-footer,
-.bar-footer {
-    width:100%;
-    padding:15px;
-    background-color: $originalSteel;
-    z-index: 3;
-
-    .button {
-        position: relative;
-        z-index: 3;
-        display: block;
-        margin:0 auto;
-    }
-
-}
-
-.fixed-header,
-.fixed-footer {
+  &.first-view {
     position: fixed;
-    left:0;
-    right:0;
+    bottom: auto;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -100px;
+  }
+
+}
+
+.fixed-header,
+.fixed-footer {
+  width: 100%;
+  padding: 15px;
+  background-color: $originalSteel;
+  z-index: 3;
+
+  .button {
+    position: relative;
+    z-index: 3;
+    margin: 0 auto;
+  }
+
+}
+
+.fixed-header,
+.fixed-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
 }
 
 .fixed-footer,
 .bar-footer {
-    bottom:0;
+  bottom: 0;
 }
 
 .fixed-footer {
-    border-top:1px solid $grayBattleship;
+  border-top: 1px solid $grayBattleship;
 }
 
 
 .fixed-header {
-    top:0;
+  top: 0;
+}
+
+.fixed-header__search {
+  background-color: $pavement;
+  border-top: 1px solid #000000;
+  .item {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  input[type="text"] {
+    color: $black;
+    border-bottom-color: $black;
+    &::-webkit-input-placeholder {
+      color: $black;
+    }
+    &::-moz-placeholder {
+      color: $black;
+    }
+    &:-ms-input-placeholder {
+      color: $black;
+    }
+    &:-moz-placeholder {
+      color: $black;
+    }
+  }
+  .icon.super-search:before {
+    color: $black;
+  }
 }
 
 .notes {
-    position: relative;
-    color: $whiteSmoke;
-    font-size: 18px;
-    background-color: darken($originalSteel,5%);
-    border:1px solid $grayBattleship;
-    padding:15px;
+  position: relative;
+  color: $whiteSmoke;
+  font-size: 18px;
+  background-color: darken($originalSteel,5%);
+  border: 1px solid $grayBattleship;
+  padding: 15px;
 
-    .tag {
-        display: inline-block;
-        padding:2px 7px;
-        background-color: $whiteSmoke;
-        color:$black;
-        margin-left:5px;
-    }
+  .tag {
+    display: inline-block;
+    padding: 2px 7px;
+    background-color: $whiteSmoke;
+    color: $black;
+    margin-left: 5px;
+  }
 
 }
 
 .days-index {
 
-    .list-days {
-        position:absolute;
-        top:50%;
-        width:95%;
-        -ms-transform: translateY(-50%);
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
-        &.list .super-navigate:first-child {
-            border-top:1px solid $grayBattleship;
-        }
+  .list-days {
+    position: absolute;
+    top: 50%;
+    width: 95%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    &.list .super-navigate:first-child {
+      border-top: 1px solid darken($neonYellow, 20%);
     }
 
-    .list .super-navigate .item .title {
-        line-height: 1;
-        margin-bottom:0;
-        font-family: $oswaldLight;
-    }
+  }
+
+  .list .super-navigate .item .title {
+    line-height: 1;
+    margin-bottom: 0;
+    font-family: $oswaldLight;
+  }
 
 }
 
 .workout-checkbox-list,
 .exercise-checkbox-list {
-    display:block;
-    padding:0 20px;
+  display: block;
+  padding: 0 20px;
 
-    .item-checkbox {
-        display: inline-block;
-        width:auto;
-        height:auto;
-        vertical-align: middle;
-        padding-left:30px;
-    }
+  .item-checkbox {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    vertical-align: middle;
+    padding-left: 30px;
+  }
 
-    .list super-navigate {
-        width:80%;
-        height:auto;
-        display: inline-block;
-        background: transparent;
-        color:$whiteSmoke;
-        vertical-align: middle;
-        border-bottom:0;
-        padding:0 0 0 10px;
-    }
+  .list super-navigate {
+    width: 80%;
+    height: auto;
+    display: inline-block;
+    background: transparent;
+    color: $whiteSmoke;
+    vertical-align: middle;
+    border-bottom: 0;
+    padding: 0 0 0 10px;
+  }
 
-    .label {
-        display:inline-block;
-        padding-left:20px;
-        color: lighten($grayBattleship, 10%);
-        font-size:16px;
-    }
+  .label {
+    display: inline-block;
+    padding-left: 20px;
+    color: lighten($grayBattleship, 10%);
+    font-size: 16px;
+  }
 
 }
 
 .workout-checkbox-list {
-    padding-bottom:30px;
+  padding-bottom: 30px;
 }
 
 .list {
 
+  .item {
+    border: none;
+    color: $whiteSmoke;
+    background: none;
+  }
+
+  super-navigate {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 5% 0;
+    border-bottom: 1px solid darken($pavement, 45%);
+
     .item {
-        border:none;
-        color:$whiteSmoke;
-        background: none;
-    }
+      position: relative;
+      text-align: left;
+      margin: 0;
+      padding: 0;
+      white-space: normal;
+      font-size: 17px;
+      text-transform: capitalize;
 
-    super-navigate {
+      .title {
         display: block;
-        width:100%;
-        margin:0;
-        padding:5% 0;
-        border-bottom:1px solid $grayBattleship;
+        text-transform: uppercase;
+        font-family: $oswald;
+        font-size: 24px;
+        margin-bottom: 7px;
+      }
 
-        .item {
-            position: relative;
-            text-align: left;
-            margin:0;
-            padding:0;
-            white-space: normal;
-            font-size:17px;
-
-            .title {
-                display: block;
-                text-transform: uppercase;
-                font-family: $oswald;
-                font-size: 24px;
-                margin-bottom:7px;
-            }
-
-            .info {
-                display: block;
-                font-size: 15px;
-                font-weight: 400;
-                text-transform: uppercase;
-                color: $neonYellow;
-                line-height:1;
-            }
-
-        }
+      .info {
+        display: block;
+        font-size: 15px;
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $neonYellow;
+        line-height: 1;
+      }
 
     }
 
-    &.list-days super-navigate {
-        padding:4% 0;
-    }
+  }
+
+  &.list-days super-navigate {
+    padding: 4% 0;
+  }
 
 }
 
 .workout-index .workout-list,
 .exercise-index .exercise-list {
-    padding-bottom:100px;
+  padding-bottom: 100px;
 }
 
 .info-boxes {
 
-    .info-box {
+  .info-box {
 
-        &.row {
-            padding:0 0 5px;
-            background-color: $neonYellow;
-            @include justify-content(space-between);
-
-            &.last {
-                margin-bottom:30px;
-            }
-
-        }
-
-        &.day-info-box {
-
-            &.row {
-                margin-bottom:20px;
-            }
-
-            .col {
-                text-align: left;
-
-                > span {
-                    font-size: 18px;
-                }
-
-                div > span {
-                    pointer-events:none;
-
-                    > a {
-                        text-decoration:none;
-                        color:inherit;
-                    }
-
-                }
-
-            }
-
-        }
-
-        &.workout-info-box {
-
-            .col {
-                text-align: left;
-
-                > span {
-                    font-size: 18px;
-                }
-
-                div > span {
-                    pointer-events:none;
-
-                    > a {
-                        text-decoration:none;
-                        color:inherit;
-                    }
-
-                }
-
-            }
-
-            .workout-exercise-order {
-                position: absolute;
-                top:50%;
-                left:12px;
-                margin-top:-12.5px;
-            }
-
-        }
-
-        &.exercise-info-box {
-
-            .col {
-                text-align: center;
-
-                .set-entry {
-                    font-size: 32px;
-                }
-
-                .weight-entry {
-                    font-size: 16px;
-                }
-
-                div > span {
-                    pointer-events:none;
-
-                    > a {
-                        text-decoration:none;
-                        color:inherit;
-                    }
-
-                }
-
-            }
-
-        }
-
-        .col {
-            position: relative;
-            width:100%;
-            padding:10px;
-            line-height: 1;
-
-            > span {
-                color: $black;
-            }
-
-        }
-
-        .col-50 {
-            width:48%;
-            max-width: 48%;
-            @include flex(0 0 48%);
-        }
-
+    &.row {
+      padding: 6px 0;
+      color: $neonYellow;
+      border: 1px solid $neonYellow;
+      &.last {
+        margin-bottom: 30px;
+      }
     }
 
-    h3.h5 {
-        color: $neonYellow;
-        text-transform: uppercase;
-        line-height: 1;
-        font-family: $oswaldLight;
-        font-size: 26px;
-        margin-top:0;
-        margin-bottom:0;
-        padding-bottom:0;
-        border-bottom:0;
+    &.day-info-box {
+      &.row {
+        margin-bottom: 20px;
+      }
+      .col {
+        text-align: left;
+        > span {
+          font-size: 18px;
+        }
+        div > span {
+          pointer-events: none;
+          > a {
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+      }
     }
+
+    &.workout-info-box {
+      .col {
+        text-align: left;
+        > span {
+          font-size: 18px;
+        }
+        div > span {
+          pointer-events: none;
+          > a {
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+      }
+    }
+
+    &.exercise-info-box {
+      .col {
+        text-align: center;
+        .set-entry {
+          font-size: 32px;
+        }
+        .weight-entry {
+          font-size: 16px;
+        }
+        .max-weight-entry {
+          font-size: 20px;
+          color: lighten($grayBattleship, 15%);
+        }
+        div > span {
+          pointer-events: none;
+          > a {
+            text-decoration: none;
+            color: inherit;
+          }
+        }
+      }
+      &__series {
+        .col{
+          .set-entry {
+            font-size: 28px;
+            padding: 4px 16px 16px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid darken($neonYellow, 20%);
+            &:first-child {
+              padding-top: 0;
+            }
+            &:last-child {
+              padding-bottom: 0;
+              margin-bottom: 0;
+              border-bottom: none;
+            }
+            small {
+              font-size: 22px;
+            }
+            .reps {
+              display: inline-block;
+              min-width: 80px;
+            }
+          }
+        }
+      }
+    }
+
+    .col {
+      position: relative;
+      width: 100%;
+      padding: 10px;
+      line-height: 1;
+      > span {
+        color: $black;
+      }
+    }
+
+    &.exercise-info-box__series .col {
+      padding: 10px 0;
+    }
+
+    .col-50 {
+      width: 48%;
+      max-width: 48%;
+      @include flex(0 0 48%);
+    }
+
+    .count {
+      display: inline-block;
+      border-bottom: 1px solid $whiteSmoke;
+      color: $whiteSmoke;
+      font-family: $oswald;
+      font-size: 20px;
+      width: 25px;
+      text-align: center;
+      padding: 5px 0;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+  }
+
+  h3.h5 {
+    color: $neonYellow;
+    text-transform: uppercase;
+    line-height: 1;
+    font-family: $oswaldLight;
+    font-size: 26px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
 
 }
 
 .day-info-box {
 
-    .day-workout-title {
-        color: $grayGunmetal;
-        float:left;
-    }
+  .day-workout-title {
+    color: $grayGunmetal;
+    float:left;
+  }
 
-    .super-arrow-right-b {
-        float:right;
-        margin-right:5px;
-        margin-top:5px;
-    }
+  .super-arrow-right-b {
+    float:right;
+    margin-right:5px;
+    margin-top:5px;
+  }
 
 }
 
 .day-workout-title {
-    display: block;
-    width:75%;
-    font-size: 20px;
-    font-family: $oswald;
-    margin-bottom:10px;
+  display: block;
+  width:75%;
+  font-size: 20px;
+  font-family: $oswald;
+  margin-bottom:10px;
 }
 
 .day-workout-exercise-info {
-    clear:both;
+  clear: both;
 
-    > div {
-        @include clearfix;
-        margin-bottom:13px;
+  > div {
+    @include clearfix;
+    margin-bottom: 13px;
 
-        &:last-child {
-            margin-bottom:0;
-        }
-
+    &:last-child {
+      margin-bottom: 0;
     }
 
-    .workout-exercise-order {
-        display: block;
-        float:left;
+  }
+
+  .workout-exercise-order {
+    display: block;
+    float: left;
+  }
+
+  .workout-name {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .exercise-info {
+    float: left;
+    width: 75%;
+    padding-left: 15px;
+
+    .exercise-name {
+      display: block;
+      margin-bottom: 6px;
     }
 
-    .workout-name {
-        display: block;
-        margin-bottom:5px;
-    }
-
-    .exercise-info {
-        float:left;
-        width:75%;
-        padding-left:15px;
-
-        .exercise-name {
-            display:block;
-            margin-bottom:6px;
-        }
-
-    }
+  }
 
 }
 
 .workout-info-box {
+  margin-top: -1px !important;
 
-    .workout-exercise-name {
-        display:inline-block;
-        padding-left:40px;
-        line-height: 1.125;
-        width:80%
-    }
-
-    .view-link {
-        float:right;
-        margin-right:5px;
-        margin-top:5px;
-    }
-
-}
-
-.workout-exercise-order {
+  .workout-exercise-name,
+  .workout-exercise-sets {
     display: inline-block;
-    width:25px;
-    height:25px;
-    line-height: 25px;
-    background-color: $originalSteel;
+    line-height: 1.125;
+    width: 75%;
     color: $neonYellow !important;
-    font-family: $oswald;
-    font-size: 16px;
-    text-align: center;
+    font-size: 17px;
+    padding-left: 40px;
+    margin-bottom: 5px;
+  }
+
+  .workout-exercise-name {
+    text-transform: capitalize;
+  }
+
+  .count {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+  }
+
+  .view-link {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+  }
+
+  .series-entry {
+    margin-bottom: 4px;
+    .label {
+      display: inline-block;
+      width: 50px;
+    }
+  }
+
 }
 
 .workout-exercise-info {
-    clear:both;
-    margin-top:6px;
-    padding-left:40px;
+  clear: both;
+  margin-top: 6px;
+  padding-left: 40px;
+  color: lighten($grayBattleship, 15%);
+  font-size: 16px;
 }
 
 .history-boxes {
 
-    h3 {
+  h2 {
+    display: block;
+    width: 100%;
+    text-align: center !important;
+  }
+
+  .history-box {
+    display: table;
+    padding: 0;
+    margin-bottom: 10px;
+    border: 1px solid $grayBattleship;
+    .col {
+      display: table-cell;
+      color: lighten($grayBattleship, 15%);
+      padding: 15px 15px 5px;
+      vertical-align: middle;
+      span {
+        line-height: 1;
+        pointer-events: none;
+        > a {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+      &.date {
         text-align: center;
+        border-right: 1px solid $grayBattleship;
+        span {
+          line-height: 1;
+        }
+        span.day {
+          font-size: 12px;
+          font-family: $oswald;
+        }
+        span.year {
+          font-size: 14px;
+          font-family: $oswaldBold;
+        }
+      }
+      &.info {
+        span {
+          line-height: 1;
+          padding-left: 0;
+        }
+        .notes-entry {
+          margin-bottom: 5px;
+        }
+        .set-entry {
+          font-size: 18px;
+          margin-top: 5px;
+        }
+        .weight-entry {
+          font-size: 14px;
+        }
+      }
     }
 
-    .history-box {
-        display: table;
-        padding: 0;
-        margin-bottom: 10px;
-        background-color: darken($originalSteel,5%);
-        border:1px solid $grayBattleship;
-
-        .col {
-            display: table-cell;
-            color: $whiteSmoke;
-            padding: 10px;
-            vertical-align: middle;
-
-
-            span {
-                line-height: 1;
-                pointer-events: none;
-
-                > a {
-                    text-decoration:none;
-                    color:inherit;
-                }
-
-            }
-
-            &.date {
-                text-align: center;
-                border-right:1px solid $grayBattleship;
-
-                span {
-                    line-height: 1;
-                }
-
-                span.day {
-                    font-size: 11px;
-                    font-family: $oswald;
-                }
-
-                span.year {
-                    font-size: 13px;
-                    font-family: $oswaldBold;
-                }
-
-            }
-
-            &.info {
-
-                span {
-                    line-height: 1;
-                    padding-left:0;
-                }
-
-                .set-entry {
-                    font-size: 22px;
-                }
-
-                .weight-entry {
-                    font-size: 14px;
-                }
-
-            }
-
-        }
-
-        .col-20 {
-            width:18%;
-            max-width: 18%;
-            @include flex(0 0 18%);
-        }
-
-        .col-80 {
-            width:80%;
-            max-width: 80%;
-            @include flex(0 0 80%);
-        }
-
+    .col-20 {
+      width:18%;
+      max-width: 18%;
+      @include flex(0 0 18%);
     }
+
+    .col-80 {
+      width:80%;
+      max-width: 80%;
+      @include flex(0 0 80%);
+    }
+
+  }
 
 }
 
 .icon.view-link {
-    border:1px solid $redBrave;
-    padding:4px 7px;
-
-    @include border-top-radius(3px);
-    @include border-right-radius(3px);
-    @include border-bottom-radius(3px);
-    @include border-left-radius(3px);
-
-    font-size: 14px;
-    color:$redBrave;
+  border: 1px solid lighten($grayBattleship, 10%);
+  color: lighten($grayBattleship, 10%);
+  padding: 4px 7px;
+  font-size: 14px;
+  @include border-top-radius(3px);
+  @include border-right-radius(3px);
+  @include border-bottom-radius(3px);
+  @include border-left-radius(3px);
 }
 
-.at {
-    display: inline;
-    color:$neonYellow;
-    vertical-align: middle;
-    font-size: 30px;
+.at,
+.set-count {
+  display: inline-block;
+  color: $neonYellow;
+  vertical-align: middle;
+  font-size: 30px;
+  text-align: center;
+  line-height: 1;
 }

@@ -6,6 +6,14 @@
     margin-top:10px !important;
 }
 
+.margin-right-10 {
+    margin-right:10px !important;
+}
+
+.margin-bottom-5 {
+    margin-bottom:5px !important;
+}
+
 .margin-bottom-10 {
     margin-bottom:10px !important;
 }
@@ -16,6 +24,10 @@
 
 .margin-bottom-20 {
     margin-bottom:20px !important;
+}
+
+.margin-right-20 {
+    margin-right:20px !important;
 }
 
 .margin-bottom-30 {
@@ -32,6 +44,18 @@
 
 .padding-bottom-100 {
     padding-bottom: 100px !important;
+}
+
+.padding-bottom-150 {
+    padding-bottom: 150px !important;
+}
+
+.padding-bottom-200 {
+    padding-bottom: 200px !important;
+}
+
+.padding-top-70 {
+    padding-top: 70px !important;
 }
 
 .a-center {
@@ -55,3 +79,25 @@
 	width:100%;
 	background-color:$grayBattleship;
 }
+
+.textColor-grey {
+    color: $grayBattleship !important;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clearfix {
+    &:before,
+    &:after {
+        clear: both;
+        content: '';
+        display: table;
+    }
+}
+

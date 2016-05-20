@@ -9,6 +9,11 @@ navigation-bar {
     color: #ffffff;
 }
 
+#settings icon {
+    background-image: url(icons/cog.svg);
+    background-size: 22px;
+}
+
 navigation-bar title {
     color: #ffffff;
     font-size: 16px;
@@ -21,36 +26,16 @@ navigation-bar button, navigation-bar back-bar-button {
 }
 
 tab-bar {
-    background-color: #ffffff;
+    background-color: #413D3D;
     border-top: 1px #d8d8d8 solid;
 }
 
 tab-bar tab-bar-item {
     color: #b0b1b4;
     font-family: "Avenir";
-    font-size: 10px;
+    font-size: 12px;
 }
 
 tab-bar tab-bar-item:selected {
     color: #1596f7;
-}
-
-tab-bar-item#info {
-    background-image: url(icons/info.svg);
-    color:#000;
-}
-
-tab-bar-item#day {
-    background-image: url(icons/calendar.svg);
-    color:#000;
-}
-
-tab-bar-item#workout {
-    background-image: url(icons/bolt.svg);
-    color:#000;
-}
-
-tab-bar-item#exercise {
-    background-image: url(icons/dumbbell.svg);
-    color:#000;
 }

@@ -1,12 +1,13 @@
 .button {
     position: relative;
-    z-index:2;
+    z-index: 2;
     display: block;
     text-transform: uppercase;
     line-height: 50px;
-    font-size: 15px;
-    margin:0 auto;
-    padding:0 8px;
+    font-size: 20px;
+    font-family: $oswaldBold;
+    margin: 0 auto;
+    padding: 0 8px;
 
     .icon {
         display: block;
@@ -27,14 +28,14 @@
         width: 200px;
         height: 200px;
         line-height: 1.125;
-        font-size:20px;
+        font-size: 20px;
 
         -webkit-box-shadow: 0px 0 0 0 rgba(0,0,0,0.75);
         -moz-box-shadow: 0px 0 0 0 rgba(0,0,0,0.75);
         box-shadow: 0px 0 0 0 rgba(0,0,0,0.75);
 
         .icon {
-            margin-bottom:10px;
+            margin-bottom: 10px;
 
             &:before {
                 line-height: 1;

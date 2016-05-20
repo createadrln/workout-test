@@ -19,24 +19,39 @@ form {
     border-right: 0;
     border-top: 0;
     border-bottom: 0;
-
     &.last {
       margin-bottom: 40px;
     }
+  }
 
+  .item-toggle {
+    padding-left: 0;
+    .label {
+      color: lighten($grayBattleship, 15%);
+      font-size: 18px;
+      padding: 0;
+    }
+    .toggle {
+      margin-right: -20px;
+      .track {
+        border-color: darken($grayBattleship, 10%);
+        background-color: $grayBattleship;
+      }
+      input:checked + .track {
+        border-color: darken($neonYellow, 10%);
+        background-color: $neonYellow;
+      }
+    }
   }
 
   .item-stacked-label {
-
     .input-label {
       display: block;
     }
-
     input[type="text"],
     input[type="number"] {
       background-color: transparent;
     }
-
   }
 
   .item-floating-label {
@@ -52,31 +67,34 @@ form {
     margin-bottom: 5px;
     width: 85%;
     max-width: 300px;
-
     .ex {
       display: block;
       font-size: 13px;
     }
-
   }
 
   .input-select {
     position: relative;
-
+    &:before {
+      content: '';
+      position: absolute;
+      top: 19px;
+      right: 15px;
+      @include triangle(15px, $neonYellow, up);
+    }
     &:after {
       content: '';
       position: absolute;
-      top: 15px;
-      right: 12px;
-      @include triangle(20px, $grayBattleship, down);
+      bottom: 19px;
+      right: 15px;
+      @include triangle(15px, $neonYellow, down);
     }
-
   }
 
   tags-input .tags {
     -moz-appearance: textfield;
     -webkit-appearance: textfield;
-    padding: 0 0 5px 10px;
+    padding: 0 0 5px 0;
     margin-bottom: 10px;
     overflow: hidden;
     word-wrap: break-word;
@@ -85,14 +103,14 @@ form {
     border-top: 0;
     border-left: 0;
     border-right: 0;
-    border-bottom: 1px solid $grayBattleship;
+    border-bottom: 1px solid $neonYellow;
     box-shadow: 0 0 0 0 lightgray inset;
 
     .input {
       font-size: 18px;
       margin: 0;
       padding-left: 0;
-      width: 100px !important;
+      width: 200px !important;
       height: 45px;
     }
 
@@ -118,9 +136,9 @@ input[type="text"],
 input[type="number"] {
   height: 45px;
   line-height: 20px;
-  border-bottom: 1px solid $grayBattleship;
+  border-bottom: 1px solid $neonYellow;
   color: lighten($grayBattleship, 15%);
-  font-size: 16px;
+  font-size: 18px;
 
   &.col-40 {
     display: inline-block;
@@ -130,8 +148,16 @@ input[type="number"] {
 
 }
 
+input[type="text"] {
+  text-transform: capitalize;
+}
+
 .list-qty .item {
   display: inline-block;
+}
+
+.list .label {
+  color: $grayBattleship;
 }
 
 .item-input-qty,
@@ -140,9 +166,11 @@ input[type="number"] {
   text-align: center;
   padding: 0 15px 20px;
   vertical-align: middle;
+
   .label {
-    margin-top:10px;
+    margin-top: 10px;
   }
+
 }
 
 input[type="text"].input-qty,
@@ -160,7 +188,7 @@ input[type="text"].input-qty-weight {
   font-family: $oxygen;
 
   background-color: transparent;
-  border: 1px solid $grayBattleship;
+  border: 1px solid $neonYellow;
   color: lighten($grayBattleship, 15%);
   padding: 10px;
 
@@ -172,20 +200,90 @@ input[type="text"].input-qty-weight {
 
 input[type="text"].input-qty {
   width: 100px;
+  &:disabled {
+    border: 1px solid $neonYellow;
+    opacity: 1;
+  }
 }
 
 input[type="text"].input-qty-weight {
   width: 140px;
 }
 
+.list-exercise-reps-fixed,
+.list-exercise-reps-series {
+  padding: 0 15px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  input[type="text"].input-qty {
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 40px;
+  }
+
+  input[type="text"].input-qty-weight {
+    width: 110px;
+    height: 80px;
+    line-height: 80px;
+    font-size: 40px;
+  }
+
+  .label {
+    clear: both;
+    line-height: 40px;
+  }
+
+  .input-select {
+    width: 90px;
+
+    &:before {
+      top: 12px;
+      right: 10px;
+      @include triangle(10px, $neonYellow, up);
+    }
+
+    &:after {
+      bottom: 12px;
+      right: 10px;
+      @include triangle(10px, $neonYellow, down);
+    }
+
+  }
+
+  select {
+    font-size: 16px;
+    padding: 7px 10px;
+  }
+
+  .at {
+    font-size: 18px;
+    margin: 0 5px;
+  }
+
+  .divider {
+    clear: both;
+  }
+
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
 textarea {
   -webkit-appearance: none;
   background-color: transparent;
-  border: 1px solid $grayBattleship;
+  border: 1px solid $neonYellow;
   outline: 0;
-  font-size: 16px;
-  padding: 10px;
+  font-size: 18px;
+  padding: 15px;
   color: lighten($grayBattleship, 15%);
+
   @include border-top-radius(0);
   @include border-right-radius(0);
   @include border-bottom-radius(0);
@@ -196,11 +294,13 @@ select {
   width: 100%;
   -webkit-appearance: none;
   background-color: transparent;
-  border: 1px solid $grayBattleship;
+  border: 1px solid $neonYellow;
   outline: 0;
-  padding: 8px 40px 8px 10px;
-  font-size: 16px;
+  padding: 15px 40px 15px 15px;
+  font-size: 18px;
   color: lighten($grayBattleship, 15%);
+  white-space: nowrap;
+  overflow: hidden;
 
   @include border-top-radius(0);
   @include border-right-radius(0);
@@ -266,7 +366,7 @@ select::-ms-expand {
   .col-30 {
     display: inline-block;
     width: 33%;
-    max-width: 33%;
+    max-width: 33.3%;
     text-align: center;
   }
 
@@ -294,40 +394,37 @@ select::-ms-expand {
     display: block;
     color: $neonYellow;
     text-align: center;
-    text-transform: uppercase;
   }
 
 }
 
 .list-set-exercise-weight {
+
   .col-30 {
     display: inline-block;
     width: 32%;
     max-width: 32%;
     text-align: center;
   }
+
 }
 
 .list-set-exercise-reps,
 .list-set-exercise-weight {
 
   .item-radio .item-content {
-    border:1px solid $grayBattleship;
+    border: 1px solid $neonYellow;
     color: lighten($grayBattleship, 15%);
-    @include border-top-radius(4px);
-    @include border-right-radius(4px);
-    @include border-bottom-radius(4px);
-    @include border-left-radius(4px);
     text-align: center;
     text-transform: uppercase;
     text-overflow: initial;
-    padding:15px 10px;
+    padding: 15px 10px;
   }
 
   .item-radio input:checked ~ .item-content {
     background: $neonYellow;
     color: $grayGunmetal;
-    border:1px solid $neonYellow;
+    border: 1px solid $neonYellow;
   }
 
 }
@@ -342,4 +439,52 @@ select::-ms-expand {
 input.input.ng-pristine.ng-untouched.ng-valid,
 input.input.ng-untouched.ng-valid.ng-dirty {
   height: 40px;
+}
+
+.list__add-exercise-to-workout {
+
+  .super-minus-circled {
+    float: right;
+    margin-top: 10px;
+    &:before {
+      color: $grayBattleship !important;
+      font-size: 27px !important;
+    }
+  }
+
+  li:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+}
+
+.buttons__add-exercise-to-workout {
+  text-align: center;
+}
+
+.btn-add-new-exercise,
+.btn-remove-new-exercise {
+  display: inline-block;
+  margin: 0 6px;
+
+  .super-plus-circled,
+  .super-minus-circled {
+    font-size: 20px;
+
+    &:before {
+      font-size: 60px;
+    }
+
+  }
+
+}
+
+.btn-add-new-exercise {
+  color: $neonYellow;
+}
+
+.btn-remove-new-exercise {
+  color: $grayBattleship;
 }
