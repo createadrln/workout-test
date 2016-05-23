@@ -15,3 +15,6 @@ logs/
 app/common/assets/sass/color-me-sass/
 
 app/common/assets/sass/config.rb
+npm-debug.log
+.idea/magicento.xml
+.idea/modules.xml
