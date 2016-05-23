@@ -1,18 +1,21 @@
 <div ng-controller="IndexController">
-    <div class="padding v-align">
-        <div class="padding">
-            <div class="logo"></div>
-            <div>
-                <h2>Track Your Workout Activity</h2>
-                <h3 class="margin-bottom-30">Get Started</h3>
-                <super-navigate location="exercise#newExerciseStep1" class="button button-full button-exercises">Create an Exercise</super-navigate>
-                <super-navigate location="workout#new" class="button button-full button-workouts">Create a Workout</super-navigate>
-            </div>
-            <div>
-                <h2>View Your Workout Activity</h2>
-                <h3 class="margin-bottom-30">Get Started</h3>
-                <super-navigate location="exercise#index" class="button button-full button-exercises">Go To Exercises</super-navigate>
-                <super-navigate location="workout#index" class="button button-full button-workouts">Go To Workouts</super-navigate>
+    <div ng-show="showSpinner" ng-include="'_spinner.html'"></div>
+    <div ng-hide="showSpinner" class="padding">
+        <div class="padding v-align">
+            <div class="padding">
+                <div class="logo"></div>
+                <div ng-show="initialView">
+                    <h2>Track Your Workout Activity</h2>
+                    <h3 class="margin-bottom-30">Get Started</h3>
+                    <super-navigate location="exercise#newExerciseStep1" data-params-location="onboarding" class="button button-full button-exercises">Create an Exercise</super-navigate>
+                    <super-navigate location="workout#new" data-params-location="onboarding" class="button button-full button-workouts">Create a Workout</super-navigate>
+                </div>
+                <div ng-hide="initialView">
+                    <h2>View Your Workouts</h2>
+                    <h3 class="margin-bottom-30">Get Started</h3>
+                    <super-navigate location="exercise#index" class="button button-full button-exercises">Go To Exercises</super-navigate>
+                    <super-navigate location="workout#index" class="button button-full button-workouts">Go To Workouts</super-navigate>
+                </div>
             </div>
         </div>
     </div>

@@ -4,7 +4,8 @@ angular
         $scope.exercise = {};
         $scope.exercise.id = generateUUID();
         $localStorage.newExercise = null;
-
+        $scope.exercise.location = steroids.view.params.location;
+        
         if (!$localStorage.localExercises) {
             $localStorage.localExercises = [];
         }

@@ -66,7 +66,12 @@ angular
                 $scope.addToHistory();
                 $localStorage.localExercises.push($scope.exercise);
                 supersonic.data.channel('localExercises').publish($localStorage.localExercises);
-                supersonic.ui.modal.hide();
+                if ($scope.exercise.location == 'onboarding') {
+                    var exerciseView = new supersonic.ui.View('exercise#index');
+                    supersonic.ui.layers.push(exerciseView);
+                } else {
+                    supersonic.ui.modal.hide();
+                }
             }
         };
 

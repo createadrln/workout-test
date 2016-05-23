@@ -4,7 +4,7 @@ angular
 
         $scope.exercise = $localStorage.newExercise;
 		$scope.exercise.sets = 1;
-        
+
         $scope.increaseSetQty = function() {
             $scope.exercise.sets++;
         };

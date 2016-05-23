@@ -52,7 +52,7 @@ angular
             }
             $scope.exercise.history.push($scope.pushToHistory);
         };
-        
+
         // Form Actions //
 
         // Form Validate //

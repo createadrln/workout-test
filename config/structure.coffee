@@ -2,33 +2,26 @@
 
 module.exports =
 
-  # See styling options for tabs and other native components in app/common/native-styles/ios.css or app/common/native-styles/android.css
-  tabs: [
-    {
-      title: "Exercises"
-      id: "exercise"
-      location: "exercise#index"
-    }
-    {
-      title: "Days"
-      id: "day"
-      icon: "icons/calendar.svg"
-      location: "day#index" # Supersonic module#view type navigation
-    }
-    {
-      title: "Workouts"
-      id: "workout"
-      location: "workout#index"
-    }
-    {
-      title: "Info"
-      id: "info"
-      location: "info#index"
-    }
-  ]
+# initialView:
+#   id: "initialView"
+#   location: "onboarding#index"
 
-# rootView:
-#   location: "example#getting-started"
+  # See styling options for tabs and other native components in app/common/native-styles/ios.css or app/common/native-styles/android.css
+# tabs: [
+#   {
+#     title: "Exercises"
+#     id: "exercise"
+#     location: "exercise#index"
+#   }
+#   {
+#     title: "Workouts"
+#     id: "workout"
+#     location: "workout#index"
+#   }
+# ]
+
+  rootView:
+    location: "onboarding#index"
 
 # preloads: [
 #   {
@@ -49,6 +42,3 @@ module.exports =
 #   options:
 #     animation: "swingingDoor"
 #
-#  initialView:
-#    id: "initialView"
-#    location: "exercise#index"
