@@ -11,8 +11,8 @@
 
 .onboarding-background {
   background-image: url("../../../images/gym-background.jpg");
-  background-position: 50% 20%;
-  background-size: 600%;
+  background-position: 53% 20% ;
+  background-size: 200%;
   background-repeat: no-repeat;
   background-color: $black;
   text-align: center;
@@ -374,13 +374,15 @@
 
     .count {
       display: inline-block;
-      border-bottom: 1px solid $whiteSmoke;
-      color: $whiteSmoke;
-      font-family: $oswald;
-      font-size: 20px;
-      width: 25px;
+      color: $originalSteel;
+      background-color: $neonYellow;
+      font-family: $oswaldBold;
+      font-size: 14px;
+      width: 20px;
       text-align: center;
-      padding: 5px 0;
+      top: -6px;
+      right: 0;
+      padding: 8px 0;
       vertical-align: middle;
       margin-right: 10px;
     }
