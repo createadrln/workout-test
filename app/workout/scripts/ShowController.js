@@ -83,6 +83,7 @@ angular
                         'sets' : exerciseGroup.sets,
                         'reps_fixed' : exerciseGroup.reps_fixed,
                         'reps_fixed_weight' : exerciseGroup.reps_fixed_weight,
+                        'max_weight' : exerciseGroup.max_weight,
                         'weight_unit' : exerciseGroup.weight_unit
                     });
                 }
@@ -93,6 +94,7 @@ angular
                         'reps' : 'series',
                         'sets' : exerciseGroup.sets,
                         'reps_series' : exerciseGroup.reps_series,
+                        'max_weight' : exerciseGroup.max_weight,
                         'weight_unit' : exerciseGroup.weight_unit
                     });
                 }
@@ -100,6 +102,21 @@ angular
             $scope.exercises = exercises;
             $scope.showSpinner = false;
         };
+
+        removeBtn = new supersonic.ui.NavigationBarButton({
+            title: 'Remove',
+            onTap: function() {
+                removeWorkout();
+            },
+            styleId: 'remove'
+        });
+
+        supersonic.ui.navigationBar.update({
+            title: '',
+            buttons: {
+                right: [removeBtn]
+            }
+        }).then(supersonic.ui.navigationBar.show());
 
         // Iterate From Array //
         $scope.getCount = function(num) {
@@ -117,11 +134,12 @@ angular
             _refreshViewData();
         });
 
-        $scope.remove = function (id) {
-            $scope.showSpinner = true;
-            $scope.workout.delete().then( function () {
-                supersonic.ui.layers.pop();
-            });
-        };
-
+        function removeWorkout() {
+            var index = getIndexOfIdCnt($localStorage.localWorkouts, $scope.dataId);
+            $scope.localWorkouts.splice(index, 1);
+            $localStorage.localWorkouts = $scope.localWorkouts;
+            supersonic.data.channel('localWorkouts').publish($localStorage.localWorkouts);
+            supersonic.ui.layers.pop();
+        }
+        
     });

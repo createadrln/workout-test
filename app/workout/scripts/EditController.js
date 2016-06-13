@@ -39,8 +39,11 @@ angular
             $scope.exercise_count ++;
         };
 
-        $scope.removeExercise = function (target) {
-            $scope.exercise_count --;
+        $scope.removeExercise = function () {
+            if ($scope.exercise_count > 1) {
+                $scope.exerciseSelects.pop();
+                $scope.exercise_count --;
+            }
         };
 
         /* Submit and Update Workout Data */

@@ -14,12 +14,18 @@
                         <i class="icon view-link">View</i>
                         <div class="workout-exercise-info" ng-if="exercise.reps == 'fixed'">
                             <span ng-bind="exercise['reps_fixed']"></span> reps @ <span ng-bind="exercise['reps_fixed_weight']"></span> <span ng-bind="exercise['weight_unit']"></span><br />
+                            <div ng-if="exercise.max_weight">
+                                Max Weight: {{exercise.max_weight}} {{exercise.weight_unit}}
+                            </div>
                         </div>
                         <div class="workout-exercise-info" ng-if="exercise.reps == 'series'">
                             <div ng-repeat="i in getCount(exercise.sets) track by $index">
                                 <div class="series-entry">
                                     <span ng-bind="exercise.reps_series['reps_series' + '_' + $index]"></span> reps <small>@</small> <span ng-bind="exercise.reps_series['reps_series_weight' + '_' + $index]"></span> {{exercise.weight_unit}}
                                 </div>
+                            </div>
+                            <div ng-if="exercise.max_weight">
+                                Max Weight: {{exercise.max_weight}} {{exercise.weight_unit}}
                             </div>
                         </div>
                     </super-navigate>

@@ -34,7 +34,7 @@
     <div class="padding padding-bottom-100">
         <div ng-hide="localExercises == null" class="padding">
             <label class="item item-input item-floating-label item__add-exercise-to-workout search margin-bottom-20">
-                <input type="text" ng-model="search" placeholder="Filter Exercises" /><i class="icon super-search"></i>
+                <input type="text" ng-model="exerciseSearch" placeholder="Filter Exercises" /><i class="icon super-search"></i>
             </label>
         </div>
         <ul class="list list__add-exercise-to-workout padding padding-top-0 margin-bottom-0">
@@ -47,7 +47,7 @@
                         <option ng-if="exercise_keys < 1" value="" selected>Select Exercise #{{$index + 1}}...</option>
                         <option ng-if="exercise_keys > 0" value="" selected>Select Exercise #{{$index + 1}}... {{workout.exercises['exercise_' + $index].name}}</option>
                         <option value="">---------------------</option>
-                        <option ng-repeat="option in exerciseSelect.option | filter:search" value="{{option.id}}">{{option.name}}</option>
+                        <option ng-repeat="option in exerciseSelect.option | filter:exerciseSearch" value="{{option.id}}">{{option.name}}</option>
                     </select>
                 </label>
             </li>

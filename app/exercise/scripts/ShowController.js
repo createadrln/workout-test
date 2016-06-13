@@ -13,6 +13,21 @@ angular
             });
         });
 
+        removeBtn = new supersonic.ui.NavigationBarButton({
+            title: 'Remove',
+            onTap: function() {
+                removeExercise();
+            },
+            styleId: 'remove'
+        });
+
+        supersonic.ui.navigationBar.update({
+            title: '',
+            buttons: {
+                right: [removeBtn]
+            }
+        }).then(supersonic.ui.navigationBar.show());
+
         $scope.getCount = function(num) {
             return new Array(num);
         };
@@ -33,10 +48,12 @@ angular
             _refreshViewData();
         });
 
-        $scope.remove = function (id) {
-            $scope.showSpinner = true;
-            //removeIndexOfId($localStorage.localExercises, id);
+        function removeExercise() {
+            var index = getIndexOfIdCnt($localStorage.localExercises, $scope.dataId);
+            $scope.localExercises.splice(index, 1);
+            $localStorage.localExercises = $scope.localExercises;
+            supersonic.data.channel('localExercises').publish($localStorage.localExercises);
             supersonic.ui.layers.pop();
-        };
+        }
 
     });

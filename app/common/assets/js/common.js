@@ -21,9 +21,3 @@ function getIndexOfIdCnt(array, id) {
     }
     return -1;
 }
-
-function removeIndexOfId(array, id) {
-    for (var i=0; i<array.length; i++) {
-        if (array[i].id==id) return array.remove[i];
-    }
-}
