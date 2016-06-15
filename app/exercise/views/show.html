@@ -52,9 +52,9 @@
                                     <span ng-bind="entry['sets']"></span> sets x <span ng-bind="entry['reps_fixed']"></span> @ <span ng-bind="entry['reps_fixed_weight']"></span> <span ng-if="entry['weight_unit'] == 'body'">Body</span><span ng-if="entry['weight_unit'] != 'body'">{{entry.weight_unit}}</span>
                                 </div>
                                 <div ng-if="entry.notes || entry.technique.technique_name" class="notes-entry margin-bottom-10">
-                                    <div ng-bind="entry.technique['technique_name']"></div>
-                                    <div ng-bind="entry['notes']"></div>
-                                </div>
+                                    <div ng-if="entry.technique.technique_name">{{entry.technique.technique_name}}</div>
+                                    <div ng-if="entry.notes" class="margin-top-10">{{entry.notes}}</div>
+                                 </div>
                                 <div ng-if="entry.max_weight || entry.one_rep_max" class="max-entry margin-bottom-10">
                                     <div ng-show="{{entry.max_weight}}">Max: <span ng-bind="entry['max_weight']"></span> {{entry.weight_unit}}</div>
                                     <div ng-show="{{entry.one_rep_max}}">One Rep Max: <span ng-bind="entry['one_rep_max']"></span> {{entry.weight_unit}}</div>
@@ -73,8 +73,8 @@
                                     </div>
                                 </div>
                                 <div ng-if="entry.notes || entry.technique.technique_name" class="notes-entry margin-bottom-10">
-                                    <div ng-bind="entry.technique['technique_name']"></div>
-                                    <div ng-bind="entry['notes']"></div>
+                                    <div ng-if="entry.technique.technique_name">{{entry.technique.technique_name}}</div>
+                                    <div ng-if="entry.notes" class="margin-top-10">{{entry.notes}}</div>
                                 </div>
                                 <div ng-if="entry.max_weight || entry.one_rep_max" class="max-entry margin-bottom-10">
                                     <div ng-show="{{entry.max_weight}}">Max: <span ng-bind="entry['max_weight']"></span> {{entry.weight_unit}}</div>

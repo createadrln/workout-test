@@ -21,3 +21,4 @@ function getIndexOfIdCnt(array, id) {
     }
     return -1;
 }
+
