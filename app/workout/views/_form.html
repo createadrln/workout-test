@@ -1,13 +1,13 @@
 <div class="fieldset">
 
     <div class="page-title">
-        <h2>Add A Workout</h2>
+        <h2>Workout Info</h2>
     </div>
 
     <div class="padding">
         <div class="list margin-bottom-0 padding padding-top-0">
-            <label class="item item-input item-floating-label margin-bottom-10">
-                <input type="text" ng-model="workout['title']" placeholder="What do you call this workout?">
+            <label class="item item-input item-floating-label margin-bottom-20">
+                <textarea ng-model="workout['title']" placeholder="Workout Name" rows="2"></textarea>
             </label>
             <label class="item item-input item-floating-label item-tags margin-bottom-10">
                 <tags-input ng-model="workout['tags']" placeholder="Popular Tags"></tags-input>

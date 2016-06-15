@@ -377,13 +377,15 @@ input[type="text"].input-qty-weight {
 
 /* line 278, ../assets/sass/partials/_forms.scss */
 textarea {
-  -webkit-appearance: none;
   background-color: transparent;
   border: 1px solid #FFC803;
-  outline: 0;
-  font-size: 18px;
-  padding: 15px;
   color: #aaaaa9;
+  font-size: 18px;
+  line-height: 1.5;
+  outline: 0;
+  padding: 15px;
+  text-transform: capitalize;
+  -webkit-appearance: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -394,7 +396,7 @@ textarea {
   border-top-left-radius: 0;
 }
 
-/* line 293, ../assets/sass/partials/_forms.scss */
+/* line 295, ../assets/sass/partials/_forms.scss */
 select {
   width: 100%;
   -webkit-appearance: none;
@@ -415,23 +417,23 @@ select {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
-/* line 310, ../assets/sass/partials/_forms.scss */
+/* line 312, ../assets/sass/partials/_forms.scss */
 select.ng-dirty {
   color: #f5f5f5;
 }
 
-/* line 316, ../assets/sass/partials/_forms.scss */
+/* line 318, ../assets/sass/partials/_forms.scss */
 select::-ms-expand {
   display: none;
 }
 
-/* line 320, ../assets/sass/partials/_forms.scss */
+/* line 322, ../assets/sass/partials/_forms.scss */
 .item-input {
   position: relative;
   padding: 0;
   margin-bottom: 10px;
 }
-/* line 325, ../assets/sass/partials/_forms.scss */
+/* line 327, ../assets/sass/partials/_forms.scss */
 .item-input .icon::before {
   position: absolute;
   bottom: 10px;
@@ -439,40 +441,40 @@ select::-ms-expand {
   color: #9d9d9c;
   font-size: 22px;
 }
-/* line 336, ../assets/sass/partials/_forms.scss */
+/* line 338, ../assets/sass/partials/_forms.scss */
 .item-input.item-stacked-label .icon::before, .item-input.item-tags .icon::before {
   bottom: 30px;
 }
 
-/* line 344, ../assets/sass/partials/_forms.scss */
+/* line 346, ../assets/sass/partials/_forms.scss */
 .item-radio .item-content,
 .item-radio input:checked ~ .item-content {
   background-color: transparent;
 }
 
-/* line 351, ../assets/sass/partials/_forms.scss */
+/* line 353, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .item-radio input:checked ~ .super-ios-circle-outline:before {
   content: '\f400';
 }
-/* line 355, ../assets/sass/partials/_forms.scss */
+/* line 357, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .item-radio .item-content {
   text-transform: uppercase;
 }
-/* line 359, ../assets/sass/partials/_forms.scss */
+/* line 361, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .col-50 {
   display: inline-block;
   width: 49%;
   max-width: 49%;
   text-align: center;
 }
-/* line 366, ../assets/sass/partials/_forms.scss */
+/* line 368, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .col-30 {
   display: inline-block;
   width: 33%;
   max-width: 33.3%;
   text-align: center;
 }
-/* line 373, ../assets/sass/partials/_forms.scss */
+/* line 375, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .item-radio .radio-icon {
   display: block;
   visibility: visible;
@@ -484,20 +486,20 @@ select::-ms-expand {
   color: #FFC803;
   font-size: 36px;
 }
-/* line 387, ../assets/sass/partials/_forms.scss */
+/* line 389, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .item-content {
   display: block;
   padding-right: 0;
   padding-left: 0;
 }
-/* line 393, ../assets/sass/partials/_forms.scss */
+/* line 395, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .exercise-reps-message {
   display: block;
   color: #FFC803;
   text-align: center;
 }
 
-/* line 403, ../assets/sass/partials/_forms.scss */
+/* line 405, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-weight .col-30 {
   display: inline-block;
   width: 32%;
@@ -505,7 +507,7 @@ select::-ms-expand {
   text-align: center;
 }
 
-/* line 415, ../assets/sass/partials/_forms.scss */
+/* line 417, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .item-radio .item-content,
 .list-set-exercise-weight .item-radio .item-content {
   border: 1px solid #FFC803;
@@ -515,7 +517,7 @@ select::-ms-expand {
   text-overflow: initial;
   padding: 15px 10px;
 }
-/* line 424, ../assets/sass/partials/_forms.scss */
+/* line 426, ../assets/sass/partials/_forms.scss */
 .list-set-exercise-reps .item-radio input:checked ~ .item-content,
 .list-set-exercise-weight .item-radio input:checked ~ .item-content {
   background: #FFC803;
@@ -523,7 +525,7 @@ select::-ms-expand {
   border: 1px solid #FFC803;
 }
 
-/* line 432, ../assets/sass/partials/_forms.scss */
+/* line 434, ../assets/sass/partials/_forms.scss */
 .to {
   color: #f5f5f5;
   font-size: 20px;
@@ -531,48 +533,48 @@ select::-ms-expand {
   margin-bottom: 20px;
 }
 
-/* line 439, ../assets/sass/partials/_forms.scss */
+/* line 441, ../assets/sass/partials/_forms.scss */
 input.input.ng-pristine.ng-untouched.ng-valid,
 input.input.ng-untouched.ng-valid.ng-dirty {
   height: 40px;
 }
 
-/* line 446, ../assets/sass/partials/_forms.scss */
+/* line 448, ../assets/sass/partials/_forms.scss */
 .list__add-exercise-to-workout .super-minus-circled {
   float: right;
   margin-top: 10px;
 }
-/* line 449, ../assets/sass/partials/_forms.scss */
+/* line 451, ../assets/sass/partials/_forms.scss */
 .list__add-exercise-to-workout .super-minus-circled:before {
   color: #848482 !important;
   font-size: 27px !important;
 }
-/* line 455, ../assets/sass/partials/_forms.scss */
+/* line 457, ../assets/sass/partials/_forms.scss */
 .list__add-exercise-to-workout li:after {
   content: '';
   display: table;
   clear: both;
 }
 
-/* line 463, ../assets/sass/partials/_forms.scss */
+/* line 465, ../assets/sass/partials/_forms.scss */
 .buttons__add-exercise-to-workout {
   text-align: center;
 }
 
-/* line 467, ../assets/sass/partials/_forms.scss */
+/* line 469, ../assets/sass/partials/_forms.scss */
 .btn-add-new-exercise,
 .btn-remove-new-exercise {
   display: inline-block;
   margin: 0 6px;
 }
-/* line 472, ../assets/sass/partials/_forms.scss */
+/* line 474, ../assets/sass/partials/_forms.scss */
 .btn-add-new-exercise .super-plus-circled,
 .btn-add-new-exercise .super-minus-circled,
 .btn-remove-new-exercise .super-plus-circled,
 .btn-remove-new-exercise .super-minus-circled {
   font-size: 20px;
 }
-/* line 476, ../assets/sass/partials/_forms.scss */
+/* line 478, ../assets/sass/partials/_forms.scss */
 .btn-add-new-exercise .super-plus-circled:before,
 .btn-add-new-exercise .super-minus-circled:before,
 .btn-remove-new-exercise .super-plus-circled:before,
@@ -580,12 +582,12 @@ input.input.ng-untouched.ng-valid.ng-dirty {
   font-size: 60px;
 }
 
-/* line 484, ../assets/sass/partials/_forms.scss */
+/* line 486, ../assets/sass/partials/_forms.scss */
 .btn-add-new-exercise {
   color: #FFC803;
 }
 
-/* line 488, ../assets/sass/partials/_forms.scss */
+/* line 490, ../assets/sass/partials/_forms.scss */
 .btn-remove-new-exercise {
   color: #848482;
 }
@@ -1623,4 +1625,15 @@ h2 {
   font-size: 30px;
   text-align: center;
   line-height: 1;
+}
+
+/* line 610, ../assets/sass/custom.scss */
+.ig-logo {
+  background-image: url("../../../icons/instagram.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
 }

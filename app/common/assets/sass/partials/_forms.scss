@@ -276,13 +276,15 @@ input[type="text"].input-qty-weight {
 }
 
 textarea {
-  -webkit-appearance: none;
   background-color: transparent;
   border: 1px solid $neonYellow;
-  outline: 0;
-  font-size: 18px;
-  padding: 15px;
   color: lighten($grayBattleship, 15%);
+  font-size: 18px;
+  line-height: 1.5;
+  outline: 0;
+  padding: 15px;
+  text-transform: capitalize;
+  -webkit-appearance: none;
 
   @include border-top-radius(0);
   @include border-right-radius(0);

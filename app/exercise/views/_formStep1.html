@@ -8,14 +8,14 @@
         <div class="padding padding-top-0">
 
             <div class="list margin-bottom-0">
-                <label class="item item-input item-floating-label margin-bottom-10">
-                    <input type="text" class="input-name" ng-model="exercise['name']" placeholder="Exercise Name" />
+                <label class="item item-input item-floating-label margin-bottom-20">
+                    <textarea ng-model="exercise['name']" placeholder="Exercise Name" rows="2"></textarea>
+                </label>
+                <label class="item item-input item-floating-label">
+                    <textarea ng-model="exercise['notes']" placeholder="Exercise Notes" rows="4"></textarea>
                 </label>
                 <label class="item item-input item-floating-label item-tags">
                     <tags-input ng-model="exercise['tags']"></tags-input>
-                </label>
-                <label class="item item-input item-floating-label">
-                    <textarea ng-model="exercise['notes']" placeholder="Notes" rows="7"></textarea>
                 </label>
             </div>
 

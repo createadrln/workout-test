@@ -606,3 +606,13 @@
   text-align: center;
   line-height: 1;
 }
+
+.ig-logo {
+  background-image: url("../../../icons/instagram.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 50% 50%;
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+}
