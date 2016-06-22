@@ -11,6 +11,7 @@
                         <div class="count">{{$index + 1}}</div>
                         <span class="workout-exercise-name">{{exercise.name}}</span>
                         <span class="workout-exercise-sets">x {{exercise.sets}} sets</span>
+                        <span ng-if="exercise.technique.technique_name != 'Select Training Technique...'" class="workout-exercise-technique">{{exercise.technique.technique_name}}</span>
                         <i class="icon view-link">View</i>
                         <div class="workout-exercise-info" ng-if="exercise.reps == 'fixed'">
                             <span ng-bind="exercise['reps_fixed']"></span> reps @ <span ng-bind="exercise['reps_fixed_weight']"></span> <span ng-bind="exercise['weight_unit']"></span><br />
@@ -26,9 +27,6 @@
                             </div>
                             <div ng-if="exercise.max_weight" class="margin-top-10">
                                 Max Weight: {{exercise.max_weight}} {{exercise.weight_unit}}
-                            </div>
-                            <div ng-if="exercise.technique" class="margin-top-10">
-                                {{exercise.technique}}
                             </div>
                         </div>
                     </super-navigate>
