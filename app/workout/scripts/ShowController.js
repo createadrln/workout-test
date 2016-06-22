@@ -17,6 +17,7 @@ angular
                         exercises.push({
                             'id' : exerciseGroup.id,
                             'name' : exerciseGroup.name,
+                            'technique' : exerciseGroup.technique,
                             'reps' : 'fixed',
                             'sets' : exerciseGroup.sets,
                             'reps_fixed' : exerciseGroup.reps_fixed,
@@ -28,6 +29,7 @@ angular
                         exercises.push({
                             'id' : exerciseGroup.id,
                             'name' : exerciseGroup.name,
+                            'technique' : exerciseGroup.technique,
                             'reps' : 'series',
                             'set_count' : exerciseGroup.set_count,
                             'reps_series' : exerciseGroup.reps_series,
@@ -48,6 +50,7 @@ angular
                         exercises.push({
                             'id' : exerciseGroup.id,
                             'name' : exerciseGroup.name,
+                            'technique' : exerciseGroup.technique,
                             'reps' : 'fixed',
                             'sets' : exerciseGroup.sets,
                             'reps_fixed' : exerciseGroup.reps_fixed,
@@ -59,6 +62,7 @@ angular
                         exercises.push({
                             'id' : exerciseGroup.id,
                             'name' : exerciseGroup.name,
+                            'technique' : exerciseGroup.technique,
                             'reps' : 'series',
                             'sets' : exerciseGroup.sets,
                             'reps_series' : exerciseGroup.reps_series,
@@ -79,6 +83,7 @@ angular
                     exercises.push({
                         'id' : exerciseGroup.id,
                         'name' : exerciseGroup.name,
+                        'technique' : exerciseGroup.technique,
                         'reps' : 'fixed',
                         'sets' : exerciseGroup.sets,
                         'reps_fixed' : exerciseGroup.reps_fixed,
@@ -91,6 +96,7 @@ angular
                     exercises.push({
                         'id' : exerciseGroup.id,
                         'name' : exerciseGroup.name,
+                        'technique' : exerciseGroup.technique,
                         'reps' : 'series',
                         'sets' : exerciseGroup.sets,
                         'reps_series' : exerciseGroup.reps_series,
