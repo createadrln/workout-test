@@ -6,6 +6,7 @@ angular
         $scope.localExercises = null;
         $scope.exercise_count = 1;
         $scope.exercise_keys = 0;
+        $scope.workout.featured = false;
 
         if (!$localStorage.localWorkouts) {
             $localStorage.localWorkouts = [];
@@ -17,7 +18,8 @@ angular
             for (var i=0; i<$scope.localExercises.length; i++) {
                 $scope.exerciseSelectOptions.push({
                     'id' : $scope.localExercises[i].id,
-                    'name' : $scope.localExercises[i].name
+                    'name' : $scope.localExercises[i].name,
+                    'tags' : $scope.localExercises[i].tags
                 });
             }
             $scope.exerciseSelects = [];

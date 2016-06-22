@@ -19,7 +19,9 @@ angular
             { 'id' : 5, 'technique_name' : 'Drop Set' },
             { 'id' : 6, 'technique_name' : 'Negative Set' },
             { 'id' : 7, 'technique_name' : 'Rest Pause Set' },
-            { 'id' : 8, 'technique_name' : 'Static Hold' }
+            { 'id' : 8, 'technique_name' : 'Static Hold' },
+            { 'id' : 8, 'technique_name' : 'HIIT' },
+            { 'id' : 8, 'technique_name' : 'Tabata' }
         ];
         $scope.exercise.technique =  $scope.techniques[0];
 

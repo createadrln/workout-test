@@ -7,7 +7,7 @@
             </label>
         </div>
         <ul class="list workout-list padding padding-top-70 padding-bottom-150">
-            <super-navigate location="workout#show" data-params-id="{{ workout.id }}" ng-repeat="workout in localWorkouts | orderBy: 'featured' | filter:search">
+            <super-navigate location="workout#show" data-params-id="{{ workout.id }}" ng-repeat="workout in localWorkouts | orderBy: 'featured':true | filter:search">
                 <li class="item">
                     <span ng-bind="workout['title']"></span><span ng-if="workout.featured" class="right icon super-star"></span>
                 </li>

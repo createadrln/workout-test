@@ -21,7 +21,8 @@ angular
             for (var j=0; j<$scope.localExercises.length; j++) {
                 $scope.exerciseSelectOptions.push({
                     'id' : $scope.localExercises[j].id,
-                    'name' : $scope.localExercises[j].name
+                    'name' : $scope.localExercises[j].name,
+                    'tags' : $scope.localExercises[j].tags
                 });
             }
             $scope.exerciseSelects = [];
